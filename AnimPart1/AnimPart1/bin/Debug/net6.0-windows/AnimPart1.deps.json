@@ -1,0 +1,342 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "AnimPart1/1.0.0": {
+        "dependencies": {
+          "SVGImage": "3.0.0",
+          "SharpVectors": "1.8.4",
+          "SharpVectors.Reloaded": "1.8.4",
+          "SharpVectors.Reloaded.Cmguo": "1.3.0",
+          "SharpVectors.Wpf": "1.8.4",
+          "Svg.Skia": "1.0.0.18"
+        },
+        "runtime": {
+          "AnimPart1.dll": {}
+        }
+      },
+      "ExCSS/4.2.3": {
+        "runtime": {
+          "lib/net6.0/ExCSS.dll": {
+            "assemblyVersion": "4.2.3.0",
+            "fileVersion": "4.2.3.0"
+          }
+        }
+      },
+      "HarfBuzzSharp/7.3.0": {
+        "dependencies": {
+          "HarfBuzzSharp.NativeAssets.Win32": "7.3.0",
+          "HarfBuzzSharp.NativeAssets.macOS": "7.3.0"
+        },
+        "runtime": {
+          "lib/net6.0/HarfBuzzSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "7.3.0.0"
+          }
+        }
+      },
+      "HarfBuzzSharp.NativeAssets.macOS/7.3.0": {
+        "runtimeTargets": {
+          "runtimes/osx/native/libHarfBuzzSharp.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "HarfBuzzSharp.NativeAssets.Win32/7.3.0": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/libHarfBuzzSharp.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libHarfBuzzSharp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libHarfBuzzSharp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SharpVectors/1.8.4": {
+        "runtime": {
+          "lib/net6.0-windows7.0/SharpVectors.Converters.Wpf.dll": {
+            "assemblyVersion": "1.8.4.0",
+            "fileVersion": "1.8.4.0"
+          },
+          "lib/net6.0-windows7.0/SharpVectors.Core.dll": {
+            "assemblyVersion": "1.8.4.0",
+            "fileVersion": "1.8.4.0"
+          },
+          "lib/net6.0-windows7.0/SharpVectors.Css.dll": {
+            "assemblyVersion": "1.8.4.0",
+            "fileVersion": "1.8.4.0"
+          },
+          "lib/net6.0-windows7.0/SharpVectors.Dom.dll": {
+            "assemblyVersion": "1.8.4.0",
+            "fileVersion": "1.8.4.0"
+          },
+          "lib/net6.0-windows7.0/SharpVectors.Model.dll": {
+            "assemblyVersion": "1.8.4.0",
+            "fileVersion": "1.8.4.0"
+          },
+          "lib/net6.0-windows7.0/SharpVectors.Rendering.Gdi.dll": {
+            "assemblyVersion": "1.8.4.0",
+            "fileVersion": "1.8.4.0"
+          },
+          "lib/net6.0-windows7.0/SharpVectors.Rendering.Wpf.dll": {
+            "assemblyVersion": "1.8.4.0",
+            "fileVersion": "1.8.4.0"
+          },
+          "lib/net6.0-windows7.0/SharpVectors.Runtime.Wpf.dll": {
+            "assemblyVersion": "1.8.4.0",
+            "fileVersion": "1.8.4.0"
+          }
+        }
+      },
+      "SharpVectors.Reloaded/1.8.4": {},
+      "SharpVectors.Reloaded.Cmguo/1.3.0": {},
+      "SharpVectors.Wpf/1.8.4": {},
+      "ShimSkiaSharp/1.0.0.18": {
+        "runtime": {
+          "lib/net6.0/ShimSkiaSharp.dll": {
+            "assemblyVersion": "1.0.0.18",
+            "fileVersion": "1.0.0.18"
+          }
+        }
+      },
+      "SkiaSharp/2.88.6": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.6",
+          "SkiaSharp.NativeAssets.macOS": "2.88.6"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.6.0"
+          }
+        }
+      },
+      "SkiaSharp.HarfBuzz/2.88.6": {
+        "dependencies": {
+          "HarfBuzzSharp": "7.3.0",
+          "SkiaSharp": "2.88.6"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.6.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.6": {
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/2.88.6": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Svg.Custom/1.0.0.18": {
+        "dependencies": {
+          "ExCSS": "4.2.3"
+        },
+        "runtime": {
+          "lib/net6.0/Svg.Custom.dll": {
+            "assemblyVersion": "1.0.0.18",
+            "fileVersion": "1.0.0.18"
+          }
+        }
+      },
+      "Svg.Model/1.0.0.18": {
+        "dependencies": {
+          "ShimSkiaSharp": "1.0.0.18",
+          "Svg.Custom": "1.0.0.18"
+        },
+        "runtime": {
+          "lib/net6.0/Svg.Model.dll": {
+            "assemblyVersion": "1.0.0.18",
+            "fileVersion": "1.0.0.18"
+          }
+        }
+      },
+      "Svg.Skia/1.0.0.18": {
+        "dependencies": {
+          "SkiaSharp": "2.88.6",
+          "SkiaSharp.HarfBuzz": "2.88.6",
+          "Svg.Custom": "1.0.0.18",
+          "Svg.Model": "1.0.0.18"
+        },
+        "runtime": {
+          "lib/net6.0/Svg.Skia.dll": {
+            "assemblyVersion": "1.0.0.18",
+            "fileVersion": "1.0.0.18"
+          }
+        }
+      },
+      "SVGImage/3.0.0": {
+        "runtime": {
+          "lib/net5.0-windows7.0/SVGImage.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AnimPart1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ExCSS/4.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SyeAfu2wL5247sipJoPUzQfjiwQtfSd8hN4IbgoyVcDx4PP6Dud4znwPRibWQzLtTlUxYYcbf5f4p+EfFC7KtQ==",
+      "path": "excss/4.2.3",
+      "hashPath": "excss.4.2.3.nupkg.sha512"
+    },
+    "HarfBuzzSharp/7.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OrQLaxtZMIeS2yHSUtsKzeSdk9CPaCpyJ/JCs+wLfRGatjE8MLUS6LGj6vdbGRxqRavcXs79C9O3oWe6FJR0JQ==",
+      "path": "harfbuzzsharp/7.3.0",
+      "hashPath": "harfbuzzsharp.7.3.0.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.macOS/7.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LWcFJ39j+dN0KK8c/GJJZPPZPL9TqT2FA42/LRGqzUMmSm5LYbINOMnPvUr7RuLR6RFSmKIrgrlgObR8G5ho2A==",
+      "path": "harfbuzzsharp.nativeassets.macos/7.3.0",
+      "hashPath": "harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.Win32/7.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ulEewLMk+dNmbmpy15ny/YusI6JNUWqchF080TV2jgfFBXPXjWm767JleDi/S7hp8eDeEN6GYIIxpvNr5fLvIw==",
+      "path": "harfbuzzsharp.nativeassets.win32/7.3.0",
+      "hashPath": "harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512"
+    },
+    "SharpVectors/1.8.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gqNB7pUeI9EWwocU1JCoSrXkArrUSS8pvpwsKXPNbI7yqboTtD+EIxVJwUhfEPakWDca9VydFK8I98g4IpDbQw==",
+      "path": "sharpvectors/1.8.4",
+      "hashPath": "sharpvectors.1.8.4.nupkg.sha512"
+    },
+    "SharpVectors.Reloaded/1.8.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TNWVSMo1c7CVA6c8LcJGBELZ/hb3shQUBJO+xv8d6QA3iaW40jgbUjhLHUX0k84uM3Aw+/mKvO4X6dk0wcLA4A==",
+      "path": "sharpvectors.reloaded/1.8.4",
+      "hashPath": "sharpvectors.reloaded.1.8.4.nupkg.sha512"
+    },
+    "SharpVectors.Reloaded.Cmguo/1.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VxAvsYmai9mOLr31aR5oQs5f+6lYiWs6R6tgShQEtDcxwN422QM7FtURO80MIJkGPjOzUPTjHD+YXXbstmDQ0g==",
+      "path": "sharpvectors.reloaded.cmguo/1.3.0",
+      "hashPath": "sharpvectors.reloaded.cmguo.1.3.0.nupkg.sha512"
+    },
+    "SharpVectors.Wpf/1.8.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m5eb7aijSzgNhiOP2uEdytbLWH621N2uwT7N2RRI+Q6ZbORaQQsfD6apVPnqJCertMIEpNjrhmZNmRz+RA04KQ==",
+      "path": "sharpvectors.wpf/1.8.4",
+      "hashPath": "sharpvectors.wpf.1.8.4.nupkg.sha512"
+    },
+    "ShimSkiaSharp/1.0.0.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zcUISy3XoIPrYWOeHqt/CrM2oX+OHon91aEtIbfiWb/7eP5V20kjkwhN1h4V0eloy62jVE8H1TE5PCVQ0k0M2Q==",
+      "path": "shimskiasharp/1.0.0.18",
+      "hashPath": "shimskiasharp.1.0.0.18.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wdfeBAQrEQCbJIRgAiargzP1Uy+0grZiG4CSgBnhAgcJTsPzlifIaO73JRdwIlT3TyBoeU9jEqzwFUhl4hTYnQ==",
+      "path": "skiasharp/2.88.6",
+      "hashPath": "skiasharp.2.88.6.nupkg.sha512"
+    },
+    "SkiaSharp.HarfBuzz/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s5yZTHdqbXKiTL06ns6zW3asELfX60dEceA4ZdYmNlOkz/OyWDfdjHAuu4HGDA7Mxx5iaUEzDZgPkEe+OVr/jg==",
+      "path": "skiasharp.harfbuzz/2.88.6",
+      "hashPath": "skiasharp.harfbuzz.2.88.6.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Sko9LFxRXSjb3OGh5/RxrVRXxYo48tr5NKuuSy6jB85GrYt8WRqVY1iLOLwtjPiVAt4cp+pyD4i30azanS64dw==",
+      "path": "skiasharp.nativeassets.macos/2.88.6",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.6.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7TzFO0u/g2MpQsTty4fyCDdMcfcWI+aLswwfnYXr3gtNS6VLKdMXPMeKpJa3pJSLnUBN6wD0JjuCe8OoLBQ6cQ==",
+      "path": "skiasharp.nativeassets.win32/2.88.6",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.6.nupkg.sha512"
+    },
+    "Svg.Custom/1.0.0.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bavGcKBodZwHY65Yw2JJ/Vd2ghNh7FYrqiDngPDv21uu6Uy8pj9FAQWYyoeBAyPmEVN/WFAl1l4CKMGEYlIuXw==",
+      "path": "svg.custom/1.0.0.18",
+      "hashPath": "svg.custom.1.0.0.18.nupkg.sha512"
+    },
+    "Svg.Model/1.0.0.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DXs+nOWjR4/xZp5wExWS3Ih8JN3MAwdhIrczduzKkO2pIox08DQnoyWWGy9nVlGnby7gyqAMDtLpbY639pugcA==",
+      "path": "svg.model/1.0.0.18",
+      "hashPath": "svg.model.1.0.0.18.nupkg.sha512"
+    },
+    "Svg.Skia/1.0.0.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o+fajf+Z3OUtLahZuwigeeS+bXNr21iyP4koweeDln9hD7Bzayw50IHJ6bPprfkRMpMkwMob7rWyupYq0GaEAg==",
+      "path": "svg.skia/1.0.0.18",
+      "hashPath": "svg.skia.1.0.0.18.nupkg.sha512"
+    },
+    "SVGImage/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m8WrTTRJ9lLzxUAq1x1np9Xbz+0upunD9yTQvAJVhv/TceknMjxsJYNJdPe1vTOK/2humSDwcB5QHg6UBaccuQ==",
+      "path": "svgimage/3.0.0",
+      "hashPath": "svgimage.3.0.0.nupkg.sha512"
+    }
+  }
+}
