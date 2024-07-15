@@ -78,13 +78,13 @@ namespace AnimPart1
 
         private void HopperCameraChecked_Checked(object sender, RoutedEventArgs e)
         {
-            tank001Control.ChangeBackgroundImageLights("BackgroundLightOn.svg", "Tank001");
+            tank001Control.ChangeBackgroundImageCamera("CameraFlashOn.svg", "Camera");
 
         }
 
         private void HopperCameraChecked_Unchecked(object sender, RoutedEventArgs e)
         {
-            tank001Control.ChangeBackgroundImageLights("CameraFlashOff.svg", "Camera");
+            tank001Control.ChangeBackgroundImageCamera("CameraFlashOff.svg", "Camera");
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)

@@ -10,6 +10,7 @@ using System.Windows.Media.Animation;
 using DotNetProjects.SVGImage.SVG.Shapes.Filter;
 using SharpVectors.Converters;
 using SharpVectors.Renderers.Wpf;
+using System.Timers;
 
 namespace AnimPart1.Tank001
 {
@@ -18,16 +19,86 @@ namespace AnimPart1.Tank001
     /// </summary>
     public partial class Tank001 : UserControl
     {
-        Lights.Lights userControl2;
+        Lights.Lights lightUserCtrl;
+        Camera.Camera cameraUserCtrl;
+
+        private List<ImageBrush> tankLevelImagesLightOn;
+        private List<ImageBrush> tankLevelImagesLightOff;
+
+        private int currentImageIndex;
+        private System.Timers.Timer animationTimer;
 
         public Tank001()
         {
             InitializeComponent();
 
-            userControl2 = new Lights.Lights();
-            lightColumn.Content = userControl2;
+            lightUserCtrl = new Lights.Lights();
+            lightColumn.Content = lightUserCtrl;
+
+
+            cameraUserCtrl = new Camera.Camera();
+            CameraColumn.Content = cameraUserCtrl;
 
             LoadBackGroundImage("BackgroundLightOn.svg", "Tank001");
+
+            LoadTankLevelImages("Tank001", "TankLevelsLightOn");
+            LoadTankLevelImagesLightOff("Tank001", "TankLevelsLightOff");
+
+        }
+
+        private void LoadTankLevelImages(string folder, string subfolder)
+        {
+            tankLevelImagesLightOn = new List<ImageBrush>();
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string fullFolderPath = System.IO.Path.Combine(baseDirectory, folder, "Images", subfolder);
+
+            foreach (string filePath in Directory.GetFiles(fullFolderPath, "*.svg"))
+            {
+                tankLevelImagesLightOn.Add(GetSvgImageBrush(filePath));
+            }
+
+            // Reverse the order of tankLevelImages
+            tankLevelImagesLightOn.Reverse();
+        }
+
+        private void LoadTankLevelImagesLightOff(string folder, string subfolder)
+        {
+            tankLevelImagesLightOff = new List<ImageBrush>();
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string fullFolderPath = System.IO.Path.Combine(baseDirectory, folder, "Images", subfolder);
+
+            foreach (string filePath in Directory.GetFiles(fullFolderPath, "*.svg"))
+            {
+                tankLevelImagesLightOff.Add(GetSvgImageBrush(filePath));
+            }
+
+            // Reverse the order of tankLevelImages
+            tankLevelImagesLightOff.Reverse();
+        }
+
+        private void StartTankLevelAnimation()
+        {
+            if (tankLevelImagesLightOn.Count == 0)
+            {
+                MessageBox.Show("No images found for animation.");
+                return;
+            }
+
+            currentImageIndex = 0;
+            TankColumn.Background = tankLevelImagesLightOn[currentImageIndex];
+
+            animationTimer = new System.Timers.Timer(400); // Change image every second
+            animationTimer.Elapsed += OnAnimationTimerElapsed;
+            animationTimer.Start();
+        }
+
+        private void OnAnimationTimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                currentImageIndex = (currentImageIndex + 1) % tankLevelImagesLightOn.Count;
+                TankColumn.Background = tankLevelImagesLightOn[currentImageIndex];
+            });
         }
 
         public void LoadBackGroundImage(string imagePath, string folder)
@@ -68,53 +139,9 @@ namespace AnimPart1.Tank001
             }
         }
 
-        public void LoadBackGroundImage2(string imagePath, string folder)
-        {
-            try
-            {
-                // Construct the full path based on the current directory and relative path
-                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string relativePath = System.IO.Path.Combine(folder, "Images", imagePath);
-                string fullPath = System.IO.Path.Combine(baseDirectory, relativePath);
-
-                // Ensure the file exists
-                if (!File.Exists(fullPath))
-                {
-                    throw new FileNotFoundException($"The file '{fullPath}' was not found.");
-                }
-
-                // Handle SVG and other image formats
-                if (System.IO.Path.GetExtension(fullPath).ToLower() == ".svg")
-                {
-                    ImageBrush imageBrush = GetSvgImageBrush(fullPath);
-                    lightColumn.Background = imageBrush;
-                }
-                else
-                {
-                    BitmapImage bitmapImage = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
-                    ImageBrush imageBrush = new ImageBrush
-                    {
-                        ImageSource = bitmapImage,
-                        Stretch = Stretch.Uniform // Set to Uniform or UniformToFill based on your requirement
-                    };
-                    lightColumn.Background = imageBrush;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading image: {ex.Message}");
-            }
-        }
-        // Helper method to get dimensions of an SVG image
-
-
-
-
 
         public void ChangeBackgroundImageLights(string imagePath, string folder)
         {
-           
-
             try
             {
                 // Construct the full path based on the current directory and relative path
@@ -132,7 +159,8 @@ namespace AnimPart1.Tank001
                 if (System.IO.Path.GetExtension(fullPath).ToLower() == ".svg")
                 {
                     ImageBrush imageBrush = GetSvgImageBrush(fullPath);
-                    userControl2.Background = imageBrush;
+
+                    lightUserCtrl.Background = imageBrush;
                 }
                 else
                 {
@@ -142,7 +170,8 @@ namespace AnimPart1.Tank001
                         ImageSource = bitmapImage,
                         Stretch = Stretch.Uniform // Set to Uniform or UniformToFill based on your requirement
                     };
-                    userControl2.Background = imageBrush;
+
+                    lightUserCtrl.Background = imageBrush;
                 }
             }
             catch (Exception ex)
@@ -151,6 +180,46 @@ namespace AnimPart1.Tank001
             }
         }
 
+
+        public void ChangeBackgroundImageCamera(string imagePath, string folder)
+        {
+            try
+            {
+                // Construct the full path based on the current directory and relative path
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string relativePath = System.IO.Path.Combine(folder, "Images", imagePath);
+                string fullPath = System.IO.Path.Combine(baseDirectory, relativePath);
+
+                // Ensure the file exists
+                if (!File.Exists(fullPath))
+                {
+                    throw new FileNotFoundException($"The file '{fullPath}' was not found.");
+                }
+
+                // Handle SVG and other image formats
+                if (System.IO.Path.GetExtension(fullPath).ToLower() == ".svg")
+                {
+                    ImageBrush imageBrush = GetSvgImageBrush(fullPath);
+
+                    cameraUserCtrl.Background = imageBrush;
+                }
+                else
+                {
+                    BitmapImage bitmapImage = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
+                    ImageBrush imageBrush = new ImageBrush
+                    {
+                        ImageSource = bitmapImage,
+                        Stretch = Stretch.Uniform // Set to Uniform or UniformToFill based on your requirement
+                    };
+
+                    cameraUserCtrl.Background = imageBrush;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}");
+            }
+        }
 
 
         private ImageBrush GetSvgImageBrush(string svgPath)
@@ -181,10 +250,15 @@ namespace AnimPart1.Tank001
             return imageBrush;
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            StartTankLevelAnimation();
 
-
-
+        }
     }
 
     public static class SKBitmapExtensions

@@ -11,6 +11,7 @@
 
         <!-- TankColumn -->
         <Canvas x:Name="TankColumn" Margin="3,62,-214,-284" Grid.Column="1">
+            <Button Content="Start " Canvas.Left="249" Canvas.Top="312" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="77" Click="Button_Click_1"/>
             <!-- Background image or other content can be managed here -->
         </Canvas>
 
