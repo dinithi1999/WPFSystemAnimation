@@ -10,6 +10,7 @@ using System.Windows.Media.Animation;
 using DotNetProjects.SVGImage.SVG.Shapes.Filter;
 using SharpVectors.Converters;
 using SharpVectors.Renderers.Wpf;
+using System.Timers;
 
 namespace AnimPart1.Tank001
 {
@@ -20,6 +21,12 @@ namespace AnimPart1.Tank001
     {
         Lights.Lights lightUserCtrl;
         Camera.Camera cameraUserCtrl;
+
+        private List<ImageBrush> tankLevelImagesLightOn;
+        private List<ImageBrush> tankLevelImagesLightOff;
+
+        private int currentImageIndex;
+        private System.Timers.Timer animationTimer;
 
         public Tank001()
         {
@@ -33,6 +40,65 @@ namespace AnimPart1.Tank001
             CameraColumn.Content = cameraUserCtrl;
 
             LoadBackGroundImage("BackgroundLightOn.svg", "Tank001");
+
+            LoadTankLevelImages("Tank001", "TankLevelsLightOn");
+            LoadTankLevelImagesLightOff("Tank001", "TankLevelsLightOff");
+
+        }
+
+        private void LoadTankLevelImages(string folder, string subfolder)
+        {
+            tankLevelImagesLightOn = new List<ImageBrush>();
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string fullFolderPath = System.IO.Path.Combine(baseDirectory, folder, "Images", subfolder);
+
+            foreach (string filePath in Directory.GetFiles(fullFolderPath, "*.svg"))
+            {
+                tankLevelImagesLightOn.Add(GetSvgImageBrush(filePath));
+            }
+
+            // Reverse the order of tankLevelImages
+            tankLevelImagesLightOn.Reverse();
+        }
+
+        private void LoadTankLevelImagesLightOff(string folder, string subfolder)
+        {
+            tankLevelImagesLightOff = new List<ImageBrush>();
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string fullFolderPath = System.IO.Path.Combine(baseDirectory, folder, "Images", subfolder);
+
+            foreach (string filePath in Directory.GetFiles(fullFolderPath, "*.svg"))
+            {
+                tankLevelImagesLightOff.Add(GetSvgImageBrush(filePath));
+            }
+
+            // Reverse the order of tankLevelImages
+            tankLevelImagesLightOff.Reverse();
+        }
+
+        private void StartTankLevelAnimation()
+        {
+            if (tankLevelImagesLightOn.Count == 0)
+            {
+                MessageBox.Show("No images found for animation.");
+                return;
+            }
+
+            currentImageIndex = 0;
+            TankColumn.Background = tankLevelImagesLightOn[currentImageIndex];
+
+            animationTimer = new System.Timers.Timer(400); // Change image every second
+            animationTimer.Elapsed += OnAnimationTimerElapsed;
+            animationTimer.Start();
+        }
+
+        private void OnAnimationTimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                currentImageIndex = (currentImageIndex + 1) % tankLevelImagesLightOn.Count;
+                TankColumn.Background = tankLevelImagesLightOn[currentImageIndex];
+            });
         }
 
         public void LoadBackGroundImage(string imagePath, string folder)
@@ -184,10 +250,15 @@ namespace AnimPart1.Tank001
             return imageBrush;
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            StartTankLevelAnimation();
 
-
-
+        }
     }
 
     public static class SKBitmapExtensions
