@@ -18,14 +18,19 @@ namespace AnimPart1.Tank001
     /// </summary>
     public partial class Tank001 : UserControl
     {
-        Lights.Lights userControl2;
+        Lights.Lights lightUserCtrl;
+        Camera.Camera cameraUserCtrl;
 
         public Tank001()
         {
             InitializeComponent();
 
-            userControl2 = new Lights.Lights();
-            lightColumn.Content = userControl2;
+            lightUserCtrl = new Lights.Lights();
+            lightColumn.Content = lightUserCtrl;
+
+
+            cameraUserCtrl = new Camera.Camera();
+            CameraColumn.Content = cameraUserCtrl;
 
             LoadBackGroundImage("BackgroundLightOn.svg", "Tank001");
         }
@@ -68,53 +73,9 @@ namespace AnimPart1.Tank001
             }
         }
 
-        public void LoadBackGroundImage2(string imagePath, string folder)
-        {
-            try
-            {
-                // Construct the full path based on the current directory and relative path
-                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string relativePath = System.IO.Path.Combine(folder, "Images", imagePath);
-                string fullPath = System.IO.Path.Combine(baseDirectory, relativePath);
-
-                // Ensure the file exists
-                if (!File.Exists(fullPath))
-                {
-                    throw new FileNotFoundException($"The file '{fullPath}' was not found.");
-                }
-
-                // Handle SVG and other image formats
-                if (System.IO.Path.GetExtension(fullPath).ToLower() == ".svg")
-                {
-                    ImageBrush imageBrush = GetSvgImageBrush(fullPath);
-                    lightColumn.Background = imageBrush;
-                }
-                else
-                {
-                    BitmapImage bitmapImage = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
-                    ImageBrush imageBrush = new ImageBrush
-                    {
-                        ImageSource = bitmapImage,
-                        Stretch = Stretch.Uniform // Set to Uniform or UniformToFill based on your requirement
-                    };
-                    lightColumn.Background = imageBrush;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading image: {ex.Message}");
-            }
-        }
-        // Helper method to get dimensions of an SVG image
-
-
-
-
 
         public void ChangeBackgroundImageLights(string imagePath, string folder)
         {
-           
-
             try
             {
                 // Construct the full path based on the current directory and relative path
@@ -132,7 +93,8 @@ namespace AnimPart1.Tank001
                 if (System.IO.Path.GetExtension(fullPath).ToLower() == ".svg")
                 {
                     ImageBrush imageBrush = GetSvgImageBrush(fullPath);
-                    userControl2.Background = imageBrush;
+
+                    lightUserCtrl.Background = imageBrush;
                 }
                 else
                 {
@@ -142,7 +104,8 @@ namespace AnimPart1.Tank001
                         ImageSource = bitmapImage,
                         Stretch = Stretch.Uniform // Set to Uniform or UniformToFill based on your requirement
                     };
-                    userControl2.Background = imageBrush;
+
+                    lightUserCtrl.Background = imageBrush;
                 }
             }
             catch (Exception ex)
@@ -151,6 +114,46 @@ namespace AnimPart1.Tank001
             }
         }
 
+
+        public void ChangeBackgroundImageCamera(string imagePath, string folder)
+        {
+            try
+            {
+                // Construct the full path based on the current directory and relative path
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                string relativePath = System.IO.Path.Combine(folder, "Images", imagePath);
+                string fullPath = System.IO.Path.Combine(baseDirectory, relativePath);
+
+                // Ensure the file exists
+                if (!File.Exists(fullPath))
+                {
+                    throw new FileNotFoundException($"The file '{fullPath}' was not found.");
+                }
+
+                // Handle SVG and other image formats
+                if (System.IO.Path.GetExtension(fullPath).ToLower() == ".svg")
+                {
+                    ImageBrush imageBrush = GetSvgImageBrush(fullPath);
+
+                    cameraUserCtrl.Background = imageBrush;
+                }
+                else
+                {
+                    BitmapImage bitmapImage = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
+                    ImageBrush imageBrush = new ImageBrush
+                    {
+                        ImageSource = bitmapImage,
+                        Stretch = Stretch.Uniform // Set to Uniform or UniformToFill based on your requirement
+                    };
+
+                    cameraUserCtrl.Background = imageBrush;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}");
+            }
+        }
 
 
         private ImageBrush GetSvgImageBrush(string svgPath)
