@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Hopper-1" xmlns="http://www.w3.org/2000/svg" width="372.97" height="465" viewBox="0 0 372.97 465">
+  <defs>
+    <style>
+      .c {
+        fill: #0000f9;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Marquee">
+    <polygon class="c" points="254 426 237 426 237 420 249 420 249 409 254 409 254 426"/>
+    <path class="c" d="M207,426h-31v-6h31v6ZM145,426h-30v-6h30v6ZM84,426h-31v-6h31v6Z"/>
+    <polygon class="c" points="18 426 0 426 0 409 6 409 6 420 18 420 18 426"/>
+    <path class="c" d="M6,378H0v-31h6v31ZM6,317H0v-31h6v31ZM6,255H0v-31h6v31ZM6,194H0v-31h6v31ZM6,133H0v-31h6v31ZM6,72H0v-31h6v31Z"/>
+    <polygon class="c" points="6 17 0 17 0 1 18 1 18 5 6 5 6 17"/>
+    <path class="c" d="M204,5h-31V1h31v4ZM143,5h-31V1h31v4ZM82,5h-31V1h31v4Z"/>
+    <polygon class="c" points="254 17 249 17 249 5 237 5 237 1 254 1 254 17"/>
+    <path class="c" d="M254,382h-5v-30h5v30ZM254,321h-5v-30h5v30ZM254,260h-5v-30h5v30ZM254,199h-5v-31h5v31ZM254,137h-5v-30h5v30ZM254,76h-5v-31h5v31Z"/>
+  </g>
+</svg>

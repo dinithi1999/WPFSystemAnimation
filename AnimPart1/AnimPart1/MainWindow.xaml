@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:AnimPart1"
         mc:Ignorable="d"
         Title="MainWindow" Height="1104" Width="1342">
+    
+    
+    
     <Window.Resources>
         <!-- Style for ToggleButton to act as a switch -->
         <Style TargetType="ToggleButton">
@@ -70,10 +73,7 @@
     </Window.Resources>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="447*"/>
-            <ColumnDefinition Width="353*"/>
-        </Grid.ColumnDefinitions>
+       
         <!-- Define Main Grid Rows -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -82,7 +82,7 @@
             <!-- Row for animation -->
         </Grid.RowDefinitions>
 
-        <GroupBox Header="TANK (001)" HorizontalAlignment="Left" VerticalAlignment="Center" Width="195">
+        <GroupBox x:Name="tankGroupBox" Header="TANK (001)" HorizontalAlignment="Left" VerticalAlignment="Center" Width="195">
             <Grid Height="142">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -97,7 +97,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="ToggleButton_Checked"/>
+                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="TankLabelVislibility_Checked" Unchecked="TankLabelVislibility_Unchecked"/>
                 </Grid>
 
                 <!-- Second ToggleButton with Label -->
@@ -107,7 +107,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1"/>
+                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="TankLight_Checked" Unchecked="TankLight_Unchecked"/>
                 </Grid>
 
                 <!-- Third ToggleButton with Label -->
@@ -117,7 +117,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton Content="" Margin="36,0,47,10" Width="50" Height="30" Grid.Column="1"/>
+                    <ToggleButton Content="" Margin="36,0,47,10" Width="50" Height="30" Grid.Column="1"  Checked="TankCamera_Checked" Unchecked="Camera_Unchecked"/>
                 </Grid>
             </Grid>
         </GroupBox>
@@ -126,12 +126,12 @@
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <!-- Define Animation Grid Rows -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="401*"/>
-                <RowDefinition Height="92*"/>
-                <RowDefinition Height="86*"/>
-                <RowDefinition Height="132*"/>
-                <RowDefinition Height="71*"/>
-                <RowDefinition Height="37*"/>
+                <RowDefinition Height="425*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <!-- First Animation Row with Three Columns -->
@@ -143,7 +143,10 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- ContentControls to host UserControls -->
-                <ContentControl Grid.Column="2" x:Name="ThirdColumn"/>
+                <ContentControl Grid.Column="1" x:Name="hopperContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ContentControl Grid.Column="2" x:Name="tankContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ContentControl Grid.Column="0" x:Name="sloContentControl" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
             </Grid>
 
             <!-- Second Animation Row with Three Columns -->
@@ -163,7 +166,7 @@
             <ContentControl Grid.Row="4" Margin="0,4,0,0"/>
             <ContentControl Grid.Row="5" Margin="0,9,0,0"/>
         </Grid>
-        <GroupBox Header="HOPPER (004)" Margin="390,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <GroupBox x:Name="hopperGroupBox" Header="HOPPER (004)" Margin="390,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Grid Height="142">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -178,7 +181,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1" />
+                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="HopperLabelVislibility_Checked" Unchecked="HopperLabelVislibility_Unchecked"  />
                 </Grid>
 
                 <!-- Second ToggleButton with Label -->
@@ -188,7 +191,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="HopperLightChecked_Checked" Unchecked="HopperLightChecked_Unchecked"/>
+                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="HopperLightChecked_Checked" Unchecked="HopperLightChecked_Unchecked" />
                 </Grid>
 
                 <!-- Third ToggleButton with Label -->
@@ -202,6 +205,7 @@
                 </Grid>
             </Grid>
         </GroupBox>
+        
         <GroupBox Header="SILO (015)" Margin="210,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Grid Height="142">
                 <Grid.RowDefinitions>
@@ -217,7 +221,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="ToggleButton_Checked"/>
+                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLabelVislibility_Checked" Unchecked="SLOLabelVislibility_Unchecked"/>
                 </Grid>
 
                 <!-- Second ToggleButton with Label -->
@@ -227,7 +231,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1"/>
+                    <ToggleButton Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLights_Checked" Unchecked="SLOLight_Unchecked"/>
                 </Grid>
 
                 <!-- Third ToggleButton with Label -->
@@ -237,7 +241,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"/>
+                    <ToggleButton Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"  Checked="SLOCamera_Checked" Unchecked="SLOCamera_Unchecked"/>
                 </Grid>
             </Grid>
         </GroupBox>

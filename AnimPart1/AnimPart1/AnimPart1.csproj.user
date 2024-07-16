@@ -7,27 +7,39 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Camera\Camera.xaml.cs">
+    <Compile Update="UC_AncillaryAnima\Camera\Camera.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Lights\Lights.xaml.cs">
+    <Compile Update="UC_AncillaryAnima\Lights\Lights.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Tank001\Tank001.xaml.cs">
+    <Compile Update="UC_DepenAnima\UC_Hopper\UC_Hopper.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_DepenAnima\UC_SLO\UC_SLO.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_DepenAnima\UC_TNK\UC_TNK.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Camera\Camera.xaml">
+    <Page Update="UC_AncillaryAnima\Camera\Camera.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Lights\Lights.xaml">
+    <Page Update="UC_AncillaryAnima\Lights\Lights.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Tank001\Tank001.xaml">
+    <Page Update="UC_DepenAnima\UC_Hopper\UC_Hopper.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_DepenAnima\UC_SLO\UC_SLO.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_DepenAnima\UC_TNK\UC_TNK.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

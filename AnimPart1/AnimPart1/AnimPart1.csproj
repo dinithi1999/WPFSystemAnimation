@@ -9,170 +9,84 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Tank001\TankLevels\**" />
-    <EmbeddedResource Remove="Tank001\TankLevels\**" />
-    <None Remove="Tank001\TankLevels\**" />
-    <Page Remove="Tank001\TankLevels\**" />
+    <Compile Remove="UC_DepenAnima\UC_Hopper\TankLevels\**" />
+    <EmbeddedResource Remove="UC_DepenAnima\UC_Hopper\TankLevels\**" />
+    <None Remove="UC_DepenAnima\UC_Hopper\TankLevels\**" />
+    <Page Remove="UC_DepenAnima\UC_Hopper\TankLevels\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Camera\Images\CameraFlashOff.svg" />
-    <None Remove="Camera\Images\CameraFlashOn.png" />
-    <None Remove="Camera\Images\CameraFlashOn.svg" />
-    <None Remove="Lights\Images\CameraFlashOff.svg" />
-    <None Remove="Lights\Images\CameraFlashOn.svg" />
-    <None Remove="Lights\Images\LightOff.svg" />
-    <None Remove="Lights\Images\LightOn.svg" />
-    <None Remove="Tank001\Images\BackgroundLightOn.svg" />
-    <None Remove="Tank001\Images\CameraFlashOn.svg" />
-    <None Remove="Tank001\Images\lighOnEmpty.png" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\20.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\30180.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\3090.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\40180.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\4090.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\50180.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\5090.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\60180.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\6090.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\70180.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\7090.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\80180.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\8090.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\90180.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\9090.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\99180.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\9990.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOff\empty.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\20.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\empty.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_1.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_10.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_11.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_12.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_13.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_14.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_2.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_3.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_4.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_5.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_6.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_7.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_8.svg" />
-    <None Remove="Tank001\Images\TankLevelsLightOn\lightOn_9.svg" />
+    <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOff.svg" />
+    <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOn.png" />
+    <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOn.svg" />
+    <None Remove="UC_AncillaryAnima\Lights\Images\CameraFlashOff.svg" />
+    <None Remove="UC_AncillaryAnima\Lights\Images\CameraFlashOn.svg" />
+    <None Remove="UC_AncillaryAnima\Lights\Images\LightOff.svg" />
+    <None Remove="UC_AncillaryAnima\Lights\Images\LightOn.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\BackgroundLightOn.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\DepenBackgroundBlueBorder.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\20.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\30180.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\3090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\40180.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\4090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\50180.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\5090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\60180.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\6090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\70180.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\7090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\80180.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\8090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\90180.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\9090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\99180.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\9990.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\empty.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\20.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\empty.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_10.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_11.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_12.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_13.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_14.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_2.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_3.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_4.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_5.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_6.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_7.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_8.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_9.svg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Camera\Images\CameraFlashOff.svg">
+    <Resource Include="UC_AncillaryAnima\Camera\Images\CameraFlashOff.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\Camera\Images\CameraFlashOn.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\Lights\Images\LightOff.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\Lights\Images\LightOn.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_DepenAnima\UC_Hopper\Images\BackgroundLightOn.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\DepenBackgroundBlueBorder.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Camera\Images\CameraFlashOn.svg">
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\empty.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Lights\Images\LightOff.svg">
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\20.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Lights\Images\LightOn.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\BackgroundLightOn.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\CameraFlashOn.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\20.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\30180.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\3090.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\40180.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\4090.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\50180.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\5090.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\60180.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\6090.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\70180.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\7090.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\80180.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\8090.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\90180.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\9090.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\99180.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\9990.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOff\empty.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\20.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\empty.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_1.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_11.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_12.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_13.svg" />
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_14.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_2.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_4.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_5.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_6.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_7.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_8.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tank001\Images\TankLevelsLightOn\lightOn_9.svg">
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\empty.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -180,16 +94,15 @@
   <ItemGroup>
     <PackageReference Include="SharpVectors" Version="1.8.4" />
     <PackageReference Include="SharpVectors.Reloaded" Version="1.8.4" />
-    <PackageReference Include="SharpVectors.Reloaded.Cmguo" Version="1.3.0" />
     <PackageReference Include="SharpVectors.Wpf" Version="1.8.4" />
     <PackageReference Include="Svg.Skia" Version="1.0.0.18" />
     <PackageReference Include="SVGImage" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Tank001\Images\lighOnEmpty.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Reference Include="SharpVectors.Rendering.Wpf">
+      <HintPath>bin\Debug\net6.0-windows\SharpVectors.Rendering.Wpf.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

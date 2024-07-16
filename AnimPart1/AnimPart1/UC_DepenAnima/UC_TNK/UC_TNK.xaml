@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="AnimPart1.UC_DepenAnima.UC_TNK.UC_TNK"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AnimPart1.UC_DepenAnima.UC_TNK"
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             mc:Ignorable="d" 
+             d:DesignHeight="425" d:DesignWidth="225"
+             MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
+
+
+
+    <Grid x:Name="grid1">
+        <!-- Background image that appears on mouse over -->
+        <svgc:SvgViewbox x:Name="backgroundSvg"
+                  Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_Hopper\Images\DepenBackgroundBlueBorder.svg"
+                  Stretch="Uniform"
+                  Visibility="Collapsed" 
+                  RenderTransformOrigin="0.5,0.5"
+                  HorizontalAlignment="Left"
+                  Height="393"
+                  VerticalAlignment="Center"
+                  Canvas.Left="21"
+                  Canvas.Top="31"/>
+
+
+        <Canvas x:Name="TankColumn">
+            <!-- Background image or other content can be managed here -->
+            <svgc:SvgViewbox x:Name="svgViewbox"
+           Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_Hopper\Images\BackgroundLightOn.svg"
+           Stretch="Uniform"
+           RenderTransformOrigin="0.5,0.5"
+           HorizontalAlignment="Left"
+           Height="393"
+           VerticalAlignment="Center"
+           Canvas.Left="21"
+           Canvas.Top="31">
+            </svgc:SvgViewbox>
+        </Canvas>
+
+        <!-- lightColumn positioned at the top-left of TankColumn -->
+        <ContentControl x:Name="lightColumn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" />
+
+        <!-- CameraColumn positioned at the top-right of TankColumn -->
+        <ContentControl x:Name="CameraColumn" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" />
+    </Grid>
+
+</UserControl>
