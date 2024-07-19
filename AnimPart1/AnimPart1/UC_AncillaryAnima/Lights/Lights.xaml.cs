@@ -19,9 +19,7 @@ namespace AnimPart1.Lights
         public Lights()
         {
             InitializeComponent();
-
-            svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
-
+            svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
         }
 
         private void LighticonCloseBtn_Click(object sender, RoutedEventArgs e)

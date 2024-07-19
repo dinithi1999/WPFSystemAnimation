@@ -223,15 +223,27 @@ namespace AnimPart1
         private void HopperLightChecked_Checked(object sender, RoutedEventArgs e)
         {
             hopperUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            hopperUCInstance.isLightOn = true;
 
         }
 
         private void HopperLightChecked_Unchecked(object sender, RoutedEventArgs e)
         {
             hopperUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
-        } 
+            hopperUCInstance.isLightOn = false;
+        }
         #endregion
 
+        private void HopperStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+            hopperUCInstance.StartAnimation();
+        }
+
+        private void HopperStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+            hopperUCInstance.StopAnimation();
+
+        }
     }
 
 

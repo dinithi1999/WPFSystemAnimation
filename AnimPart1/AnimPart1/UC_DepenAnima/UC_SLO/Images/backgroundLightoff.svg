@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="398.97" height="490" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 398.97 490">
+  <defs>
+    <style>
+      .l {
+        fill: #da0000;
+      }
+
+      .l, .m, .n, .o, .p, .q, .r, .s, .t {
+        stroke-width: 0px;
+      }
+
+      .m {
+        fill: url(#j);
+      }
+
+      .m, .n, .o, .q, .s, .t {
+        fill-rule: evenodd;
+      }
+
+      .n {
+        fill: url(#g);
+      }
+
+      .o {
+        fill: url(#d);
+      }
+
+      .p {
+        fill: #979797;
+      }
+
+      .q {
+        fill: #b3b3b3;
+        isolation: isolate;
+        opacity: .75;
+      }
+
+      .r {
+        fill: #e4e4e4;
+      }
+
+      .s {
+        fill: #ffc;
+      }
+
+      .t {
+        fill: #000;
+      }
+    </style>
+    <linearGradient id="d" x1="75" y1="239.74" x2="239" y2="239.74" gradientTransform="translate(0 476) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#603813"/>
+      <stop offset="0" stop-color="#613914" stop-opacity="1"/>
+      <stop offset=".07" stop-color="#896d53" stop-opacity=".99"/>
+      <stop offset=".14" stop-color="#aa9888" stop-opacity=".99"/>
+      <stop offset=".21" stop-color="#c4bab0" stop-opacity=".98"/>
+      <stop offset=".27" stop-color="#d7d2ce" stop-opacity=".98"/>
+      <stop offset=".32" stop-color="#e2e1e0" stop-opacity=".97"/>
+      <stop offset=".35" stop-color="#e6e6e6" stop-opacity=".97"/>
+      <stop offset=".41" stop-color="#ececec" stop-opacity=".98"/>
+      <stop offset=".48" stop-color="#fdfdfd" stop-opacity="1"/>
+      <stop offset=".48" stop-color="#fff"/>
+      <stop offset=".76" stop-color="#f2f2f2"/>
+      <stop offset=".79" stop-color="#efeeed"/>
+      <stop offset=".82" stop-color="#e6e2df"/>
+      <stop offset=".85" stop-color="#d7cfc8"/>
+      <stop offset=".89" stop-color="#c2b4a8"/>
+      <stop offset=".93" stop-color="#a6927f"/>
+      <stop offset=".96" stop-color="#86684d"/>
+      <stop offset="1" stop-color="#603813"/>
+    </linearGradient>
+    <linearGradient id="g" x1="174.52" y1="237.25" x2="97.98" y2="355.13" gradientTransform="translate(0 476) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".18" stop-color="#fff"/>
+      <stop offset=".67" stop-color="#e0fffc"/>
+      <stop offset=".99" stop-color="#c9fffa"/>
+    </linearGradient>
+    <linearGradient id="j" x1="87" y1="400" x2="219" y2="400" gradientTransform="translate(0 476) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#603813"/>
+      <stop offset=".04" stop-color="#724e2d" stop-opacity="1"/>
+      <stop offset=".15" stop-color="#9c836c" stop-opacity=".99"/>
+      <stop offset=".25" stop-color="#bfafa1" stop-opacity=".99"/>
+      <stop offset=".34" stop-color="#dbd2c9" stop-opacity=".98"/>
+      <stop offset=".43" stop-color="#efebe7" stop-opacity=".98"/>
+      <stop offset=".5" stop-color="#fbfaf9" stop-opacity=".97"/>
+      <stop offset=".55" stop-color="#fff" stop-opacity=".97"/>
+      <stop offset=".6" stop-color="#fbfaf9" stop-opacity=".97"/>
+      <stop offset=".65" stop-color="#f0ece8" stop-opacity=".98"/>
+      <stop offset=".72" stop-color="#ddd5cd" stop-opacity=".98"/>
+      <stop offset=".79" stop-color="#c3b4a6" stop-opacity=".99"/>
+      <stop offset=".87" stop-color="#a28a75" stop-opacity=".99"/>
+      <stop offset=".95" stop-color="#7a5839" stop-opacity="1"/>
+      <stop offset="1" stop-color="#603813"/>
+    </linearGradient>
+  </defs>
+  <g id="b" data-name="Silo">
+    <g id="c" data-name="Valve Close">
+      <g>
+        <circle class="r" cx="156.98" cy="427.8" r="12.05"/>
+        <path class="p" d="M169.48,427.8c0,6.89-5.61,12.5-12.5,12.5s-12.5-5.61-12.5-12.5,5.61-12.5,12.5-12.5,12.5,5.61,12.5,12.5ZM145.39,427.8c0,6.39,5.2,11.59,11.59,11.59s11.59-5.2,11.59-11.59-5.2-11.59-11.59-11.59-11.59,5.2-11.59,11.59Z"/>
+      </g>
+      <path class="l" d="M158.96,420.95c0-1.02-.85-1.85-1.88-1.85s-1.98.83-1.98,1.85c0,.05-.1.1-.1.15v15.89h4v-15.89c0-.05-.04-.1-.04-.15Z"/>
+    </g>
+    <polygon id="e" data-name="Background" class="o" points="239 265.13 181.19 314 169 314 169 325 181.4 325.07 227.15 336.41 216.15 352.27 158.05 369.53 95.46 352.04 85.36 336.46 136.23 324.9 146 324.9 146 314 132.87 314 75 265.13 75 103 239 103 239 265.13"/>
+    <polygon id="f" data-name="Empty" class="s" points="239 265.13 181.19 314 169 314 169 325 181.4 325.07 227.15 336.41 216.15 352.27 158.05 369.53 95.46 352.04 85.36 336.46 136.23 324.9 146 324.9 146 314 132.87 314 75 265.13 75 103 239 103 239 265.13"/>
+    <polygon id="h" data-name="Lights On" class="n" points="239 265.13 181.19 314 169 314 169 325 181.4 325.07 227.15 336.41 216.15 352.27 158.05 369.53 95.46 352.04 85.36 336.46 136.23 324.9 146 324.9 146 314 132.87 314 75 265.13 75 103 239 103 239 265.13"/>
+    <g id="i" data-name="Top Back">
+      <polygon class="m" points="219 101 87 101 98.22 73.65 126.26 71.98 125.1 51 182.08 51 181.05 71.98 212.09 73.1 219 101"/>
+    </g>
+    <path class="t" d="M260,426h-4.69c-7.98-28.46-16.05-56.82-24.2-85.06,2.61-7.84,11.45-11.63,11.71-20.07.39-12.66.18-89.2.18-120.42v-105.67c-4,.07-14.68-.45-20.93-.86-3.17-8.17-4.84-17.9-9.63-23.93-7.82-.88-16.44-.26-25.44-.77v-12.22h8c2.75,0,5-2.25,5-5s-2.25-5-5-5h-80c-2.75,0-5,2.25-5,5s2.25,5,5,5h8.36c0,3.92.06,8-.08,12.22-8.41.49-17.75-.11-26.28.77-4.16,6.86-6.12,16.64-9.96,23.93-6.14.4-12.85.21-18.74.77-1.34,72.58-.4,151.81-1.17,226.95,3.08,7.78,8.91,11.93,11.71,20.07-8.8,27.37-15.74,57.18-24.73,84.29h-5.11c-2.75,0-5,2.25-5,5s2.25,5,5,5h36c2.75,0,5-2.25,5-5s-2.25-5-5-5h-2.67c8.04-16.72,15.04-38.27,23.44-50h29.22v110h11v-7h-6v-108h6v-4.45l-10.17-2.55-40-11.82c-3.34-5.08-6.57-10.31-9.87-15.45l50.09-11.46c3.3-.01,6.61-.02,9.95,0v-11.27h-13.65l-22.84-18.87-33.79-29.26c0-53.27-.08-108.87-.08-160.87h160.36v160.81l-33.7,29.32-22.76,18.87h-11.54v11.37c4,.02,7.97.05,11.93.07l44.58,11.25c-3.3,4.95-7.07,10.32-10.79,15.72l-35.73,11.66v-.08l-10,2.55v4.45h6v108h-6v7h10v-110h26.75c7.14,14.46,15.28,32.7,22.6,50h-3.36c-2.75,0-5,2.25-5,5s2.25,5,5,5h36c2.75,0,5-2.25,5-5s-2.25-5-5-5ZM98.75,370.73c-7.43,19.35-16.65,35.24-24.41,55.27h-11.97c6.97-27.18,14.45-51.49,21.74-77.04,5.2,6.79,9.71,14.63,14.64,21.76ZM130,57h50v12h-50v-12ZM95.23,94c1.62-5.13,3.58-13,5.86-19h107.18c3.24,2,4.49,13.87,6.44,19h-119.48ZM235.58,426c-7.95-20.06-16.43-36.25-24.39-54.65,4.07-8.27,9.79-14.23,14.06-22.24,8.31,24.45,15.06,49.66,22.31,76.89h-11.98Z"/>
+    <polygon id="k" data-name="Lights On" class="q" points="239 265.13 181.19 314 169 314 169 325 181.4 325.07 227.15 336.41 216.15 352.27 158.05 369.53 95.46 352.04 85.36 336.46 136.23 324.9 146 324.9 146 314 132.87 314 75 265.13 75 103 239 103 239 265.13"/>
+  </g>
+</svg>

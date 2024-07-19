@@ -10,10 +10,11 @@
    
     <Grid x:Name="grid1">
          <!--Background image that appears on mouse over-->
-        <!--Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_Hopper\Images\DepenBackgroundBlueBorder.svg"-->
+
 
         <svgc:SvgViewbox x:Name="backgroundSvg"
                          Stretch="Uniform"
+                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_Hopper\Images\DepenBackgroundBlueBorder.svg"
                          Visibility="Collapsed" 
                          RenderTransformOrigin="0.5,0.5"
                          HorizontalAlignment="Left"
@@ -22,7 +23,7 @@
                          Canvas.Left="21"
                          Canvas.Top="31"/>
 
-        <Canvas x:Name="TankColumn">
+        <Canvas x:Name="TankColumn" Margin="-8,-2,8,2">
              <!--Background image or other content can be managed here-->
             <!--Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_Hopper\Images\BackgroundLightOn.svg"-->
 

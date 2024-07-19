@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:AnimPart1"
         mc:Ignorable="d"
         Title="MainWindow" Height="1104" Width="1342">
-    
-    
-    
+
+
+
     <Window.Resources>
         <!-- Style for ToggleButton to act as a switch -->
         <Style TargetType="ToggleButton">
@@ -73,16 +73,16 @@
     </Window.Resources>
 
     <Grid>
-       
+
         <!-- Define Main Grid Rows -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="221"/>
             <!-- Row for switches -->
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
             <!-- Row for animation -->
         </Grid.RowDefinitions>
 
-        <GroupBox x:Name="tankGroupBox" Header="TANK (001)" HorizontalAlignment="Left" VerticalAlignment="Center" Width="195">
+        <GroupBox x:Name="tankGroupBox" Header="TANK (001)" HorizontalAlignment="Left" VerticalAlignment="Center" Width="195" Height="164">
             <Grid Height="142">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -123,7 +123,7 @@
         </GroupBox>
 
         <!-- Third Row for Animation -->
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+        <Grid Grid.Row="1">
             <!-- Define Animation Grid Rows -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="425*"/>
@@ -143,9 +143,9 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- ContentControls to host UserControls -->
-                <ContentControl Grid.Column="1" x:Name="hopperContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <ContentControl Grid.Column="2" x:Name="tankContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <ContentControl Grid.Column="0" x:Name="sloContentControl" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <ContentControl Grid.Column="2" x:Name="hopperContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ContentControl Grid.Column="0" x:Name="tankContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ContentControl Grid.Column="1" x:Name="sloContentControl" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
             </Grid>
 
@@ -166,16 +166,18 @@
             <ContentControl Grid.Row="4" Margin="0,4,0,0"/>
             <ContentControl Grid.Row="5" Margin="0,9,0,0"/>
         </Grid>
-        <GroupBox x:Name="hopperGroupBox" Header="HOPPER (004)" Margin="390,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <Grid Height="142">
+        <GroupBox x:Name="hopperGroupBox" Header="HOPPER (004)" Margin="390,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="198" Width="188">
+            <Grid Height="160" Margin="0,0,6,0">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+
                 </Grid.RowDefinitions>
 
                 <!-- First ToggleButton with Label -->
-                <Grid Grid.Row="0" VerticalAlignment="Top">
+                <Grid VerticalAlignment="Center" Height="40">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
@@ -203,10 +205,21 @@
                     <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
                     <ToggleButton Content="" Margin="26,5,32,5" Width="50" Height="30" Grid.Column="1" Checked="HopperCameraChecked_Checked" Unchecked="HopperCameraChecked_Unchecked"/>
                 </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                    <ToggleButton Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="HopperStartChecked_Checked" Unchecked="HopperStartChecked_Unchecked"/>
+                </Grid>
+
+
             </Grid>
         </GroupBox>
-        
-        <GroupBox Header="SILO (015)" Margin="210,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+
+        <GroupBox Header="SILO (015)" Margin="210,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="164" Width="169">
             <Grid Height="142">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>

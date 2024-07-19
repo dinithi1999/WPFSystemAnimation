@@ -23,27 +23,64 @@
     <None Remove="UC_AncillaryAnima\Lights\Images\CameraFlashOn.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\LightOff.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\LightOn.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\BackgroundLightOff.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\BackgroundLightOn.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\DepenBackgroundBlueBorder.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\20.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\20_1svg.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\20_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\30180.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\3090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\30_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\30_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\40180.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\4090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\40_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\40_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\50180.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\5090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\50_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\50_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\60180.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\6090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\60_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\60_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\70180.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\7090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\70_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\70_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\80180.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\8090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\80_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\80_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\90180.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\9090.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\90_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\90_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\99180.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\9990.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\99_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\99_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\empty.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\20.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\20_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\20_2.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\30_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\30_2.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\40_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\40_2.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\50_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\50_2.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\60_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\60_2.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\70_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\70_2.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\80_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\80_2.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\90_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\90_2.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\99_1.svg" />
+    <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\99_2.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\empty.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_1.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_10.svg" />
@@ -59,6 +96,9 @@
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_7.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_8.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\lightOn_9.svg" />
+    <None Remove="UC_DepenAnima\UC_SLO\Images\backgroundLightoff.svg" />
+    <None Remove="UC_DepenAnima\UC_TNK\Images\BackgroundLightOff.svg" />
+    <None Remove="UC_DepenAnima\UC_TNK\Images\DepenBackgroundBlueBorder.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,15 +114,133 @@
     <Resource Include="UC_AncillaryAnima\Lights\Images\LightOn.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="UC_DepenAnima\UC_Hopper\Images\BackgroundLightOff.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="UC_DepenAnima\UC_Hopper\Images\BackgroundLightOn.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\20_1svg.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\20_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\30_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\20_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\20_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\30_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\30_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\30_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\40_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\40_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\50_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\50_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\60_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\60_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\70_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\70_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\80_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\80_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\90_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\90_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\99_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\99_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\40_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\40_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\50_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\50_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\60_1.svg" />
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\60_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\70_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\70_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\80_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\80_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\90_1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\90_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\99_1.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\99_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="UC_DepenAnima\UC_SLO\Images\backgroundLightoff.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_DepenAnima\UC_TNK\Images\BackgroundLightOff.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_DepenAnima\UC_TNK\Images\DepenBackgroundBlueBorder.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Content Include="UC_DepenAnima\UC_Hopper\Images\DepenBackgroundBlueBorder.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\empty.svg">
+    <Resource Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOff\empty.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\20.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

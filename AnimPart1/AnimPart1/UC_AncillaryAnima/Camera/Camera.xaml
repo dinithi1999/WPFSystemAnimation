@@ -22,9 +22,9 @@
 
         <!-- SVG image displayed using SvgViewbox from SharpVectors -->
         <svgc:SvgViewbox x:Name="svgViewbox"
-                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\Camera\Images\CameraFlashOn.svg"
+                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\Camera\Images\CameraFlashOff.svg"
                          Stretch="Uniform"
-                         RenderTransformOrigin="0.5,0.5" Canvas.Left="137" Canvas.Top="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                         RenderTransformOrigin="0.5,0.5" Canvas.Left="130" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="-8"/>
 
         <!-- Transparent button positioned over the SVG image -->
 
