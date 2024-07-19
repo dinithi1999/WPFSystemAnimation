@@ -7,15 +7,23 @@
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              mc:Ignorable="d" Height="425" Width="236"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
-   
+
+    <UserControl.Resources>
+        <!-- Storyboard for spinning animation -->
+        <Storyboard x:Key="SpinStoryboard">
+            <DoubleAnimation 
+                Storyboard.TargetName="axisAngleRotation"
+                Storyboard.TargetProperty="Angle"
+                From="0" To="360" Duration="0:0:2" RepeatBehavior="Forever"/>
+        </Storyboard>
+    </UserControl.Resources>
+
     <Grid x:Name="grid1">
-         <!--Background image that appears on mouse over-->
-
-
+        <!-- Background image that appears on mouse over -->
         <svgc:SvgViewbox x:Name="backgroundSvg"
                          Stretch="Uniform"
                          Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_Hopper\Images\DepenBackgroundBlueBorder.svg"
-                         Visibility="Collapsed" 
+                         Visibility="Collapsed"
                          RenderTransformOrigin="0.5,0.5"
                          HorizontalAlignment="Left"
                          Height="393"
@@ -23,25 +31,51 @@
                          Canvas.Left="21"
                          Canvas.Top="31"/>
 
-        <Canvas x:Name="TankColumn" Margin="-8,-2,8,2">
-             <!--Background image or other content can be managed here-->
-            <!--Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_Hopper\Images\BackgroundLightOn.svg"-->
+        <Viewport3D Name="viewport3D" Width="200" Height="200">
+            <Viewport3D.Camera>
+                <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45" />
+            </Viewport3D.Camera>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <Model3DGroup>
+                        <DirectionalLight Color="White" Direction="-0.612, -0.5, -0.612" />
+                        <GeometryModel3D>
+                            <GeometryModel3D.Geometry>
+                                <MeshGeometry3D Positions="-1,-1,0 1,-1,0 1,1,0 -1,1,0"
+                                                TextureCoordinates="0,1 1,1 1,0 0,0"
+                                                TriangleIndices="0,1,2 0,2,3" />
+                            </GeometryModel3D.Geometry>
+                            <GeometryModel3D.Material>
+                                <DiffuseMaterial>
+                                    <DiffuseMaterial.Brush>
+                                        <VisualBrush>
+                                            <VisualBrush.Visual>
+                                                <svgc:SvgViewbox x:Name="svgViewbox"
+                                                                 Stretch="Uniform"
+                                                                 Width="200"
+                                                                 Height="200" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </DiffuseMaterial.Brush>
+                                </DiffuseMaterial>
+                            </GeometryModel3D.Material>
+                            <GeometryModel3D.Transform>
+                                <RotateTransform3D x:Name="rotateTransform">
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D x:Name="axisAngleRotation" Axis="0,1,0" Angle="0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                            </GeometryModel3D.Transform>
+                        </GeometryModel3D>
+                    </Model3DGroup>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+        </Viewport3D>
 
-            <svgc:SvgViewbox x:Name="svgViewbox"
-                   Stretch="Uniform"
-                   RenderTransformOrigin="0.5,0.5"
-                   HorizontalAlignment="Left"
-                   Height="393"
-                   VerticalAlignment="Center"
-                   Canvas.Left="21"
-                   Canvas.Top="31">
-            </svgc:SvgViewbox>
-        </Canvas>
-
-         <!--lightColumn positioned at the top-left of TankColumn--> 
+        <!-- LightColumn positioned at the top-left of TankColumn -->
         <ContentControl x:Name="lightColumn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" />
 
-         <!--CameraColumn positioned at the top-right of TankColumn--> 
+        <!-- CameraColumn positioned at the top-right of TankColumn -->
         <ContentControl x:Name="CameraColumn" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" />
     </Grid>
 </UserControl>

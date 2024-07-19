@@ -1,17 +1,13 @@
-﻿using SkiaSharp;
-using Svg.Skia;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace AnimPart1.UC_DepenAnima.UC_Hopper
 {
-    /// <summary>
-    /// Interaction logic for UC_Hopper.xaml
-    /// </summary>
     public partial class UC_Hopper : UserControl
     {
         public Lights.Lights lightUserCtrl;
@@ -47,8 +43,11 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             animationTimer.Elapsed += OnAnimationTimerElapsed;
 
             // Initialize background images
-            currentTankLevel = 20; // Assuming initial tank level is 20
+            currentTankLevel = 40; // Assuming initial tank level is 40
             SetTankLevelImage(currentTankLevel);
+
+            // Start the spinning animation
+            StartSpinning();
         }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -109,6 +108,12 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         public void StopAnimation()
         {
             animationTimer.Stop();
+        }
+
+        public void StartSpinning()
+        {
+            var storyboard = (Storyboard)this.Resources["SpinStoryboard"];
+            storyboard.Begin();
         }
     }
 }
