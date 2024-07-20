@@ -13,9 +13,6 @@
     <Compile Update="UC_AncillaryAnima\Lights\Lights.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC_AncillaryAnima\PadleRotation\UC_PadleRotation.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="UC_DepenAnima\UC_Hopper\UC_Hopper.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +24,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Resources\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UC_AncillaryAnima\Camera\Camera.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -34,9 +34,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UC_AncillaryAnima\PadleRotation\UC_PadleRotation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_DepenAnima\UC_Hopper\UC_Hopper.xaml">

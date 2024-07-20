@@ -42,11 +42,11 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             tankLevelImagesLightOff = LoadTankLevelImages("UC_DepenAnima/UC_Hopper/Images/TankLevelsLightOff");
 
             currentImageIndex = 0;
-            animationTimer = new System.Timers.Timer(500); // Set the interval to 500ms
+            animationTimer = new System.Timers.Timer(1); // Set the interval to 500ms
             animationTimer.Elapsed += OnAnimationTimerElapsed;
 
             // Initialize background images
-            currentTankLevel = 60; // Assuming initial tank level is 60
+            currentTankLevel = 30; // Assuming initial tank level is 60
             SetTankLevelImage(currentTankLevel);
 
             // Start the animation timer
@@ -100,6 +100,22 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
                 var imageUri = levelImages[currentImageIndex % levelImages.Count];
                 svgViewbox.Source = imageUri;
             }
+            else {
+
+                svgViewbox.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_Hopper/Images/empty.svg");
+
+            }
+        }
+
+
+        public void StartPadleAnimation()
+        {
+            padle.StartSpinning();
+        }
+
+        public void StopPadleAnimation()
+        {
+            padle.StopSpinning();
         }
     }
 }

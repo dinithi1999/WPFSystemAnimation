@@ -238,13 +238,12 @@ namespace AnimPart1
 
         private void HopperStartChecked_Checked(object sender, RoutedEventArgs e)
         {
-            //hopperUCInstance.StartAnimation();
+            hopperUCInstance.StartPadleAnimation();
         }
 
         private void HopperStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
-            //hopperUCInstance.StopAnimation();
-
+            hopperUCInstance.StopPadleAnimation();
         }
     }
 

@@ -5,42 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AnimPart1.UC_DepenAnima.UC_SLO"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-             mc:Ignorable="d" 
-             d:DesignHeight="425" d:DesignWidth="225"
+             mc:Ignorable="d" Height="425" Width="225"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
+
 
     <Grid x:Name="grid1">
         <!-- Background image that appears on mouse over -->
         <svgc:SvgViewbox x:Name="backgroundSvg"
-                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_SLO\Images\DepenBackgroundBlueBorder.svg"
-                         Stretch="Uniform"
-                         Visibility="Collapsed" 
-                         RenderTransformOrigin="0.5,0.5"
-                         HorizontalAlignment="Left"
-                         Height="393"
-                         VerticalAlignment="Center"
-                         Canvas.Left="21"
-                         Canvas.Top="31"/>
+                      Stretch="Uniform"
+                      Visibility="Collapsed"
+                      RenderTransformOrigin="0.5,0.5"
+                      HorizontalAlignment="Left"
+                      Height="393"
+                      VerticalAlignment="Center"
+                      Canvas.Left="21"
+                      Canvas.Top="31"/>
 
-        <Canvas x:Name="TankColumn">
-            <!-- Background image or other content can be managed here -->
-            <svgc:SvgViewbox x:Name="svgViewbox"
-                   Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_SLO\Images\BackgroundLightOff.svg"
-                   Stretch="Uniform"
-                   RenderTransformOrigin="0.5,0.5"
-                   HorizontalAlignment="Left"
-                   Height="393"
-                   VerticalAlignment="Center"
-                   Canvas.Left="21"
-                   Canvas.Top="31">
-            </svgc:SvgViewbox>
-        </Canvas>
 
-        <!-- lightColumn positioned at the top-left of TankColumn -->
+        <svgc:SvgViewbox x:Name="svgViewbox"
+                      Stretch="Uniform"
+                      RenderTransformOrigin="0.5,0.5" Margin="20,12,16,0">
+        </svgc:SvgViewbox>
+
+        <!-- LightColumn positioned at the top-left of TankColumn -->
         <ContentControl x:Name="lightColumn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" />
 
         <!-- CameraColumn positioned at the top-right of TankColumn -->
         <ContentControl x:Name="CameraColumn" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" />
+
+        <!-- PadleColumn positioned at the center -->
+        <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Center" Height="371" Width="212"/>
+
     </Grid>
 
 </UserControl>

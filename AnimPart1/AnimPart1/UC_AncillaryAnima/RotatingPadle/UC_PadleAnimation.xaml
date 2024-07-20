@@ -3,47 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AnimPart1.UC_AncillaryAnima.Rotating_Padle" xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             xmlns:local="clr-namespace:AnimPart1.UC_AncillaryAnima.Rotating_Padle"
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              mc:Ignorable="d" 
              d:DesignHeight="425" d:DesignWidth="225">
-   
+
     <UserControl.Resources>
         <Storyboard x:Key="SpinStoryboard">
-        <DoubleAnimation
+            <DoubleAnimation
                 Storyboard.TargetName="axisAngleRotation"
                 Storyboard.TargetProperty="Angle"
                 From="0"
                 To="360"
                 Duration="0:0:1"
                 RepeatBehavior="Forever"/>
-    </Storyboard>
+        </Storyboard>
     </UserControl.Resources>
-    
+
     <Canvas x:Name="MainCanvas"
             Margin="0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
             RenderTransformOrigin="0.5,0.5">
-        <Canvas.RenderTransform>
-            <TransformGroup>
-                <ScaleTransform/>
-                <SkewTransform AngleX="-0.766"/>
-                <RotateTransform/>
-                <TranslateTransform X="-0.474"/>
-            </TransformGroup>
-        </Canvas.RenderTransform>
+      
+        <svgc:SvgViewbox x:Name="svgViewbox2"
+                        Source="pack://application:,,,/UC_AncillaryAnima\RotatingPadle\Images\padle_bacckground.svg"
 
-        <!--Source="C:/Users/DinithiAthukoralage/OneDrive - MindOxTechno/Documents/GitHub/WPFSystemAnimation/AnimPart1/AnimPart1/UC_AncillaryAnima/RotatingPadle/Images/padle.svg"-->
-
-        <!--<svgc:SvgViewbox x:Name="svgViewbox"
-                         Stretch="Uniform"
-                         RenderTransformOrigin="0.5,0.5" Canvas.Left="77" Canvas.Top="25" HorizontalAlignment="Left" VerticalAlignment="Center">
-        </svgc:SvgViewbox>-->
+                    Stretch="Uniform" Canvas.Left="105" Canvas.Top="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
         <Viewport3D Name="viewport3D" ClipToBounds="True"
-                     Width="300" Height="279"
-            HorizontalAlignment="Left" 
-             VerticalAlignment="Center" Canvas.Left="-42">
+                    Width="300" Height="279"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" Canvas.Left="-42">
             <Viewport3D.Camera>
                 <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="60" />
             </Viewport3D.Camera>
@@ -54,17 +43,19 @@
                         <GeometryModel3D>
                             <GeometryModel3D.Geometry>
                                 <MeshGeometry3D Positions="-2,-2,0 2,-2,0 2,2,0 -2,2,0"
-                                        TextureCoordinates="0,1 1,1 1,0 0,0"
-                                        TriangleIndices="0,1,2 0,2,3" />
+                                                TextureCoordinates="0,1 1,1 1,0 0,0"
+                                                TriangleIndices="0,1,2 0,2,3" />
                             </GeometryModel3D.Geometry>
                             <GeometryModel3D.Material>
                                 <DiffuseMaterial>
                                     <DiffuseMaterial.Brush>
                                         <VisualBrush Stretch="Uniform">
                                             <VisualBrush.Visual>
-                                                <svgc:SvgViewbox x:Name="svgViewbox"
-                                                         Stretch="Uniform"
-                                                          />
+                                                <Grid>
+                                                    <svgc:SvgViewbox x:Name="svgViewbox"
+                                                                    Source="pack://application:,,,/UC_AncillaryAnima\RotatingPadle\Images\padle.svg"
+                                                                     Stretch="Uniform"/>
+                                                </Grid>
                                             </VisualBrush.Visual>
                                         </VisualBrush>
                                     </DiffuseMaterial.Brush>
@@ -84,6 +75,5 @@
                 </ModelVisual3D.Content>
             </ModelVisual3D>
         </Viewport3D>
-
     </Canvas>
 </UserControl>

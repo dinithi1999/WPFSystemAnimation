@@ -9,23 +9,13 @@
 
     <Canvas x:Name="MainCanvas"
             Margin="0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
             RenderTransformOrigin="0.5,0.5">
-        <Canvas.RenderTransform>
-            <TransformGroup>
-                <ScaleTransform/>
-                <SkewTransform AngleX="-0.766"/>
-                <RotateTransform/>
-                <TranslateTransform X="-0.474"/>
-            </TransformGroup>
-        </Canvas.RenderTransform>
-
+      
         <!-- SVG image displayed using SvgViewbox from SharpVectors -->
-        <!--Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\Lights\Images\LightOn.svg"-->
 
         <svgc:SvgViewbox x:Name="svgViewbox"
                          Stretch="Uniform"
+                         Source="pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg"
                          RenderTransformOrigin="0.5,0.5">
         </svgc:SvgViewbox>
 
@@ -35,33 +25,8 @@
         Height="16"
         Click="LighticonCloseBtn_Click"
         HorizontalAlignment="Center"
-        VerticalAlignment="Center">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    Padding="{TemplateBinding Padding}">
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Padding" Value="4"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Transparent"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-
-
+        VerticalAlignment="Center"
+        Style="{StaticResource TransparentButtonStyle}"/>
     </Canvas>
 
 </UserControl>

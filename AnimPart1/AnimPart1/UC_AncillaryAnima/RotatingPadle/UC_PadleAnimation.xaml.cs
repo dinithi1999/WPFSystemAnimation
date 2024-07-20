@@ -24,17 +24,19 @@ namespace AnimPart1.UC_AncillaryAnima.Rotating_Padle
         public UC_PadleAnimation()
         {
             InitializeComponent();
-
-            svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/RotatingPadle/Images/padle.svg");
-
-            // Start the spinning animation
-            StartSpinning();
+            
         }
 
         public void StartSpinning()
         {
             var storyboard = (Storyboard)this.Resources["SpinStoryboard"];
             storyboard.Begin();
+        }
+
+        public void StopSpinning()
+        {
+            var storyboard = (Storyboard)this.Resources["SpinStoryboard"];
+            storyboard.Stop();
         }
     }
 }

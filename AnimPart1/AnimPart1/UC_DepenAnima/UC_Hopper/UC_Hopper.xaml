@@ -5,24 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AnimPart1.UC_DepenAnima.UC_Hopper"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-             mc:Ignorable="d" Height="425" Width="236"
+             mc:Ignorable="d" Height="425" Width="225"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
-
-    <UserControl.Resources>
-        <!-- Storyboard for spinning animation -->
-        <Storyboard x:Key="SpinStoryboard">
-            <DoubleAnimation 
-                Storyboard.TargetName="axisAngleRotation"
-                Storyboard.TargetProperty="Angle"
-                From="0" To="360" Duration="0:0:2" RepeatBehavior="Forever"/>
-        </Storyboard>
-    </UserControl.Resources>
 
     <Grid x:Name="grid1">
         <!-- Background image that appears on mouse over -->
         <svgc:SvgViewbox x:Name="backgroundSvg"
                          Stretch="Uniform"
-                         Source="C:/Users/DinithiAthukoralage/OneDrive - MindOxTechno/Documents/GitHub/WPFSystemAnimation/AnimPart1/AnimPart1/UC_DepenAnima/UC_Hopper/Images/DepenBackgroundBlueBorder.svg"
                          Visibility="Collapsed"
                          RenderTransformOrigin="0.5,0.5"
                          HorizontalAlignment="Left"
@@ -31,9 +20,11 @@
                          Canvas.Left="21"
                          Canvas.Top="31"/>
 
+        <!--Source="C:/Users/DinithiAthukoralage/OneDrive - MindOxTechno/Documents/GitHub/WPFSystemAnimation/AnimPart1/AnimPart1/UC_DepenAnima/UC_Hopper/Images/DepenBackgroundBlueBorder.svg"-->
+
         <svgc:SvgViewbox x:Name="svgViewbox"
                          Stretch="Uniform"
-                         RenderTransformOrigin="0.5,0.5">
+                         RenderTransformOrigin="0.5,0.5" Margin="20,12,16,0">
         </svgc:SvgViewbox>
 
         <!-- LightColumn positioned at the top-left of TankColumn -->
