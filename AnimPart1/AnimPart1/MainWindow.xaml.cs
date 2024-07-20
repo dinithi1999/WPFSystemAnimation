@@ -68,6 +68,8 @@ namespace AnimPart1
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+
+            hopperAnimStart.IsChecked = true;
         }
 
        
@@ -236,12 +238,12 @@ namespace AnimPart1
 
         private void HopperStartChecked_Checked(object sender, RoutedEventArgs e)
         {
-            hopperUCInstance.StartAnimation();
+            //hopperUCInstance.StartAnimation();
         }
 
         private void HopperStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
-            hopperUCInstance.StopAnimation();
+            //hopperUCInstance.StopAnimation();
 
         }
     }

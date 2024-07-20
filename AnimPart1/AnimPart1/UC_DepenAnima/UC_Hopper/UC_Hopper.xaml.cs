@@ -1,10 +1,10 @@
-﻿using System;
+﻿using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Animation;
 
 namespace AnimPart1.UC_DepenAnima.UC_Hopper
 {
@@ -12,7 +12,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
     {
         public Lights.Lights lightUserCtrl;
         public Camera.Camera cameraUserCtrl;
-
+        UC_PadleAnimation padle;
         private Dictionary<int, List<Uri>> tankLevelImagesLightOn;
         private Dictionary<int, List<Uri>> tankLevelImagesLightOff;
         private int currentImageIndex;
@@ -30,6 +30,9 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             cameraUserCtrl = new Camera.Camera();
             CameraColumn.Content = cameraUserCtrl;
 
+            padle = new UC_PadleAnimation();
+            PadleColumn.Content = padle;
+
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_Hopper/Images/DepenBackgroundBlueBorder.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_Hopper/Images/BackgroundLightOff.svg");
@@ -43,11 +46,11 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             animationTimer.Elapsed += OnAnimationTimerElapsed;
 
             // Initialize background images
-            currentTankLevel = 40; // Assuming initial tank level is 40
+            currentTankLevel = 60; // Assuming initial tank level is 60
             SetTankLevelImage(currentTankLevel);
 
-            // Start the spinning animation
-            StartSpinning();
+            // Start the animation timer
+            animationTimer.Start();
         }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -67,8 +70,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             foreach (var file in Directory.GetFiles(directory, "*.svg"))
             {
                 var fileName = Path.GetFileNameWithoutExtension(file);
-                var parts = fileName.Split('_');
-                if (parts.Length == 2 && int.TryParse(parts[0], out int level))
+                if (int.TryParse(fileName, out int level))
                 {
                     if (!imagesDict.ContainsKey(level))
                     {
@@ -85,7 +87,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             Application.Current.Dispatcher.Invoke(() =>
             {
                 SetTankLevelImage(currentTankLevel); // Use the current tank level
-                currentImageIndex = (currentImageIndex + 1) % 2; // Toggle between 0 and 1
+                currentImageIndex = (currentImageIndex + 1) % (tankLevelImagesLightOn[currentTankLevel].Count); // Toggle images based on the current tank level
             });
         }
 
@@ -98,22 +100,6 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
                 var imageUri = levelImages[currentImageIndex % levelImages.Count];
                 svgViewbox.Source = imageUri;
             }
-        }
-
-        public void StartAnimation()
-        {
-            animationTimer.Start();
-        }
-
-        public void StopAnimation()
-        {
-            animationTimer.Stop();
-        }
-
-        public void StartSpinning()
-        {
-            var storyboard = (Storyboard)this.Resources["SpinStoryboard"];
-            storyboard.Begin();
         }
     }
 }

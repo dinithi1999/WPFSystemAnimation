@@ -212,7 +212,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="HopperStartChecked_Checked" Unchecked="HopperStartChecked_Unchecked"/>
+                    <ToggleButton x:Name="hopperAnimStart" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="HopperStartChecked_Checked" Unchecked="HopperStartChecked_Unchecked"/>
                 </Grid>
 
 
