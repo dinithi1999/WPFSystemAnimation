@@ -1,4 +1,5 @@
-﻿using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
+﻿using AnimPart1.UC_AncillaryAnima.Label;
+using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,15 +28,19 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
 
         public Lights.Lights lightUserCtrl;
         public Camera.Camera cameraUserCtrl;
-
+        public UC_Label labelUserCtrl;
         UC_PadleAnimation padle;
+
         private Dictionary<int, List<Uri>> tankLevelImagesLightOn;
         private Dictionary<int, List<Uri>> tankLevelImagesLightOff;
+
         private int currentImageIndex;
         private System.Timers.Timer animationTimer;
+
         public bool isLightOn;
         private int currentTankLevel; // Keep track of the current tank level
 
+        public string labelName = "Tank 00X";
 
         public UC_TNK()
         {
@@ -48,11 +53,16 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
             cameraUserCtrl = new Camera.Camera();
             CameraColumn.Content = cameraUserCtrl;
 
+            labelUserCtrl = new UC_Label();
+            labelColumn.Content = labelUserCtrl;
+
+
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_TNK/Images/DepenBackgroundBlueBorder.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_TNK/Images/BackgroundLightOff.svg");
 
             padle = new UC_PadleAnimation();
             PadleColumn.Content = padle;
+            labelUserCtrl.labelName.Text = labelName;
 
 
             // Initialize the dictionaries
@@ -64,7 +74,7 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
             animationTimer.Elapsed += OnAnimationTimerElapsed;
 
             // Initialize background images
-            currentTankLevel = 20; // Assuming initial tank level is 60
+            currentTankLevel = 70; // Assuming initial tank level is 60
             SetTankLevelImage(currentTankLevel);
 
             // Start the animation timer
@@ -102,31 +112,104 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
 
         private void OnAnimationTimerElapsed(object sender, ElapsedEventArgs e)
         {
-            Application.Current.Dispatcher.Invoke(() =>
+            if (currentTankLevel != 0)
             {
-                SetTankLevelImage(currentTankLevel); // Use the current tank level
-                currentImageIndex = (currentImageIndex + 1) % (tankLevelImagesLightOn[currentTankLevel].Count); // Toggle images based on the current tank level
-            });
+                Application.Current.Dispatcher.Invoke(() =>
+                 {
+                     SetTankLevelImage(currentTankLevel); // Use the current tank level
+                     currentImageIndex = (currentImageIndex + 1) % (tankLevelImagesLightOn[currentTankLevel].Count); // Toggle images based on the current tank level
+                 });
+            }
+            else
+            {
+                TankMaterialsEmpty();
+            }
         }
 
         public void SetTankLevelImage(int tankLevel)
         {
             currentTankLevel = tankLevel; // Update the current tank level
+            labelUserCtrl.levelPercentage.Text = currentTankLevel.ToString() + "%";
+
+            if (tankLevel >= 20)
+            {
+
+                labelUserCtrl.svgViewboxGreenIcon.Visibility = Visibility.Visible;
+
+                labelUserCtrl.svgViewboxRedIcon.Visibility = Visibility.Hidden;
+
+                if (tankLevel == 20)
+                {
+                    labelUserCtrl.svgViewboxWarningIcon.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    labelUserCtrl.svgViewboxWarningIcon.Visibility = Visibility.Hidden;
+
+                }
+
+                labelUserCtrl.svgViewboxGeerIcon.Visibility = Visibility.Hidden;
+
+            }
+            else
+            {
+                TankMaterialsEmpty();
+            }
+
+
             var images = isLightOn ? tankLevelImagesLightOn : tankLevelImagesLightOff;
             if (images.TryGetValue(tankLevel, out var levelImages))
             {
                 var imageUri = levelImages[currentImageIndex % levelImages.Count];
                 svgViewbox.Source = imageUri;
+
+            }
+            else
+            {
+                TankMaterialsEmpty();
             }
         }
 
         public void StartPadleAnimation()
         {
             padle.StartSpinning();
+            labelUserCtrl.blinkTimerOperationOn.Start();
+            labelUserCtrl.svgViewboxYellowIcon.Visibility = Visibility.Visible;
         }
 
         public void StopPadleAnimation()
         {
+            padle.StopSpinning();
+            labelUserCtrl.blinkTimerOperationOn.Stop();
+
+        }
+
+        private void DataBasevalue_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dataBasevalue.SelectedItem != null)
+            {
+                int selectedValue = Convert.ToInt32((dataBasevalue.SelectedItem as ComboBoxItem).Content);
+                SetTankLevelImage(selectedValue);
+            }
+        }
+
+        private void TankMaterialsEmpty()
+        {
+
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                svgViewbox.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_TNK/Images/TankLevelsLightOn/empty.svg");
+
+                labelUserCtrl.svgViewboxRedIcon.Visibility = Visibility.Visible;
+                labelUserCtrl.svgViewboxWarningIcon.Visibility = Visibility.Visible;
+                labelUserCtrl.svgViewboxGeerIcon.Visibility = Visibility.Visible;
+
+                labelUserCtrl.svgViewboxGreenIcon.Visibility = Visibility.Hidden;
+                labelUserCtrl.svgViewboxYellowIcon.Visibility = Visibility.Hidden;
+            });
+
+          
+
             padle.StopSpinning();
         }
     }

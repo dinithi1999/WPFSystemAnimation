@@ -1,4 +1,5 @@
-﻿using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
+﻿using AnimPart1.UC_AncillaryAnima.Label;
+using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,15 +28,18 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
 
         public Lights.Lights lightUserCtrl;
         public Camera.Camera cameraUserCtrl;
-
+        public UC_Label labelUserCtrl;
         UC_PadleAnimation padle;
-        private Dictionary<int, List<Uri>> tankLevelImagesLightOn;
-        private Dictionary<int, List<Uri>> tankLevelImagesLightOff;
+
+        private Dictionary<int, List<Uri>> siloLevelImagesLightOn;
+        private Dictionary<int, List<Uri>> siloLevelImagesLightOff;
+
         private int currentImageIndex;
         private System.Timers.Timer animationTimer;
         public bool isLightOn;
-        private int currentTankLevel; // Keep track of the current tank level
+        private int currentSiloLevel; // Keep track of the current tank level
 
+        public string labelName = "Silo 00X";
 
 
         public UC_SLO()
@@ -55,20 +59,22 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
             padle = new UC_PadleAnimation();
             PadleColumn.Content = padle;
 
-          
+
+            labelUserCtrl = new UC_Label();
+            labelColumn.Content = labelUserCtrl;
+            labelUserCtrl.labelName.Text = labelName;
+
             // Initialize the dictionaries
-            tankLevelImagesLightOn = LoadTankLevelImages("UC_DepenAnima/UC_SLO/Images/TankLevelsLightOn");
-            tankLevelImagesLightOff = LoadTankLevelImages("UC_DepenAnima/UC_SLO/Images/TankLevelsLightOff");
+            siloLevelImagesLightOn = SiloTankLevelImages("UC_DepenAnima/UC_SLO/Images/TankLevelsLightOn");
+            siloLevelImagesLightOff = SiloTankLevelImages("UC_DepenAnima/UC_SLO/Images/TankLevelsLightOff");
 
             currentImageIndex = 0;
             animationTimer = new System.Timers.Timer(100); // Set the interval to 500ms
             animationTimer.Elapsed += OnAnimationTimerElapsed;
 
             // Initialize background images
-            currentTankLevel = 20; // Assuming initial tank level is 60
-            SetTankLevelImage(currentTankLevel);
-
-            StartPadleAnimation();
+            currentSiloLevel = 50; // Assuming initial tank level is 60
+            SetSiloLevelImage(currentSiloLevel);
 
             // Start the animation timer
             animationTimer.Start();
@@ -84,7 +90,7 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
             backgroundSvg.Visibility = Visibility.Collapsed;
         }
 
-        private Dictionary<int, List<Uri>> LoadTankLevelImages(string folder)
+        private Dictionary<int, List<Uri>> SiloTankLevelImages(string folder)
         {
             var imagesDict = new Dictionary<int, List<Uri>>();
             var directory = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folder);
@@ -105,31 +111,101 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
 
         private void OnAnimationTimerElapsed(object sender, ElapsedEventArgs e)
         {
-            Application.Current.Dispatcher.Invoke(() =>
+            if (currentSiloLevel != 0)
             {
-                SetTankLevelImage(currentTankLevel); // Use the current tank level
-                currentImageIndex = (currentImageIndex + 1) % (tankLevelImagesLightOn[currentTankLevel].Count); // Toggle images based on the current tank level
-            });
+                Application.Current.Dispatcher.Invoke(() =>
+                  {
+                      SetSiloLevelImage(currentSiloLevel); // Use the current tank level
+                      currentImageIndex = (currentImageIndex + 1) % (siloLevelImagesLightOn[currentSiloLevel].Count); // Toggle images based on the current tank level
+                  });
+            }
+            else
+            {
+                TankMaterialsEmpty();
+            }
         }
 
-        public void SetTankLevelImage(int tankLevel)
+        public void SetSiloLevelImage(int tankLevel)
         {
-            currentTankLevel = tankLevel; // Update the current tank level
-            var images = isLightOn ? tankLevelImagesLightOn : tankLevelImagesLightOff;
+            currentSiloLevel = tankLevel;
+            labelUserCtrl.levelPercentage.Text = currentSiloLevel.ToString() + "%";
+
+            if (tankLevel >= 20)
+            {
+
+                labelUserCtrl.svgViewboxGreenIcon.Visibility = Visibility.Visible;
+
+                labelUserCtrl.svgViewboxRedIcon.Visibility = Visibility.Hidden;
+
+                if (tankLevel == 20)
+                {
+                    labelUserCtrl.svgViewboxWarningIcon.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    labelUserCtrl.svgViewboxWarningIcon.Visibility = Visibility.Hidden;
+
+                }
+
+                labelUserCtrl.svgViewboxGeerIcon.Visibility = Visibility.Hidden;
+
+            }
+            else
+            {
+                TankMaterialsEmpty();
+            }
+
+            var images = isLightOn ? siloLevelImagesLightOn : siloLevelImagesLightOff;
             if (images.TryGetValue(tankLevel, out var levelImages))
             {
                 var imageUri = levelImages[currentImageIndex % levelImages.Count];
                 svgViewbox.Source = imageUri;
+            }
+            else
+            {
+                TankMaterialsEmpty();
             }
         }
 
         public void StartPadleAnimation()
         {
             padle.StartSpinning();
+            labelUserCtrl.blinkTimerOperationOn.Start();
+            labelUserCtrl.svgViewboxYellowIcon.Visibility = Visibility.Visible;
         }
 
         public void StopPadleAnimation()
         {
+            padle.StopSpinning();
+            labelUserCtrl.blinkTimerOperationOn.Stop();
+
+        }
+
+        private void DataBasevalue_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dataBasevalue.SelectedItem != null)
+            {
+                int selectedValue = Convert.ToInt32((dataBasevalue.SelectedItem as ComboBoxItem).Content);
+                SetSiloLevelImage(selectedValue);
+            }
+        }
+        private void TankMaterialsEmpty()
+        {
+
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                svgViewbox.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_SLO/Images/TankLevelsLightOn/empty.svg");
+
+                labelUserCtrl.svgViewboxRedIcon.Visibility = Visibility.Visible;
+                labelUserCtrl.svgViewboxWarningIcon.Visibility = Visibility.Visible;
+                labelUserCtrl.svgViewboxGeerIcon.Visibility = Visibility.Visible;
+
+                labelUserCtrl.svgViewboxGreenIcon.Visibility = Visibility.Hidden;
+                labelUserCtrl.svgViewboxYellowIcon.Visibility = Visibility.Hidden;
+            });
+
+
+
             padle.StopSpinning();
         }
     }

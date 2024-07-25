@@ -10,6 +10,9 @@
     <Compile Update="UC_AncillaryAnima\Camera\Camera.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_AncillaryAnima\Labels\UC_Label.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_AncillaryAnima\Lights\Lights.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_AncillaryAnima\Camera\Camera.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_AncillaryAnima\Labels\UC_Label.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_AncillaryAnima\Lights\Lights.xaml">

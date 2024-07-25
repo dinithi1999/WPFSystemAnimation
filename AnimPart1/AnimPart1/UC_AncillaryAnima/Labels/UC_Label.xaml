@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="AnimPart1.UC_AncillaryAnima.Label.UC_Label"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:AnimPart1.UC_AncillaryAnima.Label"
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             mc:Ignorable="d"
+             Height="100" Width="150">
+
+    <Canvas x:Name="MainCanvas" 
+            RenderTransformOrigin="0.5,0.5" Margin="-2,1,4,0">
+
+        <!-- SvgViewbox for the background SVG image -->
+        <svgc:SvgViewbox x:Name="svgViewboxLabelBackGround"
+                         Stretch="Uniform"
+                         RenderTransformOrigin="0.5,0.5"
+                         Canvas.Left="1"
+                            Width="{Binding ActualWidth, ElementName=MainCanvas}"
+                         Height="{Binding ActualHeight, ElementName=MainCanvas}" HorizontalAlignment="Center" Canvas.Top="-1" VerticalAlignment="Top" />
+
+        <svgc:SvgViewbox x:Name="svgViewboxGeerIcon"
+                    Stretch="Uniform" Canvas.Left="69" Canvas.Top="62" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+        <svgc:SvgViewbox x:Name="svgViewboxWarningIcon"
+             Stretch="Uniform" Canvas.Left="42" Canvas.Top="64" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+        <svgc:SvgViewbox x:Name="svgViewboxGreenIcon"
+         Stretch="Uniform" Canvas.Left="93" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+
+
+        <svgc:SvgViewbox x:Name="svgViewboxYellowIcon"
+         Stretch="Uniform" Canvas.Left="68" Canvas.Top="4" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+        <svgc:SvgViewbox x:Name="svgViewboxRedIcon"
+   Stretch="Uniform" Canvas.Left="46" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+        <!-- Transparent button positioned over the SVG image -->
+        <Button Canvas.Left="121"
+                Width="28"
+                Height="24"
+                Click="LabelIconCloseBtn_Click"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Style="{StaticResource TransparentButtonStyle}" />
+        <TextBlock x:Name="labelName" Canvas.Left="42" TextWrapping="Wrap" Text="Hopper 001" Canvas.Top="33" HorizontalAlignment="Center" VerticalAlignment="Center" Width="81"/>
+        <TextBlock x:Name="levelPercentage" Canvas.Left="99" TextWrapping="Wrap" Text="50%" Canvas.Top="65" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+    </Canvas>
+</UserControl>

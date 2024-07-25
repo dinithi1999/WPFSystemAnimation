@@ -23,10 +23,20 @@
     <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOff.svg" />
     <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOn.png" />
     <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOn.svg" />
+    <None Remove="UC_AncillaryAnima\Labels\Images\geerIcon.svg" />
+    <None Remove="UC_AncillaryAnima\Labels\Images\green.svg" />
+    <None Remove="UC_AncillaryAnima\Labels\Images\labetFormat.svg" />
+    <None Remove="UC_AncillaryAnima\Labels\Images\Red.svg" />
+    <None Remove="UC_AncillaryAnima\Labels\Images\warningIcon.svg" />
+    <None Remove="UC_AncillaryAnima\Labels\Images\yellow.svg" />
+    <None Remove="UC_AncillaryAnima\Labels\Images\yellowNotBlinking.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\CameraFlashOff.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\CameraFlashOn.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\LightOff.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\LightOn.svg" />
+    <None Remove="UC_AncillaryAnima\RotatingPadle\Images\ARROW1.svg" />
+    <None Remove="UC_AncillaryAnima\RotatingPadle\Images\ARROW2.svg" />
+    <None Remove="UC_AncillaryAnima\RotatingPadle\Images\arrows.svg" />
     <None Remove="UC_AncillaryAnima\RotatingPadle\Images\padle.svg" />
     <None Remove="UC_AncillaryAnima\RotatingPadle\Images\padle_bacckground.svg" />
     <None Remove="UC_DepenAnima\UC_Hopper\Images\BackgroundLightOff.svg" />
@@ -164,6 +174,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="UC_AncillaryAnima\Labels\Images\geerIcon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\Labels\Images\green.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\Labels\Images\labetFormat.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\Labels\Images\Red.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\Labels\Images\warningIcon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\Labels\Images\yellow.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\Labels\Images\yellowNotBlinking.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOff\20.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -218,9 +249,9 @@
     <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOn\99.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOn\empty.svg">
+    <Resource Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOn\empty.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Content Include="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOff\empty.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -251,9 +282,9 @@
     <Content Include="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\99.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\empty.svg">
+    <Resource Include="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\empty.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -267,6 +298,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_AncillaryAnima\Lights\Images\LightOn.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\RotatingPadle\Images\ARROW1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\RotatingPadle\Images\ARROW2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\RotatingPadle\Images\arrows.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_DepenAnima\UC_Hopper\Images\BackgroundLightOff.svg">
@@ -371,9 +411,9 @@
     <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\20.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\empty.svg">
+    <Resource Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\empty.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

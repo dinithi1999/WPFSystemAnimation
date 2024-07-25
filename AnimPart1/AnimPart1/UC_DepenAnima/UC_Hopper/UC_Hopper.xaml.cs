@@ -1,4 +1,5 @@
-﻿using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
+﻿using AnimPart1.UC_AncillaryAnima.Label;
+using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,12 +14,18 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         public Lights.Lights lightUserCtrl;
         public Camera.Camera cameraUserCtrl;
         UC_PadleAnimation padle;
-        private Dictionary<int, List<Uri>> tankLevelImagesLightOn;
-        private Dictionary<int, List<Uri>> tankLevelImagesLightOff;
+        public UC_Label labelUserCtrl;
+
+        private Dictionary<int, List<Uri>> hoppersLevelImagesLightOn;
+        private Dictionary<int, List<Uri>> hopperLevelImagesLightOff;
+
         private int currentImageIndex;
         private System.Timers.Timer animationTimer;
         public bool isLightOn;
-        private int currentTankLevel; // Keep track of the current tank level
+
+        private int currentHopperLevel; // Keep track of the current tank level
+
+        public string labelName = "Hopper 00X";
 
         public UC_Hopper()
         {
@@ -33,21 +40,28 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             padle = new UC_PadleAnimation();
             PadleColumn.Content = padle;
 
+            labelUserCtrl = new UC_Label();
+            labelColumn.Content = labelUserCtrl;
+            labelUserCtrl.labelName.Text = labelName;
+
+
+
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_Hopper/Images/DepenBackgroundBlueBorder.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_Hopper/Images/BackgroundLightOff.svg");
 
             // Initialize the dictionaries
-            tankLevelImagesLightOn = LoadTankLevelImages("UC_DepenAnima/UC_Hopper/Images/TankLevelsLightOn");
-            tankLevelImagesLightOff = LoadTankLevelImages("UC_DepenAnima/UC_Hopper/Images/TankLevelsLightOff");
+            hoppersLevelImagesLightOn = LoadHopperLevelImages("UC_DepenAnima/UC_Hopper/Images/TankLevelsLightOn");
+            hopperLevelImagesLightOff = LoadHopperLevelImages("UC_DepenAnima/UC_Hopper/Images/TankLevelsLightOff");
 
             currentImageIndex = 0;
             animationTimer = new System.Timers.Timer(1); // Set the interval to 500ms
             animationTimer.Elapsed += OnAnimationTimerElapsed;
 
             // Initialize background images
-            currentTankLevel = 30; // Assuming initial tank level is 60
-            SetTankLevelImage(currentTankLevel);
+            currentHopperLevel = 30; // Assuming initial tank level is 60
+            SetHopperLevelImage(currentHopperLevel);
+
 
             // Start the animation timer
             animationTimer.Start();
@@ -63,7 +77,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             backgroundSvg.Visibility = Visibility.Collapsed;
         }
 
-        private Dictionary<int, List<Uri>> LoadTankLevelImages(string folder)
+        private Dictionary<int, List<Uri>> LoadHopperLevelImages(string folder)
         {
             var imagesDict = new Dictionary<int, List<Uri>>();
             var directory = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folder);
@@ -84,38 +98,109 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
 
         private void OnAnimationTimerElapsed(object sender, ElapsedEventArgs e)
         {
-            Application.Current.Dispatcher.Invoke(() =>
+            if (currentHopperLevel != 0)
             {
-                SetTankLevelImage(currentTankLevel); // Use the current tank level
-                currentImageIndex = (currentImageIndex + 1) % (tankLevelImagesLightOn[currentTankLevel].Count); // Toggle images based on the current tank level
-            });
+
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    SetHopperLevelImage(currentHopperLevel); // Use the current tank level
+                    currentImageIndex = (currentImageIndex + 1) % (hoppersLevelImagesLightOn[currentHopperLevel].Count); // Toggle images based on the current tank level
+                });
+            }
+            else {
+                TankMaterialsEmpty();
+
+            }
         }
 
-        public void SetTankLevelImage(int tankLevel)
+        public void SetHopperLevelImage(int tankLevel)
         {
-            currentTankLevel = tankLevel; // Update the current tank level
-            var images = isLightOn ? tankLevelImagesLightOn : tankLevelImagesLightOff;
+            currentHopperLevel = tankLevel; // Update the current tank level
+            labelUserCtrl.levelPercentage.Text =currentHopperLevel.ToString() +"%";
+
+           if (tankLevel >= 20) {
+
+                labelUserCtrl.svgViewboxGreenIcon.Visibility = Visibility.Visible;
+
+                labelUserCtrl.svgViewboxRedIcon.Visibility = Visibility.Hidden;
+
+                if (tankLevel == 20)
+                {
+                    labelUserCtrl.svgViewboxWarningIcon.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    labelUserCtrl.svgViewboxWarningIcon.Visibility = Visibility.Hidden;
+
+                }
+
+                labelUserCtrl.svgViewboxGeerIcon.Visibility = Visibility.Hidden;
+
+           }
+           else
+           {
+                TankMaterialsEmpty();
+
+           }
+
+            var images = isLightOn ? hoppersLevelImagesLightOn : hopperLevelImagesLightOff;
             if (images.TryGetValue(tankLevel, out var levelImages))
             {
                 var imageUri = levelImages[currentImageIndex % levelImages.Count];
                 svgViewbox.Source = imageUri;
+
             }
             else {
 
-                svgViewbox.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_Hopper/Images/empty.svg");
+                TankMaterialsEmpty();
+
 
             }
         }
 
-
         public void StartPadleAnimation()
         {
             padle.StartSpinning();
+            labelUserCtrl.blinkTimerOperationOn.Start();
+            labelUserCtrl.svgViewboxYellowIcon.Visibility = Visibility.Visible;
+
         }
 
         public void StopPadleAnimation()
         {
             padle.StopSpinning();
+            labelUserCtrl.blinkTimerOperationOn.Stop();
+
         }
+        private void TankMaterialsEmpty()
+        {
+
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                svgViewbox.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_Hopper/Images/TankLevelsLightOn/empty.svg");
+
+                labelUserCtrl.svgViewboxRedIcon.Visibility = Visibility.Visible;
+                labelUserCtrl.svgViewboxWarningIcon.Visibility = Visibility.Visible;
+                labelUserCtrl.svgViewboxGeerIcon.Visibility = Visibility.Visible;
+
+                labelUserCtrl.svgViewboxGreenIcon.Visibility = Visibility.Hidden;
+                labelUserCtrl.svgViewboxYellowIcon.Visibility = Visibility.Hidden;
+            });
+
+
+
+            padle.StopSpinning();
+        }
+
+
+        private void DataBasevalue_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dataBasevalue.SelectedItem != null)
+            {
+                int selectedValue = Convert.ToInt32((dataBasevalue.SelectedItem as ComboBoxItem).Content);
+                SetHopperLevelImage(selectedValue);
+            }
+        }
+
     }
 }

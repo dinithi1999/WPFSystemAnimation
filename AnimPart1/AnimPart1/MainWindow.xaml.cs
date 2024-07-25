@@ -70,9 +70,23 @@ namespace AnimPart1
             }
 
             hopperAnimStart.IsChecked = true;
+            hopperCam.IsChecked = true;
+            hopperLight.IsChecked = true;
+            hopperLabel.IsChecked = true;
+
+            tankCam.IsChecked = true;
+            tankLabel.IsChecked = true;
+            tankLight.IsChecked = true;
+            tankAnimStart.IsChecked = true;
+
+            SiloCam.IsChecked = true;
+            SiloLabel.IsChecked = true;
+            SiloLight.IsChecked = true;
+            SiloAnimStart.IsChecked = true;
+
         }
 
-       
+
 
 
 
@@ -167,23 +181,35 @@ namespace AnimPart1
         {
             hopperUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
             hopperUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            hopperUCInstance.labelUserCtrl.Visibility = Visibility.Visible;
+            hopperUCInstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+
+
         }
 
         private void HopperLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
         {
             hopperUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
             hopperUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            hopperUCInstance.labelUserCtrl.Visibility = Visibility.Hidden;
+
         }
 
         private void TankLabelVislibility_Checked(object sender, RoutedEventArgs e)
         {
             tankUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
             tankUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            tankUCInstance.labelUserCtrl.Visibility = Visibility.Visible;
+            tankUCInstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+
+
         }
         private void TankLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
         {
             tankUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
             tankUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            tankUCInstance.labelUserCtrl.Visibility = Visibility.Hidden;
+
         }
 
 
@@ -191,12 +217,18 @@ namespace AnimPart1
         {
             sloUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
             sloUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            sloUCInstance.labelUserCtrl.Visibility = Visibility.Visible;
+            sloUCInstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+
+            
         }
 
         private void SLOLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
         {
             sloUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
             sloUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            sloUCInstance.labelUserCtrl.Visibility = Visibility.Hidden;
+
         }
         #endregion
 
@@ -204,22 +236,30 @@ namespace AnimPart1
         private void TankLight_Checked(object sender, RoutedEventArgs e)
         {
             tankUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            tankUCInstance.isLightOn = true;
+
 
         }
         private void TankLight_Unchecked(object sender, RoutedEventArgs e)
         {
             tankUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            tankUCInstance.isLightOn = false;
+
 
         }
         private void SLOLights_Checked(object sender, RoutedEventArgs e)
         {
             sloUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            sloUCInstance.isLightOn = true;
+
 
         }
 
         private void SLOLight_Unchecked(object sender, RoutedEventArgs e)
         {
             sloUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            sloUCInstance.isLightOn = false;
+
 
         }
         private void HopperLightChecked_Checked(object sender, RoutedEventArgs e)
@@ -244,6 +284,28 @@ namespace AnimPart1
         private void HopperStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
             hopperUCInstance.StopPadleAnimation();
+        }
+
+        private void SiloStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+            sloUCInstance.StartPadleAnimation();
+
+        }
+        private void SiloStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+            sloUCInstance.StopPadleAnimation();
+
+        }
+
+        private void TankStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+            tankUCInstance.StartPadleAnimation();
+
+        }
+
+        private void TankStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+            tankUCInstance.StopPadleAnimation();
         }
     }
 
