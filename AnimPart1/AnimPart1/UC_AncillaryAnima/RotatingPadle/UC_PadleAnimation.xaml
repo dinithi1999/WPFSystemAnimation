@@ -16,7 +16,7 @@
                 Storyboard.TargetProperty="Rotation.Angle"
                 From="0"
                 To="360"
-                Duration="0:0:2"
+                Duration="0:0:1"
                 RepeatBehavior="Forever">
                 <DoubleAnimation.EasingFunction>
                     <QuadraticEase EasingMode="EaseInOut"/>
@@ -32,7 +32,7 @@
                 Storyboard.TargetProperty="Rotation.Angle"
                 From="0"
                 To="360"
-                Duration="0:0:2"
+                Duration="0:0:1"
                 RepeatBehavior="Forever" />
 
         </Storyboard>
@@ -105,8 +105,8 @@
                     HorizontalAlignment="Center" 
                     VerticalAlignment="Top" Canvas.Left="75" Canvas.Top="54">
             <Viewport3D.Camera>
-                <!-- PerspectiveCamera for viewing the scene -->
-                <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-1" UpDirection="0,1,0" />
+                 <!--PerspectiveCamera for viewing the scene--> 
+                <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-6" UpDirection="1,1,8" />
             </Viewport3D.Camera>
 
             <ModelVisual3D>
@@ -133,32 +133,7 @@
                                             <VisualBrush.Visual>
                                                 <Grid>
                                                     <svgc:SvgViewbox x:Name="svgViewbox3"
-                                                                     Source="pack://application:,,,/UC_AncillaryAnima/RotatingPadle/Images/arrows.svg"
-                                                                     Stretch="Uniform"/>
-                                                </Grid>
-                                            </VisualBrush.Visual>
-                                        </VisualBrush>
-                                    </DiffuseMaterial.Brush>
-                                </DiffuseMaterial>
-                            </GeometryModel3D.Material>
-                        </GeometryModel3D>
-
-                        <!-- Second GeometryModel3D with ARROW2.svg -->
-                        <GeometryModel3D>
-                            <GeometryModel3D.Geometry>
-                                <MeshGeometry3D
-                                    Positions="-1,-1,0 1,-1,0 1,1,0 -1,1,0"
-                                    TextureCoordinates="0,1 1,1 1,0 0,0"
-                                    TriangleIndices="0,1,2 0,2,3" />
-                            </GeometryModel3D.Geometry>
-                            <GeometryModel3D.Material>
-                                <DiffuseMaterial>
-                                    <DiffuseMaterial.Brush>
-                                        <VisualBrush>
-                                            <VisualBrush.Visual>
-                                                <Grid>
-                                                    <svgc:SvgViewbox x:Name="svgViewbox4"
-                                                                     Source="pack://application:,,,/UC_AncillaryAnima/RotatingPadle/Images/arrows.svg"
+                                                                     Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\RotatingPadle\Images\arrows.svg"
                                                                      Stretch="Uniform"/>
                                                 </Grid>
                                             </VisualBrush.Visual>
@@ -174,7 +149,7 @@
                                 <!-- RotateTransform3D for rotation -->
                                 <RotateTransform3D x:Name="rotateTransform2">
                                     <RotateTransform3D.Rotation>
-                                        <AxisAngleRotation3D Axis="1,1,3" Angle="0" />
+                                        <AxisAngleRotation3D Axis="0,1,0" Angle="0" />
                                     </RotateTransform3D.Rotation>
                                 </RotateTransform3D>
 
