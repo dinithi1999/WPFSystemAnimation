@@ -212,5 +212,10 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
 
             padle.StopSpinning();
         }
+
+        private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.IO;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace AnimPart1.UC_DepenAnima.UC_Hopper
 {
@@ -192,7 +193,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             padle.StopSpinning();
         }
 
-
+     
         private void DataBasevalue_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dataBasevalue.SelectedItem != null)
@@ -201,6 +202,12 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
                 SetHopperLevelImage(selectedValue);
             }
         }
+
+        private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+        }
+
 
     }
 }

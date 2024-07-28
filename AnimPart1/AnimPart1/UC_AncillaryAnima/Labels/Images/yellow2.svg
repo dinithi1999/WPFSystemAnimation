@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="SystStatus Label" xmlns="http://www.w3.org/2000/svg" width="108.61" height="88.62" viewBox="0 0 108.61 88.62">
+  <defs>
+    <style>
+      .d {
+        fill: #de912f;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Indicators">
+    <path id="c" data-name="Active-Flashing" class="d" d="M36.15,14.27c0-4.83,3.92-8.75,8.75-8.75s8.75,3.92,8.75,8.75-3.92,8.75-8.75,8.75-8.75-3.92-8.75-8.75Z"/>
+  </g>
+</svg>

@@ -1,33 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="a" data-name="SystStatus Label" xmlns="http://www.w3.org/2000/svg" width="123.64" height="108.93" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 123.64 108.93">
+<svg id="a" data-name="SystStatus Label" xmlns="http://www.w3.org/2000/svg" width="108.61" height="88.62" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 108.61 88.62">
   <defs>
     <style>
-      .f {
+      .g {
         fill: #f7b434;
       }
 
-      .f, .g {
+      .g, .h, .i {
         stroke-width: 0px;
       }
 
-      .g {
-        fill: url(#c);
+      .h {
+        fill: #de912f;
+      }
+
+      .i {
+        fill: url(#d);
       }
     </style>
-    <radialGradient id="c" cx="44.9" cy="34.58" fx="44.9" fy="34.58" r="10.5" gradientUnits="userSpaceOnUse">
+    <radialGradient id="d" cx="44.9" cy="14.26" fx="44.9" fy="14.26" r="10.5" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff"/>
-      <stop offset=".2" stop-color="#fefdfc"/>
-      <stop offset=".34" stop-color="#fef9f2"/>
-      <stop offset=".47" stop-color="#fef3e2"/>
-      <stop offset=".59" stop-color="#fdeacb"/>
-      <stop offset=".71" stop-color="#fddeae"/>
-      <stop offset=".82" stop-color="#fccf8a"/>
-      <stop offset=".92" stop-color="#fbbf60"/>
-      <stop offset="1" stop-color="#fbb03b"/>
+      <stop offset=".18" stop-color="#fefdfc"/>
+      <stop offset=".29" stop-color="#fefaf3"/>
+      <stop offset=".38" stop-color="#fef4e5"/>
+      <stop offset=".46" stop-color="#feecd1"/>
+      <stop offset=".54" stop-color="#fde1b6"/>
+      <stop offset=".61" stop-color="#fcd495"/>
+      <stop offset=".67" stop-color="#fcc56f"/>
+      <stop offset=".73" stop-color="#fbb343"/>
+      <stop offset=".75" stop-color="#fbb03b"/>
+      <stop offset=".95" stop-color="#f15a24"/>
     </radialGradient>
   </defs>
   <g id="b" data-name="Indicators">
-    <path id="d" data-name="Active-Flashing Big" class="g" d="M34.4,34.58c0-5.8,4.7-10.5,10.49-10.5s10.5,4.7,10.5,10.5-4.7,10.5-10.5,10.5-10.49-4.7-10.49-10.5Z"/>
-    <path id="e" data-name="Active-Flashing" class="f" d="M41.37,34.58c0-1.95,1.58-3.53,3.52-3.53s3.53,1.58,3.53,3.53-1.58,3.52-3.53,3.52-3.52-1.58-3.52-3.52Z"/>
+    <path id="c" data-name="Active-Flashing" class="h" d="M36.15,14.27c0-4.83,3.92-8.75,8.75-8.75s8.75,3.92,8.75,8.75-3.92,8.75-8.75,8.75-8.75-3.92-8.75-8.75Z"/>
+    <path id="e" data-name="Active-Flashing Big" class="i" d="M34.4,14.27c0-5.8,4.7-10.5,10.49-10.5s10.5,4.7,10.5,10.5-4.7,10.5-10.5,10.5-10.49-4.7-10.49-10.5Z"/>
+    <path id="f" data-name="Active-Flashing" class="g" d="M41.37,14.26c0-1.95,1.58-3.53,3.52-3.53s3.53,1.58,3.53,3.53-1.58,3.52-3.53,3.52-3.52-1.58-3.52-3.52Z"/>
   </g>
 </svg>

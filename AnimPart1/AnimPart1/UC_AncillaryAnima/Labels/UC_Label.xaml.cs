@@ -30,7 +30,7 @@ namespace AnimPart1.UC_AncillaryAnima.Label
             svgViewboxLabelBackGround.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/labetFormat.svg");
             svgViewboxGeerIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/geerIcon.svg");
             svgViewboxWarningIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/warningIcon.svg");
-            svgViewboxYellowIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/yellowNotBlinking.svg");
+            svgViewboxYellowIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/yellow2.svg");
             svgViewboxRedIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/red.svg");
             svgViewboxGreenIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/green.svg");
 
@@ -58,11 +58,13 @@ namespace AnimPart1.UC_AncillaryAnima.Label
 
             if (flag)
             {
-                svgViewboxYellowIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/yellow.svg");
+                svgViewboxYellowIcon.Opacity = 0.7; 
+                svgViewboxYellowIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/yellow2.svg");
             }
             else
             {
-                svgViewboxYellowIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/yellowNotBlinking.svg");
+                svgViewboxYellowIcon.Opacity = 1;
+                svgViewboxYellowIcon.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Labels/Images/yellow.svg");
             }
 
             flag = !flag;

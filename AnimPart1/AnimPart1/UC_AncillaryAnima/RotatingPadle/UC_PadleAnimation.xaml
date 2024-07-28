@@ -25,7 +25,7 @@
         </Storyboard>
 
         <!-- Animation for ARROW1.svg and ARROW2.svg -->
-        <Storyboard x:Key="SpinStoryboard2">
+        <Storyboard x:Key="RotateArrowStoryboard">
             <!-- Rotation Animation -->
             <DoubleAnimation
                 Storyboard.TargetName="rotateTransform2"
@@ -36,6 +36,7 @@
                 RepeatBehavior="Forever" />
 
         </Storyboard>
+
     </UserControl.Resources>
 
     <Canvas x:Name="MainCanvas"
@@ -99,32 +100,33 @@
             </ModelVisual3D>
         </Viewport3D>
 
-        <!-- Viewport3D for ARROW1.svg and ARROW2.svg -->
-        <Viewport3D Name="viewport3D2" ClipToBounds="True"
-                    Width="66" Height="57"
-                    HorizontalAlignment="Center" 
-                    VerticalAlignment="Top" Canvas.Left="75" Canvas.Top="54">
+        <!-- Viewport3D for ARROW1.svg -->
+        <!--<Viewport3D Name="viewport3D2" ClipToBounds="True"
+            Width="66" Height="57"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" Canvas.Left="75" Canvas.Top="51.5">
+
             <Viewport3D.Camera>
-                 <!--PerspectiveCamera for viewing the scene--> 
-                <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-6" UpDirection="1,1,8" />
+                --><!-- PerspectiveCamera for viewing the scene --><!--
+                <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-3" UpDirection="1,5,9" FieldOfView="40" />
             </Viewport3D.Camera>
 
             <ModelVisual3D>
                 <ModelVisual3D.Content>
-                    <!-- Model3DGroup to hold all 3D models and lights -->
+                    
+            
                     <Model3DGroup x:Name="modelGroup">
 
-                        <!-- Directional lights for illumination -->
-                        <DirectionalLight Color="White" Direction="-1,-1,-3" />
-                        <DirectionalLight Color="White" Direction="1,1,3" />
 
-                        <!-- First GeometryModel3D with ARROW1.svg -->
+                        <DirectionalLight Color="White" Direction="-1,-1,-1" />
+                        <DirectionalLight Color="White" Direction="1,1,1" />
+
                         <GeometryModel3D>
                             <GeometryModel3D.Geometry>
                                 <MeshGeometry3D
-                                    Positions="-1,-1,0 1,-1,0 1,1,0 -1,1,0"
-                                    TextureCoordinates="0,1 1,1 1,0 0,0"
-                                    TriangleIndices="0,1,2 0,2,3" />
+                            Positions="-1,-1,0 1,-1,0 1,1,0 -1,1,0"
+                            TextureCoordinates="0,1 1,1 1,0 0,0"
+                            TriangleIndices="0,1,2 0,2,3" />
                             </GeometryModel3D.Geometry>
                             <GeometryModel3D.Material>
                                 <DiffuseMaterial>
@@ -133,8 +135,8 @@
                                             <VisualBrush.Visual>
                                                 <Grid>
                                                     <svgc:SvgViewbox x:Name="svgViewbox3"
-                                                                     Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\RotatingPadle\Images\arrows.svg"
-                                                                     Stretch="Uniform"/>
+                                                             Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\RotatingPadle\Images\arrows.svg"
+                                                             Stretch="Uniform"/>
                                                 </Grid>
                                             </VisualBrush.Visual>
                                         </VisualBrush>
@@ -143,24 +145,43 @@
                             </GeometryModel3D.Material>
                         </GeometryModel3D>
 
-                        <!-- Transform3DGroup for applying transformations -->
+                        
+       
+            
                         <Model3DGroup.Transform>
                             <Transform3DGroup>
-                                <!-- RotateTransform3D for rotation -->
+                                
                                 <RotateTransform3D x:Name="rotateTransform2">
                                     <RotateTransform3D.Rotation>
                                         <AxisAngleRotation3D Axis="0,1,0" Angle="0" />
                                     </RotateTransform3D.Rotation>
                                 </RotateTransform3D>
 
-                                <!-- TranslateTransform3D for translation -->
+            
                                 <TranslateTransform3D x:Name="translateTransform" />
                             </Transform3DGroup>
                         </Model3DGroup.Transform>
                     </Model3DGroup>
                 </ModelVisual3D.Content>
             </ModelVisual3D>
-        </Viewport3D>
+        </Viewport3D>-->
 
+
+        <Grid>
+            <svgc:SvgViewbox x:Name="svgViewbox3"
+              Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\RotatingPadle\Images\arrows.svg"
+              Stretch="Uniform" Margin="90,69,-91,-69" RenderTransformOrigin="0.5,0.5">
+                <svgc:SvgViewbox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </svgc:SvgViewbox.RenderTransform>
+                
+            </svgc:SvgViewbox>
+        </Grid>
+        
     </Canvas>
 </UserControl>

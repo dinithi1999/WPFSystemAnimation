@@ -20,7 +20,7 @@
                          Height="{Binding ActualHeight, ElementName=MainCanvas}" HorizontalAlignment="Center" Canvas.Top="-1" VerticalAlignment="Top" />
 
         <svgc:SvgViewbox x:Name="svgViewboxGeerIcon"
-                    Stretch="Uniform" Canvas.Left="69" Canvas.Top="62" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                    Stretch="Uniform" Canvas.Left="69" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
         <svgc:SvgViewbox x:Name="svgViewboxWarningIcon"
              Stretch="Uniform" Canvas.Left="42" Canvas.Top="64" HorizontalAlignment="Center" VerticalAlignment="Top" />
@@ -31,7 +31,7 @@
 
 
         <svgc:SvgViewbox x:Name="svgViewboxYellowIcon"
-         Stretch="Uniform" Canvas.Left="68" Canvas.Top="4" HorizontalAlignment="Center" VerticalAlignment="Top" />
+         Stretch="Uniform" Canvas.Left="68" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
         <svgc:SvgViewbox x:Name="svgViewboxRedIcon"
    Stretch="Uniform" Canvas.Left="46" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />

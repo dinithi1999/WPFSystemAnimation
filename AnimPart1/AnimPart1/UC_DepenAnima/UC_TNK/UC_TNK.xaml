@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:AnimPart1.UC_DepenAnima.UC_TNK"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              mc:Ignorable="d" Height="425" Width="375"
+             MouseRightButtonDown="UserControl_MouseRightButtonDown"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
 
     <Grid x:Name="MainGrid"
@@ -59,6 +60,7 @@
                 <ComboBoxItem Content="60"/>
                 <ComboBoxItem Content="70"/>
                 <ComboBoxItem Content="80"/>
+                <ComboBoxItem Content="90"/>
                 <ComboBoxItem Content="99"/>
             </ComboBox>
         </Grid>

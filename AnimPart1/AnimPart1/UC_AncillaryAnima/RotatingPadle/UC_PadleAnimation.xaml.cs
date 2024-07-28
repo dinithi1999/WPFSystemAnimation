@@ -13,31 +13,26 @@ namespace AnimPart1.UC_AncillaryAnima.Rotating_Padle
         public void StartSpinning()
         {
             var spinStoryboard = (Storyboard)this.Resources["SpinStoryboard"];
-            var spinStoryboard2 = (Storyboard)this.Resources["SpinStoryboard2"];
+            var spinStoryboard2 = (Storyboard)this.Resources["RotateArrowStoryboard"];
 
             if (spinStoryboard != null)
             {
                 spinStoryboard.Begin();
+                //spinStoryboard2.Begin();
+
             }
             else
             {
                 // Handle null storyboard (e.g., log error, throw exception, etc.)
             }
 
-            if (spinStoryboard2 != null)
-            {
-                spinStoryboard2.Begin(); // Start the storyboard for arrows
-            }
-            else
-            {
-                // Handle null storyboard (e.g., log error, throw exception, etc.)
-            }
+         
         }
 
         public void StopSpinning()
         {
             var spinStoryboard = (Storyboard)this.Resources["SpinStoryboard"];
-            var spinStoryboard2 = (Storyboard)this.Resources["SpinStoryboard2"];
+            var spinStoryboard2 = (Storyboard)this.Resources["RotateArrowStoryboard"];
 
             if (spinStoryboard != null)
             {

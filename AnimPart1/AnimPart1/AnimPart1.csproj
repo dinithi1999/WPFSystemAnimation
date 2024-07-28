@@ -29,7 +29,7 @@
     <None Remove="UC_AncillaryAnima\Labels\Images\Red.svg" />
     <None Remove="UC_AncillaryAnima\Labels\Images\warningIcon.svg" />
     <None Remove="UC_AncillaryAnima\Labels\Images\yellow.svg" />
-    <None Remove="UC_AncillaryAnima\Labels\Images\yellowNotBlinking.svg" />
+    <None Remove="UC_AncillaryAnima\Labels\Images\yellow2.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\CameraFlashOff.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\CameraFlashOn.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\LightOff.svg" />
@@ -192,7 +192,7 @@
     <Resource Include="UC_AncillaryAnima\Labels\Images\yellow.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="UC_AncillaryAnima\Labels\Images\yellowNotBlinking.svg">
+    <Resource Include="UC_AncillaryAnima\Labels\Images\yellow2.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOff\20.svg">
@@ -417,11 +417,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
     <PackageReference Include="SharpVectors" Version="1.8.4" />
     <PackageReference Include="SharpVectors.Reloaded" Version="1.8.4" />
     <PackageReference Include="SharpVectors.Wpf" Version="1.8.4" />
     <PackageReference Include="Svg.Skia" Version="1.0.0.18" />
     <PackageReference Include="SVGImage" Version="3.0.0" />
+    <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>

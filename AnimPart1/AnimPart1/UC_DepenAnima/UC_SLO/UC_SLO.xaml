@@ -6,15 +6,16 @@
              xmlns:local="clr-namespace:AnimPart1.UC_DepenAnima.UC_SLO"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              mc:Ignorable="d" Height="425" Width="375"
+             MouseRightButtonDown="UserControl_MouseRightButtonDown"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
 
 
-    <Grid x:Name="MainGrid"
-
-       >
+    <Grid x:Name="MainGrid">
+        
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid"             Height="425"
+        <Grid x:Name="BackgroundGrid" Height="425"
          Width="225" HorizontalAlignment="Left" >
+            
             <svgc:SvgViewbox x:Name="backgroundSvg"
                           Stretch="Uniform"
                           Visibility="Collapsed"
@@ -22,7 +23,6 @@
                           VerticalAlignment="Center"
                           Canvas.Left="21"
                           Canvas.Top="31"/>
-
 
             <svgc:SvgViewbox x:Name="svgViewbox"
                       Stretch="Uniform"
@@ -59,6 +59,7 @@
                 <ComboBoxItem Content="60"/>
                 <ComboBoxItem Content="70"/>
                 <ComboBoxItem Content="80"/>
+                <ComboBoxItem Content="90"/>
                 <ComboBoxItem Content="99"/>
             </ComboBox>
             
