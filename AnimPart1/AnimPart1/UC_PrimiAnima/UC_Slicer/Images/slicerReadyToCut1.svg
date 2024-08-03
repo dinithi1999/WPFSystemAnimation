@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Slicer" xmlns="http://www.w3.org/2000/svg" width="880.06" height="498.36" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 880.06 498.36">
+  <defs>
+    <style>
+      .f {
+        fill: url(#b);
+        fill-rule: evenodd;
+        filter: url(#c);
+        stroke-width: 0px;
+      }
+    </style>
+    <radialGradient id="b" cx="720.2" cy="278.71" fx="720.2" fy="278.71" r="13.4" gradientTransform="translate(217.7 -283.34) rotate(31) scale(1 .8)" gradientUnits="userSpaceOnUse">
+      <stop offset=".21" stop-color="#fff"/>
+      <stop offset=".86" stop-color="#c1272d"/>
+    </radialGradient>
+    <filter id="c" data-name="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="4" dy="4"/>
+      <feGaussianBlur result="d" stdDeviation="5"/>
+      <feFlood flood-color="#494949" flood-opacity="1"/>
+      <feComposite in2="d" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="e" data-name="Just Dropped 2 Cut" class="f" d="M709.27,284.4c0-7.4,6-13.4,13.4-13.4s13.41,6,13.41,13.4-6,13.41-13.41,13.41-13.4-6-13.4-13.41Z"/>
+</svg>

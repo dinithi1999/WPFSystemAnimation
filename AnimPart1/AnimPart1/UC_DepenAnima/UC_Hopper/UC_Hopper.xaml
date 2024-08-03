@@ -5,38 +5,49 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:AnimPart1.UC_DepenAnima.UC_Hopper"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-             mc:Ignorable="d" Height="425" Width="375"
+             mc:Ignorable="d" Height="420" Width="375"
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
+             FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
 
-    <Grid x:Name="MainGrid"
+    <UserControl.Resources>
+        <ContextMenu x:Key="ContextMenu1">
+            <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
+            <!-- Other MenuItems can be defined here -->
+        </ContextMenu>
+    </UserControl.Resources>
+    
+    <Grid x:Name="MainGrid">
 
-          >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <!-- Column 0: Width adjusts to content -->
+            <ColumnDefinition Width="*" />
+            <!-- Column 1: Takes up remaining space -->
+        </Grid.ColumnDefinitions>
+        
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid"             Height="425"
-            Width="225" HorizontalAlignment="Left" >
+        <Grid x:Name="BackgroundGrid" Width="220" HorizontalAlignment="Left" VerticalAlignment="Center" >
             <svgc:SvgViewbox x:Name="backgroundSvg"
                              Stretch="Uniform"
                              Visibility="Collapsed"
-                             RenderTransformOrigin="0.5,0.5"
-                             HorizontalAlignment="Left"
+                             HorizontalAlignment="Center"
                              VerticalAlignment="Center"
-                             Canvas.Left="21"
-                             Canvas.Top="31"/>
+                            />
 
 
             <svgc:SvgViewbox x:Name="svgViewbox"
                          Stretch="Uniform"
-                         RenderTransformOrigin="0.5,0.5"
-                         Margin="20,12,15,0"/>
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center" Width="192" 
+                        />
 
             <!-- LightColumn positioned at the top-left of TankColumn -->
             <ContentControl x:Name="lightColumn"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="10,25,0,0"
-                Height="400"
-                Width="220">
+                Margin="0,25,-10,0"
+                VerticalAlignment="Top">
                 <ContentControl.Effect>
                     <DropShadowEffect Color="Gray"
                           Direction="320"
@@ -50,7 +61,7 @@
             <!-- PadleColumn positioned at the center -->
             <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Top" Height="400" Width="212" Margin="0,25,0,0"/>
 
-
+        
             <ComboBox x:Name="dataBasevalue" HorizontalAlignment="Left" Margin="87,4,0,0" VerticalAlignment="Top" Width="42"
                       SelectionChanged="DataBasevalue_SelectionChanged">
                 <ComboBoxItem Content="0"/>
@@ -66,7 +77,11 @@
             </ComboBox>
         </Grid>
 
-        <ContentControl x:Name="labelColumn" HorizontalAlignment="Right" VerticalAlignment="Top" Height="100" Width="150" Margin="0,-1,4,0"/>
+        <ContentControl Grid.Column="1" x:Name="labelColumn" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="150"  >
+
+        </ContentControl>
+
+
 
     </Grid>
 

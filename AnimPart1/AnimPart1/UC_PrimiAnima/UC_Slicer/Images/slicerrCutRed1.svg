@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Slicer" xmlns="http://www.w3.org/2000/svg" width="880.06" height="498.36" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 880.06 498.36">
+  <defs>
+    <style>
+      .i {
+        filter: url(#g);
+      }
+
+      .i, .j, .k, .l {
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+
+      .i, .l {
+        fill: #000;
+      }
+
+      .j {
+        fill: #fff;
+      }
+
+      .k {
+        fill: url(#b);
+        filter: url(#c);
+      }
+    </style>
+    <radialGradient id="b" cx="720.2" cy="278.71" fx="720.2" fy="278.71" r="13.4" gradientTransform="translate(217.7 -283.34) rotate(31) scale(1 .8)" gradientUnits="userSpaceOnUse">
+      <stop offset=".21" stop-color="#fff"/>
+      <stop offset=".86" stop-color="#c1272d"/>
+    </radialGradient>
+    <filter id="c" data-name="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="4" dy="4"/>
+      <feGaussianBlur result="d" stdDeviation="5"/>
+      <feFlood flood-color="#494949" flood-opacity="1"/>
+      <feComposite in2="d" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="g" data-name="drop-shadow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="5"/>
+      <feGaussianBlur result="h" stdDeviation="3"/>
+      <feFlood flood-color="#494949" flood-opacity="1"/>
+      <feComposite in2="h" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="e" data-name="Just Dropped 2 Cut" class="k" d="M709.27,284.4c0-7.4,6-13.4,13.4-13.4s13.41,6,13.41,13.4-6,13.41-13.41,13.41-13.4-6-13.4-13.41Z"/>
+  <g id="f" data-name="Blade">
+    <path class="j" d="M694,277.25c42.77,16.05,85.48,32.15,128.03,48.42v11.87c-43.06-15.61-84.96-32.35-128.03-47.95v-12.34Z"/>
+    <path class="l" d="M693.76,265.96c42.78,16.15,85.49,32.36,128.04,48.73v11.95c-43.06-15.71-84.97-32.56-128.04-48.25v-12.42Z"/>
+    <path class="i" d="M693.76,288.42c43.21,15.55,85.12,32.41,128.04,48.25v12.42c-42.63-16.29-85.35-32.5-128.04-48.73v-11.94Z"/>
+  </g>
+</svg>

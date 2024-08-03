@@ -16,6 +16,9 @@
     <Compile Update="UC_AncillaryAnima\Lights\Lights.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_AncillaryAnima\ScrewRotation\UC_ScrewRotation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_DepenAnima\UC_Hopper\UC_Hopper.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +26,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UC_DepenAnima\UC_TNK\UC_TNK.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_PrimiAnima\UC_Portioner\UC_Portioner.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_PrimiAnima\UC_Pump\UC_Pump.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_PrimiAnima\UC_Screw\UC_Screw.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_PrimiAnima\UC_Slicer\UC_Slicer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -42,6 +57,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UC_AncillaryAnima\ScrewRotation\UC_ScrewRotation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UC_DepenAnima\UC_Hopper\UC_Hopper.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -49,6 +67,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_DepenAnima\UC_TNK\UC_TNK.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_PrimiAnima\UC_Portioner\UC_Portioner.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_PrimiAnima\UC_Pump\UC_Pump.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_PrimiAnima\UC_Screw\UC_Screw.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_PrimiAnima\UC_Slicer\UC_Slicer.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

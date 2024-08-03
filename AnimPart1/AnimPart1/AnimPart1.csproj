@@ -171,6 +171,43 @@
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\90.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\99.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\empty.svg" />
+    <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner0.svg" />
+    <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner90.svg" />
+    <None Remove="UC_PrimiAnima\UC_Portioner\Images\portionerMarquee.svg" />
+    <None Remove="UC_PrimiAnima\UC_Pump\Images\pumpBackground.svg" />
+    <None Remove="UC_PrimiAnima\UC_Pump\Images\pumpBorder.svg" />
+    <None Remove="UC_PrimiAnima\UC_Pump\Images\pumpFixedSection.svg" />
+    <None Remove="UC_PrimiAnima\UC_Pump\Images\pumpMarqueesvg.svg" />
+    <None Remove="UC_PrimiAnima\UC_Pump\Images\pumpRotationalPart.svg" />
+    <None Remove="UC_PrimiAnima\UC_Screw\Images\screwBackground.svg" />
+    <None Remove="UC_PrimiAnima\UC_Screw\Images\screwmarquee.svg" />
+    <None Remove="UC_PrimiAnima\UC_Screw\Images\screwRotatingPart.svg" />
+    <None Remove="UC_PrimiAnima\UC_Screw\Images\screwRotatingPart2.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerbackground.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerDroppedorange.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerMarquee.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerOrange1.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerOrange2.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerrCutRed1.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerReadyToCut1.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerReadyToCut2.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerRed1.svg" />
+    <None Remove="UC_PrimiAnima\UC_Slicer\Images\slicerRed2.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UC_PrimiAnima\UC_Pump\Images\pumpBackground.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Pump\Images\pumpFixedSection.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Pump\Images\pumpMarqueesvg.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerMarquee.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -249,6 +286,25 @@
     <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOn\99.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="UC_PrimiAnima\UC_Pump\Images\pumpBorder.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="UC_PrimiAnima\UC_Pump\Images\pumpRotationalPart.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerbackground.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Screw\Images\screwBackground.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Portioner\Images\portioner0.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Portioner\Images\portioner90.svg" />
+    <Resource Include="UC_PrimiAnima\UC_Portioner\Images\portionerMarquee.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOn\empty.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -393,9 +449,9 @@
     <Content Include="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOff\99.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="UC_DepenAnima\UC_SLO\Images\backgroundLightoff.svg">
+    <Content Include="UC_DepenAnima\UC_SLO\Images\backgroundLightoff.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Resource Include="UC_DepenAnima\UC_SLO\Images\DepenBackgroundBlueBorder.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -412,6 +468,39 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\empty.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Screw\Images\screwmarquee.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Screw\Images\screwRotatingPart.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Screw\Images\screwRotatingPart2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerDroppedorange.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerOrange1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerOrange2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerrCutRed1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerReadyToCut1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerReadyToCut2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerRed1.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerRed2.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
@@ -436,6 +525,10 @@
     <None Update="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\70.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UC_AncillaryAnima\ContextMenue\" />
   </ItemGroup>
 
 </Project>

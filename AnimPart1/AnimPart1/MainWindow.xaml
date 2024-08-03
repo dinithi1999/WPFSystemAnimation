@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimPart1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1104" Width="1342">
+        Title="MainWindow" Height="750" Width="1325">
 
 
 
@@ -74,213 +74,443 @@
 
     <Grid>
 
-        <!-- Define Main Grid Rows -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" MinHeight="221"/>
+            <RowDefinition Height="220" MinHeight="221"/>
             <!-- Row for switches -->
             <RowDefinition/>
             <!-- Row for animation -->
+            <!-- Content for the second row (vertical scrollbar) -->
+
+
         </Grid.RowDefinitions>
 
-        <GroupBox x:Name="tankGroupBox" Header="TANK (001)" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Height="200">
-            <Grid Height="160">
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+
+            <Grid>
+
+                <GroupBox x:Name="tankGroupBox" Header="TANK (001)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200">
+                    <Grid Height="160">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="tankLabel" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="TankLabelVislibility_Checked" Unchecked="TankLabelVislibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="tankLight" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="TankLight_Checked" Unchecked="TankLight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="tankCam" Content="" Margin="36,0,47,10" Width="50" Height="30" Grid.Column="1"  Checked="TankCamera_Checked" Unchecked="Camera_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="tankAnimStart" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="TankStartChecked_Checked" Unchecked="TankStartChecked_Unchecked"/>
+                        </Grid>
+
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="PORTIONER" Margin="669,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200">
+                    <Grid Height="160">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton  x:Name="portionerLabel" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="PortionerLabelVislibility_Checked" Unchecked="PortionerLabelVislibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerLight" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="PortionerLights_Checked" Unchecked="PortionerLight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerCam" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"  Checked="PortionerCamera_Checked" Unchecked="PortionerCamera_Unchecked"/>
+                        </Grid>
+
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerAnimStart" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="PortionerStartChecked_Checked" Unchecked="PortionerStartChecked_Unchecked"/>
+                        </Grid>
+
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="hopperGroupBox" Header="HOPPER (004)" Margin="442,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200">
+                    <Grid Height="160" Margin="0,0,6,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid VerticalAlignment="Center" Height="40">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="hopperLabel" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="HopperLabelVislibility_Checked" Unchecked="HopperLabelVislibility_Unchecked"  />
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="hopperLight" Content="" Margin="45,5,45,0" Width="50" Grid.Column="1" Checked="HopperLightChecked_Checked" Unchecked="HopperLightChecked_Unchecked" />
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="hopperCam" Content="" Margin="26,5,32,5" Width="50" Height="30" Grid.Column="1" Checked="HopperCameraChecked_Checked" Unchecked="HopperCameraChecked_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="hopperAnimStart" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="HopperStartChecked_Checked" Unchecked="HopperStartChecked_Unchecked"/>
+                        </Grid>
+
+
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="SILO (015)" Margin="222,-1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200">
+                    <Grid Height="160">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton  x:Name="SiloLabel" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLabelVislibility_Checked" Unchecked="SLOLabelVislibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="SiloLight" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLights_Checked" Unchecked="SLOLight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="SiloCam" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"  Checked="SLOCamera_Checked" Unchecked="SLOCamera_Unchecked"/>
+                        </Grid>
+
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="SiloAnimStart" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="SiloStartChecked_Checked" Unchecked="SiloStartChecked_Unchecked"/>
+                        </Grid>
+
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="SLICER" Margin="897,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200">
+                    <Grid Height="160">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton  x:Name="portionerLabel1" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLabelVislibility_Checked" Unchecked="SLOLabelVislibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerLight1" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLights_Checked" Unchecked="SLOLight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerCam1" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"  Checked="SLOCamera_Checked" Unchecked="SLOCamera_Unchecked"/>
+                        </Grid>
+
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerAnimStart1" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="SiloStartChecked_Checked" Unchecked="SiloStartChecked_Unchecked"/>
+                        </Grid>
+
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="SCREW" Margin="1122,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200">
+                    <Grid Height="160">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton  x:Name="portionerLabel2" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLabelVislibility_Checked" Unchecked="SLOLabelVislibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerLight2" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLights_Checked" Unchecked="SLOLight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerCam2" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"  Checked="SLOCamera_Checked" Unchecked="SLOCamera_Unchecked"/>
+                        </Grid>
+
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerAnimStart2" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="SiloStartChecked_Checked" Unchecked="SiloStartChecked_Unchecked"/>
+                        </Grid>
+
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="new" Margin="1124,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200">
+                    <Grid Height="160">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton  x:Name="ww" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLabelVislibility_Checked" Unchecked="SLOLabelVislibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="wwwwwww" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLights_Checked" Unchecked="SLOLight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionwwwwerCam2" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"  Checked="SLOCamera_Checked" Unchecked="SLOCamera_Unchecked"/>
+                        </Grid>
+
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="portionerwwwAnimStart2" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="SiloStartChecked_Checked" Unchecked="SiloStartChecked_Unchecked"/>
+                        </Grid>
+
+                    </Grid>
+                </GroupBox>
+
+            </Grid>
+
+        </ScrollViewer>
+
+
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+
+            <Grid>
+                <!-- Define Animation Grid Rows -->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
+                    <!-- Use Auto to fit content size -->
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <!-- Use Auto to fit content size -->
                 </Grid.RowDefinitions>
 
-                <!-- First ToggleButton with Label -->
-                <Grid Grid.Row="0">
+                <!-- First Animation Row with Three Columns -->
+                <Grid Grid.Row="0" Margin="0,0,0,3">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="tankLabel" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="TankLabelVislibility_Checked" Unchecked="TankLabelVislibility_Unchecked"/>
+
+                    <!-- ContentControls to host UserControls -->
+                    <ContentControl Grid.Column="2" x:Name="hopperContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ContentControl Grid.Column="0" x:Name="tankContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ContentControl Grid.Column="1" x:Name="sloContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
 
-                <!-- Second ToggleButton with Label -->
+                <!-- Second Animation Row with Three Columns -->
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="tankLight" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="TankLight_Checked" Unchecked="TankLight_Unchecked"/>
+
+                    <!-- ContentControls to host UserControls -->
+                    <ContentControl Grid.Column="0" x:Name="column1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <ContentControl Grid.Column="1" x:Name="column2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- ContentControls for the third column rows -->
+                        <ContentControl x:Name="column3Row2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <ContentControl Grid.Row="1" x:Name="column3Row1ContentControl" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                    </Grid>
                 </Grid>
-
-                <!-- Third ToggleButton with Label -->
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="tankCam" Content="" Margin="36,0,47,10" Width="50" Height="30" Grid.Column="1"  Checked="TankCamera_Checked" Unchecked="Camera_Unchecked"/>
-                </Grid>
-
-                <Grid Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="tankAnimStart" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="TankStartChecked_Checked" Unchecked="TankStartChecked_Unchecked"/>
-                </Grid>
-
-            </Grid>
-        </GroupBox>
-
-        <!-- Third Row for Animation -->
-        <Grid Grid.Row="1">
-            <!-- Define Animation Grid Rows -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="425*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <!-- First Animation Row with Three Columns -->
-            <Grid Grid.Row="0" Margin="0,0,0,3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <!-- ContentControls to host UserControls -->
-                <ContentControl Grid.Column="2" x:Name="hopperContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <ContentControl Grid.Column="0" x:Name="tankContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <ContentControl Grid.Column="1" x:Name="sloContentControl" HorizontalAlignment="Center" VerticalAlignment="Center" />
-
             </Grid>
 
-            <!-- Second Animation Row with Three Columns -->
-            <Grid Margin="0,323,0,1" Grid.RowSpan="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="160*"/>
-                    <ColumnDefinition Width="287*"/>
-                    <ColumnDefinition Width="147*"/>
-                    <ColumnDefinition Width="301*"/>
-                    <ColumnDefinition Width="447*"/>
-                </Grid.ColumnDefinitions>
-                <ContentControl x:Name="FirstThirdColumn" Grid.Column="4"/>
-            </Grid>
 
-            <!-- Remaining Rows -->
-            <ContentControl Grid.Row="3" Margin="0,15,0,9"/>
-            <ContentControl Grid.Row="4" Margin="0,4,0,0"/>
-            <ContentControl Grid.Row="5" Margin="0,9,0,0"/>
-        </Grid>
-        <GroupBox x:Name="hopperGroupBox" Header="HOPPER (004)" Margin="442,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="200" Width="200">
-            <Grid Height="160" Margin="0,0,6,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-
-                </Grid.RowDefinitions>
-
-                <!-- First ToggleButton with Label -->
-                <Grid VerticalAlignment="Center" Height="40">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="hopperLabel" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="HopperLabelVislibility_Checked" Unchecked="HopperLabelVislibility_Unchecked"  />
-                </Grid>
-
-                <!-- Second ToggleButton with Label -->
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="hopperLight" Content="" Margin="45,5,45,0" Width="50" Grid.Column="1" Checked="HopperLightChecked_Checked" Unchecked="HopperLightChecked_Unchecked" />
-                </Grid>
-
-                <!-- Third ToggleButton with Label -->
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="hopperCam" Content="" Margin="26,5,32,5" Width="50" Height="30" Grid.Column="1" Checked="HopperCameraChecked_Checked" Unchecked="HopperCameraChecked_Unchecked"/>
-                </Grid>
-
-                <Grid Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="hopperAnimStart" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="HopperStartChecked_Checked" Unchecked="HopperStartChecked_Unchecked"/>
-                </Grid>
+        </ScrollViewer>
 
 
-            </Grid>
-        </GroupBox>
-
-        <GroupBox Header="SILO (015)" Margin="210,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="200" Width="200">
-            <Grid Height="160">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-
-                </Grid.RowDefinitions>
-
-                <!-- First ToggleButton with Label -->
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton  x:Name="SiloLabel" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLabelVislibility_Checked" Unchecked="SLOLabelVislibility_Unchecked"/>
-                </Grid>
-
-                <!-- Second ToggleButton with Label -->
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="SiloLight" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="SLOLights_Checked" Unchecked="SLOLight_Unchecked"/>
-                </Grid>
-
-                <!-- Third ToggleButton with Label -->
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="SiloCam" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"  Checked="SLOCamera_Checked" Unchecked="SLOCamera_Unchecked"/>
-                </Grid>
-
-
-                <Grid Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                    <ToggleButton x:Name="SiloAnimStart" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="SiloStartChecked_Checked" Unchecked="SiloStartChecked_Unchecked"/>
-                </Grid>
-
-            </Grid>
-        </GroupBox>
     </Grid>
 </Window>

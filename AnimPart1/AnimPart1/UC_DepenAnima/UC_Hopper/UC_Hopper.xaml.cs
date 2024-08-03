@@ -7,6 +7,7 @@ using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using static AnimPart1.UC_DepenAnima.UC_TNK.UC_TNK;
 
 namespace AnimPart1.UC_DepenAnima.UC_Hopper
 {
@@ -27,6 +28,8 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         private int currentHopperLevel; // Keep track of the current tank level
 
         public string labelName = "Hopper 00X";
+        public ICommand ToggleLightCommand { get; }
+
 
         public UC_Hopper()
         {
@@ -45,8 +48,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             labelColumn.Content = labelUserCtrl;
             labelUserCtrl.labelName.Text = labelName;
 
-
-
+       
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_Hopper/Images/DepenBackgroundBlueBorder.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_DepenAnima/UC_Hopper/Images/BackgroundLightOff.svg");
@@ -63,10 +65,16 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             currentHopperLevel = 30; // Assuming initial tank level is 60
             SetHopperLevelImage(currentHopperLevel);
 
-
             // Start the animation timer
             animationTimer.Start();
+
+            this.KeyDown += UserControl1_KeyDown;
+            this.Focus();  // Set focus to the UserControl to capture key events
+
         }
+
+
+
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -205,9 +213,72 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+            //if (isLightOn)
+            //{
+            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+            //    isLightOn = false;
+            //}
+            //else
+            //{
+            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+            //    isLightOn = true;
+
+            //}
+            // Open the context menu defined in resources
+            var contextMenu = (ContextMenu)this.Resources["ContextMenu1"];
+
+            foreach (MenuItem item in contextMenu.Items)
+            {
+                if (item.Name == "menuItem1")
+                {
+                    item.Header = "Updated Option 1"; // Update header text
+
+                    if (isLightOn)
+                    {
+                        item.Header = "Light Off"; // Update header text
+                    }
+                    else
+                    {
+                        item.Header = "Light on"; // Update header text
+                    }
+                }
+              
+            }
+
+            contextMenu.IsOpen = true;
+
         }
 
+        private void Option1_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleLight();
+        }
+
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void UserControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.L && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                ToggleLight();
+                e.Handled = true;
+            }
+        }
+        private void ToggleLight()
+        {
+            if (isLightOn)
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+                isLightOn = false;
+            }
+            else
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+                isLightOn = true;
+            }
+        }
 
     }
 }

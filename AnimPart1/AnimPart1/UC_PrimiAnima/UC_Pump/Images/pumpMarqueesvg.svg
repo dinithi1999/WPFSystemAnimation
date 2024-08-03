@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Pump" xmlns="http://www.w3.org/2000/svg" width="880.06" height="498.36" viewBox="0 0 880.06 498.36">
+  <defs>
+    <style>
+      .d {
+        fill: #0000f9;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Pump">
+    <g id="c" data-name="Marquee">
+      <polygon class="d" points="880.06 447 864.06 447 864.06 443 876.06 443 876.06 432 880.06 432 880.06 447"/>
+      <path class="d" d="M840.06,447h-24v-4h24v4ZM792.06,447h-24v-4h24v4ZM744.06,447h-24v-4h24v4ZM696.06,447h-25v-4h25v4Z"/>
+      <polygon class="d" points="643.06 447 627.06 447 627.06 432 631.06 432 631.06 443 643.06 443 643.06 447"/>
+      <path class="d" d="M631.06,406h-4v-26h4v26ZM631.06,356h-4v-24h4v24ZM631.06,308h-4v-25h4v25ZM631.06,258h-4v-24h4v24ZM631.06,210h-4v-24h4v24Z"/>
+      <polygon class="d" points="631.06 158 627.06 158 627.06 143 643.06 143 643.06 147 631.06 147 631.06 158"/>
+      <path class="d" d="M836.06,147h-24v-4h24v4ZM788.06,147h-24v-4h24v4ZM740.06,147h-24v-4h24v4ZM692.06,147h-25v-4h25v4Z"/>
+      <polygon class="d" points="880.06 158 876.06 158 876.06 147 864.06 147 864.06 143 880.06 143 880.06 158"/>
+      <path class="d" d="M880.06,403h-4v-25h4v25ZM880.06,354h-4v-24h4v24ZM880.06,306h-4v-24h4v24ZM880.06,257h-4v-25h4v25ZM880.06,208h-4v-24h4v24Z"/>
+    </g>
+  </g>
+</svg>

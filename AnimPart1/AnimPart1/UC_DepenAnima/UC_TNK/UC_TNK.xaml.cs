@@ -79,6 +79,9 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
 
             // Start the animation timer
             animationTimer.Start();
+
+          
+
         }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -86,6 +89,7 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
             backgroundSvg.Visibility = Visibility.Visible;
         }
 
+     
         private void Grid_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Collapsed;
@@ -215,7 +219,17 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+            if (isLightOn)
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+                isLightOn = false;
+            }
+            else
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+                isLightOn = true;
+
+            }
         }
     }
 }

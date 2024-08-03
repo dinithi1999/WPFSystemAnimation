@@ -1,6 +1,11 @@
 ﻿using AnimPart1.UC_DepenAnima.UC_Hopper;
 using AnimPart1.UC_DepenAnima.UC_SLO;
 using AnimPart1.UC_DepenAnima.UC_TNK;
+using AnimPart1.UC_PrimiAnima;
+using AnimPart1.UC_PrimiAnima.UC_Screw;
+using AnimPart1.UC_PrimiAnima.UC_Slicer;
+using AnimPart1.UC_PrimiAnima.UC_Pump;
+
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
@@ -17,7 +22,10 @@ namespace AnimPart1
         UC_Hopper hopperUCInstance;
         UC_SLO sloUCInstance;
         UC_TNK tankUCInstance;
-
+        UC_Portioner portionerUCInstance;
+        UC_Screw screwUCInstance;
+        UC_Slicer sliderUCInstance;
+        UC_Pump pumpUCInstance;
 
         DispatcherTimer blinkTimer;
         DispatcherTimer blinkTimer2;
@@ -33,6 +41,10 @@ namespace AnimPart1
         const string CameraOffPath = "pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg";
         const string CameraOnPath = "pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOn.svg";
 
+        const string portionerInit = "pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner0.svg";
+        const string portioner90 = "pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner90.svg";
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -42,11 +54,28 @@ namespace AnimPart1
                 hopperUCInstance = new UC_Hopper();
                 hopperContentControl.Content = hopperUCInstance;
 
+
                 sloUCInstance = new UC_SLO();
                 sloContentControl.Content = sloUCInstance; 
 
+
                 tankUCInstance = new UC_TNK();
                 tankContentControl.Content = tankUCInstance;
+
+
+                portionerUCInstance = new UC_Portioner();
+                column3Row1ContentControl.Content = portionerUCInstance;
+
+
+                screwUCInstance = new UC_Screw();
+                column3Row2ContentControl.Content = screwUCInstance;
+
+
+                sliderUCInstance = new UC_Slicer();
+                column2ContentControl.Content = sliderUCInstance;
+
+                pumpUCInstance = new UC_Pump();
+                column1ContentControl.Content = pumpUCInstance;
 
                 // Initialize the timer for blinking for the camera
                 blinkTimer = new DispatcherTimer();
@@ -132,6 +161,19 @@ namespace AnimPart1
             sloUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
         }
 
+        private void PortionerCamera_Unchecked(object sender, RoutedEventArgs e)
+        {
+            // Stop blinking and show the LightOff image
+        //    blinkTimer2.Stop();
+        //    sloUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+        }
+
+        private void PortionerCamera_Checked(object sender, RoutedEventArgs e)
+        {
+            // Start blinking
+            //isCamFlashIsOn2 = true; // Initial state
+            //blinkTimer2.Start();
+        }
 
         private void BlinkTimerHopper_Tick(object sender, EventArgs e)
         {
@@ -230,6 +272,25 @@ namespace AnimPart1
             sloUCInstance.labelUserCtrl.Visibility = Visibility.Hidden;
 
         }
+
+        private void PortionerLabelVislibility_Checked(object sender, RoutedEventArgs e)
+        {
+            portionerUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            portionerUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            portionerUCInstance.labelUserCtrl.Visibility = Visibility.Visible;
+            portionerUCInstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+
+
+        }
+
+        private void PortionerLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            portionerUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            portionerUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            portionerUCInstance.labelUserCtrl.Visibility = Visibility.Hidden;
+
+        }
+
         #endregion
 
         #region DepenLights
@@ -274,6 +335,21 @@ namespace AnimPart1
             hopperUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
             hopperUCInstance.isLightOn = false;
         }
+
+        private void PortionerLights_Checked(object sender, RoutedEventArgs e)
+        {
+            portionerUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            portionerUCInstance.isLightOn = true;
+
+
+        }
+
+        private void PortionerLight_Unchecked(object sender, RoutedEventArgs e)
+        {
+            portionerUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            portionerUCInstance.isLightOn = false;
+
+        }
         #endregion
 
         private void HopperStartChecked_Checked(object sender, RoutedEventArgs e)
@@ -306,6 +382,15 @@ namespace AnimPart1
         private void TankStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
             tankUCInstance.StopPadleAnimation();
+        }
+
+        private void PortionerStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+            portionerUCInstance.svgViewbox.Source = new Uri(portionerInit);
+        }
+        private void PortionerStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+            portionerUCInstance.svgViewbox.Source = new Uri(portioner90);
         }
     }
 

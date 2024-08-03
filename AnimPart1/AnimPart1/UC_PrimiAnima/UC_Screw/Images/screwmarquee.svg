@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Screw" xmlns="http://www.w3.org/2000/svg" width="880.06" height="498.36" viewBox="0 0 880.06 498.36">
+  <defs>
+    <style>
+      .c {
+        fill: #0000f9;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Marquee">
+    <polygon class="c" points="880.06 447 864.06 447 864.06 443 876.06 443 876.06 432 880.06 432 880.06 447"/>
+    <path class="c" d="M840.06,447h-24v-4h24v4ZM792.06,447h-24v-4h24v4ZM744.06,447h-24v-4h24v4ZM696.06,447h-25v-4h25v4Z"/>
+    <polygon class="c" points="643.06 447 627.06 447 627.06 432 631.06 432 631.06 443 643.06 443 643.06 447"/>
+    <path class="c" d="M631.06,406h-4v-25h4v25ZM631.06,357h-4v-24h4v24ZM631.06,309h-4v-25h4v25ZM631.06,260h-4v-24h4v24ZM631.06,212h-4v-24h4v24Z"/>
+    <polygon class="c" points="631.06 161 627.06 161 627.06 146 643.06 146 643.06 150 631.06 150 631.06 161"/>
+    <path class="c" d="M836.06,150h-24v-4h24v4ZM788.06,150h-24v-4h24v4ZM740.06,150h-24v-4h24v4ZM692.06,150h-25v-4h25v4Z"/>
+    <polygon class="c" points="880.06 161 876.06 161 876.06 150 864.06 150 864.06 146 880.06 146 880.06 161"/>
+    <path class="c" d="M880.06,403h-4v-24h4v24ZM880.06,355h-4v-24h4v24ZM880.06,307h-4v-24h4v24ZM880.06,259h-4v-25h4v25ZM880.06,210h-4v-24h4v24Z"/>
+  </g>
+</svg>

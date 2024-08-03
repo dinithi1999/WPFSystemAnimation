@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Hopper-1" xmlns="http://www.w3.org/2000/svg" width="372.97" height="465" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 372.97 465">
+  <defs>
+    <style>
+      .bu, .bv, .bw, .bx, .by {
+        fill-rule: evenodd;
+      }
+
+      .bu, .bv, .bx {
+        fill: #a67c52;
+      }
+
+      .bu, .bw, .bz, .by, .ca, .cb, .cc, .cd, .ce {
+        stroke-width: 0px;
+      }
+
+      .bv, .cf, .cg, .ch, .ci, .cj, .ck, .bx, .cl, .cm, .cn {
+        stroke-miterlimit: 10;
+      }
+
+      .bv, .ci {
+        stroke: #754c24;
+      }
+
+      .bw {
+        filter: url(#bk);
+      }
+
+      .bw, .co, .by, .cb {
+        fill: #000;
+      }
+
+      .cf {
+        fill: url(#f);
+        filter: url(#g);
+      }
+
+      .cf, .cl {
+        stroke: red;
+      }
+
+      .cp {
+        filter: url(#av);
+      }
+
+      .cq {
+        filter: url(#ao);
+      }
+
+      .cg {
+        fill: url(#t);
+        filter: url(#u);
+      }
+
+      .cg, .ch, .cj, .ck, .bx, .cm, .cn {
+        stroke: #8c6239;
+      }
+
+      .ch {
+        fill: url(#m);
+        filter: url(#n);
+      }
+
+      .ci, .bz, .cl, .cd, .ce {
+        fill: #fff;
+      }
+
+      .co {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 12px;
+      }
+
+      .cj {
+        fill: url(#ay);
+      }
+
+      .ck {
+        fill: url(#as);
+      }
+
+      .ca {
+        fill: #da00f9;
+      }
+
+      .cb {
+        filter: url(#bs);
+      }
+
+      .cc {
+        fill: url(#b);
+      }
+
+      .cd {
+        filter: url(#bo);
+      }
+
+      .ce {
+        filter: url(#bq);
+      }
+
+      .cm {
+        fill: url(#ai);
+        filter: url(#aj);
+      }
+
+      .cn {
+        fill: url(#ab);
+        filter: url(#ac);
+      }
+    </style>
+    <linearGradient id="b" x1="144.93" y1="256.1" x2="43.25" y2="84.59" gradientUnits="userSpaceOnUse">
+      <stop offset=".18" stop-color="#fff"/>
+      <stop offset=".67" stop-color="#dffffc"/>
+      <stop offset=".99" stop-color="#c9fffa"/>
+    </linearGradient>
+    <linearGradient id="f" x1="38.5" y1="327.61" x2="222.74" y2="327.61" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9e005d"/>
+      <stop offset=".05" stop-color="#b60045"/>
+      <stop offset=".16" stop-color="#dd001f"/>
+      <stop offset=".24" stop-color="#f60008"/>
+      <stop offset=".28" stop-color="red"/>
+      <stop offset=".29" stop-color="#fe0404"/>
+      <stop offset=".37" stop-color="#f46363"/>
+      <stop offset=".44" stop-color="#ecaaaa"/>
+      <stop offset=".48" stop-color="#e7d5d5"/>
+      <stop offset=".51" stop-color="#e6e6e6"/>
+      <stop offset=".54" stop-color="#e5dadb"/>
+      <stop offset=".59" stop-color="#e5babf"/>
+      <stop offset=".65" stop-color="#e58792"/>
+      <stop offset=".73" stop-color="#e44154"/>
+      <stop offset=".8" stop-color="#e4001a"/>
+      <stop offset="1" stop-color="#9e005d"/>
+    </linearGradient>
+    <filter id="g" data-name="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="-3"/>
+      <feGaussianBlur result="h" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="h" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="m" x1="38.92" y1="314.82" x2="223" y2="314.82" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#603813"/>
+      <stop offset=".02" stop-color="rgba(106, 65, 28, 1)" stop-opacity="1"/>
+      <stop offset=".08" stop-color="rgba(132, 91, 51, .98)" stop-opacity=".98"/>
+      <stop offset=".15" stop-color="rgba(151, 109, 68, .98)" stop-opacity=".98"/>
+      <stop offset=".22" stop-color="rgba(162, 120, 78, .97)" stop-opacity=".97"/>
+      <stop offset=".31" stop-color="#a67c52" stop-opacity=".97"/>
+      <stop offset=".48" stop-color="#c69c6d"/>
+      <stop offset=".68" stop-color="#c69c6d"/>
+      <stop offset=".74" stop-color="#c19768"/>
+      <stop offset=".81" stop-color="#b3895c"/>
+      <stop offset=".88" stop-color="#9c7348"/>
+      <stop offset=".95" stop-color="#7c532c"/>
+      <stop offset="1" stop-color="#603813"/>
+    </linearGradient>
+    <filter id="n" data-name="drop-shadow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="-3"/>
+      <feGaussianBlur result="o" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="o" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="t" y1="302.32" y2="302.32" xlink:href="#m"/>
+    <filter id="u" data-name="drop-shadow-3" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="-3"/>
+      <feGaussianBlur result="v" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="v" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="ab" x1="38.5" y1="290.11" x2="222.74" y2="290.11" xlink:href="#m"/>
+    <filter id="ac" data-name="drop-shadow-4" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="-3"/>
+      <feGaussianBlur result="ad" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="ad" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="ai" x1="38.5" y1="277.61" x2="222.74" y2="277.61" xlink:href="#m"/>
+    <filter id="aj" data-name="drop-shadow-5" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="-3"/>
+      <feGaussianBlur result="ak" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="ak" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="ao" data-name="drop-shadow-6" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="-3"/>
+      <feGaussianBlur result="ap" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="ap" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="as" x1="38.5" y1="264.37" x2="222.74" y2="264.37" xlink:href="#m"/>
+    <filter id="av" data-name="drop-shadow-7" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="-3"/>
+      <feGaussianBlur result="aw" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="aw" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="ay" x1="38.5" y1="252.61" x2="222.74" y2="252.61" xlink:href="#m"/>
+    <filter id="bk" data-name="drop-shadow-8" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5"/>
+      <feGaussianBlur result="bl" stdDeviation="3"/>
+      <feFlood flood-color="#494949" flood-opacity=".38"/>
+      <feComposite in2="bl" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="bo" data-name="drop-shadow-9" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3"/>
+      <feGaussianBlur result="bp" stdDeviation="5"/>
+      <feFlood flood-color="#494949" flood-opacity=".75"/>
+      <feComposite in2="bp" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="bq" data-name="drop-shadow-10" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3"/>
+      <feGaussianBlur result="br" stdDeviation="5"/>
+      <feFlood flood-color="#494949" flood-opacity=".75"/>
+      <feComposite in2="br" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="bs" data-name="drop-shadow-11" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3"/>
+      <feGaussianBlur result="bt" stdDeviation="5"/>
+      <feFlood flood-color="#494949" flood-opacity=".75"/>
+      <feComposite in2="bt" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="c" data-name="Lights On" class="cc" d="M124,371h-12.87c2.99-26-20.84-25.89-32.71-37.16,7.82.08,12.42.16,14.14.12l-.13-12.96h-53.43v-70h36v-12.21l-36-30.65v-36.72c0-1.05.02-1.45,0-3.42h36v-11.74l-36-30.65v-35.98c0-1.05-1.95-1.63-1.11-1.63h23.11v-13.19c-6,.01-12.11.03-18.23.09,27.56-15.72,57.31-29.31,85.67-44.21,31.41,12.53,59.39,29.31,89.2,43.47-5.42.16-10.63.28-15.63.39v13.45h21v37.61l-36,30.65v11.74h36v40.14l-36,30.65v12.21h15.64c3.76,0,4.98,0,4.93,0h15.42v70h-54v12.23c4,0,8.48.05,12.9-.01-10.76,12.65-36.31,8.78-33.06,37.78h-24.84ZM39,334h12v48h-12v-48ZM223,382h-14v-48h14v48Z"/>
+  <g id="d" data-name="20">
+    <g id="e" data-name="Level">
+      <path id="i" data-name="20" class="cf" d="M222.69,298.5h.06c-.04-3-.06-3.41-.06-3.41,0-12.39-10.83,4.23-12.91-6.97-6.8-4.37-8.17-.82-13.02-.06l-12.06,5.8c-3.31-.17-19.72-.49-15.3-.63-29.81-14.17-6.96,5.36-38.38-7.17-28.36,14.9-5.49-13.06-33.04,2.66,5.4-.05-17.51,2.47-18.75,3.05l-15.93-2.53c-7.84,0-4.52-2-11.49.79-.78.31.74,9.15-3.95,0-5.42-10.57-8.5-7.12-8.5,4.82,0,0-.02.64-.04,3.64h.04s-.59,3.46-.59,5.6c-.18.28-.25.08-.25.23v21.17h53.92l-1.05,7.04c-1.72.04-2.71-.91-3.94-.88.3-.08-4.32,2.09-12.14,2.01,11.87,11.08,38.83,11.83,35.84,37.83h37.71c-3.25-29,23.72-26.26,34.48-38.69-4.41.06-10.81-1.13-14.81-1.12v-6.19h54v-21.65c0-3.83.22-5.35.19-5.35Z"/>
+      <g id="j" data-name="Label Qty">
+        <path class="cl" d="M167.74,295.07c0-4.32,3.5-7.82,7.82-7.82s7.82,3.5,7.82,7.82-3.5,7.82-7.82,7.82-7.82-3.5-7.82-7.82Z"/>
+        <text id="k" data-name="30" class="co" transform="translate(169.41 299.2)"><tspan x="0" y="0">20</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g id="l" data-name="30">
+    <path class="ch" d="M222.69,273h.06c-.04-2.13-.06-3.16-.06-3.16,0-12.39-12.91,4.16-12.91-6.84-1.85-3.03-4.07-3.54-13.02,0l-12.06,5.83c-3.31-.17-19.72-.48-15.3-.61-29.81-14.17-6.96,5.36-38.38-7.17-28.36,14.9-5.49-13.05-33.04,2.66,5.4-.04-17.51,2.47-18.75,3.06l-15.93-2.53c-7.84,0-3.33-3.42-11.49.79-.75.39.74,9.15-3.95,0-5.42-10.57-8.5-7.37-8.5,4.57,0,0-.02,1.26-.04,3.39h.04c-.04.95-.34,7.13-.34,11.25-.18.54,0,.64,0,.92v40.83h52.87l-.03,7.04c-1.74.04-3.21.25-4.46.29.3-.08-1.77-.16-9.7-.24,12.04,11.5,36.2,11.91,33.17,37.91h38.24c-3.29-30,22.84-25.64,33.75-38.55-4.47.06-8.86.03-12.86.04v-6.49h53v-41.75c0-7.36-.28-10.78-.31-11.25Z"/>
+    <g id="p" data-name="Level">
+      <g id="q" data-name="Label Qty">
+        <path class="ci" d="M167.74,270.07c0-4.32,3.5-7.82,7.82-7.82s7.82,3.5,7.82,7.82-3.5,7.82-7.82,7.82-7.82-3.5-7.82-7.82Z"/>
+        <text id="r" data-name="30" class="co" transform="translate(169.41 274.2)"><tspan x="0" y="0">30</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g id="s" data-name="40">
+    <path class="cg" d="M222.69,248h.06c-.04-2.13-.06-3.16-.06-3.16,0-12.39-12.91,4.16-12.91-6.84h-13.02l-12.06,5.83c-3.31-.17-19.72-.48-15.3-.61-29.81-14.17-6.96,5.36-38.38-7.17-28.36,14.9-5.49-13.05-33.04,2.66,5.4-.04-17.51,2.47-18.75,3.06l-15.93-2.53c-7.84,0-3.65.79-11.49.79-.85,0,.74,9.15-3.95,0-5.42-10.57-8.5-7.37-8.5,4.57,0,0-.02,1.26-.04,3.39h.04c-.04,1.4-.34,10.53-.34,16.61-.18.79,0,.95,0,1.36v60.03h52.87l-.03,7.04c-1.74.04-3.21.25-4.46.29.3-.08-1.77-.16-9.7-.24,12.04,11.5,36.2,11.91,33.17,37.91h38.24c-3.29-30,22.84-25.64,33.75-38.55-4.47.06-8.86.03-12.86.04v-6.49h53v-61.39c0-10.86-.28-15.92-.31-16.61Z"/>
+    <g id="w" data-name="Level">
+      <g id="x" data-name="Label Qty">
+        <path class="ci" d="M167.74,245.07c0-4.32,3.5-7.82,7.82-7.82s7.82,3.5,7.82,7.82-3.5,7.82-7.82,7.82-7.82-3.5-7.82-7.82Z"/>
+        <text id="y" data-name="40" class="co" transform="translate(169.41 249.2)"><tspan x="0" y="0">40</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g id="z" data-name="50">
+    <g id="aa" data-name="Level">
+      <path class="cn" d="M222.69,223.5h.06c-.04-3-.06-3.41-.06-3.41,0-12.39-12.91,4.03-12.91-6.97-7.65-3.5-9.87-1.73-13.02-.06l-12.06,5.8c-3.31-.17-19.72-.49-15.3-.63-29.81-14.17-6.96,5.36-38.38-7.17-28.36,14.9-5.49-13.06-33.04,2.66,5.4-.05-17.51,2.47-18.75,3.05l-15.93-2.53c-7.84,0-3.67-4.75-11.49.79-.69.49.74,9.15-3.95,0-5.42-10.57-8.5-7.12-8.5,4.82,0,0-.02.64-.04,3.64h.04c-.04,1-.59,13.67-.59,21.69-.18,1.05-.25,1-.25,1.55v79.76h53.37l-.03,6.79c-1.74.04-3.21.13-4.46.16.3-.08-1.77.03-9.7-.05,12.04,11.5,36.2,12.1,33.17,38.1h38.24c-3.29-30,22.59-25.89,33.5-38.8-4.47.06-9.11-.22-13.11-.21v-5.99h53v-81.55c0-14.36.22-21.45.19-21.45Z"/>
+      <g id="ae" data-name="Label Qty">
+        <circle class="ci" cx="175.56" cy="220.07" r="7.82"/>
+        <text id="af" data-name="50" class="co" transform="translate(169.41 224.2)"><tspan x="0" y="0">50</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g id="ag" data-name="60">
+    <g id="ah" data-name="Level">
+      <path id="al" data-name="60" class="cm" d="M222.69,198.5h.06c-.04-3-.06-3.41-.06-3.41,0-12.39-12.91,4.03-12.91-6.97-.49-3.12-3.39-3.52-13.02-.06l-12.06,5.8c-3.31-.17-19.72-.49-15.3-.63-29.81-14.17-6.96,5.36-38.38-7.17-28.36,14.9-5.49-13.06-33.04,2.66,5.4-.05-17.51,2.47-18.75,3.05l-15.93-2.53c-7.84,0-7.18-6.14-11.49.79-1.57,2.52.74,9.15-3.95,0-5.42-10.57-8.5-7.12-8.5,4.82,0,0-.02.64-.04,3.64h.04c-.04,2-.59,17.13-.59,27.15-.18,1.3-.25,1.31-.25,1.99v98.85h53.37l-.03,6.79c-1.74.04-3.21.13-4.46.16.3-.08-1.77.03-9.7-.05,12.04,11.5,36.2,12.1,33.17,38.1h38.24c-3.29-30,22.59-25.89,33.5-38.8-4.47.06-9.11-.22-13.11-.21v-5.99h53v-101.09c0-17.93.22-25.91.19-26.91Z"/>
+      <g id="am" data-name="Label Qty">
+        <circle class="ci" cx="175.56" cy="195.07" r="7.82"/>
+        <text id="an" data-name="60" class="co" transform="translate(169.41 199.2)"><tspan x="0" y="0">60</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g id="aq" data-name="70" class="cq">
+    <g id="ar" data-name="Level">
+      <path class="ck" d="M222.69,173.5h.06c-.04-3-.06-3.16-.06-3.16,0-12.39-12.91,4.16-12.91-6.84h-13.02l-12.06,5.58c-3.31-.17-19.72-.6-15.3-.73-29.81-14.17-6.96,5.3-38.38-7.23-28.36,14.9-5.49-13.09-33.04,2.63,5.4-.05-17.51,2.46-18.75,3.04l-15.93-2.53c-7.84,0-3.65.79-11.49.79-.85,0,.44,6.96-4.25-2.19-5.42-10.57-8.8-5.01-8.8,6.93,0,0,.74,1.07-.26,3.21v150.52h53.38l-.04,9.79c-1.74.04-3.21.13-4.46.16.3-.08-1.77.03-9.7-.05,12.04,11.5,36.2,12.1,33.17,38.1h38.24c-3.29-30,22.59-25.89,33.5-38.8-4.47.06-9.11-.22-13.11-.21v-8.99h53v-118.16c0-21.15.22-30.84.19-31.84Z"/>
+      <g id="at" data-name="Label Qty">
+        <circle class="ci" cx="175.56" cy="170.07" r="7.82"/>
+        <text id="au" data-name="70" class="co" transform="translate(169.41 174.2)"><tspan x="0" y="0">70</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g id="ax" data-name="80" class="cp">
+    <path class="cj" d="M222.69,148.5h.06c-.04-3-.06-3.16-.06-3.16,0-12.39-12.91,4.16-12.91-6.84h-13.02l-12.06,5.58c-3.31-.17-19.72-.6-15.3-.73-29.81-14.17-6.96,5.3-38.38-7.23-28.36,14.9-5.49-13.09-33.04,2.63,5.4-.05-17.51,2.46-18.75,3.04l-15.93-2.53c-7.84,0-3.65.79-11.49.79-.85,0,.74,9.15-3.95,0-5.42-10.57-8.5-7.12-8.5,4.82,0,0-.02.64-.04,3.64h.04c-.04,3-.59,23.97-.59,37.93-.18,1.82-.25,1.92-.25,2.88v136.2h53.37l-.03,7.79c-1.74.04-3.21.13-4.46.16.3-.08-1.77.03-9.7-.05,12.04,11.5,36.2,12.1,33.17,38.1h38.24c-3.29-30,22.59-25.89,33.5-38.8-4.47.06-9.11-.22-13.11-.21v-6.99h53v-139.3c0-24.98.22-36.7.19-37.7Z"/>
+    <g id="az" data-name="Level">
+      <g id="ba" data-name="Label Qty">
+        <circle class="ci" cx="175.56" cy="145.07" r="7.82"/>
+        <text id="bb" data-name="80" class="co" transform="translate(169.41 149.2)"><tspan x="0" y="0">80</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <rect class="bz" x="39" y="334" width="12" height="48"/>
+    <rect class="bz" x="209" y="334" width="14" height="48"/>
+  </g>
+  <g id="bc" data-name="Flow">
+    <polygon id="bd" data-name="flow8" class="bv" points="133.13 379.18 126.83 378.04 128.02 371.26 134.32 372.4 133.13 379.18"/>
+    <polygon id="be" data-name="flow7" class="bx" points="133.69 385.94 127.75 385.34 128.34 379.31 134.28 379.91 133.69 385.94"/>
+    <polygon id="bf" data-name="flow6" class="bu" points="130.71 392.52 125.92 391.74 126.68 386.88 131.47 387.65 130.71 392.52"/>
+    <polygon id="bg" data-name="flow5" class="bu" points="137.09 395.69 132.08 398.22 129.59 393.14 134.59 390.6 137.09 395.69"/>
+    <polygon id="bh" data-name="flow4" class="bu" points="133.8 409.37 127.62 408.74 128.24 402.47 134.41 403.09 133.8 409.37"/>
+    <polygon id="bi" data-name="flow3" class="bu" points="131.09 422.35 125.39 421.43 126.3 415.63 132.01 416.55 131.09 422.35"/>
+  </g>
+  <g id="bj" data-name="Stirrer">
+    <path class="by" d="M126,55v222.3c2.33.24,4.68.23,7-.02V55h-7Z"/>
+    <path id="bm" data-name="90 degrees" class="bw" d="M157.23,230.37c-4.87-8.93-8.85-14.68-15.53-21.91-2.39-2.59-6.94-6.77-8.34-10.22l-.36-1.55V55h-7v144h.51c-.98,2-2.98,3.11-4.24,4.48-4.6,5-10.26,10.85-13.57,15.27-4.64,6.2-11.6,15.98-12.04,25.67-.44,9.59,3.85,17.59,9.51,23.33,13.09,13.29,34.08,12.65,46.52.03,5.55-5.62,10.18-13.69,9.57-23.73-.33-5.49-2.83-9.65-5.03-13.68ZM125.72,270.09c-14.07-.88-26.81-17.79-20.09-33.33,4.26-9.86,14.38-19.77,19.63-26.48,1.06,19.02.15,40.02.46,59.81ZM133,270.09v-58.89c0-.81.45-.94.47-.46,5.74,6.4,15.34,16.11,19.63,26.02,6.45,14.93-3.1,32.3-20.1,33.33Z"/>
+    <g id="bn" data-name="Rotation Direction">
+      <path class="ca" d="M138.5,76.99c-.21-1.04,2.92-1.8,3.66-2.2,1.48-.79,3.77-2.33,2.83-4.47-.72-1.64-3.36-2.96-5.93-3.81v-1.77c3.66,1.07,9.74,3.5,8.13,7.85-.59,1.59-2.37,2.95-4.19,3.85-.84.41-4.21,2.02-4.5.55Z"/>
+      <path class="ca" d="M125.42,82.49c-.55-1.23,2.43-1.94,2.83-2.83-4.71-.16-8.38-.63-12.04-1.65-3.87-1.07-9.3-3.22-8.7-7.3.41-2.79,4.5-4.84,8.27-5.96.07-.02.14-.04.21-.06v1.78c-2.65.86-5.33,2.19-6.08,3.78-.41.88-.11,1.97.42,2.67,1.49,1.96,4.33,2.91,7.33,3.69,3.11.8,6.65,1.25,10.37,1.41-.54-1.21-2.98-1.32-2.72-2.67.07-.35.65-.67.94-.71,1.17-.13,2.32,1.26,3.14,1.88.98.73,2.58,1.48,2.62,2.28.05.96-3.13,2.74-4.08,3.45-.64.48-2.03,1.33-2.51.24Z"/>
+      <path class="ca" d="M138.54,66.27c.85.25,1.25.41,2.48.79l.37-1.5c-1.24-.37-1.73-.54-2.68-.81.55-.71,3.39-.69,3.17-1.91-.19-1.08-1.63-.63-2.31-.34-1.01.43-4.26,1.33-4.43,2.2-.14.72,1.13,1.75,1.85,2.62.61.74,1.33,2.24,2.41,2.39.27.04.86-.13,1-.43.53-1.15-1.65-1.79-1.87-3Z"/>
+    </g>
+  </g>
+  <path class="cd" d="M39,334h12v48h-12v-48Z"/>
+  <path class="ce" d="M223,382h-14v-48h14v48Z"/>
+  <path class="cb" d="M98.8,361.27c-2.06,17.29,4.25,20.78,18.25,21.45v42.28h7v-54h-12.87c2.99-26-20.84-25.89-32.71-37.16,7.82.08,12.42.16,14.14.12l-.13-12.96h-53.43v-70h36v-12.21l-36-30.65v-36.72c0-1.05.02-1.45,0-3.42h36v-11.74l-36-30.65v-35.98c0-1.05-1.95-1.63-1.11-1.63h23.11v-13.19c-6,.01-12.11.03-18.23.09,27.56-15.72,57.31-29.31,85.67-44.21,31.41,12.53,59.39,29.31,89.2,43.47-5.42.16-10.63.28-15.63.39v13.45h21v37.61l-36,30.65v11.74h36v40.14l-36,30.65v12.21h15.64c3.76,0,4.98,0,4.93,0h15.42v70h-54v12.23c4,0,8.48.05,12.9-.01-10.76,12.65-36.31,8.78-33.06,37.78h-10.84v54h7v-42.54c12-1.17,19.45-5.5,16.19-21.67,12.59-6.61,25.03-18.01,36.96-22.83.33,14.29.38,57.05.38,57.05h35.68s-.22-200.37-.22-282.53c0-14.72.12-31.76-.89-39.79-.96-7.65-8.45-9.18-22.92-16.05-27.45-13.04-49.58-25.63-76.58-39.63h-7.25c-23.66,12-51.52,26.53-77.59,39.63-9,4.53-19.85,9.62-22.43,15.76-3.02,7.19-.12,300.05-.12,322.07,6.04,0,35.09-.06,35.09-.06,0,0,.81-39.3.52-56.97,12.77,7.41,25.19,15.38,36.93,23.83ZM223.05,382h-14v-48h14v48ZM51.05,382h-12v-48h12v48Z"/>
+</svg>

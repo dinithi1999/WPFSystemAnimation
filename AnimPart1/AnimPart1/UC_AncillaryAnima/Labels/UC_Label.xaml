@@ -10,7 +10,7 @@
 
     <Canvas x:Name="MainCanvas" 
             RenderTransformOrigin="0.5,0.5" Margin="-2,1,4,0">
-
+        
         <!-- SvgViewbox for the background SVG image -->
         <svgc:SvgViewbox x:Name="svgViewboxLabelBackGround"
                          Stretch="Uniform"
@@ -20,21 +20,19 @@
                          Height="{Binding ActualHeight, ElementName=MainCanvas}" HorizontalAlignment="Center" Canvas.Top="-1" VerticalAlignment="Top" />
 
         <svgc:SvgViewbox x:Name="svgViewboxGeerIcon"
-                    Stretch="Uniform" Canvas.Left="69" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        Stretch="Uniform" Canvas.Left="69" Canvas.Top="64" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
         <svgc:SvgViewbox x:Name="svgViewboxWarningIcon"
-             Stretch="Uniform" Canvas.Left="42" Canvas.Top="64" HorizontalAlignment="Center" VerticalAlignment="Top" />
+         Stretch="Uniform" Canvas.Left="42" Canvas.Top="64" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
         <svgc:SvgViewbox x:Name="svgViewboxGreenIcon"
          Stretch="Uniform" Canvas.Left="93" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />
-
-
 
         <svgc:SvgViewbox x:Name="svgViewboxYellowIcon"
          Stretch="Uniform" Canvas.Left="68" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
         <svgc:SvgViewbox x:Name="svgViewboxRedIcon"
-   Stretch="Uniform" Canvas.Left="46" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        Stretch="Uniform" Canvas.Left="46" Canvas.Top="6" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
         <!-- Transparent button positioned over the SVG image -->
         <Button Canvas.Left="121"
@@ -46,5 +44,7 @@
                 Style="{StaticResource TransparentButtonStyle}" />
         <TextBlock x:Name="labelName" Canvas.Left="42" TextWrapping="Wrap" Text="Hopper 001" Canvas.Top="33" HorizontalAlignment="Center" VerticalAlignment="Center" Width="81"/>
         <TextBlock x:Name="levelPercentage" Canvas.Left="99" TextWrapping="Wrap" Text="50%" Canvas.Top="65" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        
     </Canvas>
+    
 </UserControl>

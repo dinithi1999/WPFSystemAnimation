@@ -213,7 +213,17 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+            if (isLightOn)
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+                isLightOn = false;
+            }
+            else
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+                isLightOn = true;
+
+            }
         }
     }
 }

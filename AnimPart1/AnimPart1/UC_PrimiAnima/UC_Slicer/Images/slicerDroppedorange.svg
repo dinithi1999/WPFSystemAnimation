@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Slicer" xmlns="http://www.w3.org/2000/svg" width="880.06" height="498.36" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 880.06 498.36">
+  <defs>
+    <style>
+      .i {
+        fill: url(#f);
+        filter: url(#g);
+      }
+
+      .i, .j, .k {
+        stroke-width: 0px;
+      }
+
+      .j {
+        fill: url(#e);
+        fill-rule: evenodd;
+      }
+
+      .l {
+        filter: url(#b);
+      }
+
+      .k {
+        fill: #b0b0b0;
+      }
+    </style>
+    <filter id="b" data-name="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="2"/>
+      <feGaussianBlur result="c" stdDeviation="3"/>
+      <feFlood flood-color="#494949" flood-opacity=".82"/>
+      <feComposite in2="c" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="e" cx="752.41" cy="478.23" fx="752.41" fy="478.23" r="10.52" gradientTransform="translate(1349.42 -18.04) rotate(126) scale(1 .4)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".09" stop-color="rgba(254, 247, 245, .99)" stop-opacity=".99"/>
+      <stop offset=".26" stop-color="rgba(252, 227, 218, .97)" stop-opacity=".97"/>
+      <stop offset=".46" stop-color="rgba(249, 194, 174, .93)" stop-opacity=".93"/>
+      <stop offset=".71" stop-color="rgba(245, 148, 113, .88)" stop-opacity=".88"/>
+      <stop offset=".99" stop-color="rgba(241, 91, 37, .82)" stop-opacity=".82"/>
+      <stop offset="1" stop-color="#f15a24" stop-opacity=".82"/>
+    </radialGradient>
+    <radialGradient id="f" cx="761.28" cy="459" fx="761.28" fy="459" r="56.22" gradientTransform="translate(1.22 603.26) rotate(-21) scale(1 .3)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset=".42" stop-color="#f6f6f6"/>
+      <stop offset=".75" stop-color="#fff"/>
+      <stop offset=".81" stop-color="#ececec" stop-opacity=".98"/>
+      <stop offset="1" stop-color="#666" stop-opacity=".87"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".82"/>
+    </radialGradient>
+    <filter id="g" data-name="drop-shadow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="0"/>
+      <feGaussianBlur result="h" stdDeviation="3"/>
+      <feFlood flood-color="#494949" flood-opacity=".79"/>
+      <feComposite in2="h" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="d" data-name="Cut 2 Collect" class="l">
+    <path class="j" d="M744.27,484.96c0-7.4,6-13.41,13.4-13.41s13.41,6,13.41,13.41-6,13.41-13.41,13.41-13.4-6-13.4-13.41Z"/>
+    <g>
+      <rect class="k" x="757.06" y="472" width="1" height="14"/>
+      <rect class="k" x="761.54" y="482.81" width="2.24" height="13.36" transform="translate(-88.58 800.37) rotate(-52.76)"/>
+      <rect class="k" x="745.94" y="488.37" width="12.83" height="2.23" transform="translate(-140.22 584.12) rotate(-39.1)"/>
+    </g>
+  </g>
+  <polygon class="i" points="687.06 430.5 740.52 487.5 782.04 487.5 835.5 430.5 687.06 430.5"/>
+</svg>

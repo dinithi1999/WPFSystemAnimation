@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Portioner" xmlns="http://www.w3.org/2000/svg" width="880.06" height="498.36" viewBox="0 0 880.06 498.36">
+  <defs>
+    <style>
+      .d {
+        fill: #0000f9;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Marquee">
+    <polygon class="d" points="878.06 379 857.06 379 857.06 373 872.06 373 872.06 358 878.06 358 878.06 379"/>
+    <path class="d" d="M815.06,379h-43v-6h43v6ZM730.06,379h-42v-6h42v6Z"/>
+    <polygon class="d" points="648.06 379 627.06 379 627.06 358 633.06 358 633.06 373 648.06 373 648.06 379"/>
+    <rect class="d" x="627.06" y="303" width="6" height="28"/>
+    <polygon class="d" points="633.06 276 627.06 276 627.06 255 648.06 255 648.06 261 633.06 261 633.06 276"/>
+    <path class="d" d="M818.06,261h-43v-6h43v6ZM733.06,261h-42v-6h42v6Z"/>
+    <polygon class="d" points="878.06 276 872.06 276 872.06 261 857.06 261 857.06 255 878.06 255 878.06 276"/>
+    <rect class="d" x="872.06" y="303" width="6" height="28"/>
+  </g>
+</svg>
