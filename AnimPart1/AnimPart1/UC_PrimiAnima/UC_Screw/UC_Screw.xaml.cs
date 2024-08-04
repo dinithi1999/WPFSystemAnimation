@@ -1,19 +1,9 @@
-﻿using AnimPart1.UC_AncillaryAnima.Label;
-using AnimPart1.UC_AncillaryAnima.ScrewRotation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AnimPart1.UC_AncillaryAnima.ScrewRotation;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using AnimPart1.UC_AncillaryAnima.Lights;
+using AnimPart1.UC_AncillaryAnima.Label;
 
 namespace AnimPart1.UC_PrimiAnima.UC_Screw
 {
@@ -25,11 +15,12 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
 
         public Lights.Lights lightUserCtrl;
         public Camera.Camera cameraUserCtrl;
+        public UC_PrimiLabel labelUserCtrl2;
         public UC_Label labelUserCtrl;
 
         UC_ScrewRotation uC_ScrewRotation;
 
-        public string labelName = "Portioner";
+        public string labelName = "SRW-XXX";
         public bool isLightOn;
 
 
@@ -49,10 +40,14 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
             PadleColumn.Content = uC_ScrewRotation;
             uC_ScrewRotation.backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Screw/Images/screwRotatingPart.svg");
 
+            labelUserCtrl2 = new UC_PrimiLabel();
+            labelColumn2.Content = labelUserCtrl2;
+
+
             labelUserCtrl = new UC_Label();
             labelColumn.Content = labelUserCtrl;
             labelUserCtrl.labelName.Text = labelName;
-
+            labelUserCtrl.levelPercentage.Visibility = Visibility.Hidden;
 
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Screw/Images/screwmarquee.svg");

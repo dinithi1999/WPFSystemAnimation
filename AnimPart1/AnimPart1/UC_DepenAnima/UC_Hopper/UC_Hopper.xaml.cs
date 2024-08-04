@@ -27,7 +27,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
 
         private int currentHopperLevel; // Keep track of the current tank level
 
-        public string labelName = "Hopper 00X";
+        public string labelName = "HOP-XXX";
         public ICommand ToggleLightCommand { get; }
 
 
@@ -65,12 +65,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             currentHopperLevel = 30; // Assuming initial tank level is 60
             SetHopperLevelImage(currentHopperLevel);
 
-            // Start the animation timer
             animationTimer.Start();
-
-            this.KeyDown += UserControl1_KeyDown;
-            this.Focus();  // Set focus to the UserControl to capture key events
-
         }
 
 
@@ -90,6 +85,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         {
             var imagesDict = new Dictionary<int, List<Uri>>();
             var directory = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folder);
+
             foreach (var file in Directory.GetFiles(directory, "*.svg"))
             {
                 var fileName = Path.GetFileNameWithoutExtension(file);
@@ -109,7 +105,6 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         {
             if (currentHopperLevel != 0)
             {
-
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     SetHopperLevelImage(currentHopperLevel); // Use the current tank level
@@ -118,7 +113,6 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             }
             else {
                 TankMaterialsEmpty();
-
             }
         }
 
@@ -213,18 +207,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //if (isLightOn)
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
-            //    isLightOn = false;
-            //}
-            //else
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
-            //    isLightOn = true;
-
-            //}
-            // Open the context menu defined in resources
+            
             var contextMenu = (ContextMenu)this.Resources["ContextMenu1"];
 
             foreach (MenuItem item in contextMenu.Items)

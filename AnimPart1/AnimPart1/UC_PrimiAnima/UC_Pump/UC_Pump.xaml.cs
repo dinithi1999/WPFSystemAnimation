@@ -14,7 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
+
 using System.Reflection.Metadata;
+using AnimPart1.UC_AncillaryAnima.Lights;
 
 namespace AnimPart1.UC_PrimiAnima.UC_Pump
 {
@@ -25,7 +27,10 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
     {
         public Lights.Lights lightUserCtrl;
         public Camera.Camera cameraUserCtrl;
+        public UC_PrimiLabel labelUserCtrl2;
+
         public UC_Label labelUserCtrl;
+
 
         UC_ScrewRotation uC_ScrewRotation;
 
@@ -44,16 +49,19 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
             cameraUserCtrl = new Camera.Camera();
             CameraColumn.Content = cameraUserCtrl;
 
-            labelUserCtrl = new UC_Label();
-            labelColumn.Content = labelUserCtrl;
-            labelUserCtrl.labelName.Text = labelName;
-
+      
             uC_ScrewRotation = new UC_ScrewRotation();
             PadleColumn.Content = uC_ScrewRotation;
 
+
+            labelUserCtrl2 = new UC_PrimiLabel();
+            labelColumn2.Content = labelUserCtrl2;
+
+
             labelUserCtrl = new UC_Label();
             labelColumn.Content = labelUserCtrl;
             labelUserCtrl.labelName.Text = labelName;
+            labelUserCtrl.levelPercentage.Visibility = Visibility.Hidden;
 
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Pump/Images/pumpMarqueesvg.svg");

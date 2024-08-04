@@ -39,7 +39,7 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
         public bool isLightOn;
         private int currentSiloLevel; // Keep track of the current tank level
 
-        public string labelName = "Silo 00X";
+        public string labelName = "SLO-XXX";
 
 
         public UC_SLO()

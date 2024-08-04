@@ -40,7 +40,7 @@
             <svgc:SvgViewbox x:Name="svgViewbox"
                          Stretch="Uniform"
                          HorizontalAlignment="Center"
-                         VerticalAlignment="Center" Width="192" 
+                         VerticalAlignment="Center" Width="180" 
                         />
 
             <!-- LightColumn positioned at the top-left of TankColumn -->

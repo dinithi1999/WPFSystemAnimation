@@ -40,7 +40,7 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
         public bool isLightOn;
         private int currentTankLevel; // Keep track of the current tank level
 
-        public string labelName = "Tank 00X";
+        public string labelName = "TNK-XXX";
 
         public UC_TNK()
         {

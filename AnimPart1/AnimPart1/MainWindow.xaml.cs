@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.Windows.Controls;
 
 namespace AnimPart1
 {
@@ -24,16 +25,25 @@ namespace AnimPart1
         UC_TNK tankUCInstance;
         UC_Portioner portionerUCInstance;
         UC_Screw screwUCInstance;
-        UC_Slicer sliderUCInstance;
+        UC_Slicer slicerUCInstance;
         UC_Pump pumpUCInstance;
 
         DispatcherTimer blinkTimer;
         DispatcherTimer blinkTimer2;
         DispatcherTimer blinkTimer3;
+        DispatcherTimer blinkTimer4;
+        DispatcherTimer blinkTimer5;
+        DispatcherTimer blinkTimer6;
+        DispatcherTimer blinkTimer7;
 
         bool isCamFlashIsOn;
         bool isCamFlashIsOn2;
         bool isCamFlashIsOn3;
+        bool isCamFlashIsOn4;
+        bool isCamFlashIsOn5;
+        bool isCamFlashIsOn6;
+        bool isCamFlashIsOn7;
+
 
 
         const string LightOnPath = "pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg";
@@ -71,8 +81,8 @@ namespace AnimPart1
                 column3Row2ContentControl.Content = screwUCInstance;
 
 
-                sliderUCInstance = new UC_Slicer();
-                column2ContentControl.Content = sliderUCInstance;
+                slicerUCInstance = new UC_Slicer();
+                column2ContentControl.Content = slicerUCInstance;
 
                 pumpUCInstance = new UC_Pump();
                 column1ContentControl.Content = pumpUCInstance;
@@ -91,6 +101,25 @@ namespace AnimPart1
                 blinkTimer3 = new DispatcherTimer();
                 blinkTimer3.Interval = TimeSpan.FromSeconds(0.5);
                 blinkTimer3.Tick += BlinkTimerTank_Tick;
+
+                blinkTimer4 = new DispatcherTimer();
+                blinkTimer4.Interval = TimeSpan.FromSeconds(0.5);
+                blinkTimer4.Tick += BlinkTimerPMP_Tick;
+
+                // Initialize the timer for blinking for the camera
+                blinkTimer5 = new DispatcherTimer();
+                blinkTimer5.Interval = TimeSpan.FromSeconds(0.5);
+                blinkTimer5.Tick += BlinkTimerSLC_Tick;
+
+                // Initialize the timer for blinking for the camera
+                blinkTimer6 = new DispatcherTimer();
+                blinkTimer6.Interval = TimeSpan.FromSeconds(0.5);
+                blinkTimer6.Tick += BlinkTimerSRW_Tick;
+
+                 // Initialize the timer for blinking for the camera
+                blinkTimer7 = new DispatcherTimer();
+                blinkTimer7.Interval = TimeSpan.FromSeconds(0.5);
+                blinkTimer7.Tick += BlinkTimerPOR_Tick;
 
             }
             catch (Exception ex)
@@ -113,13 +142,53 @@ namespace AnimPart1
             SiloLight.IsChecked = true;
             SiloAnimStart.IsChecked = true;
 
+
+            pmpLabelVisibilityToggleBtn.IsChecked = true;
+            pmplightOnToggleBtn.IsChecked = true;
+            pmpCamOnToggleBtn.IsChecked = true;
+            pmpAnimStartToggleBtn.IsChecked = true;
+            pmpclockwiseRadioButton.IsChecked = true;
+
+            srwLabelVisibilityToggleBtn.IsChecked = true;
+            srwlightOnToggleBtn.IsChecked = true;
+            srwCamOnToggleBtn.IsChecked = true;
+            srwAnimStartToggleBtn.IsChecked = true;
+            srwclockwiseRadioButton.IsChecked = true;
+
+            slcLabelVisibilityToggleBtn.IsChecked = true;
+            slclightOnToggleBtn.IsChecked = true;
+            slcCamOnToggleBtn.IsChecked = true;
+            slcAnimStartToggleBtn.IsChecked = true;
+
+            porLabelVisibilityToggleBtn.IsChecked = true;
+            porlightOnToggleBtn.IsChecked = true;
+            porCamOnToggleBtn.IsChecked = true;
+            porAnimStartToggleBtn.IsChecked = true;
+
+            SetSliderValue(tnkspeedSlider, 100);
+            SetSliderValue(speedSliderSLO, 100);
+            SetSliderValue(speedSliderHOP, 100);
+            SetSliderValue(speedSliderpmp, 100);
+            SetSliderValue(speedSliderSRW, 100);
+
         }
 
 
+        private void SetSliderValue(Slider slider, double newValue)
+        {
+            // Ensure the value is within the defined range
+            if (newValue >= slider.Minimum && newValue <= slider.Maximum)
+            {
+                slider.Value = newValue;
+            }
+            else
+            {
+                // Handle out-of-range values if necessary
+                throw new ArgumentOutOfRangeException(nameof(newValue), "Value is out of range for the slider.");
+            }
+        }
 
-
-
-        #region DepenCamera
+        #region Camera
         private void HopperCameraChecked_Checked(object sender, RoutedEventArgs e)
         {
             // Start blinking
@@ -156,23 +225,58 @@ namespace AnimPart1
 
         private void SLOCamera_Unchecked(object sender, RoutedEventArgs e)
         {
-            // Stop blinking and show the LightOff image
             blinkTimer2.Stop();
             sloUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+
         }
 
-        private void PortionerCamera_Unchecked(object sender, RoutedEventArgs e)
+        private void PMPCamera_Unchecked(object sender, RoutedEventArgs e)
         {
-            // Stop blinking and show the LightOff image
-        //    blinkTimer2.Stop();
-        //    sloUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            blinkTimer4.Stop();
+            pumpUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
         }
 
-        private void PortionerCamera_Checked(object sender, RoutedEventArgs e)
+        private void PMPCamera_Checked(object sender, RoutedEventArgs e)
         {
-            // Start blinking
-            //isCamFlashIsOn2 = true; // Initial state
-            //blinkTimer2.Start();
+            isCamFlashIsOn4 = true;
+            blinkTimer4.Start();
+        }
+
+        private void SLCCamera_Unchecked(object sender, RoutedEventArgs e)
+        {
+            blinkTimer5.Stop();
+            slicerUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+        }
+
+        private void SLCCamera_Checked(object sender, RoutedEventArgs e)
+        {
+            isCamFlashIsOn5 = true;
+            blinkTimer5.Start();
+           
+        }
+
+        private void SRWCamera_Unchecked(object sender, RoutedEventArgs e)
+        {
+            blinkTimer6.Stop();
+            screwUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+        }
+
+        private void SRWCamera_Checked(object sender, RoutedEventArgs e)
+        {
+            isCamFlashIsOn6 = true;
+            blinkTimer6.Start();
+           
+        }
+        private void PORCamera_Unchecked(object sender, RoutedEventArgs e)
+        {
+            blinkTimer7.Stop();
+            portionerUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+        }
+
+        private void PORCamera_Checked(object sender, RoutedEventArgs e)
+        {
+            isCamFlashIsOn7 = true;
+            blinkTimer7.Start();
         }
 
         private void BlinkTimerHopper_Tick(object sender, EventArgs e)
@@ -216,9 +320,67 @@ namespace AnimPart1
 
             isCamFlashIsOn3 = !isCamFlashIsOn3;
         }
+
+        private void BlinkTimerPMP_Tick(object sender, EventArgs e)
+        {
+            if (isCamFlashIsOn4)
+            {
+                pumpUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            }
+            else
+            {
+                pumpUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
+            }
+
+            isCamFlashIsOn4 = !isCamFlashIsOn4;
+        }
+
+
+        private void BlinkTimerSLC_Tick(object sender, EventArgs e)
+        {
+            if (isCamFlashIsOn5)
+            {
+                slicerUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            }
+            else
+            {
+                slicerUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
+            }
+
+            isCamFlashIsOn5 = !isCamFlashIsOn5;
+        }
+
+
+        private void BlinkTimerSRW_Tick(object sender, EventArgs e)
+        {
+            if (isCamFlashIsOn6)
+            {
+                screwUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            }
+            else
+            {
+                screwUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
+            }
+
+            isCamFlashIsOn6 = !isCamFlashIsOn6;
+        }
+
+        private void BlinkTimerPOR_Tick(object sender, EventArgs e)
+        {
+            if (isCamFlashIsOn7)
+            {
+                portionerUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            }
+            else
+            {
+                portionerUCInstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
+            }
+
+            isCamFlashIsOn7 = !isCamFlashIsOn7;
+        }
         #endregion
 
-        #region DepenLabel
+        #region Label
         private void HopperLabelVislibility_Checked(object sender, RoutedEventArgs e)
         {
             hopperUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
@@ -277,13 +439,87 @@ namespace AnimPart1
         {
             portionerUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
             portionerUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+
             portionerUCInstance.labelUserCtrl.Visibility = Visibility.Visible;
             portionerUCInstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
-
 
         }
 
         private void PortionerLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            portionerUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            portionerUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            portionerUCInstance.labelUserCtrl.Visibility = Visibility.Hidden;
+
+        }
+
+        private void PMPLabelVislibility_Checked(object sender, RoutedEventArgs e)
+        {
+            pumpUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            pumpUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            pumpUCInstance.labelUserCtrl.Visibility = Visibility.Visible;
+            pumpUCInstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+            pumpUCInstance.labelUserCtrl2.Visibility = Visibility.Visible;
+            pumpUCInstance.labelUserCtrl2.MainCanvas.Visibility = Visibility.Visible;
+        }
+
+        private void PMPLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            pumpUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            pumpUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            pumpUCInstance.labelUserCtrl.Visibility = Visibility.Hidden;
+            pumpUCInstance.labelUserCtrl2.Visibility = Visibility.Hidden;
+
+        }
+
+        private void SLCLabelVislibility_Checked(object sender, RoutedEventArgs e)
+        {
+            slicerUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            slicerUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            slicerUCInstance.labelUserCtrl.Visibility = Visibility.Visible;
+            slicerUCInstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+
+            slicerUCInstance.labelUserCtrl2.Visibility = Visibility.Hidden;
+            slicerUCInstance.labelUserCtrl2.MainCanvas.Visibility = Visibility.Hidden;
+        }
+
+        private void SLCLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            slicerUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            slicerUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            slicerUCInstance.labelUserCtrl.Visibility = Visibility.Hidden;
+
+            slicerUCInstance.labelUserCtrl2.Visibility = Visibility.Hidden;
+            slicerUCInstance.labelUserCtrl2.MainCanvas.Visibility = Visibility.Hidden;
+        }
+
+        private void SRWLabelVislibility_Checked(object sender, RoutedEventArgs e)
+        {
+            screwUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            screwUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            screwUCInstance.labelUserCtrl.Visibility = Visibility.Visible;
+            screwUCInstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+            screwUCInstance.labelUserCtrl2.Visibility = Visibility.Visible;
+            screwUCInstance.labelUserCtrl2.MainCanvas.Visibility = Visibility.Visible;
+        }
+
+        private void SRWLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            screwUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            screwUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            screwUCInstance.labelUserCtrl.Visibility = Visibility.Hidden;
+            screwUCInstance.labelUserCtrl2.Visibility = Visibility.Hidden;
+        }
+
+        private void PORLabelVislibility_Checked(object sender, RoutedEventArgs e)
+        {
+            portionerUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            portionerUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            portionerUCInstance.labelUserCtrl.Visibility = Visibility.Visible;
+            portionerUCInstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+        }
+
+        private void PORLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
         {
             portionerUCInstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
             portionerUCInstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
@@ -340,16 +576,53 @@ namespace AnimPart1
         {
             portionerUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
             portionerUCInstance.isLightOn = true;
-
-
         }
 
         private void PortionerLight_Unchecked(object sender, RoutedEventArgs e)
         {
             portionerUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
             portionerUCInstance.isLightOn = false;
-
         }
+
+        private void PMPLights_Checked(object sender, RoutedEventArgs e)
+        {
+            pumpUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            pumpUCInstance.isLightOn = true;
+        }
+
+        private void PMPLight_Unchecked(object sender, RoutedEventArgs e)
+        {
+            pumpUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            pumpUCInstance.isLightOn = false;
+        }
+
+        private void SRWLights_Checked(object sender, RoutedEventArgs e)
+        {
+            screwUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            screwUCInstance.isLightOn = true;
+        }
+
+        private void SRWLight_Unchecked(object sender, RoutedEventArgs e)
+        {
+            screwUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            screwUCInstance.isLightOn = false;
+        }
+
+        private void SLCLights_Checked(object sender, RoutedEventArgs e)
+        {
+            slicerUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            slicerUCInstance.isLightOn = true;
+        }
+
+        private void SLCLight_Unchecked(object sender, RoutedEventArgs e)
+        {
+            slicerUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            slicerUCInstance.isLightOn = false;
+        }
+
+
+
+
         #endregion
 
         private void HopperStartChecked_Checked(object sender, RoutedEventArgs e)
@@ -392,6 +665,9 @@ namespace AnimPart1
         {
             portionerUCInstance.svgViewbox.Source = new Uri(portioner90);
         }
+
+        
+
     }
 
 

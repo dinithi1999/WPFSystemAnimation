@@ -34,6 +34,7 @@
     <None Remove="UC_AncillaryAnima\Lights\Images\CameraFlashOn.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\LightOff.svg" />
     <None Remove="UC_AncillaryAnima\Lights\Images\LightOn.svg" />
+    <None Remove="UC_AncillaryAnima\PrimiLabel\Images\PrimiLabel.svg" />
     <None Remove="UC_AncillaryAnima\RotatingPadle\Images\ARROW1.svg" />
     <None Remove="UC_AncillaryAnima\RotatingPadle\Images\ARROW2.svg" />
     <None Remove="UC_AncillaryAnima\RotatingPadle\Images\arrows.svg" />
@@ -171,8 +172,11 @@
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\90.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\99.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\empty.svg" />
+    <None Remove="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner0.svg" />
+    <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner180.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner90.svg" />
+    <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner90_2.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portionerMarquee.svg" />
     <None Remove="UC_PrimiAnima\UC_Pump\Images\pumpBackground.svg" />
     <None Remove="UC_PrimiAnima\UC_Pump\Images\pumpBorder.svg" />
@@ -196,6 +200,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Portioner\Images\portioner180.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_PrimiAnima\UC_Portioner\Images\portioner90_2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="UC_PrimiAnima\UC_Pump\Images\pumpBackground.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -232,6 +245,9 @@
     <Resource Include="UC_AncillaryAnima\Labels\Images\yellow2.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Content Include="UC_AncillaryAnima\PrimiLabel\Images\PrimiLabel.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOff\20.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -299,9 +315,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_PrimiAnima\UC_Portioner\Images\portioner0.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Portioner\Images\portioner90.svg" />
+    <Resource Include="UC_PrimiAnima\UC_Portioner\Images\portioner90.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="UC_PrimiAnima\UC_Portioner\Images\portionerMarquee.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

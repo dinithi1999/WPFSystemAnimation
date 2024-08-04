@@ -1,4 +1,5 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
+using AnimPart1.UC_AncillaryAnima.Lights;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +25,10 @@ namespace AnimPart1.UC_PrimiAnima.UC_Slicer
 
         public Lights.Lights lightUserCtrl;
         public Camera.Camera cameraUserCtrl;
+        public UC_PrimiLabel labelUserCtrl2;
         public UC_Label labelUserCtrl;
 
-        private Dictionary<int, List<Uri>> hoppersLevelImagesLightOn;
-        private Dictionary<int, List<Uri>> hopperLevelImagesLightOff;
+
 
         private int currentImageIndex;
         private System.Timers.Timer animationTimer;
@@ -35,7 +36,7 @@ namespace AnimPart1.UC_PrimiAnima.UC_Slicer
 
         private int currentHopperLevel; // Keep track of the current tank level
 
-        public string labelName = "Slicer 00X";
+        public string labelName = "SLC XXX";
         public ICommand ToggleLightCommand { get; }
 
 
@@ -51,15 +52,17 @@ namespace AnimPart1.UC_PrimiAnima.UC_Slicer
             CameraColumn.Content = cameraUserCtrl;
 
       
+            labelUserCtrl2 = new UC_PrimiLabel();
+            labelColumn2.Content = labelUserCtrl2;
+
             labelUserCtrl = new UC_Label();
             labelColumn.Content = labelUserCtrl;
             labelUserCtrl.labelName.Text = labelName;
+            labelUserCtrl.levelPercentage.Visibility = Visibility.Hidden;
 
-            // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Slicer/Images/slicerMarquee.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Slicer/Images/slicerbackground.svg");
           
-            // Start the animation timer
         }
 
 

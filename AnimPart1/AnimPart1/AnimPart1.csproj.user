@@ -16,6 +16,9 @@
     <Compile Update="UC_AncillaryAnima\Lights\Lights.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_AncillaryAnima\PrimiLabel\UC_PrimiLabel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_AncillaryAnima\ScrewRotation\UC_ScrewRotation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_AncillaryAnima\PrimiLabel\UC_PrimiLabel.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_AncillaryAnima\ScrewRotation\UC_ScrewRotation.xaml">
