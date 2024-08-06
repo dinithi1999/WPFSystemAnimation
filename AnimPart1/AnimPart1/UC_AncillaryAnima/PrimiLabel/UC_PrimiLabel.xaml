@@ -14,7 +14,7 @@
             <!-- SvgViewbox for the background SVG image -->
             <svgc:SvgViewbox x:Name="svgViewboxLabelBackGround"
                      Stretch="Uniform"
-                     Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\PrimiLabel\Images\PrimiLabel.svg"
+                      Source="pack://application:,,,/UC_AncillaryAnima/PrimiLabel/Images/PrimiLabel.svg"
                         Width="134"
                      Height="117" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="14" Canvas.Left="6" />
 

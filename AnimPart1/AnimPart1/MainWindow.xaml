@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimPart1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="1761" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="750" Width="1761" WindowStartupLocation="CenterScreen" WindowState="Maximized">
 
 
 
@@ -73,6 +73,10 @@
     </Window.Resources>
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1268*"/>
+            <ColumnDefinition Width="493*"/>
+        </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="265" MinHeight="221"/>
@@ -84,7 +88,7 @@
 
         </Grid.RowDefinitions>
 
-        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -500,7 +504,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                            <ToggleButton x:Name="srwAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="SiloStartChecked_Checked" Unchecked="SiloStartChecked_Unchecked"/>
+                            <ToggleButton x:Name="srwAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="SRWStartChecked_Checked" Unchecked="SRWStartChecked_Unchecked"/>
                         </Grid>
 
                         <Grid Grid.Row="4">
@@ -510,8 +514,8 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Dir" VerticalAlignment="Center" Margin="5"/>
                             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                                <RadioButton x:Name="srwclockwiseRadioButton" Content="Clockwise" Margin="5" />
-                                <RadioButton x:Name="srwcounterClockwiseRadioButton" Content="Counterclockwise" Margin="5" />
+                                <RadioButton x:Name="srwclockwiseRadioButton" Content="Clockwise" Margin="5" Checked="srwclockwiseRadioButton_Checked" />
+                                <RadioButton x:Name="srwcounterClockwiseRadioButton" Content="Counterclockwise" Margin="5" Checked="srwcounterClockwiseRadioButton_Checked" />
                             </StackPanel>
                         </Grid>
 
@@ -600,7 +604,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                            <ToggleButton x:Name="pmpAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="SiloStartChecked_Checked" Unchecked="SiloStartChecked_Unchecked"/>
+                            <ToggleButton x:Name="pmpAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="PMPStartChecked_Checked" Unchecked="PMPStartChecked_Unchecked"/>
                         </Grid>
 
                         <Grid Grid.Row="4">
@@ -610,8 +614,8 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Dir" VerticalAlignment="Center" Margin="5"/>
                             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                                <RadioButton x:Name="pmpclockwiseRadioButton" Content="Clockwise" Margin="5" />
-                                <RadioButton x:Name="pmpcounterClockwiseRadioButton" Content="Counterclockwise" Margin="5" />
+                                <RadioButton x:Name="pmpclockwiseRadioButton" Content="Clockwise" Margin="5" Checked="pmpclockwiseRadioButton_Checked" />
+                                <RadioButton x:Name="pmpcounterClockwiseRadioButton" Content="Counterclockwise" Margin="5" Checked="pmpcounterClockwiseRadioButton_Checked" />
                             </StackPanel>
                         </Grid>
 
@@ -619,16 +623,17 @@
                         <Grid Grid.Row="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="28*"/>
+                                <ColumnDefinition Width="31*"/>
                             </Grid.ColumnDefinitions>
-                            
+
                             <Grid Grid.Column="0" VerticalAlignment="Center">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5" Grid.Column="0"/>
-                                
+
                                 <TextBox x:Name="pmpspeedTextBoxpmp"
                                           Text="{Binding ElementName=speedSlider, Path=Value, Mode=TwoWay, StringFormat={}{0}}"
                                           Width="18"
@@ -636,21 +641,21 @@
                                           VerticalAlignment="Center"
                                           Grid.Column="1"/>
                             </Grid>
-                            
-                            
-                                <Slider x:Name="speedSliderpmp"
+
+
+                            <Slider x:Name="speedSliderpmp"
                                        Minimum="0"
                                        Maximum="100"
                                        Value="{Binding ElementName=speedTextBox, Path=Text, Mode=TwoWay, StringFormat={}{0}}"
                                        TickFrequency="1"
                                        IsSnapToTickEnabled="True"
                                        Margin="17,5,2,5"
-                                       Grid.Column="1"/>
-                            
-                            
-                                <TextBlock Text="%"
+                                       Grid.Column="1" Grid.ColumnSpan="2"/>
+
+
+                            <TextBlock Text="%"
                                        VerticalAlignment="Center"
-                                       Margin="2,0,113,0"
+                                       Margin="2,0,20,0"
                                        Grid.Column="1"/>
                         </Grid>
 
@@ -665,7 +670,7 @@
 
 
 
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
 
             <Grid>
                 <!-- Define Animation Grid Rows -->

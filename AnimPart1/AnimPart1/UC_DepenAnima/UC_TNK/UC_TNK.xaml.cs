@@ -219,6 +219,37 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
+            var contextMenu = (ContextMenu)this.Resources["ContextMenu1"];
+
+            foreach (MenuItem item in contextMenu.Items)
+            {
+                if (item.Name == "menuItem1")
+                {
+                    item.Header = "Updated Option 1"; // Update header text
+
+                    if (isLightOn)
+                    {
+                        item.Header = "Light Off"; // Update header text
+                    }
+                    else
+                    {
+                        item.Header = "Light on"; // Update header text
+                    }
+                }
+
+            }
+
+            contextMenu.IsOpen = true;
+        }
+
+        private void Option1_Click(object sender, RoutedEventArgs e)
+        {
+
+            ToggleLight();
+
+        }
+        private void ToggleLight()
+        {
             if (isLightOn)
             {
                 lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
@@ -228,7 +259,6 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
             {
                 lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
                 isLightOn = true;
-
             }
         }
     }

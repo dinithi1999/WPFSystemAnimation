@@ -12,8 +12,8 @@
             <DoubleAnimation 
                 Storyboard.TargetName="backgroundSvg" 
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
-                From="0" 
-                To="360" 
+                From="360" 
+                To="0" 
                 Duration="0:0:2" 
                 RepeatBehavior="Forever"/>
         </Storyboard>
@@ -23,7 +23,8 @@
         <svgc:SvgViewbox x:Name="backgroundSvg"
                         Stretch="Uniform"
                         Visibility="Visible"
-                        Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_PrimiAnima\UC_Pump\Images\pumpRotationalPart.svg"
+                        Source="pack://application:,,,/UC_PrimiAnima/UC_Pump/Images/pumpRotationalPart.svg"
+
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
             <svgc:SvgViewbox.RenderTransform>

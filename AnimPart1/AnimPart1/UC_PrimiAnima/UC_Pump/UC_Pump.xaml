@@ -8,11 +8,12 @@
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
              >
-    
+
+
     <UserControl.Resources>
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
-             Other MenuItems can be defined here 
+            <!-- Other MenuItems can be defined here -->
         </ContextMenu>
     </UserControl.Resources>
 

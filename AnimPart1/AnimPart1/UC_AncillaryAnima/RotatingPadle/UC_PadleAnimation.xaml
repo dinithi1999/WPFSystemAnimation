@@ -100,76 +100,11 @@
             </ModelVisual3D>
         </Viewport3D>
 
-        <!-- Viewport3D for ARROW1.svg -->
-        <!--<Viewport3D Name="viewport3D2" ClipToBounds="True"
-            Width="66" Height="57"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Top" Canvas.Left="75" Canvas.Top="51.5">
-
-            <Viewport3D.Camera>
-                --><!-- PerspectiveCamera for viewing the scene --><!--
-                <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-3" UpDirection="1,5,9" FieldOfView="40" />
-            </Viewport3D.Camera>
-
-            <ModelVisual3D>
-                <ModelVisual3D.Content>
-                    
-            
-                    <Model3DGroup x:Name="modelGroup">
-
-
-                        <DirectionalLight Color="White" Direction="-1,-1,-1" />
-                        <DirectionalLight Color="White" Direction="1,1,1" />
-
-                        <GeometryModel3D>
-                            <GeometryModel3D.Geometry>
-                                <MeshGeometry3D
-                            Positions="-1,-1,0 1,-1,0 1,1,0 -1,1,0"
-                            TextureCoordinates="0,1 1,1 1,0 0,0"
-                            TriangleIndices="0,1,2 0,2,3" />
-                            </GeometryModel3D.Geometry>
-                            <GeometryModel3D.Material>
-                                <DiffuseMaterial>
-                                    <DiffuseMaterial.Brush>
-                                        <VisualBrush>
-                                            <VisualBrush.Visual>
-                                                <Grid>
-                                                    <svgc:SvgViewbox x:Name="svgViewbox3"
-                                                             Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\RotatingPadle\Images\arrows.svg"
-                                                             Stretch="Uniform"/>
-                                                </Grid>
-                                            </VisualBrush.Visual>
-                                        </VisualBrush>
-                                    </DiffuseMaterial.Brush>
-                                </DiffuseMaterial>
-                            </GeometryModel3D.Material>
-                        </GeometryModel3D>
-
-                        
-       
-            
-                        <Model3DGroup.Transform>
-                            <Transform3DGroup>
-                                
-                                <RotateTransform3D x:Name="rotateTransform2">
-                                    <RotateTransform3D.Rotation>
-                                        <AxisAngleRotation3D Axis="0,1,0" Angle="0" />
-                                    </RotateTransform3D.Rotation>
-                                </RotateTransform3D>
-
-            
-                                <TranslateTransform3D x:Name="translateTransform" />
-                            </Transform3DGroup>
-                        </Model3DGroup.Transform>
-                    </Model3DGroup>
-                </ModelVisual3D.Content>
-            </ModelVisual3D>
-        </Viewport3D>-->
-
+    
 
         <Grid>
             <svgc:SvgViewbox x:Name="svgViewbox3"
-              Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\RotatingPadle\Images\arrows.svg"
+              Source="pack://application:,,,/UC_AncillaryAnima/RotatingPadle/Images/arrows.svg"
               Stretch="Uniform" Margin="90,69,-91,-69" RenderTransformOrigin="0.5,0.5">
                 <svgc:SvgViewbox.RenderTransform>
                     <TransformGroup>

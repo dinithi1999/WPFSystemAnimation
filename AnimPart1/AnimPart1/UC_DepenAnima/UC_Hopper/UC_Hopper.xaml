@@ -7,7 +7,6 @@
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              mc:Ignorable="d" Height="420" Width="375"
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
-             FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
 
     <UserControl.Resources>

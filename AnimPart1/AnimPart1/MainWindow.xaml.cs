@@ -127,7 +127,7 @@ namespace AnimPart1
                 MessageBox.Show($"Error: {ex.Message}");
             }
 
-            hopperAnimStart.IsChecked = true;
+            hopperAnimStart.IsChecked = false;
             hopperCam.IsChecked = true;
             hopperLight.IsChecked = true;
             hopperLabel.IsChecked = true;
@@ -135,35 +135,35 @@ namespace AnimPart1
             tankCam.IsChecked = true;
             tankLabel.IsChecked = true;
             tankLight.IsChecked = true;
-            tankAnimStart.IsChecked = true;
+            tankAnimStart.IsChecked = false;
 
             SiloCam.IsChecked = true;
             SiloLabel.IsChecked = true;
             SiloLight.IsChecked = true;
-            SiloAnimStart.IsChecked = true;
+            SiloAnimStart.IsChecked = false;
 
 
             pmpLabelVisibilityToggleBtn.IsChecked = true;
             pmplightOnToggleBtn.IsChecked = true;
             pmpCamOnToggleBtn.IsChecked = true;
-            pmpAnimStartToggleBtn.IsChecked = true;
+            pmpAnimStartToggleBtn.IsChecked = false;
             pmpclockwiseRadioButton.IsChecked = true;
 
             srwLabelVisibilityToggleBtn.IsChecked = true;
             srwlightOnToggleBtn.IsChecked = true;
             srwCamOnToggleBtn.IsChecked = true;
-            srwAnimStartToggleBtn.IsChecked = true;
+            srwAnimStartToggleBtn.IsChecked = false;
             srwclockwiseRadioButton.IsChecked = true;
 
             slcLabelVisibilityToggleBtn.IsChecked = true;
             slclightOnToggleBtn.IsChecked = true;
             slcCamOnToggleBtn.IsChecked = true;
-            slcAnimStartToggleBtn.IsChecked = true;
+            slcAnimStartToggleBtn.IsChecked = false;
 
             porLabelVisibilityToggleBtn.IsChecked = true;
             porlightOnToggleBtn.IsChecked = true;
             porCamOnToggleBtn.IsChecked = true;
-            porAnimStartToggleBtn.IsChecked = true;
+            porAnimStartToggleBtn.IsChecked = false;
 
             SetSliderValue(tnkspeedSlider, 100);
             SetSliderValue(speedSliderSLO, 100);
@@ -640,6 +640,7 @@ namespace AnimPart1
             sloUCInstance.StartPadleAnimation();
 
         }
+
         private void SiloStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
             sloUCInstance.StopPadleAnimation();
@@ -661,13 +662,108 @@ namespace AnimPart1
         {
             portionerUCInstance.svgViewbox.Source = new Uri(portionerInit);
         }
+
         private void PortionerStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
             portionerUCInstance.svgViewbox.Source = new Uri(portioner90);
         }
 
-        
+        private void PMPStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+            pumpUCInstance.StartSpinning();
+            pmpclockwiseRadioButton.IsEnabled = false;
+            pmpcounterClockwiseRadioButton.IsEnabled = false;
 
+        }
+
+        private void PMPStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+            pumpUCInstance.StopSpinning();
+            pmpclockwiseRadioButton.IsEnabled = true;
+            pmpcounterClockwiseRadioButton.IsEnabled = true;
+        }
+
+        private void SLCStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SLCStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void SRWStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+            screwUCInstance.StartSpinning();
+            srwclockwiseRadioButton.IsEnabled = false;
+            srwcounterClockwiseRadioButton.IsEnabled = false;
+
+
+        }
+
+        private void SRWStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+            screwUCInstance.StopSpinning();
+            srwclockwiseRadioButton.IsEnabled = true;
+            srwcounterClockwiseRadioButton.IsEnabled = true;
+        }
+
+
+        private void srwclockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!screwUCInstance.isAnimationOnGoing)
+            {
+                screwUCInstance.SetRotationDirection(false);
+            }
+            else
+            {
+                MessageBox.Show("Stop the rotation berfore changing the rotational direction");
+            }
+        }
+
+        private void srwcounterClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!screwUCInstance.isAnimationOnGoing)
+            {
+                screwUCInstance.SetRotationDirection(true);
+            }
+            else
+            {
+
+                MessageBox.Show("Stop the rotation berfore changing the rotational direction");
+
+            }
+        }
+
+
+
+        private void pmpcounterClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!pumpUCInstance.isAnimationOngoing)
+            {
+                pumpUCInstance.SetRotationDirection(true);
+            }
+            else
+            {
+                MessageBox.Show("Stop the rotation berfore changing the rotational direction");
+
+
+            }
+        }
+
+        private void pmpclockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!pumpUCInstance.isAnimationOngoing)
+            {
+                pumpUCInstance.SetRotationDirection(false);
+            }
+            else
+            {
+                MessageBox.Show("Stop the rotation berfore changing the rotational direction");
+
+
+            }
+        }
     }
 
 

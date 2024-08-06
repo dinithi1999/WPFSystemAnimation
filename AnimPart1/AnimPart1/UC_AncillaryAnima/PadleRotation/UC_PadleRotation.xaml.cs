@@ -36,11 +36,7 @@ namespace AnimPart1.UC_AncillaryAnima.PadleRotation
                 spinStoryboard.Begin();
 
             }
-            else
-            {
-                // Handle null storyboard (e.g., log error, throw exception, etc.)
-            }
-
+          
 
         }
 

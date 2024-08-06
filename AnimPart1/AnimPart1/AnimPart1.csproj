@@ -245,9 +245,9 @@
     <Resource Include="UC_AncillaryAnima\Labels\Images\yellow2.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="UC_AncillaryAnima\PrimiLabel\Images\PrimiLabel.svg">
+    <Resource Include="UC_AncillaryAnima\PrimiLabel\Images\PrimiLabel.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOff\20.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

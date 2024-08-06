@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using AnimPart1.UC_AncillaryAnima.Lights;
 using AnimPart1.UC_AncillaryAnima.Label;
+using System.Windows.Media.Animation;
 
 namespace AnimPart1.UC_PrimiAnima.UC_Screw
 {
@@ -22,6 +23,7 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
 
         public string labelName = "SRW-XXX";
         public bool isLightOn;
+        public bool isAnimationOnGoing;
 
 
         public UC_Screw()
@@ -55,20 +57,7 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
         }
 
         
-        private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            //if (isLightOn)
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
-            //    isLightOn = false;
-            //}
-            //else
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
-            //    isLightOn = true;
-            //}
-        }
-
+     
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
@@ -79,6 +68,68 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
         {
             backgroundSvg.Visibility = Visibility.Collapsed;
         }
+
+        private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var contextMenu = (ContextMenu)this.Resources["ContextMenu1"];
+
+            foreach (MenuItem item in contextMenu.Items)
+            {
+                if (item.Name == "menuItem1")
+                {
+                    item.Header = "Updated Option 1"; // Update header text
+
+                    if (isLightOn)
+                    {
+                        item.Header = "Light Off"; // Update header text
+                    }
+                    else
+                    {
+                        item.Header = "Light on"; // Update header text
+                    }
+                }
+
+            }
+
+            contextMenu.IsOpen = true;
+        }
+
+        private void Option1_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleLight();
+        }
+
+        private void ToggleLight()
+        {
+            if (isLightOn)
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+                isLightOn = false;
+            }
+            else
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+                isLightOn = true;
+            }
+        }
+
+        public void StartSpinning()
+        {
+            uC_ScrewRotation.StartSpinning();
+            isAnimationOnGoing = true;
+        }
+
+        public void StopSpinning()
+        {
+            uC_ScrewRotation.StopSpinning();
+            isAnimationOnGoing = false;
+        }
+
+        public void SetRotationDirection(bool clockwise)
+        {
+            uC_ScrewRotation.SetRotationDirection(clockwise);
+        }
+
 
     }
 }

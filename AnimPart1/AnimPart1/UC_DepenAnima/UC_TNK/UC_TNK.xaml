@@ -9,6 +9,13 @@
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
 
+    <UserControl.Resources>
+        <ContextMenu x:Key="ContextMenu1">
+            <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
+            <!-- Other MenuItems can be defined here -->
+        </ContextMenu>
+    </UserControl.Resources>
+    
     <Grid x:Name="MainGrid"
 
       >

@@ -9,15 +9,53 @@ namespace AnimPart1.UC_AncillaryAnima.ScrewRotation
         public UC_ScrewRotation()
         {
             InitializeComponent();
+        }
 
-            Loaded += UC_ScrewRotation_Loaded;
+        public void StartSpinning()
+        {
+            var spinStoryboard = (Storyboard)this.Resources["RotateStoryboard"];
+
+            if (spinStoryboard != null)
+            {
+                spinStoryboard.Begin();
+
+            }
 
         }
 
-        private void UC_ScrewRotation_Loaded(object sender, RoutedEventArgs e)
+        public void StopSpinning()
         {
-            Storyboard storyboard = (Storyboard)this.Resources["RotateStoryboard"];
-            storyboard.Begin();
+            var spinStoryboard = (Storyboard)this.Resources["RotateStoryboard"];
+
+            if (spinStoryboard != null)
+            {
+                spinStoryboard.Stop();
+            }
+
+        }
+
+
+        public void SetRotationDirection(bool clockwise)
+        {
+            var spinStoryboard = (Storyboard)this.Resources["RotateStoryboard"];
+            if (spinStoryboard != null)
+            {
+                var animation = spinStoryboard.Children[0] as DoubleAnimation;
+
+                if (animation != null)
+                {
+                    if (clockwise)
+                    {
+                        animation.From = 360;
+                        animation.To = 0;
+                    }
+                    else
+                    {
+                        animation.From = 0;
+                        animation.To = 360;
+                    }
+                }
+            }
         }
     }
 }

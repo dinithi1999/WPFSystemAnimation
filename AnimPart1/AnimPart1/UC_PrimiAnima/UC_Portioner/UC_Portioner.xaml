@@ -16,35 +16,44 @@
     </UserControl.Resources>
 
     <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <!-- Column 0: Width adjusts to content -->
             <ColumnDefinition Width="*"/>
-            <!-- Column 1: Takes up remaining space -->
         </Grid.ColumnDefinitions>
 
-        <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid">
+        <!-- Existing content in the first row -->
+        <Grid Grid.Row="0" Margin="5,9,7,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
+            <!-- Background SVG -->
             <svgc:SvgViewbox x:Name="backgroundSvg"
                              Stretch="Uniform"
                              Visibility="Collapsed"
                              HorizontalAlignment="Center"
                              Margin="10,0,0,0"
-                             VerticalAlignment="Top"/>
+                             VerticalAlignment="Top"
+                              Panel.ZIndex="0"
+                             />
 
             <svgc:SvgViewbox x:Name="svgViewbox"
                              Stretch="Uniform"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                              Margin="80,10,0,0"
-                             Panel.ZIndex="0" />
+                             Margin="80,10,0,0"
+                             Panel.ZIndex="1" />
 
             <ContentControl x:Name="lightColumn"
                             HorizontalAlignment="Left"
                             Margin="10,0,0,0"
                             VerticalAlignment="Center"
-                            Panel.ZIndex="1">
+                            Panel.ZIndex="2">
                 <ContentControl.Effect>
                     <DropShadowEffect Color="Gray"
                                       Direction="320"
@@ -55,17 +64,23 @@
 
             <ContentControl x:Name="CameraColumn"
                             HorizontalAlignment="Right"
-                          Margin="10,0,-5,0"
-
+                            Margin="10,0,-5,0"
                             VerticalAlignment="Top"
-                            Panel.ZIndex="0"/>
+                            Panel.ZIndex="2"/>
+
+            <svgc:SvgViewbox x:Name="backgroundSvgRow"
+                 Stretch="None"
+                 Source="pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/downArrow.svg"
+                  Margin="1,0,2,129"
+                 />
         </Grid>
 
-        <ContentControl Grid.Column="1"
+       
+        <ContentControl Grid.Row="0" Grid.Column="1"
                         x:Name="labelColumn"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
                         Height="100"
-                        Width="150"/>
+                        Width="150" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>
