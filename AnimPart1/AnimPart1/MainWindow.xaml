@@ -148,34 +148,31 @@
 
                         <Grid Grid.Row="4">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto" MinWidth="64.047"/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0" VerticalAlignment="Center">
+                            <Grid Grid.Column="0" VerticalAlignment="Center" Height="26">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5" Grid.Column="0"/>
-                                <TextBox x:Name="speedTextBox"
-                                     Text="{Binding ElementName=speedSlider, Path=Value, Mode=TwoWay, StringFormat={}{0}}"
-                                     Width="18"
-                                     HorizontalAlignment="Center"
-                                     VerticalAlignment="Center"
-                                     Grid.Column="1"/>
+                                <TextBlock Text="Speeed" VerticalAlignment="Center" Margin="5" Grid.Column="0"/>
+                                <TextBox x:Name="speedTextBoxTANK"
+                                    Width="30"
+                                    Text="50"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    PreviewTextInput="TextBox_PreviewTextInput"
+                                    TextChanged="TNKSpeedTextBox_TextChanged"
+                                    MaxLength="3"
+                                    Grid.Column="1" Margin="40,0,0,0"/>
                             </Grid>
-                            <Slider x:Name="tnkspeedSlider"
-                                         Minimum="0"
-                                         Maximum="100"
-                                         Value="{Binding ElementName=speedTextBox, Path=Text, Mode=TwoWay, StringFormat={}{0}}"
-                                         TickFrequency="1"
-                                         IsSnapToTickEnabled="True"
-                                         Margin="17,5,2,5"
-                                         Grid.Column="1"/>
+
+
                             <TextBlock Text="%"
                                             VerticalAlignment="Center"
-                                            Margin="2,0,113,0"
-                                            Grid.Column="1"/>
+                                            Margin="0,0,44,0"
+                                            Grid.Column="1" HorizontalAlignment="Right" Width="23"/>
                         </Grid>
 
                     </Grid>
@@ -282,36 +279,51 @@
                             <ToggleButton x:Name="hopperAnimStart" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="HopperStartChecked_Checked" Unchecked="HopperStartChecked_Unchecked"/>
                         </Grid>
 
-                        <Grid Grid.Row="4">
+
+
+
+                        <Grid Grid.Row="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0" VerticalAlignment="Center">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="43.047"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="100"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5" Grid.Column="0"/>
+                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
                                 <TextBox x:Name="speedTextBoxHOP"
-             Text="{Binding ElementName=speedSlider, Path=Value, Mode=TwoWay, StringFormat={}{0}}"
-             Width="18"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center"
-             Grid.Column="1"/>
+          Width="30"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Center"
+          Grid.Column="1"
+          Text="50"                               
+          RenderTransformOrigin="-0.408,0.434"
+          Height="18"
+          PreviewTextInput="TextBox_PreviewTextInput"
+          TextChanged="TextBox_TextChanged"
+          MaxLength="3" Margin="49,0,0,0"/>
+                                <!-- Limit to 3 characters for integers between 0 and 100 -->
+
                             </Grid>
-                            <Slider x:Name="speedSliderHOP"
-                 Minimum="0"
-                 Maximum="100"
-                 Value="{Binding ElementName=speedTextBox, Path=Text, Mode=TwoWay, StringFormat={}{0}}"
-                 TickFrequency="1"
-                 IsSnapToTickEnabled="True"
-                 Margin="17,5,2,5"
-                 Grid.Column="1"/>
+
+
+
+
+
                             <TextBlock Text="%"
                     VerticalAlignment="Center"
-                    Margin="2,0,107,0"
-                    Grid.Column="1"/>
+                    Margin="128,0,32,0" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-8.962"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
                         </Grid>
 
 
@@ -371,34 +383,29 @@
 
                         <Grid Grid.Row="4">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto" MinWidth="64.047"/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0" VerticalAlignment="Center">
+                            <Grid Grid.Column="0" VerticalAlignment="Center" Height="26">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5" Grid.Column="0"/>
-                                <TextBox x:Name="speedTextBoxSLP"
-             Text="{Binding ElementName=speedSlider, Path=Value, Mode=TwoWay, StringFormat={}{0}}"
-             Width="18"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center"
-             Grid.Column="1"/>
+                                <TextBox x:Name="speedTextBoxSLO"
+                                    Width="30"
+                                    Text="50"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    PreviewTextInput="TextBox_PreviewTextInput"
+                                    TextChanged="SLOSpeedTextBox_TextChanged"
+                                    MaxLength="3"
+                                    Grid.Column="1" Margin="50,0,0,0"/>
                             </Grid>
-                            <Slider x:Name="speedSliderSLO"
-                 Minimum="0"
-                 Maximum="100"
-                 Value="{Binding ElementName=speedTextBox, Path=Text, Mode=TwoWay, StringFormat={}{0}}"
-                 TickFrequency="1"
-                 IsSnapToTickEnabled="True"
-                 Margin="17,5,2,5"
-                 Grid.Column="1"/>
+
                             <TextBlock Text="%"
                     VerticalAlignment="Center"
-                    Margin="2,0,113,0"
-                    Grid.Column="1"/>
+                    Margin="3,0,53,0" Grid.Column="1" Height="16"/>
                         </Grid>
 
                     </Grid>
@@ -455,7 +462,15 @@
 
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="SCREW" Margin="580,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1">
+                <GroupBox Header="SCREW" Margin="580,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="244" Width="250" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
+                    <GroupBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="0"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0"/>
+                        </TransformGroup>
+                    </GroupBox.RenderTransform>
                     <Grid Height="230">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -526,29 +541,38 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0" VerticalAlignment="Center">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="43.047"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="100"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5" Grid.Column="0"/>
+                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
                                 <TextBox x:Name="speedTextBoxSRW"
-                                    Text="{Binding ElementName=speedSlider, Path=Value, Mode=TwoWay, StringFormat={}{0}}"
-                                    Width="18"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Grid.Column="1"/>
+                                 Text="50"
+                                 Width="30"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Bottom"
+                                 Grid.Column="1"
+                                 RenderTransformOrigin="-0.408,0.434"
+                                 Height="18"
+                                 PreviewTextInput="TextBox_PreviewTextInput"
+                                 TextChanged="SRWSpeedTextBox_TextChanged"
+                                 MaxLength="3" Margin="70,0,0,0"/>
+                                <!-- Limit to 3 characters for integers between 0 and 100 -->
+
                             </Grid>
-                            <Slider x:Name="speedSliderSRW"
-                                       Minimum="0"
-                                       Maximum="100"
-                                       Value="{Binding ElementName=speedTextBox, Path=Text, Mode=TwoWay, StringFormat={}{0}}"
-                                       TickFrequency="1"
-                                       IsSnapToTickEnabled="True"
-                                       Margin="17,5,2,5"
-                                       Grid.Column="1"/>
+
                             <TextBlock Text="%"
                                        VerticalAlignment="Center"
-                                       Margin="2,0,113,0"
-                                       Grid.Column="1"/>
+                                       Margin="1,0,72,0"
+                                       Grid.Column="1" RenderTransformOrigin="0.583,-0.18">
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="-1"/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform X="-2.317"/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
                         </Grid>
 
 
@@ -622,41 +646,34 @@
 
                         <Grid Grid.Row="5">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="28*"/>
-                                <ColumnDefinition Width="31*"/>
+                                <ColumnDefinition Width="Auto" MinWidth="148"/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
-                            <Grid Grid.Column="0" VerticalAlignment="Center">
+                            <Grid Grid.Column="0" VerticalAlignment="Center" Height="26">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="43.047"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="18"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5" Grid.Column="0"/>
+                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
 
                                 <TextBox x:Name="pmpspeedTextBoxpmp"
-                                          Text="{Binding ElementName=speedSlider, Path=Value, Mode=TwoWay, StringFormat={}{0}}"
-                                          Width="18"
-                                          HorizontalAlignment="Center"
+                                          Width="30"
+                                          PreviewTextInput="TextBox_PreviewTextInput"
+                                          TextChanged="PMPSpeedTextBox_TextChanged"
+                                          HorizontalAlignment="Left"
+                                          Text="50"
                                           VerticalAlignment="Center"
-                                          Grid.Column="1"/>
+                                          Grid.Column="1" Height="18" RenderTransformOrigin="0.504,0.507" Margin="78,0,0,0"/>
                             </Grid>
 
 
-                            <Slider x:Name="speedSliderpmp"
-                                       Minimum="0"
-                                       Maximum="100"
-                                       Value="{Binding ElementName=speedTextBox, Path=Text, Mode=TwoWay, StringFormat={}{0}}"
-                                       TickFrequency="1"
-                                       IsSnapToTickEnabled="True"
-                                       Margin="17,5,2,5"
-                                       Grid.Column="1" Grid.ColumnSpan="2"/>
 
 
                             <TextBlock Text="%"
                                        VerticalAlignment="Center"
                                        Margin="2,0,20,0"
-                                       Grid.Column="1"/>
+                                       Grid.Column="1" Height="16"/>
                         </Grid>
 
 

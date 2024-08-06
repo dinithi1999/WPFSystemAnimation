@@ -130,6 +130,14 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
             uC_ScrewRotation.SetRotationDirection(clockwise);
         }
 
+        public void SetRotationSpeed(int percentage)
+        {
+            if (isAnimationOnGoing)
+            {
+                uC_ScrewRotation.SetRotationSpeed(percentage);
+            }       
+        }
+
 
     }
 }

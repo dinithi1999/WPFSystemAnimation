@@ -30,6 +30,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         public string labelName = "HOP-XXX";
         public ICommand ToggleLightCommand { get; }
 
+        private bool isAnimationOnGoing;
 
         public UC_Hopper()
         {
@@ -164,6 +165,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         public void StartPadleAnimation()
         {
             padle.StartSpinning();
+            isAnimationOnGoing = true;
             labelUserCtrl.blinkTimerOperationOn.Start();
             labelUserCtrl.svgViewboxYellowIcon.Visibility = Visibility.Visible;
 
@@ -172,6 +174,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         public void StopPadleAnimation()
         {
             padle.StopSpinning();
+            isAnimationOnGoing = false;
             labelUserCtrl.blinkTimerOperationOn.Stop();
 
         }
@@ -260,6 +263,14 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             {
                 lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
                 isLightOn = true;
+            }
+        }
+
+        public void SetRotationSpeed(int percentage)
+        {
+            if (isAnimationOnGoing)
+            {
+                padle.SetRotationSpeed(percentage);
             }
         }
 

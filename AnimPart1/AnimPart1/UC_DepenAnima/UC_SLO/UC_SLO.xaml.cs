@@ -40,6 +40,7 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
         private int currentSiloLevel; // Keep track of the current tank level
 
         public string labelName = "SLO-XXX";
+        private bool isAnimationOnGoing;
 
 
         public UC_SLO()
@@ -172,6 +173,7 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
         public void StartPadleAnimation()
         {
             padle.StartSpinning();
+            isAnimationOnGoing = true;
             labelUserCtrl.blinkTimerOperationOn.Start();
             labelUserCtrl.svgViewboxYellowIcon.Visibility = Visibility.Visible;
         }
@@ -179,6 +181,7 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
         public void StopPadleAnimation()
         {
             padle.StopSpinning();
+            isAnimationOnGoing = false;
             labelUserCtrl.blinkTimerOperationOn.Stop();
 
         }
@@ -253,6 +256,14 @@ namespace AnimPart1.UC_DepenAnima.UC_SLO
             {
                 lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
                 isLightOn = true;
+            }
+        }
+
+        public void SetRotationSpeed(int percentage)
+        {
+            if (isAnimationOnGoing)
+            {
+                padle.SetRotationSpeed(percentage);
             }
         }
     }

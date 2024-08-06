@@ -1,5 +1,6 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
 using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
+using AnimPart1.UC_AncillaryAnima.ScrewRotation;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,6 +42,8 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
         private int currentTankLevel; // Keep track of the current tank level
 
         public string labelName = "TNK-XXX";
+
+        private bool isAnimationOnGoing;
 
         public UC_TNK()
         {
@@ -177,6 +180,7 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
         public void StartPadleAnimation()
         {
             padle.StartSpinning();
+            isAnimationOnGoing = true;
             labelUserCtrl.blinkTimerOperationOn.Start();
             labelUserCtrl.svgViewboxYellowIcon.Visibility = Visibility.Visible;
         }
@@ -184,6 +188,7 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
         public void StopPadleAnimation()
         {
             padle.StopSpinning();
+            isAnimationOnGoing = false;
             labelUserCtrl.blinkTimerOperationOn.Stop();
 
         }
@@ -259,6 +264,14 @@ namespace AnimPart1.UC_DepenAnima.UC_TNK
             {
                 lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
                 isLightOn = true;
+            }
+        }
+
+        public void SetRotationSpeed(int percentage)
+        {
+            if (isAnimationOnGoing)
+            {
+                padle.SetRotationSpeed(percentage);
             }
         }
     }

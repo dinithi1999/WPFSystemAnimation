@@ -24,18 +24,7 @@
             </DoubleAnimation>
         </Storyboard>
 
-        <!-- Animation for ARROW1.svg and ARROW2.svg -->
-        <Storyboard x:Key="RotateArrowStoryboard">
-            <!-- Rotation Animation -->
-            <DoubleAnimation
-                Storyboard.TargetName="rotateTransform2"
-                Storyboard.TargetProperty="Rotation.Angle"
-                From="0"
-                To="360"
-                Duration="0:0:1"
-                RepeatBehavior="Forever" />
-
-        </Storyboard>
+    
 
     </UserControl.Resources>
 

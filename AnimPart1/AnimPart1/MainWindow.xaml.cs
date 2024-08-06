@@ -11,6 +11,8 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Threading;
 using System.Windows.Controls;
+using System.Text.RegularExpressions;
+using System.Windows.Input;
 
 namespace AnimPart1
 {
@@ -165,28 +167,12 @@ namespace AnimPart1
             porCamOnToggleBtn.IsChecked = true;
             porAnimStartToggleBtn.IsChecked = false;
 
-            SetSliderValue(tnkspeedSlider, 100);
-            SetSliderValue(speedSliderSLO, 100);
-            SetSliderValue(speedSliderHOP, 100);
-            SetSliderValue(speedSliderpmp, 100);
-            SetSliderValue(speedSliderSRW, 100);
+           
 
         }
 
 
-        private void SetSliderValue(Slider slider, double newValue)
-        {
-            // Ensure the value is within the defined range
-            if (newValue >= slider.Minimum && newValue <= slider.Maximum)
-            {
-                slider.Value = newValue;
-            }
-            else
-            {
-                // Handle out-of-range values if necessary
-                throw new ArgumentOutOfRangeException(nameof(newValue), "Value is out of range for the slider.");
-            }
-        }
+      
 
         #region Camera
         private void HopperCameraChecked_Checked(object sender, RoutedEventArgs e)
@@ -628,6 +614,7 @@ namespace AnimPart1
         private void HopperStartChecked_Checked(object sender, RoutedEventArgs e)
         {
             hopperUCInstance.StartPadleAnimation();
+            SetHOPSpeed();
         }
 
         private void HopperStartChecked_Unchecked(object sender, RoutedEventArgs e)
@@ -638,6 +625,7 @@ namespace AnimPart1
         private void SiloStartChecked_Checked(object sender, RoutedEventArgs e)
         {
             sloUCInstance.StartPadleAnimation();
+            SetSRWSpeed();
 
         }
 
@@ -650,6 +638,7 @@ namespace AnimPart1
         private void TankStartChecked_Checked(object sender, RoutedEventArgs e)
         {
             tankUCInstance.StartPadleAnimation();
+            SetTNKSpeed();
 
         }
 
@@ -671,6 +660,7 @@ namespace AnimPart1
         private void PMPStartChecked_Checked(object sender, RoutedEventArgs e)
         {
             pumpUCInstance.StartSpinning();
+            SetPMPSpeed();
             pmpclockwiseRadioButton.IsEnabled = false;
             pmpcounterClockwiseRadioButton.IsEnabled = false;
 
@@ -695,6 +685,7 @@ namespace AnimPart1
         private void SRWStartChecked_Checked(object sender, RoutedEventArgs e)
         {
             screwUCInstance.StartSpinning();
+            SetSRWSpeed();
             srwclockwiseRadioButton.IsEnabled = false;
             srwcounterClockwiseRadioButton.IsEnabled = false;
 
@@ -729,9 +720,7 @@ namespace AnimPart1
             }
             else
             {
-
                 MessageBox.Show("Stop the rotation berfore changing the rotational direction");
-
             }
         }
 
@@ -746,8 +735,6 @@ namespace AnimPart1
             else
             {
                 MessageBox.Show("Stop the rotation berfore changing the rotational direction");
-
-
             }
         }
 
@@ -760,8 +747,202 @@ namespace AnimPart1
             else
             {
                 MessageBox.Show("Stop the rotation berfore changing the rotational direction");
+            }
+        }
 
 
+        #region Speed Variation
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Allow only numeric input
+            e.Handled = !IsTextNumeric(e.Text);
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                if (int.TryParse(textBox.Text, out int value))
+                {
+                    if (value < 0)
+                    {
+                        textBox.Text = "0";
+                    }
+                    else if (value > 100)
+                    {
+                        textBox.Text = "100";
+                    }
+                    // Optionally move the cursor to the end of the text
+                    textBox.SelectionStart = textBox.Text.Length;
+                }
+            }
+        }
+
+        private bool IsTextNumeric(string text)
+        {
+            return Regex.IsMatch(text, @"^[0-9]+$");
+        }
+
+        #endregion
+
+        private void SRWSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+           SetSRWSpeed();
+        }
+
+
+        private void PMPSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            SetPMPSpeed();
+
+        }
+
+        private void HOPSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetHOPSpeed();
+
+        }
+
+        private void SLOSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetSLOSpeed();
+
+        }
+
+
+        private void TNKSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetTNKSpeed();
+
+        }
+
+
+        private void SetSRWSpeed()
+        {
+            if (int.TryParse(speedTextBoxSRW.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    speedTextBoxSRW.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    speedTextBoxSRW.Text = "100";
+                }
+                speedTextBoxSRW.SelectionStart = speedTextBoxSRW.Text.Length;
+            }
+
+            if (int.TryParse(speedTextBoxSRW.Text, out int percentage))
+            {
+                if (screwUCInstance != null && screwUCInstance.isAnimationOnGoing)
+                {
+                    screwUCInstance.SetRotationSpeed(percentage);
+                }
+            }
+        }
+
+        private void SetPMPSpeed()
+        {
+
+            if (int.TryParse(pmpspeedTextBoxpmp.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    pmpspeedTextBoxpmp.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    pmpspeedTextBoxpmp.Text = "100";
+                }
+                pmpspeedTextBoxpmp.SelectionStart = pmpspeedTextBoxpmp.Text.Length;
+            }
+
+            if (int.TryParse(pmpspeedTextBoxpmp.Text, out int percentage))
+            {
+                if (pumpUCInstance != null && pumpUCInstance.isAnimationOngoing)
+                {
+                    pumpUCInstance.SetRotationSpeed(percentage);
+                }
+            }
+        }
+
+        private void SetTNKSpeed()
+        {
+
+            if (int.TryParse(speedTextBoxTANK.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    speedTextBoxTANK.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    speedTextBoxTANK.Text = "100";
+                }
+                speedTextBoxTANK.SelectionStart = speedTextBoxTANK.Text.Length;
+            }
+
+            if (int.TryParse(speedTextBoxTANK.Text, out int percentage))
+            {
+                if (tankUCInstance != null)
+                {
+                    tankUCInstance.SetRotationSpeed(percentage);
+                }
+            }
+        }
+
+        private void SetHOPSpeed()
+        {
+
+            if (int.TryParse(speedTextBoxHOP.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    speedTextBoxHOP.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    speedTextBoxHOP.Text = "100";
+                }
+                speedTextBoxHOP.SelectionStart = speedTextBoxHOP.Text.Length;
+            }
+
+            if (int.TryParse(speedTextBoxHOP.Text, out int percentage))
+            {
+                if (hopperUCInstance != null)
+                {
+                    hopperUCInstance.SetRotationSpeed(percentage);
+                }
+            }
+
+        }
+
+        private void SetSLOSpeed()
+        {
+
+            if (int.TryParse(speedTextBoxSLO.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    speedTextBoxSLO.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    speedTextBoxSLO.Text = "100";
+                }
+                speedTextBoxSLO.SelectionStart = speedTextBoxSLO.Text.Length;
+            }
+
+            if (int.TryParse(speedTextBoxSLO.Text, out int percentage))
+            {
+                if (sloUCInstance != null)
+                {
+                    sloUCInstance.SetRotationSpeed(percentage);
+                }
             }
         }
     }
