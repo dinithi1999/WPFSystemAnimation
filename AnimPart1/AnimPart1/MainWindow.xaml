@@ -302,7 +302,7 @@
           RenderTransformOrigin="-0.408,0.434"
           Height="18"
           PreviewTextInput="TextBox_PreviewTextInput"
-          TextChanged="TextBox_TextChanged"
+          TextChanged="HOPSpeedTextBox_TextChanged"
           MaxLength="3" Margin="49,0,0,0"/>
                                 <!-- Limit to 3 characters for integers between 0 and 100 -->
 
