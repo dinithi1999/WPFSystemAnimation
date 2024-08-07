@@ -22,6 +22,9 @@
     <Compile Update="UC_AncillaryAnima\ScrewRotation\UC_ScrewRotation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_AncillaryAnima\SlicerBallsAnimation\SlicerBallAnimation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_DepenAnima\UC_Hopper\UC_Hopper.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_AncillaryAnima\ScrewRotation\UC_ScrewRotation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_AncillaryAnima\SlicerBallsAnimation\SlicerBallAnimation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_DepenAnima\UC_Hopper\UC_Hopper.xaml">

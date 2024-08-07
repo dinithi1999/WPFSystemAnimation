@@ -67,5 +67,7 @@
 
         <ContentControl Grid.Column="1" x:Name="labelColumn2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Width="150" Margin="0,100,0,0"/>
 
+        <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="0,80,0,0"/>
+
     </Grid>
 </UserControl>

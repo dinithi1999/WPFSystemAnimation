@@ -1,8 +1,12 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
 using AnimPart1.UC_AncillaryAnima.Lights;
+using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
+using AnimPart1.UC_AncillaryAnima.SlicerBallsAnimation;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,7 +32,7 @@ namespace AnimPart1.UC_PrimiAnima.UC_Slicer
         public UC_PrimiLabel labelUserCtrl2;
         public UC_Label labelUserCtrl;
 
-
+        public SlicerBallAnimation slicerAnime;
 
         private int currentImageIndex;
         private System.Timers.Timer animationTimer;
@@ -54,6 +58,11 @@ namespace AnimPart1.UC_PrimiAnima.UC_Slicer
       
             labelUserCtrl2 = new UC_PrimiLabel();
             labelColumn2.Content = labelUserCtrl2;
+
+
+            slicerAnime = new SlicerBallAnimation();
+            PadleColumn.Content = slicerAnime;
+
 
             labelUserCtrl = new UC_Label();
             labelColumn.Content = labelUserCtrl;

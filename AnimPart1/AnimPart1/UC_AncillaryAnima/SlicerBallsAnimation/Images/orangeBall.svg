@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Slicer" xmlns="http://www.w3.org/2000/svg" width="267.25" height="355.36" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 267.25 355.36">
+  <defs>
+    <style>
+      .e {
+        fill: url(#d);
+        fill-rule: evenodd;
+      }
+
+      .e, .f {
+        stroke-width: 0px;
+      }
+
+      .g {
+        filter: url(#b);
+      }
+
+      .f {
+        fill: #b0b0b0;
+      }
+    </style>
+    <filter id="b" data-name="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5"/>
+      <feGaussianBlur result="c" stdDeviation="3"/>
+      <feFlood flood-color="#494949" flood-opacity="1"/>
+      <feComposite in2="c" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="d" cx="102.3" cy="236.32" fx="102.3" fy="236.32" r="10.52" gradientTransform="translate(238.91 209.11) rotate(126) scale(1 .4)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".09" stop-color="rgba(254, 247, 245, .99)" stop-opacity=".99"/>
+      <stop offset=".26" stop-color="rgba(252, 227, 218, .97)" stop-opacity=".97"/>
+      <stop offset=".46" stop-color="rgba(249, 194, 174, .93)" stop-opacity=".93"/>
+      <stop offset=".71" stop-color="rgba(245, 148, 113, .88)" stop-opacity=".88"/>
+      <stop offset=".99" stop-color="rgba(241, 91, 37, .82)" stop-opacity=".82"/>
+      <stop offset="1" stop-color="#f15a24" stop-opacity=".82"/>
+    </radialGradient>
+  </defs>
+  <g class="g">
+    <path class="e" d="M97.47,242.96c0-7.4,6-13.41,13.4-13.41s13.41,6,13.41,13.41-6,13.41-13.41,13.41-13.4-6-13.4-13.41Z"/>
+    <g>
+      <rect class="f" x="110.25" y="230" width="1" height="14"/>
+      <rect class="f" x="114.73" y="240.81" width="2.24" height="13.36" transform="translate(-151.28 189.93) rotate(-52.76)"/>
+      <rect class="f" x="99.13" y="246.37" width="12.83" height="2.23" transform="translate(-132.45 121.99) rotate(-39.1)"/>
+    </g>
+  </g>
+</svg>
