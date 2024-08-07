@@ -6,16 +6,32 @@
              xmlns:local="clr-namespace:AnimPart1.UC_AncillaryAnima.SlicerBallsAnimation"
              mc:Ignorable="d" 
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-             Loaded="UserControl_Loaded">
+            >
+
+
+    
 
     <UserControl.Resources>
-        <!-- Falling Animation -->
-        <Storyboard x:Key="FallingAnimation">
+        <!-- Falling Animation for Red Ball -->
+        <Storyboard x:Key="RedBall1FallingAnimation">
             <DoubleAnimation
-                Storyboard.TargetName="translateTransform"
+                Storyboard.TargetName="translateTransformRedBall1"
                 Storyboard.TargetProperty="Y"
                 From="0"
-                To="110" 
+                To="105" 
+                RepeatBehavior="Forever"
+                Duration="0:0:2">
+            </DoubleAnimation>
+        </Storyboard>
+
+        <!-- Falling Animation for Orange Ball -->
+        <Storyboard x:Key="FirsrOrangeBallFallingAnimation">
+            <DoubleAnimation
+                Storyboard.TargetName="translateTransformOrangeBall1"
+                Storyboard.TargetProperty="Y"
+                From="0"
+                To="135" 
+                RepeatBehavior="Forever"
                 Duration="0:0:2">
                 <DoubleAnimation.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn"/>
@@ -23,35 +39,123 @@
             </DoubleAnimation>
         </Storyboard>
 
+        <!-- New Ball 1 Animation -->
+        <Storyboard x:Key="RedBall2FallingAnimation">
+            <DoubleAnimation
+                Storyboard.TargetName="translateTransformRedBall2"
+                Storyboard.TargetProperty="Y"
+                From="0"
+                To="105"
+                RepeatBehavior="Forever"
+                Duration="0:0:2">
+                <DoubleAnimation.EasingFunction>
+                    <QuadraticEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <Storyboard x:Key="OrangeBallsDroppingOutOfSlicerAnimation">
+            <DoubleAnimation
+            Storyboard.TargetName="translateTransformDroppingOrangeBall"
+            Storyboard.TargetProperty="Y"
+            From="0"
+            To="50" 
+            RepeatBehavior= "Forever"
+            Duration="0:0:2">
+            </DoubleAnimation>
+        </Storyboard>
+
+
+        <Storyboard x:Key="SecondOrangeBallFallingAnimation">
+            <DoubleAnimation
+            Storyboard.TargetName="translateTransformOrangeBall2"
+            Storyboard.TargetProperty="Y"
+            From="0"
+            To="125" 
+                RepeatBehavior="Forever"
+            Duration="0:0:2">
+               
+            </DoubleAnimation>
+        </Storyboard>
     </UserControl.Resources>
+
 
     <Canvas x:Name="MainCanvas"
             Margin="0"
             RenderTransformOrigin="0.5,0.5">
 
         <!-- Background SVG for the paddle -->
-        <svgc:SvgViewbox x:Name="svgViewbox1"
+        <svgc:SvgViewbox x:Name="svgViewboxSlicerUpperBackground"
                          Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBackGround.svg"
                          Stretch="Uniform" Canvas.Left="98" Canvas.Top="26" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
+        <!-- Background SVG for the paddle -->
+        <svgc:SvgViewbox x:Name="svgViewboxSlicerLowerBackground"
+                      Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBottom.svg"
+                      Stretch="Uniform" Canvas.Left="110" Canvas.Top="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Panel.ZIndex="1"/>
+
+
         <!-- Red Ball SVG with TranslateTransform -->
-        <svgc:SvgViewbox x:Name="svgViewbox2"
+        <svgc:SvgViewbox x:Name="svgViewboxRedBall1"
+                         Visibility="Hidden"
                          Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\RedBall.svg"
-                         Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="138" Canvas.Top="38">
+                         Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="135" Canvas.Top="38" Panel.ZIndex="0">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
-                    <TranslateTransform x:Name="translateTransform"/>
+                    <TranslateTransform x:Name="translateTransformRedBall1"/>
                 </TransformGroup>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
         <!-- Orange Ball SVG -->
-        <svgc:SvgViewbox x:Name="svgViewbox3"
+        <svgc:SvgViewbox x:Name="svgViewboxOrangeBall1"
                          Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\orangeBall.svg"
-                         Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="135" Canvas.Top="146" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                         Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="135" Canvas.Top="146">
+            <svgc:SvgViewbox.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform x:Name="translateTransformOrangeBall1"/>
+                </TransformGroup>
+            </svgc:SvgViewbox.RenderTransform>
+        </svgc:SvgViewbox>
+
+
+        <svgc:SvgViewbox x:Name="svgViewboxOrangeBall2"
+                    Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\orangeBall.svg"
+                    Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="180" Canvas.Top="157">
+            <svgc:SvgViewbox.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform x:Name="translateTransformOrangeBall2"/>
+                </TransformGroup>
+            </svgc:SvgViewbox.RenderTransform>
+        </svgc:SvgViewbox>
+
+        <svgc:SvgViewbox x:Name="svgViewboxOrangeBallDropping"
+               Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\orangeBall.svg"
+               Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="170" Canvas.Top="297">
+            <svgc:SvgViewbox.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform x:Name="translateTransformDroppingOrangeBall"/>
+                </TransformGroup>
+            </svgc:SvgViewbox.RenderTransform>
+        </svgc:SvgViewbox>
+
+
+        <!-- New Ball 1 SVG -->
+        <svgc:SvgViewbox x:Name="svgViewboxRedBall2"
+                         Visibility="Hidden"
+                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\RedBall.svg"
+                         Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="180" Canvas.Top="60" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <svgc:SvgViewbox.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform x:Name="translateTransformRedBall2"/>
+                </TransformGroup>
+            </svgc:SvgViewbox.RenderTransform>
+        </svgc:SvgViewbox>
+
+        <!-- New Ball 2 SVG -->
 
         <!-- Slicer Blades SVG -->
-        <svgc:SvgViewbox x:Name="svgViewbox4"
+        <svgc:SvgViewbox x:Name="svgViewboxSliderBaldes"
                          Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBlades.svg"
                          Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="121" Canvas.Top="129"/>
     </Canvas>

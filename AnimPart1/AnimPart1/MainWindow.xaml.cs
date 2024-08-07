@@ -89,6 +89,21 @@ namespace AnimPart1
                 pumpUCInstance = new UC_Pump();
                 column1ContentControl.Content = pumpUCInstance;
 
+
+                //pumpUCInstance = new UC_Pump();
+                //HBYcolumn1ContentControl.Content = pumpUCInstance;
+
+                //pumpUCInstance = new UC_Pump();
+                //LOCcolumn2ContentControl.Content = pumpUCInstance;
+
+
+                //pumpUCInstance = new UC_Pump();
+                //PFUcolumn1ContentControl.Content = pumpUCInstance;
+
+                //pumpUCInstance = new UC_Pump();
+                //FPUcolumn1ContentControl.Content = pumpUCInstance;
+
+
                 // Initialize the timer for blinking for the camera
                 blinkTimer = new DispatcherTimer();
                 blinkTimer.Interval = TimeSpan.FromSeconds(0.5);
@@ -675,11 +690,16 @@ namespace AnimPart1
 
         private void SLCStartChecked_Checked(object sender, RoutedEventArgs e)
         {
+           
+
+            slicerUCInstance.slicerAnime.StartAnimations();
 
         }
 
         private void SLCStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
+            slicerUCInstance.slicerAnime.StopAnimations();
+
         }
 
         private void SRWStartChecked_Checked(object sender, RoutedEventArgs e)
@@ -945,6 +965,7 @@ namespace AnimPart1
                 }
             }
         }
+
     }
 
 

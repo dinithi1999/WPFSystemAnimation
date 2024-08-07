@@ -457,7 +457,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                            <ToggleButton x:Name="slcAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="SiloStartChecked_Checked" Unchecked="SiloStartChecked_Unchecked"/>
+                            <ToggleButton x:Name="slcAnimStartToggleBtn" Content="" Margin="56,5,48,0" Width="50" Height="30" Grid.Column="1" Checked="SLCStartChecked_Checked" Unchecked="SLCStartChecked_Unchecked" VerticalAlignment="Top"/>
                         </Grid>
 
                     </Grid>
@@ -694,6 +694,10 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="100*"/>
+                    <RowDefinition Height="100*"/>
+                    <RowDefinition Height="100*"/>
                 </Grid.RowDefinitions>
 
                 <!-- First Animation Row with Three Columns -->
@@ -711,7 +715,7 @@
                 </Grid>
 
                 <!-- Second Animation Row with Three Columns -->
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" VerticalAlignment="Top" > 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -722,7 +726,7 @@
                     <ContentControl Grid.Column="0" x:Name="column1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                     <ContentControl Grid.Column="1" x:Name="column2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-                    <Grid Grid.Column="2">
+                    <Grid Grid.Column="2" VerticalAlignment="Top">
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -735,6 +739,29 @@
 
                     </Grid>
                 </Grid>
+
+
+                <Grid Grid.Row="2" VerticalAlignment="Top" Height="300" Margin="0,-250,0,0">
+                      <ContentControl Grid.Column="1" x:Name="LOCcolumn2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                </Grid>
+
+                <Grid Grid.Row="3"  VerticalAlignment="Top" Height="300">
+
+                    <!-- ContentControls to host UserControls -->
+                    <ContentControl Grid.Column="0" x:Name="HBYcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                </Grid>
+
+                <Grid Grid.Row="4" VerticalAlignment="Top" Height="300" >
+                    <!-- ContentControls to host UserControls -->
+                    <ContentControl Grid.Column="0" x:Name="PFUcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                </Grid>
+
+
+                <Grid Grid.Row="5"  VerticalAlignment="Top" Height="300" >
+                    <!-- ContentControls to host UserControls -->
+                    <ContentControl Grid.Column="0" x:Name="FPUcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                </Grid>
+
             </Grid>
 
 

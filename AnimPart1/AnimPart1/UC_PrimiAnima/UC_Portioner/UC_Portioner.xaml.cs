@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace AnimPart1.UC_PrimiAnima
 {
@@ -39,7 +40,17 @@ namespace AnimPart1.UC_PrimiAnima
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portionerMarquee.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner180.svg");
+
+            StartAnimations();
         }
+
+
+        public void StartAnimations()
+        {
+            var secondOrangeBallFallingAnimation = (Storyboard)this.Resources["GreenArrowDown"];
+            secondOrangeBallFallingAnimation.Begin();
+        }
+
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {

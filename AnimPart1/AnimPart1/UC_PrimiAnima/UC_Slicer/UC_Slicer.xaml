@@ -32,13 +32,16 @@
                              HorizontalAlignment="Center"
                              VerticalAlignment="Top"/>
 
-            <svgc:SvgViewbox x:Name="svgViewbox"
+
+            <ContentControl x:Name="PadleColumn" HorizontalAlignment="Left" VerticalAlignment="Top"     Margin="-73,-10,0,0"/>
+
+            <!--<svgc:SvgViewbox x:Name="svgViewbox"
                              Stretch="Uniform"
                              HorizontalAlignment="Center"
                              VerticalAlignment="Top"
                              Height="260" Width="270"
                              Margin="7,20,0,0"
-                             Panel.ZIndex="0"/>
+                             Panel.ZIndex="0"/>-->
 
             <!-- LightColumn positioned at the top-left of TankColumn -->
             <ContentControl x:Name="lightColumn"
@@ -67,7 +70,6 @@
 
         <ContentControl Grid.Column="1" x:Name="labelColumn2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Width="150" Margin="0,100,0,0"/>
 
-        <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="0,80,0,0"/>
 
     </Grid>
 </UserControl>

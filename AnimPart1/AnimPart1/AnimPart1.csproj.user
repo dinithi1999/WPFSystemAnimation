@@ -10,10 +10,22 @@
     <Compile Update="UC_AncillaryAnima\Camera\Camera.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_OtherAnima\FPPAnimation\UC_FPAAnimation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_OtherAnima\FPUAnimation\UC_FPUAnimation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_OtherAnima\HBYRotation\UC_HBYAnimation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_AncillaryAnima\Labels\UC_Label.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UC_AncillaryAnima\Lights\Lights.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC_OtherAnima\LOCAnimation\UC_LOC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UC_AncillaryAnima\PrimiLabel\UC_PrimiLabel.xaml.cs">
@@ -54,6 +66,15 @@
     <Page Update="UC_AncillaryAnima\Camera\Camera.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UC_OtherAnima\FPPAnimation\UC_FPAAnimation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_OtherAnima\FPUAnimation\UC_FPUAnimation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_OtherAnima\HBYRotation\UC_HBYAnimation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UC_AncillaryAnima\Labels\UC_Label.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -61,6 +82,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_OtherAnima\LOCAnimation\UC_LOC.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_AncillaryAnima\PrimiLabel\UC_PrimiLabel.xaml">

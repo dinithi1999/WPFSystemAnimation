@@ -70,8 +70,9 @@ namespace AnimPart1.UC_PrimiAnima.UC_Slicer
             labelUserCtrl.levelPercentage.Visibility = Visibility.Hidden;
 
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Slicer/Images/slicerMarquee.svg");
-            svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Slicer/Images/slicerbackground.svg");
-          
+            //svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Slicer/Images/slicerbackground.svg");
+
+
         }
 
 
