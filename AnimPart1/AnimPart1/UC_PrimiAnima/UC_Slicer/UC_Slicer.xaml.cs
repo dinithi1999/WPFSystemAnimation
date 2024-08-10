@@ -1,5 +1,5 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
-using AnimPart1.UC_AncillaryAnima.Lights;
+using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
 using AnimPart1.UC_AncillaryAnima.SlicerBallsAnimation;
 

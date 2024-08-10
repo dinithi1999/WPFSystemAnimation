@@ -8,7 +8,6 @@
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
 
-    
     <UserControl.Resources>
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
@@ -16,16 +15,25 @@
         </ContextMenu>
 
         <Storyboard x:Key="GreenArrowDown">
+            <!-- Animate the Y position -->
             <DoubleAnimation
-            Storyboard.TargetName="translateTransformArrowDown"
-            Storyboard.TargetProperty="Y"
-            From="0"
-            To="10" 
-            RepeatBehavior="Forever"
-            Duration="0:0:1">
-            </DoubleAnimation>
-        </Storyboard>
+                Storyboard.TargetName="translateTransformArrowDown"
+                Storyboard.TargetProperty="Y"
+                From="0"
+                To="20" 
+                RepeatBehavior="Forever"
+                Duration="0:0:1" />
 
+            <!-- Animate the Opacity -->
+            <DoubleAnimation
+                Storyboard.TargetName="backgroundSvgRow"
+                Storyboard.TargetProperty="Opacity"
+                From="1.0"
+                To="0.1" 
+                RepeatBehavior="Forever"
+                Duration="0:0:1"
+                BeginTime="0:0:0" />
+        </Storyboard>
     </UserControl.Resources>
 
     <Grid x:Name="MainGrid">
@@ -52,8 +60,7 @@
                              HorizontalAlignment="Center"
                              Margin="10,0,0,0"
                              VerticalAlignment="Top"
-                              Panel.ZIndex="0"
-                             />
+                             Panel.ZIndex="0"/>
 
             <svgc:SvgViewbox x:Name="svgViewbox"
                              Stretch="Uniform"
@@ -82,19 +89,18 @@
                             Panel.ZIndex="2"/>
 
             <svgc:SvgViewbox x:Name="backgroundSvgRow"
-                 Stretch="None"
-                 Source="pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/downArrow.svg"
-                  Margin="1,0,2,129">
+                             Stretch="None"
+                             Source="pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/downArrow.svg"
+                             Margin="1,0,2,129">
                 <svgc:SvgViewbox.RenderTransform>
-                <TransformGroup>
-                    <TranslateTransform x:Name="translateTransformArrowDown"/>
-                </TransformGroup>
+                    <TransformGroup>
+                        <TranslateTransform x:Name="translateTransformArrowDown"/>
+                    </TransformGroup>
                 </svgc:SvgViewbox.RenderTransform>
             </svgc:SvgViewbox>
 
         </Grid>
 
-       
         <ContentControl Grid.Row="0" Grid.Column="1"
                         x:Name="labelColumn"
                         HorizontalAlignment="Center"

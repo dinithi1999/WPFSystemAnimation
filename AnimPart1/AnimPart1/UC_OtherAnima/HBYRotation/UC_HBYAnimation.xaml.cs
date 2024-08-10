@@ -1,20 +1,9 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
-using AnimPart1.UC_AncillaryAnima.Lights;
+using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AnimPart1.UC_AncillaryAnima.HBYRotation
 {
@@ -25,7 +14,7 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
     {
         public Camera.Camera cameraUserCtrl;
         public UC_PrimiLabel labelUserCtrl2;
-
+        public Lights.Lights lightUserCtrl;
         public UC_Label labelUserCtrl;
 
 
@@ -85,16 +74,16 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
         }
         private void ToggleLight()
         {
-            //if (isLightOn)
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
-            //    isLightOn = false;
-            //}
-            //else
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
-            //    isLightOn = true;
-            //}
+            if (isLightOn)
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+                isLightOn = false;
+            }
+            else
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+                isLightOn = true;
+            }
         }
 
         public void StartSpinning()

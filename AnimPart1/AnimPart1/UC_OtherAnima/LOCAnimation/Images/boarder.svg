@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Collector" xmlns="http://www.w3.org/2000/svg" width="253" height="193.32" viewBox="0 0 253 193.32">
+  <defs>
+    <style>
+      .c {
+        fill: #0000f9;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Marquee">
+    <polygon class="c" points="253 94 246 94 246 92 251 92 251 87 253 87 253 94"/>
+    <path class="c" d="M233,94h-13v-2h13v2ZM207,94h-13v-2h13v2ZM181,94h-13v-2h13v2ZM155,94h-13v-2h13v2ZM129,94h-13v-2h13v2ZM103,94h-13v-2h13v2ZM77,94h-13v-2h13v2ZM51,94h-13v-2h13v2ZM25,94h-11v-2h11v2Z"/>
+    <polygon class="c" points="7 94 0 94 0 87 2 87 2 92 7 92 7 94"/>
+    <path class="c" d="M2,71H0v-15h2v15ZM2,40H0v-15h2v15Z"/>
+    <polygon class="c" points="2 8 0 8 0 1 7 1 7 3 2 3 2 8"/>
+    <path class="c" d="M240,3h-12V1h12v2ZM215,3h-13V1h13v2ZM189,3h-13V1h13v2ZM163,3h-13V1h13v2ZM137,3h-13V1h13v2ZM111,3h-13V1h13v2ZM85,3h-13V1h13v2ZM59,3h-13V1h13v2ZM33,3h-13V1h13v2Z"/>
+    <polygon class="c" points="253 8 251 8 251 3 246 3 246 1 253 1 253 8"/>
+    <path class="c" d="M253,70h-2v-15h2v15ZM253,39h-2v-15h2v15Z"/>
+  </g>
+</svg>

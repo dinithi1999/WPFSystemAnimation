@@ -6,6 +6,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <Version>2.0.0.9</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>True</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
@@ -177,6 +182,10 @@
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\90.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\99.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\empty.svg" />
+    <None Remove="UC_OtherAnima\LOCAnimation\Images\backgroundPath.svg" />
+    <None Remove="UC_OtherAnima\LOCAnimation\Images\boarder.svg" />
+    <None Remove="UC_OtherAnima\LOCAnimation\Images\container.svg" />
+    <None Remove="UC_OtherAnima\LOCAnimation\Images\downArrow.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner0.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner180.svg" />
@@ -322,6 +331,18 @@
     <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOn\99.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="UC_OtherAnima\LOCAnimation\Images\backgroundPath.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\LOCAnimation\Images\boarder.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="UC_OtherAnima\LOCAnimation\Images\container.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="UC_OtherAnima\LOCAnimation\Images\downArrow.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="UC_PrimiAnima\UC_Pump\Images\pumpBorder.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -569,7 +590,6 @@
     <Folder Include="UC_OtherAnima\FPPAnimation\Images\" />
     <Folder Include="UC_OtherAnima\FPUAnimation\Images\" />
     <Folder Include="UC_OtherAnima\HBYRotation\Images\" />
-    <Folder Include="UC_OtherAnima\LOCAnimation\Images\" />
     <Folder Include="UC_OtherAnima\PFUAnimation\Images\" />
   </ItemGroup>
 

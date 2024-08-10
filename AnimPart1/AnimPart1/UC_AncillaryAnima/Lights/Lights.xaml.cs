@@ -1,11 +1,4 @@
-﻿using SkiaSharp;
-using Svg.Skia;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System;
-using System.Windows.Media.Imaging;
-using SkiaSharp;
-using System.IO;
+﻿using System.Windows.Controls;
 using System.Windows;
 
 namespace AnimPart1.Lights

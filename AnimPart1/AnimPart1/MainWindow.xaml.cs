@@ -13,6 +13,11 @@ using System.Windows.Threading;
 using System.Windows.Controls;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
+using AnimPart1.UC_AncillaryAnima.FPPAnimation;
+using AnimPart1.UC_AncillaryAnima.FPUAnimation;
+using AnimPart1.UC_AncillaryAnima.HBYRotation;
+using AnimPart1.UC_AncillaryAnima.LOCAnimation;
+using AnimPart1.UC_OtherAnima.PFUAnimation;
 
 namespace AnimPart1
 {
@@ -30,6 +35,13 @@ namespace AnimPart1
         UC_Slicer slicerUCInstance;
         UC_Pump pumpUCInstance;
 
+        UC_LOC locUCIinstance;
+        UC_HBYAnimation hbyUCIinstance;
+        UC_PFUAnimation pfuUCIinstance;
+        UC_FPUAnimation fpuUCIinstance;
+        UC_FPPAnimation fppUCIinstance;
+
+
         DispatcherTimer blinkTimer;
         DispatcherTimer blinkTimer2;
         DispatcherTimer blinkTimer3;
@@ -37,6 +49,12 @@ namespace AnimPart1
         DispatcherTimer blinkTimer5;
         DispatcherTimer blinkTimer6;
         DispatcherTimer blinkTimer7;
+
+        DispatcherTimer blinkTimer8;
+        DispatcherTimer blinkTimer9;
+        DispatcherTimer blinkTimer10;
+        DispatcherTimer blinkTimer11;
+        DispatcherTimer blinkTimer12;
 
         bool isCamFlashIsOn;
         bool isCamFlashIsOn2;
@@ -89,19 +107,21 @@ namespace AnimPart1
                 pumpUCInstance = new UC_Pump();
                 column1ContentControl.Content = pumpUCInstance;
 
+                hbyUCIinstance = new UC_HBYAnimation();
+                HBYcolumn1ContentControl.Content = hbyUCIinstance;
 
-                //pumpUCInstance = new UC_Pump();
-                //HBYcolumn1ContentControl.Content = pumpUCInstance;
-
-                //pumpUCInstance = new UC_Pump();
-                //LOCcolumn2ContentControl.Content = pumpUCInstance;
+                locUCIinstance = new UC_LOC();
+                LOCcolumn2ContentControl.Content = locUCIinstance;
 
 
-                //pumpUCInstance = new UC_Pump();
-                //PFUcolumn1ContentControl.Content = pumpUCInstance;
+                pfuUCIinstance = new UC_PFUAnimation();
+                PFUcolumn1ContentControl.Content = pfuUCIinstance;
 
-                //pumpUCInstance = new UC_Pump();
-                //FPUcolumn1ContentControl.Content = pumpUCInstance;
+                fpuUCIinstance = new UC_FPUAnimation();
+                FPUcolumn1ContentControl.Content = fppUCIinstance;
+
+                fppUCIinstance = new UC_FPPAnimation();
+                FPUcolumn1ContentControl.Content = fppUCIinstance;
 
 
                 // Initialize the timer for blinking for the camera
@@ -137,6 +157,33 @@ namespace AnimPart1
                 blinkTimer7 = new DispatcherTimer();
                 blinkTimer7.Interval = TimeSpan.FromSeconds(0.5);
                 blinkTimer7.Tick += BlinkTimerPOR_Tick;
+
+                // Initialize the timer for blinking for the camera
+                blinkTimer8 = new DispatcherTimer();
+                blinkTimer8.Interval = TimeSpan.FromSeconds(0.5);
+                blinkTimer8.Tick += BlinkTimerLOC_Tick;
+
+
+                // Initialize the timer for blinking for the camera
+                blinkTimer9 = new DispatcherTimer();
+                blinkTimer9.Interval = TimeSpan.FromSeconds(0.5);
+                blinkTimer9.Tick += BlinkTimerHBY_Tick;
+
+                // Initialize the timer for blinking for the camera
+                blinkTimer10 = new DispatcherTimer();
+                blinkTimer10.Interval = TimeSpan.FromSeconds(0.5);
+                blinkTimer10.Tick += BlinkTimerPFU_Tick;
+
+
+                // Initialize the timer for blinking for the camera
+                blinkTimer11 = new DispatcherTimer();
+                blinkTimer11.Interval = TimeSpan.FromSeconds(0.5);
+                blinkTimer11.Tick += BlinkTimerFPU_Tick;
+
+                // Initialize the timer for blinking for the camera
+                blinkTimer12 = new DispatcherTimer();
+                blinkTimer12.Interval = TimeSpan.FromSeconds(0.5);
+                blinkTimer12.Tick += BlinkTimerFPP_Tick;
 
             }
             catch (Exception ex)
@@ -280,6 +327,68 @@ namespace AnimPart1
             blinkTimer7.Start();
         }
 
+        private void LOCCamera_Unchecked(object sender, RoutedEventArgs e)
+        {
+            //blinkTimer7.Stop();
+            locUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+        }
+
+        private void LOCCamera_Checked(object sender, RoutedEventArgs e)
+        {
+            //isCamFlashIsOn7 = true;
+            //blinkTimer7.Start();
+        }
+
+        private void HBYCamera_Unchecked(object sender, RoutedEventArgs e)
+        {
+            //blinkTimer7.Stop();
+            hbyUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+        }
+
+        private void HBYCamera_Checked(object sender, RoutedEventArgs e)
+        {
+            //isCamFlashIsOn7 = true;
+            //blinkTimer7.Start();
+        }
+
+        private void PFUCamera_Unchecked(object sender, RoutedEventArgs e)
+        {
+            //blinkTimer7.Stop();
+            pfuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+        }
+
+        private void PFUCamera_Checked(object sender, RoutedEventArgs e)
+        {
+            //isCamFlashIsOn7 = true;
+            //blinkTimer7.Start();
+        }
+
+        private void FPUCamera_Unchecked(object sender, RoutedEventArgs e)
+        {
+            //blinkTimer7.Stop();
+            fpuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+        }
+
+        private void FPUCamera_Checked(object sender, RoutedEventArgs e)
+        {
+            //isCamFlashIsOn7 = true;
+            //blinkTimer7.Start();
+        }
+
+        private void FPPCamera_Unchecked(object sender, RoutedEventArgs e)
+        {
+            //blinkTimer7.Stop();
+            fppUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+        }
+
+        private void FPPCamera_Checked(object sender, RoutedEventArgs e)
+        {
+            //isCamFlashIsOn7 = true;
+            //blinkTimer7.Start();
+        }
+
+
+
         private void BlinkTimerHopper_Tick(object sender, EventArgs e)
         {
             if (isCamFlashIsOn)
@@ -379,6 +488,78 @@ namespace AnimPart1
 
             isCamFlashIsOn7 = !isCamFlashIsOn7;
         }
+
+        private void BlinkTimerLOC_Tick(object sender, EventArgs e)
+        {
+            if (isCamFlashIsOn6)
+            {
+                locUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            }
+            else
+            {
+                locUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
+            }
+
+            isCamFlashIsOn6 = !isCamFlashIsOn6;
+        }
+
+        private void BlinkTimerHBY_Tick(object sender, EventArgs e)
+        {
+            if (isCamFlashIsOn7)
+            {
+                hbyUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            }
+            else
+            {
+                hbyUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
+            }
+
+            isCamFlashIsOn7 = !isCamFlashIsOn7;
+        }
+
+
+        private void BlinkTimerPFU_Tick(object sender, EventArgs e)
+        {
+            if (isCamFlashIsOn7)
+            {
+                pfuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            }
+            else
+            {
+                pfuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
+            }
+
+            isCamFlashIsOn7 = !isCamFlashIsOn7;
+        }
+
+        private void BlinkTimerFPU_Tick(object sender, EventArgs e)
+        {
+            if (isCamFlashIsOn7)
+            {
+                fpuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            }
+            else
+            {
+                fpuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
+            }
+
+            isCamFlashIsOn7 = !isCamFlashIsOn7;
+        }
+
+        private void BlinkTimerFPP_Tick(object sender, EventArgs e)
+        {
+            if (isCamFlashIsOn7)
+            {
+                fppUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
+            }
+            else
+            {
+                fppUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
+            }
+
+            isCamFlashIsOn7 = !isCamFlashIsOn7;
+        }
+
         #endregion
 
         #region Label
@@ -528,9 +709,88 @@ namespace AnimPart1
 
         }
 
+        private void LOCLabelVislibility_Checked(object sender, RoutedEventArgs e)
+        {
+            locUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            locUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            locUCIinstance.labelUserCtrl.Visibility = Visibility.Visible;
+            locUCIinstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+        }
+
+        private void LOCLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            locUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            locUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            locUCIinstance.labelUserCtrl.Visibility = Visibility.Hidden;
+
+        }
+
+        private void HBYLabelVislibility_Checked(object sender, RoutedEventArgs e)
+        {
+            hbyUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            hbyUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            hbyUCIinstance.labelUserCtrl.Visibility = Visibility.Visible;
+            hbyUCIinstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+        }
+
+        private void HBYLabelVislibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            hbyUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            hbyUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            hbyUCIinstance.labelUserCtrl.Visibility = Visibility.Hidden;
+        }
+
+        private void PFULabelVisibility_Checked(object sender, RoutedEventArgs e)
+        {
+            pfuUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            pfuUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            pfuUCIinstance.labelUserCtrl.Visibility = Visibility.Visible;
+            pfuUCIinstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+        }
+
+        private void PFULabelVisibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            pfuUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            pfuUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            pfuUCIinstance.labelUserCtrl.Visibility = Visibility.Hidden;
+        }
+
+        private void FPULabelVislibility_Checked(object sender, RoutedEventArgs e)
+        {
+            fpuUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            fpuUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            fpuUCIinstance.labelUserCtrl.Visibility = Visibility.Visible;
+            fpuUCIinstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+        }
+
+        private void FPULabelVislibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            fpuUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            fpuUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            fpuUCIinstance.labelUserCtrl.Visibility = Visibility.Hidden;
+        }
+
+        private void FPPLabelVisibility_Checked(object sender, RoutedEventArgs e)
+        {
+            fppUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            fppUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Visible;
+            fppUCIinstance.labelUserCtrl.Visibility = Visibility.Visible;
+            fppUCIinstance.labelUserCtrl.MainCanvas.Visibility = Visibility.Visible;
+        }
+
+        private void FPPLabelVisibility_Unchecked(object sender, RoutedEventArgs e)
+        {
+            fppUCIinstance.lightUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            fppUCIinstance.cameraUserCtrl.svgViewbox.Visibility = Visibility.Hidden;
+            fppUCIinstance.labelUserCtrl.Visibility = Visibility.Hidden;
+        }
+
+
+
+
         #endregion
 
-        #region DepenLights
+        #region Lights
         private void TankLight_Checked(object sender, RoutedEventArgs e)
         {
             tankUCInstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
@@ -621,11 +881,74 @@ namespace AnimPart1
             slicerUCInstance.isLightOn = false;
         }
 
+        private void LOCLights_Checked(object sender, RoutedEventArgs e)
+        {
+            locUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            locUCIinstance.isLightOn = true;
+        }
+
+        private void LOCLight_Unchecked(object sender, RoutedEventArgs e)
+        {
+            locUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            locUCIinstance.isLightOn = false;
+        }
+
+        private void HBYLights_Checked(object sender, RoutedEventArgs e)
+        {
+            hbyUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            hbyUCIinstance.isLightOn = true;
+        }
+
+        private void HBYLight_Unchecked(object sender, RoutedEventArgs e)
+        {
+            hbyUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            hbyUCIinstance.isLightOn = false;
+        }
+
+        private void PFULights_Checked(object sender, RoutedEventArgs e)
+        {
+            pfuUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            pfuUCIinstance.isLightOn = true;
+        }
+
+        private void PFULight_Unchecked(object sender, RoutedEventArgs e)
+        {
+            pfuUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            pfuUCIinstance.isLightOn = false;
+        }
+
+        private void FPULights_Checked(object sender, RoutedEventArgs e)
+        {
+            fpuUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            fpuUCIinstance.isLightOn = true;
+        }
+
+        private void FPULight_Unchecked(object sender, RoutedEventArgs e)
+        {
+            fpuUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            fpuUCIinstance.isLightOn = false;
+        }
+
+        private void FPPLights_Checked(object sender, RoutedEventArgs e)
+        {
+            fppUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOnPath);
+            fppUCIinstance.isLightOn = true;
+        }
+
+        private void FPPLight_Unchecked(object sender, RoutedEventArgs e)
+        {
+            fppUCIinstance.lightUserCtrl.svgViewbox.Source = new Uri(LightOffPath);
+            fppUCIinstance.isLightOn = false;
+        }
+
+
+
 
 
 
         #endregion
 
+        #region StartTriggers
         private void HopperStartChecked_Checked(object sender, RoutedEventArgs e)
         {
             hopperUCInstance.StartPadleAnimation();
@@ -690,7 +1013,7 @@ namespace AnimPart1
 
         private void SLCStartChecked_Checked(object sender, RoutedEventArgs e)
         {
-           
+
 
             slicerUCInstance.slicerAnime.StartAnimations();
 
@@ -718,6 +1041,50 @@ namespace AnimPart1
             srwclockwiseRadioButton.IsEnabled = true;
             srwcounterClockwiseRadioButton.IsEnabled = true;
         }
+
+
+        private void LOCStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void LOCStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void HBYStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void HBYStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void PFUStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void PFUStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void FPUStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void FPUStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void FPPStartChecked_Checked(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void FPPStartChecked_Unchecked(object sender, RoutedEventArgs e)
+        {
+        }
+        #endregion
+
+        #region Speed Variation
 
 
         private void srwclockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
@@ -771,7 +1138,127 @@ namespace AnimPart1
         }
 
 
-        #region Speed Variation
+        private void FPPclockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //if (!fppUCIinstance.isAnimationOnGoing)
+            //{
+            //    fppUCIinstance.SetRotationDirection(false);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Stop the rotation berfore changing the rotational direction");
+            //}
+        }
+
+        private void FPPcounterClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //    if (!fppUCIinstance.isAnimationOnGoing)
+            //    {
+            //        fppUCIinstance.SetRotationDirection(true);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Stop the rotation berfore changing the rotational direction");
+            //    }
+        }
+        private void LOClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //if (!locUCIinstance.isAnimationOnGoing)
+            //{
+            //    locUCIinstance.SetRotationDirection(false);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Stop the rotation before changing the rotational direction");
+            //}
+        }
+
+        private void LOCcounterClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //    if (!locUCIinstance.isAnimationOnGoing)
+            //    {
+            //        locUCIinstance.SetRotationDirection(true);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Stop the rotation before changing the rotational direction");
+            //    }
+        }
+        private void HBYClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //if (!hbyUCIinstance.isAnimationOnGoing)
+            //{
+            //    hbyUCIinstance.SetRotationDirection(false);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Stop the rotation before changing the rotational direction");
+            //}
+        }
+
+        private void HBYCounterClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //    if (!hbyUCIinstance.isAnimationOnGoing)
+            //    {
+            //        hbyUCIinstance.SetRotationDirection(true);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Stop the rotation before changing the rotational direction");
+            //    }
+        }
+
+        private void PFUClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //if (!pfuUCIinstance.isAnimationOnGoing)
+            //{
+            //    pfuUCIinstance.SetRotationDirection(false);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Stop the rotation before changing the rotational direction");
+            //}
+        }
+
+        private void PFUcounterClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //    if (!pfuUCIinstance.isAnimationOnGoing)
+            //    {
+            //        pfuUCIinstance.SetRotationDirection(true);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Stop the rotation before changing the rotational direction");
+            //    }
+        }
+
+        private void FPUclockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //if (!fpuUCIinstance.isAnimationOnGoing)
+            //{
+            //    fpuUCIinstance.SetRotationDirection(false);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Stop the rotation before changing the rotational direction");
+            //}
+        }
+
+        private void FPUcounterClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            //    if (!fpuUCIinstance.isAnimationOnGoing)
+            //    {
+            //        fpuUCIinstance.SetRotationDirection(true);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Stop the rotation before changing the rotational direction");
+            //    }
+        }
+
+
+
+
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -805,7 +1292,8 @@ namespace AnimPart1
             return Regex.IsMatch(text, @"^[0-9]+$");
         }
 
-        #endregion
+
+
 
         private void SRWSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -835,6 +1323,41 @@ namespace AnimPart1
 
 
         private void TNKSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetTNKSpeed();
+
+        }
+
+        private void LOCSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetLOCSpeed();
+
+        }
+
+        private void HBYSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetHBYSpeed();
+
+        }
+
+        private void PFUSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetPFUSpeed();
+
+        }
+
+        private void FPUSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetFPUSpeed();
+
+        }
+        private void FPPSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetFPPSpeed();
+
+        }
+
+        private void SpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             SetTNKSpeed();
 
@@ -965,6 +1488,138 @@ namespace AnimPart1
                 }
             }
         }
+
+        private void SetLOCSpeed()
+        {
+
+            if (int.TryParse(locspeedTextBoxpmp.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    locspeedTextBoxpmp.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    locspeedTextBoxpmp.Text = "100";
+                }
+
+                locspeedTextBoxpmp.SelectionStart = locspeedTextBoxpmp.Text.Length;
+            }
+
+            if (int.TryParse(locspeedTextBoxpmp.Text, out int percentage))
+            {
+                if (locUCIinstance != null)
+                {
+                    locUCIinstance.SetRotationSpeed(percentage);
+                }
+            }
+        }
+
+        private void SetHBYSpeed()
+        {
+
+            if (int.TryParse(hbySpeedTextBox.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    hbySpeedTextBox.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    hbySpeedTextBox.Text = "100";
+                }
+
+                hbySpeedTextBox.SelectionStart = hbySpeedTextBox.Text.Length;
+            }
+
+            if (int.TryParse(hbySpeedTextBox.Text, out int percentage))
+            {
+                if (hbyUCIinstance != null)
+                {
+                    hbyUCIinstance.SetRotationSpeed(percentage);
+                }
+            }
+        }
+
+        private void SetPFUSpeed()
+        {
+
+            if (int.TryParse(pfuSpeedTextBox.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    pfuSpeedTextBox.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    pfuSpeedTextBox.Text = "100";
+                }
+
+                pfuSpeedTextBox.SelectionStart = pfuSpeedTextBox.Text.Length;
+            }
+
+            if (int.TryParse(pfuSpeedTextBox.Text, out int percentage))
+            {
+                if (pfuSpeedTextBox != null)
+                {
+                    //pfuUCIinstance.SetRotationSpeed(percentage);
+                }
+            }
+        }
+
+        private void SetFPUSpeed()
+        {
+
+            if (int.TryParse(FPUspeedTextBoxpmp.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    FPUspeedTextBoxpmp.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    FPUspeedTextBoxpmp.Text = "100";
+                }
+
+                FPUspeedTextBoxpmp.SelectionStart = FPUspeedTextBoxpmp.Text.Length;
+            }
+
+            if (int.TryParse(FPUspeedTextBoxpmp.Text, out int percentage))
+            {
+                if (FPUspeedTextBoxpmp != null)
+                {
+                    //fpuUCIinstance.SetRotationSpeed(percentage);
+                }
+            }
+        }
+
+        private void SetFPPSpeed()
+        {
+
+            if (int.TryParse(fppSpeedTextBox.Text, out int value))
+            {
+                if (value < 0)
+                {
+                    fppSpeedTextBox.Text = "0";
+                }
+                else if (value > 100)
+                {
+                    fppSpeedTextBox.Text = "100";
+                }
+
+                fppSpeedTextBox.SelectionStart = fppSpeedTextBox.Text.Length;
+            }
+
+            if (int.TryParse(fppSpeedTextBox.Text, out int percentage))
+            {
+                if (fppSpeedTextBox != null)
+                {
+                    //fppUCIinstance.SetRotationSpeed(percentage);
+                }
+            }
+        }
+
+        #endregion
 
     }
 

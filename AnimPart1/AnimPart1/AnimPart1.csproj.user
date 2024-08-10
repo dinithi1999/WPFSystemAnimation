@@ -10,7 +10,7 @@
     <Compile Update="UC_AncillaryAnima\Camera\Camera.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC_OtherAnima\FPPAnimation\UC_FPAAnimation.xaml.cs">
+    <Compile Update="UC_OtherAnima\FPPAnimation\UC_FPPanimation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UC_OtherAnima\FPUAnimation\UC_FPUAnimation.xaml.cs">
@@ -46,6 +46,9 @@
     <Compile Update="UC_DepenAnima\UC_TNK\UC_TNK.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_OtherAnima\PFUAnimation\UC_PFUAnimation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_PrimiAnima\UC_Portioner\UC_Portioner.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -66,7 +69,7 @@
     <Page Update="UC_AncillaryAnima\Camera\Camera.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UC_OtherAnima\FPPAnimation\UC_FPAAnimation.xaml">
+    <Page Update="UC_OtherAnima\FPPAnimation\UC_FPPanimation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_OtherAnima\FPUAnimation\UC_FPUAnimation.xaml">
@@ -103,6 +106,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_DepenAnima\UC_TNK\UC_TNK.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_OtherAnima\PFUAnimation\UC_PFUAnimation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_PrimiAnima\UC_Portioner\UC_Portioner.xaml">

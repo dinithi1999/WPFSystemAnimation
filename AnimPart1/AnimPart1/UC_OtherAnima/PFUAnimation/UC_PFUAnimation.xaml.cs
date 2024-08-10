@@ -1,16 +1,27 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
 using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
+namespace AnimPart1.UC_OtherAnima.PFUAnimation
 {
     /// <summary>
-    /// Interaction logic for UC_FPUAnimation.xaml
+    /// Interaction logic for UC_PFUAnimation.xaml
     /// </summary>
-    public partial class UC_FPUAnimation : UserControl
+    public partial class UC_PFUAnimation : UserControl
     {
         public Camera.Camera cameraUserCtrl;
         public UC_PrimiLabel labelUserCtrl2;
@@ -25,20 +36,20 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
         public bool isLightOn;
         public bool isAnimationOngoing;
 
-        public UC_FPUAnimation()
+        public UC_PFUAnimation()
         {
             InitializeComponent();
         }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            backgroundSvg.Visibility = Visibility.Visible;
+            //backgroundSvg.Visibility = Visibility.Visible;
         }
 
 
         private void Grid_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            backgroundSvg.Visibility = Visibility.Collapsed;
+            //backgroundSvg.Visibility = Visibility.Collapsed;
         }
 
 
@@ -61,7 +72,6 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
                         item.Header = "Light on"; // Update header text
                     }
                 }
-
             }
 
             contextMenu.IsOpen = true;
@@ -75,16 +85,16 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
         }
         private void ToggleLight()
         {
-            if (isLightOn)
-            {
-                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
-                isLightOn = false;
-            }
-            else
-            {
-                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
-                isLightOn = true;
-            }
+            //if (isLightOn)
+            //{
+            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+            //    isLightOn = false;
+            //}
+            //else
+            //{
+            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+            //    isLightOn = true;
+            //}
         }
 
         public void StartSpinning()

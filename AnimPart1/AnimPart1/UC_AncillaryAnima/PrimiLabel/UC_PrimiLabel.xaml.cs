@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AnimPart1.UC_AncillaryAnima.Lights
+namespace AnimPart1.UC_AncillaryAnima.PrimiLabel
 {
     /// <summary>
     /// Interaction logic for UC_PrimiLabel.xaml

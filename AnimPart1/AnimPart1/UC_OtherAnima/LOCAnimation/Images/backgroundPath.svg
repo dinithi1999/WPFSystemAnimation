@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Collector" xmlns="http://www.w3.org/2000/svg" width="253" height="193.32" viewBox="0 0 253 193.32">
+  <defs>
+    <style>
+      .b {
+        fill: #000;
+      }
+
+      .b, .c {
+        stroke-width: 0px;
+      }
+
+      .c {
+        fill: #997b55;
+      }
+    </style>
+  </defs>
+  <rect class="c" x="7" y="68" width="240" height="4"/>
+  <polygon class="b" points="241 62.3 247 68 241 68 241 62.3"/>
+  <polygon class="b" points="13 62.3 7 68 13 68 13 62.3"/>
+</svg>

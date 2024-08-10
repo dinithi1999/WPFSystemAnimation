@@ -16,8 +16,8 @@ using System.Windows.Shapes;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
 
 using System.Reflection.Metadata;
-using AnimPart1.UC_AncillaryAnima.Lights;
 using System.Windows.Media.Animation;
+using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 
 namespace AnimPart1.UC_PrimiAnima.UC_Pump
 {

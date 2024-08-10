@@ -1,41 +1,29 @@
-﻿using AnimPart1.UC_AncillaryAnima.Label;
-using AnimPart1.UC_AncillaryAnima.Lights;
+﻿using AnimPart1.UC_AncillaryAnima.FPUAnimation;
+using AnimPart1.UC_AncillaryAnima.Label;
+using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AnimPart1.UC_AncillaryAnima.FPPAnimation
 {
     /// <summary>
     /// Interaction logic for UC_FPAAnimation.xaml
     /// </summary>
-    public partial class UC_FPAAnimation : UserControl
+    public partial class UC_FPPAnimation : UserControl
     {
         public Camera.Camera cameraUserCtrl;
         public UC_PrimiLabel labelUserCtrl2;
-
+        public Lights.Lights lightUserCtrl;
         public UC_Label labelUserCtrl;
-
-
         UC_ScrewRotation uC_ScrewRotation;
 
         public string labelName = "PMP-XXX";
         public bool isLightOn;
         public bool isAnimationOngoing;
 
-        public UC_FPAAnimation()
+        public UC_FPPAnimation()
         {
             InitializeComponent();
         }
@@ -45,12 +33,10 @@ namespace AnimPart1.UC_AncillaryAnima.FPPAnimation
             backgroundSvg.Visibility = Visibility.Visible;
         }
 
-
         private void Grid_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Collapsed;
         }
-
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -60,41 +46,38 @@ namespace AnimPart1.UC_AncillaryAnima.FPPAnimation
             {
                 if (item.Name == "menuItem1")
                 {
-                    item.Header = "Updated Option 1"; // Update header text
+                    item.Header = "Updated Option 1"; 
 
                     if (isLightOn)
                     {
-                        item.Header = "Light Off"; // Update header text
+                        item.Header = "Light Off"; 
                     }
                     else
                     {
-                        item.Header = "Light on"; // Update header text
+                        item.Header = "Light on"; 
                     }
                 }
-
             }
-
             contextMenu.IsOpen = true;
         }
 
         private void Option1_Click(object sender, RoutedEventArgs e)
         {
-
             ToggleLight();
-
         }
+
         private void ToggleLight()
         {
-            //if (isLightOn)
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
-            //    isLightOn = false;
-            //}
-            //else
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
-            //    isLightOn = true;
-            //}
+            if (isLightOn)
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+                isLightOn = false;
+            }
+            else
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+                isLightOn = true;
+            }
         }
 
         public void StartSpinning()
@@ -107,7 +90,6 @@ namespace AnimPart1.UC_AncillaryAnima.FPPAnimation
         {
             uC_ScrewRotation.StopSpinning();
             isAnimationOngoing = false;
-
         }
 
         public void SetRotationDirection(bool clockwise)
@@ -121,6 +103,11 @@ namespace AnimPart1.UC_AncillaryAnima.FPPAnimation
             {
                 uC_ScrewRotation.SetRotationSpeed(percentage);
             }
+        }
+
+        public static implicit operator UC_FPPAnimation(UC_FPUAnimation v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

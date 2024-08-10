@@ -1,16 +1,10 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
+using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using AnimPart1.UC_AncillaryAnima.Lights;
+using System.Windows.Media.Animation;
 
 
 namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
@@ -20,21 +14,51 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
     /// </summary>
     public partial class UC_LOC : UserControl
     {
+        public Lights.Lights lightUserCtrl;
         public Camera.Camera cameraUserCtrl;
         public UC_PrimiLabel labelUserCtrl2;
+        public Lights.Lights lightUserCtrl2;
 
         public UC_Label labelUserCtrl;
 
 
         UC_ScrewRotation uC_ScrewRotation;
 
-        public string labelName = "PMP-XXX";
+        public string labelName = "LOC-XXX";
         public bool isLightOn;
         public bool isAnimationOngoing;
+
+        private DoubleAnimation collectorAnimation;
 
         public UC_LOC()
         {
             InitializeComponent();
+
+            lightUserCtrl = new Lights.Lights();
+            lightColumn.Content = lightUserCtrl;
+
+            cameraUserCtrl = new Camera.Camera();
+            CameraColumn.Content = cameraUserCtrl;
+
+            labelUserCtrl = new UC_Label();
+            labelColumn.Content = labelUserCtrl;
+            labelUserCtrl.labelName.Text = labelName;
+
+            var collectorMovement = (Storyboard)this.Resources["CollectorMovement"];
+            var collectorCarrierMovement = (Storyboard)this.Resources["CollectortextboxMovement"];
+
+            textBoxContainerDistance.Text = "0";
+
+            collectorMovement.CurrentTimeInvalidated += CollectorMovement_CurrentTimeInvalidated;
+
+            collectorMovement.Begin();
+            collectorCarrierMovement.Begin();
+        }
+
+
+        private void CollectorMovement_CurrentTimeInvalidated(object sender, EventArgs e)
+        {
+
         }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)

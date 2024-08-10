@@ -10,48 +10,94 @@
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
              >
     <UserControl.Resources>
+        
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
             <!-- Other MenuItems can be defined here -->
         </ContextMenu>
+
+        <Storyboard x:Key="CollectorMovement" CurrentTimeInvalidated="CollectorMovement_CurrentTimeInvalidated">
+            <DoubleAnimation
+                x:Name="collectorAnimation"
+                Storyboard.TargetName="translateTransformCollector"
+                Storyboard.TargetProperty="X"
+                From="0"
+                To="-900" 
+                RepeatBehavior="Forever"       
+                Duration="0:0:5">
+            </DoubleAnimation>
+        </Storyboard>
+
+        <Storyboard x:Key="CollectortextboxMovement">
+            <DoubleAnimation
+        Storyboard.TargetName="translateTransformCollectortexybox"
+        Storyboard.TargetProperty="X"
+        From="0"
+        To="-900" 
+        RepeatBehavior="Forever"       
+        Duration="0:0:5">
+            </DoubleAnimation>
+        </Storyboard>
+
     </UserControl.Resources>
 
     <Grid x:Name="MainGrid">
 
-
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220"/>
-            <!-- Column 0: Width adjusts to content -->
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*" />
-            <!-- Column 1: Takes up remaining space -->
         </Grid.ColumnDefinitions>
 
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid" Width="220" HorizontalAlignment="Center" VerticalAlignment="top" >
+        <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1200" >
             <svgc:SvgViewbox x:Name="backgroundSvg"
-                    Stretch="Uniform"
+                    Stretch="Fill"
+                    Panel.ZIndex="0"
+                    Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\LOCAnimation\Images\boarder.svg"
                     Visibility="Collapsed"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
+                    VerticalAlignment="Center"
                    />
-
 
             <svgc:SvgViewbox x:Name="svgViewbox"
                 Stretch="Uniform"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top" Height="348" Width="180" Margin="15,16,0,0" 
-               />
+                Width="1132" 
+                Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\LOCAnimation\Images\backgroundPath.svg"
+                Panel.ZIndex="1"             
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"  Margin="57,0,0,36" 
+               >
+            </svgc:SvgViewbox>
+            <!--Source="pack://application:,,,/UC_OtherAnima/LOCAnimation/Images/backgroundPath.svg"-->
+
+            <svgc:SvgViewbox x:Name="svgViewbox2"
+                Stretch="Uniform"
+                Width="260"  
+                Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\LOCAnimation\Images\container.svg"
+                Panel.ZIndex="2"             
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" Height="242" Margin="932,72,0,0" 
+               >
+                <svgc:SvgViewbox.RenderTransform>
+                    <TransformGroup>
+                        <TranslateTransform x:Name="translateTransformCollector"/>
+                    </TransformGroup>
+                </svgc:SvgViewbox.RenderTransform>
+                
+            </svgc:SvgViewbox>
+
+            <!--Source="pack://application:,,,/UC_OtherAnima/LOCAnimation/Images/container.svg"-->
 
             <!-- LightColumn positioned at the top-left of TankColumn -->
             <ContentControl x:Name="lightColumn"
-       HorizontalAlignment="Left"
-       Panel.ZIndex="1"
-       VerticalAlignment="Top">
+                             HorizontalAlignment="Left"
+                             Panel.ZIndex="1"
+                             VerticalAlignment="Top">
                 <ContentControl.Effect>
                     <DropShadowEffect Color="Gray"
-                 Direction="320"
-                 ShadowDepth="1"
-                 Opacity="0.3"/>
+                                     Direction="320"
+                                     ShadowDepth="1"
+                                     Opacity="0.3"/>
                 </ContentControl.Effect>
             </ContentControl>
 
@@ -60,13 +106,30 @@
 
             <!-- PadleColumn positioned at the center -->
             <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-5,50,0,0"  Panel.ZIndex="0"/>
+
+            <TextBlock 
+                   x:Name="textBoxContainerDistance"
+                   HorizontalAlignment="Left" 
+                   Margin="1051,244,0,0" 
+                   TextWrapping="Wrap" 
+                   Text="20" 
+                   VerticalAlignment="Top" 
+                   Height="34" 
+                   Panel.ZIndex="2" 
+                   FontSize="18" 
+                   FontWeight="Bold">
+                
+                <TextBlock.RenderTransform>
+                    <TranslateTransform x:Name="translateTransformCollectortexybox"/>
+                </TextBlock.RenderTransform>
+                
+            </TextBlock>
         </Grid>
 
         <ContentControl Grid.Column="1" x:Name="labelColumn" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="150"  >
 
         </ContentControl>
 
-        <ContentControl Grid.Column="1" x:Name="labelColumn2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Width="150" Margin="0,100,0,0"/>
 
     </Grid>
 </UserControl>

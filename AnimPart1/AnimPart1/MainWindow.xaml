@@ -114,7 +114,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
-                            <ToggleButton x:Name="tankLabel" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="TankLabelVislibility_Checked" Unchecked="TankLabelVislibility_Unchecked"/>
+                            <ToggleButton x:Name="tankLabel" Content="" Margin="50,5,50,0" Width="50" Grid.Column="1"  Checked="TankLabelVislibility_Checked" Unchecked="TankLabelVislibility_Unchecked"/>
                         </Grid>
 
                         <!-- Second ToggleButton with Label -->
@@ -681,6 +681,482 @@
 
                 </GroupBox>
 
+
+                <GroupBox Header="LOC" Margin="320,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1">
+                    <Grid Height="230">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton  x:Name="locLabelVisibilityToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="LOCLabelVislibility_Checked" Unchecked="LOCLabelVislibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="loclightOnToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="LOCLights_Checked" Unchecked="LOCLight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="locCamOnToggleBtn" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"  Checked="LOCCamera_Checked" Unchecked="LOCCamera_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="locAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="LOCStartChecked_Checked" Unchecked="LOCStartChecked_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Dir" VerticalAlignment="Center" Margin="5"/>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                <RadioButton x:Name="locclockwiseRadioButton" Content="Clockwise" Margin="5" Checked="pmpclockwiseRadioButton_Checked" />
+                                <RadioButton x:Name="loccounterClockwiseRadioButton" Content="Counterclockwise" Margin="5" Checked="LOCcounterClockwiseRadioButton_Checked" />
+                            </StackPanel>
+                        </Grid>
+
+
+                        <Grid Grid.Row="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="148"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" VerticalAlignment="Center" Height="26">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" MinWidth="43.047"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="18"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
+
+                                <TextBox x:Name="locspeedTextBoxpmp"
+                                          Width="30"
+                                          PreviewTextInput="TextBox_PreviewTextInput"
+                                          TextChanged="LOCSpeedTextBox_TextChanged"
+                                          HorizontalAlignment="Left"
+                                          Text="50"
+                                          VerticalAlignment="Center"
+                                          Grid.Column="1" Height="18" RenderTransformOrigin="0.504,0.507" Margin="78,0,0,0"/>
+                            </Grid>
+
+                            <TextBlock Text="%"
+                                       VerticalAlignment="Center"
+                                       Margin="2,0,20,0"
+                                       Grid.Column="1" Height="16"/>
+                        </Grid>
+
+
+                    </Grid>
+
+                </GroupBox>
+
+                <GroupBox Header="HBY" Margin="580,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1">
+                    <Grid Height="230">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="hbyLabelVisibilityToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="HBYLabelVislibility_Checked" Unchecked="HBYLabelVislibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="hbyLightOnToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="HBYLights_Checked" Unchecked="HBYLight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="hbyCamOnToggleBtn" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1" Checked="HBYCamera_Checked" Unchecked="HBYCamera_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="hbyAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="HBYStartChecked_Checked" Unchecked="HBYStartChecked_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Dir" VerticalAlignment="Center" Margin="5"/>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                <RadioButton x:Name="hbyClockwiseRadioButton" Content="Clockwise" Margin="5" Checked="HBYClockwiseRadioButton_Checked" />
+                                <RadioButton x:Name="hbyCounterClockwiseRadioButton" Content="HBYCounterclockwise" Margin="5" Checked="HBYCounterClockwiseRadioButton_Checked" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="148"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" VerticalAlignment="Center" Height="26">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" MinWidth="43.047"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="18"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
+
+                                <TextBox x:Name="hbySpeedTextBox"
+                          Width="30"
+                          PreviewTextInput="TextBox_PreviewTextInput"
+                          TextChanged="HBYSpeedTextBox_TextChanged"
+                          HorizontalAlignment="Left"
+                          Text="50"
+                          VerticalAlignment="Center"
+                          Grid.Column="1" Height="18" RenderTransformOrigin="0.504,0.507" Margin="78,0,0,0"/>
+                            </Grid>
+
+                            <TextBlock Text="%"
+                       VerticalAlignment="Center"
+                       Margin="2,0,20,0"
+                       Grid.Column="1" Height="16"/>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="FPP" Margin="0,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1">
+                    <Grid Height="230">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="fppLabelVisibilityToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="FPPLabelVisibility_Checked" Unchecked="FPPLabelVisibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="fppLightOnToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="FPPLights_Checked" Unchecked="FPPLight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="fppCamOnToggleBtn" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1" Checked="FPPCamera_Checked" Unchecked="FPPCamera_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="fppAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="FPPStartChecked_Checked" Unchecked="FPPStartChecked_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Dir" VerticalAlignment="Center" Margin="5"/>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                <RadioButton x:Name="fppClockwiseRadioButton" Content="Clockwise" Margin="5" Checked="FPPclockwiseRadioButton_Checked" />
+                                <RadioButton x:Name="FPPCounterClockwiseRadioButton" Content="FPPCounterclockwise" Margin="5" Checked="FPPcounterClockwiseRadioButton_Checked" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="148"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" VerticalAlignment="Center" Height="26">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" MinWidth="43.047"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="18"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
+
+                                <TextBox x:Name="fppSpeedTextBox"
+                          Width="30"
+                          PreviewTextInput="TextBox_PreviewTextInput"
+                          TextChanged="FPPSpeedTextBox_TextChanged"
+                          HorizontalAlignment="Left"
+                          Text="50"
+                          VerticalAlignment="Center"
+                          Grid.Column="1" Height="18" RenderTransformOrigin="0.504,0.507" Margin="78,0,0,0"/>
+                            </Grid>
+
+                            <TextBlock Text="%"
+                       VerticalAlignment="Center"
+                       Margin="2,0,20,0"
+                       Grid.Column="1" Height="16"/>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="FPU" Margin="1100,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1">
+                    <Grid Height="230">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton  x:Name="FPULabelVisibilityToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="FPULabelVislibility_Checked" Unchecked="FPULabelVislibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="FPUlightOnToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1"  Checked="FPULights_Checked" Unchecked="FPULight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="FPUCamOnToggleBtn" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1"  Checked="FPUCamera_Checked" Unchecked="FPUCamera_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="FPUAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="FPUStartChecked_Checked" Unchecked="FPUStartChecked_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Dir" VerticalAlignment="Center" Margin="5"/>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                <RadioButton x:Name="FPUclockwiseRadioButton" Content="Clockwise" Margin="5" Checked="FPUclockwiseRadioButton_Checked" />
+                                <RadioButton x:Name="FPUcounterClockwiseRadioButton" Content="FPUCounterclockwise" Margin="5" Checked="FPUcounterClockwiseRadioButton_Checked" />
+                            </StackPanel>
+                        </Grid>
+
+
+                        <Grid Grid.Row="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="148"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" VerticalAlignment="Center" Height="26">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" MinWidth="43.047"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="18"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
+
+                                <TextBox x:Name="FPUspeedTextBoxpmp"
+                                          Width="30"
+                                          PreviewTextInput="TextBox_PreviewTextInput"
+                                          TextChanged="FPUSpeedTextBox_TextChanged"
+                                          HorizontalAlignment="Left"
+                                          Text="50"
+                                          VerticalAlignment="Center"
+                                          Grid.Column="1" Height="18" RenderTransformOrigin="0.504,0.507" Margin="78,0,0,0"/>
+                            </Grid>
+
+                            <TextBlock Text="%"
+                                       VerticalAlignment="Center"
+                                       Margin="2,0,20,0"
+                                       Grid.Column="1" Height="16"/>
+                        </Grid>
+
+
+                    </Grid>
+
+                </GroupBox>
+
+                <GroupBox Header="PFU" Margin= "835,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1">
+                    <Grid Height="230">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- First ToggleButton with Label -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Label" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="pfuLabelVisibilityToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="PFULabelVisibility_Checked" Unchecked="PFULabelVisibility_Unchecked"/>
+                        </Grid>
+
+                        <!-- Second ToggleButton with Label -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Lights" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="pfuLightOnToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="PFULights_Checked" Unchecked="PFULight_Unchecked"/>
+                        </Grid>
+
+                        <!-- Third ToggleButton with Label -->
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Camera" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="pfuCamOnToggleBtn" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1" Checked="PFUCamera_Checked" Unchecked="PFUCamera_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="pfuAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="PFUStartChecked_Checked" Unchecked="PFUStartChecked_Unchecked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Dir" VerticalAlignment="Center" Margin="5"/>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                <RadioButton x:Name="pfuClockwiseRadioButton" Content="Clockwise" Margin="5" Checked="PFUClockwiseRadioButton_Checked" />
+                                <RadioButton x:Name="pfuCounterClockwiseRadioButton" Content="PFUCounterclockwise" Margin="5" Checked="PFUcounterClockwiseRadioButton_Checked" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="148"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" VerticalAlignment="Center" Height="26">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" MinWidth="43.047"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="18"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
+
+                                <TextBox x:Name="pfuSpeedTextBox"
+                          Width="30"
+                          PreviewTextInput="TextBox_PreviewTextInput"
+                          TextChanged="PFUSpeedTextBox_TextChanged"
+                          HorizontalAlignment="Left"
+                          Text="50"
+                          VerticalAlignment="Center"
+                          Grid.Column="1" Height="18" RenderTransformOrigin="0.504,0.507" Margin="78,0,0,0"/>
+                            </Grid>
+
+                            <TextBlock Text="%"
+                       VerticalAlignment="Center"
+                       Margin="2,0,20,0"
+                       Grid.Column="1" Height="16"/>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+
             </Grid>
 
         </ScrollViewer>
@@ -715,7 +1191,7 @@
                 </Grid>
 
                 <!-- Second Animation Row with Three Columns -->
-                <Grid Grid.Row="1" VerticalAlignment="Top" > 
+                <Grid Grid.Row="1" VerticalAlignment="Top" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -741,8 +1217,8 @@
                 </Grid>
 
 
-                <Grid Grid.Row="2" VerticalAlignment="Top" Height="300" Margin="0,-250,0,0">
-                      <ContentControl Grid.Column="1" x:Name="LOCcolumn2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Grid Grid.Row="2" VerticalAlignment="Top" Height="300" Margin="600,-250,0,0">
+                    <ContentControl Grid.Column="1" x:Name="LOCcolumn2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 </Grid>
 
                 <Grid Grid.Row="3"  VerticalAlignment="Top" Height="300">

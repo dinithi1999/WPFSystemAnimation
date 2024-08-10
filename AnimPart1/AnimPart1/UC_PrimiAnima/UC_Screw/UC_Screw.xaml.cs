@@ -2,9 +2,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using AnimPart1.UC_AncillaryAnima.Lights;
 using AnimPart1.UC_AncillaryAnima.Label;
 using System.Windows.Media.Animation;
+using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 
 namespace AnimPart1.UC_PrimiAnima.UC_Screw
 {
