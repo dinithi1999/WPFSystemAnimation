@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="PreFinal" xmlns="http://www.w3.org/2000/svg" width="226" height="226" viewBox="0 0 226 226">
+  <defs>
+    <style>
+      .c {
+        fill: #0000f9;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Marquee">
+    <polygon class="c" points="226 226 215 226 215 223 223 223 223 215 226 215 226 226"/>
+    <path class="c" d="M196,226h-18v-3h18v3ZM159,226h-16v-3h16v3ZM126,226h-19v-3h19v3ZM90,226h-18v-3h18v3ZM53,226h-20v-3h20v3Z"/>
+    <polygon class="c" points="11 226 0 226 0 215 3 215 3 223 11 223 11 226"/>
+    <g>
+      <polygon class="c" points="3 11 0 11 0 0 11 0 11 3 3 3 3 11"/>
+      <path class="c" d="M194,3h-21V0h21v3ZM154,3h-18V0h18v3ZM119,3h-19V0h19v3ZM83,3h-16V0h16v3ZM48,3h-18V0h18v3Z"/>
+      <polygon class="c" points="226 11 223 11 223 3 215 3 215 0 226 0 226 11"/>
+    </g>
+    <path class="c" d="M226,202h-3v-17h3v17ZM226,169h-3v-17h3v17Z"/>
+    <path class="c" d="M226,139h-3v-17h3v17ZM226,106h-3v-17h3v17Z"/>
+    <path class="c" d="M226,77h-3v-17h3v17ZM226,44h-3v-17h3v17Z"/>
+    <path class="c" d="M3,202H0v-17h3v17ZM3,169H0v-17h3v17Z"/>
+    <path class="c" d="M3,139H0v-17h3v17ZM3,106H0v-17h3v17Z"/>
+    <path class="c" d="M3,77H0v-17h3v17ZM3,44H0v-17h3v17Z"/>
+  </g>
+</svg>

@@ -18,6 +18,7 @@ using AnimPart1.UC_AncillaryAnima.FPUAnimation;
 using AnimPart1.UC_AncillaryAnima.HBYRotation;
 using AnimPart1.UC_AncillaryAnima.LOCAnimation;
 using AnimPart1.UC_OtherAnima.PFUAnimation;
+using AnimPart1.UC_AncillaryAnima.DownArrow;
 
 namespace AnimPart1
 {
@@ -41,6 +42,7 @@ namespace AnimPart1
         UC_FPUAnimation fpuUCIinstance;
         UC_FPPAnimation fppUCIinstance;
 
+        public UC_DownArrow arrowUCIinstance;
 
         DispatcherTimer blinkTimer;
         DispatcherTimer blinkTimer2;
@@ -63,8 +65,16 @@ namespace AnimPart1
         bool isCamFlashIsOn5;
         bool isCamFlashIsOn6;
         bool isCamFlashIsOn7;
+        bool isCamFlashIsOn8;
+        bool isCamFlashIsOn9;
+        bool isCamFlashIsOn10;
+        bool isCamFlashIsOn11;
+        bool isCamFlashIsOn12;
 
+        public UC_DownArrow arrowUpDownHBY;
+        public UC_DownArrow arrowDownDownHBY;
 
+        public UC_DownArrow arrowDownDownPFU;
 
         const string LightOnPath = "pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg";
         const string LightOffPath = "pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg";
@@ -108,20 +118,42 @@ namespace AnimPart1
                 column1ContentControl.Content = pumpUCInstance;
 
                 hbyUCIinstance = new UC_HBYAnimation();
-                HBYcolumn1ContentControl.Content = hbyUCIinstance;
+                HBYTopLeftContentControl.Content = hbyUCIinstance;
+
+
+                pfuUCIinstance = new UC_PFUAnimation();
+                HBYBottomRightContentControl.Content = pfuUCIinstance;
+
 
                 locUCIinstance = new UC_LOC();
                 LOCcolumn2ContentControl.Content = locUCIinstance;
 
 
-                pfuUCIinstance = new UC_PFUAnimation();
-                PFUcolumn1ContentControl.Content = pfuUCIinstance;
+                //pfuUCIinstance = new UC_PFUAnimation();
+                //PFUcolumn1ContentControl.Content = pfuUCIinstance;
 
                 fpuUCIinstance = new UC_FPUAnimation();
                 FPUcolumn1ContentControl.Content = fppUCIinstance;
 
                 fppUCIinstance = new UC_FPPAnimation();
                 FPUcolumn1ContentControl.Content = fppUCIinstance;
+
+                arrowUCIinstance = new UC_DownArrow();
+                HBYTopRightContentControl.Content= arrowUCIinstance;
+
+                arrowUpDownHBY = new UC_DownArrow();
+                arrowUpDownHBY.backgroundSvgRow.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/DownArrow/Images/down1Arrow.svg");
+                HBYTopLeftContentControltopRow.Content = arrowUpDownHBY;
+
+
+                arrowDownDownHBY = new UC_DownArrow();
+                arrowDownDownHBY.backgroundSvgRow.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/DownArrow/Images/down1Arrow.svg");
+                HBYTopLeftContentControldownRow.Content = arrowDownDownHBY;
+
+
+                arrowDownDownPFU = new UC_DownArrow();
+                arrowDownDownPFU.backgroundSvgRow.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/DownArrow/Images/down1Arrow.svg");
+                PFUDownArrowContentControl.Content = arrowDownDownPFU;
 
 
                 // Initialize the timer for blinking for the camera
@@ -186,6 +218,7 @@ namespace AnimPart1
                 blinkTimer12.Tick += BlinkTimerFPP_Tick;
 
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
@@ -228,8 +261,6 @@ namespace AnimPart1
             porlightOnToggleBtn.IsChecked = true;
             porCamOnToggleBtn.IsChecked = true;
             porAnimStartToggleBtn.IsChecked = false;
-
-           
 
         }
 
@@ -329,62 +360,62 @@ namespace AnimPart1
 
         private void LOCCamera_Unchecked(object sender, RoutedEventArgs e)
         {
-            //blinkTimer7.Stop();
+            blinkTimer8.Stop();
             locUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
         }
 
         private void LOCCamera_Checked(object sender, RoutedEventArgs e)
         {
-            //isCamFlashIsOn7 = true;
-            //blinkTimer7.Start();
+            isCamFlashIsOn8 = true;
+            blinkTimer8.Start();
         }
 
         private void HBYCamera_Unchecked(object sender, RoutedEventArgs e)
         {
-            //blinkTimer7.Stop();
+            blinkTimer9.Stop();
             hbyUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
         }
 
         private void HBYCamera_Checked(object sender, RoutedEventArgs e)
         {
-            //isCamFlashIsOn7 = true;
-            //blinkTimer7.Start();
+            isCamFlashIsOn9 = true;
+            blinkTimer9.Start();
         }
 
         private void PFUCamera_Unchecked(object sender, RoutedEventArgs e)
         {
-            //blinkTimer7.Stop();
+            blinkTimer10.Stop();
             pfuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
         }
 
         private void PFUCamera_Checked(object sender, RoutedEventArgs e)
         {
-            //isCamFlashIsOn7 = true;
-            //blinkTimer7.Start();
+            isCamFlashIsOn10 = true;
+            blinkTimer10.Start();
         }
 
         private void FPUCamera_Unchecked(object sender, RoutedEventArgs e)
         {
-            //blinkTimer7.Stop();
+            blinkTimer11.Stop();
             fpuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
         }
 
         private void FPUCamera_Checked(object sender, RoutedEventArgs e)
         {
-            //isCamFlashIsOn7 = true;
-            //blinkTimer7.Start();
+            isCamFlashIsOn11 = true;
+            blinkTimer11.Start();
         }
 
         private void FPPCamera_Unchecked(object sender, RoutedEventArgs e)
         {
-            //blinkTimer7.Stop();
+            blinkTimer12.Stop();
             fppUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
         }
 
         private void FPPCamera_Checked(object sender, RoutedEventArgs e)
         {
-            //isCamFlashIsOn7 = true;
-            //blinkTimer7.Start();
+            isCamFlashIsOn12 = true;
+            blinkTimer12.Start();
         }
 
 
@@ -491,7 +522,7 @@ namespace AnimPart1
 
         private void BlinkTimerLOC_Tick(object sender, EventArgs e)
         {
-            if (isCamFlashIsOn6)
+            if (isCamFlashIsOn8)
             {
                 locUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
             }
@@ -500,12 +531,12 @@ namespace AnimPart1
                 locUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
             }
 
-            isCamFlashIsOn6 = !isCamFlashIsOn6;
+            isCamFlashIsOn8 = !isCamFlashIsOn8;
         }
 
         private void BlinkTimerHBY_Tick(object sender, EventArgs e)
         {
-            if (isCamFlashIsOn7)
+            if (isCamFlashIsOn9)
             {
                 hbyUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
             }
@@ -514,13 +545,13 @@ namespace AnimPart1
                 hbyUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
             }
 
-            isCamFlashIsOn7 = !isCamFlashIsOn7;
+            isCamFlashIsOn9 = !isCamFlashIsOn9;
         }
 
 
         private void BlinkTimerPFU_Tick(object sender, EventArgs e)
         {
-            if (isCamFlashIsOn7)
+            if (isCamFlashIsOn10)
             {
                 pfuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
             }
@@ -529,12 +560,12 @@ namespace AnimPart1
                 pfuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
             }
 
-            isCamFlashIsOn7 = !isCamFlashIsOn7;
+            isCamFlashIsOn10 = !isCamFlashIsOn10;
         }
 
         private void BlinkTimerFPU_Tick(object sender, EventArgs e)
         {
-            if (isCamFlashIsOn7)
+            if (isCamFlashIsOn11)
             {
                 fpuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
             }
@@ -543,12 +574,12 @@ namespace AnimPart1
                 fpuUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
             }
 
-            isCamFlashIsOn7 = !isCamFlashIsOn7;
+            isCamFlashIsOn11 = !isCamFlashIsOn11;
         }
 
         private void BlinkTimerFPP_Tick(object sender, EventArgs e)
         {
-            if (isCamFlashIsOn7)
+            if (isCamFlashIsOn12)
             {
                 fppUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOffPath);
             }
@@ -557,7 +588,7 @@ namespace AnimPart1
                 fppUCIinstance.cameraUserCtrl.svgViewbox.Source = new Uri(CameraOnPath);
             }
 
-            isCamFlashIsOn7 = !isCamFlashIsOn7;
+            isCamFlashIsOn12 = !isCamFlashIsOn12;
         }
 
         #endregion
@@ -1045,10 +1076,13 @@ namespace AnimPart1
 
         private void LOCStartChecked_Checked(object sender, RoutedEventArgs e)
         {
+            locUCIinstance.StartAnimation();
         }
 
         private void LOCStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
+            locUCIinstance.StopAnimation();
+
         }
 
         private void HBYStartChecked_Checked(object sender, RoutedEventArgs e)

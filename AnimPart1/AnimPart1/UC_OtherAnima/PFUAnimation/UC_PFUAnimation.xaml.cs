@@ -32,24 +32,46 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
 
         UC_ScrewRotation uC_ScrewRotation;
 
-        public string labelName = "PMP-XXX";
+        public string labelName = "PFU-XXX";
         public bool isLightOn;
         public bool isAnimationOngoing;
 
         public UC_PFUAnimation()
         {
             InitializeComponent();
+
+
+            lightUserCtrl = new Lights.Lights();
+            lightColumn.Content = lightUserCtrl;
+
+            cameraUserCtrl = new Camera.Camera();
+            CameraColumn.Content = cameraUserCtrl;
+
+            labelUserCtrl = new UC_Label();
+            labelColumn.Content = labelUserCtrl;
+            labelUserCtrl.labelName.Text = labelName;
+
+
+            // Set the Source properties for the SvgViewbox controls
+            backgroundSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/PrefinalBoarer.svg");
+            svgViewbox.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/PrefinalBackground.svg");
+
+            uC_ScrewRotation = new UC_ScrewRotation();
+            PadleColumn.Content = uC_ScrewRotation;
+            uC_ScrewRotation.backgroundSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/PrefinalRotationalPart.svg");
+
+            uC_ScrewRotation.StartSpinning();
         }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            //backgroundSvg.Visibility = Visibility.Visible;
+            backgroundSvg.Visibility = Visibility.Visible;
         }
 
 
         private void Grid_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            //backgroundSvg.Visibility = Visibility.Collapsed;
+            backgroundSvg.Visibility = Visibility.Collapsed;
         }
 
 
@@ -83,18 +105,19 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
             ToggleLight();
 
         }
+
         private void ToggleLight()
         {
-            //if (isLightOn)
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
-            //    isLightOn = false;
-            //}
-            //else
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
-            //    isLightOn = true;
-            //}
+            if (isLightOn)
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+                isLightOn = false;
+            }
+            else
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+                isLightOn = true;
+            }
         }
 
         public void StartSpinning()

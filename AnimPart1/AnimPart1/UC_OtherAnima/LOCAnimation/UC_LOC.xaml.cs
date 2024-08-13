@@ -1,10 +1,12 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
 using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
+using System.Windows.Threading;
 
 
 namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
@@ -28,10 +30,25 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
         public bool isLightOn;
         public bool isAnimationOngoing;
 
-        private DoubleAnimation collectorAnimation;
+        Storyboard collectorMovement;
+        DoubleAnimation collectorAnimation;
+
+        Storyboard collectorCarrierTextMovement;
+        DoubleAnimation collectorTEXTAnimation;
+
+
+        DispatcherTimer timer;
+        private bool isAnimationOnGoing;
+
+        private List<int> predefinedValues = new List<int>
+        {
+            0, -82, -164, 246, -328, -410, -492, -574, -656, -738,
+            -820, -900
+        };
 
         public UC_LOC()
         {
+
             InitializeComponent();
 
             lightUserCtrl = new Lights.Lights();
@@ -44,21 +61,76 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
             labelColumn.Content = labelUserCtrl;
             labelUserCtrl.labelName.Text = labelName;
 
-            var collectorMovement = (Storyboard)this.Resources["CollectorMovement"];
-            var collectorCarrierMovement = (Storyboard)this.Resources["CollectortextboxMovement"];
+          
 
-            textBoxContainerDistance.Text = "0";
-
-            collectorMovement.CurrentTimeInvalidated += CollectorMovement_CurrentTimeInvalidated;
-
-            collectorMovement.Begin();
-            collectorCarrierMovement.Begin();
         }
 
 
-        private void CollectorMovement_CurrentTimeInvalidated(object sender, EventArgs e)
+        public void StartAnimation()
         {
+            // Start the Storyboard (which starts the animation)
 
+            // Retrieve the Storyboard and the animation
+            collectorMovement = (Storyboard)this.Resources["CollectorMovement"];
+            collectorAnimation = (DoubleAnimation)collectorMovement.Children[0]; // Assuming it's the first child
+
+            collectorCarrierTextMovement = (Storyboard)this.Resources["CollectortextboxMovement"];
+            collectorTEXTAnimation = (DoubleAnimation)collectorMovement.Children[0]; // Assuming it's the first child
+
+            isAnimationOngoing = true;
+
+            if (collectorMovement != null && collectorAnimation != null)
+            {
+                collectorMovement.Begin();
+                collectorCarrierTextMovement.Begin();
+
+                timer = new DispatcherTimer
+                {
+                    Interval = TimeSpan.FromMilliseconds(50) // Increase frequency for better detection
+                };
+                timer.Tick += OnTimerTick;
+                timer.Start();
+            }
+            else
+            {
+                // Handle the case where the resources were not found
+                MessageBox.Show("Storyboard or DoubleAnimation not found in resources.");
+            }
+            // Add an event handler to track progress
+        }
+
+        
+        public void StopAnimation()
+        {
+            isAnimationOngoing = false;
+            timer.Stop(); // Stop the timer if animation is paused
+
+        }
+
+        private void OnTimerTick(object sender, EventArgs e)
+        {
+            if (collectorMovement != null && translateTransformCollector != null)
+            {
+                // Get the current X value of the TranslateTransform
+                double currentXValue = translateTransformCollector.X;
+
+                // Round the current X value to the nearest integer
+                int roundedValue = (int)Math.Round(currentXValue);
+                Debug.WriteLine(roundedValue);
+
+                // Check if roundedValue is in the predefined set of values or less than or equal to -900
+                if (roundedValue <= -900 || predefinedValues.Contains(roundedValue))
+                {
+                    collectorMovement.Pause();
+                    collectorCarrierTextMovement.Pause();
+                    timer.Stop(); // Stop the timer if animation is paused
+                }
+            }
+            else
+            {
+                // Handle the case where the resources are still not initialized
+                MessageBox.Show("Storyboard or TranslateTransform is null.");
+            }
         }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -105,30 +177,18 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
         }
         private void ToggleLight()
         {
-            //if (isLightOn)
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
-            //    isLightOn = false;
-            //}
-            //else
-            //{
-            //    lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
-            //    isLightOn = true;
-            //}
+            if (isLightOn)
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg");
+                isLightOn = false;
+            }
+            else
+            {
+                lightUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg");
+                isLightOn = true;
+            }
         }
 
-        public void StartSpinning()
-        {
-            uC_ScrewRotation.StartSpinning();
-            isAnimationOngoing = true;
-        }
-
-        public void StopSpinning()
-        {
-            uC_ScrewRotation.StopSpinning();
-            isAnimationOngoing = false;
-
-        }
 
         public void SetRotationDirection(bool clockwise)
         {
@@ -143,4 +203,6 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
             }
         }
     }
+
+
 }

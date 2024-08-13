@@ -1,4 +1,5 @@
-﻿using AnimPart1.UC_AncillaryAnima.Label;
+﻿using AnimPart1.UC_AncillaryAnima.DownArrow;
+using AnimPart1.UC_AncillaryAnima.Label;
 using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
 using System.Windows;
@@ -17,16 +18,40 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
         public Lights.Lights lightUserCtrl;
         public UC_Label labelUserCtrl;
 
-
+     
         UC_ScrewRotation uC_ScrewRotation;
 
-        public string labelName = "PMP-XXX";
+        public string labelName = "HBY-XXX";
         public bool isLightOn;
         public bool isAnimationOngoing;
 
         public UC_HBYAnimation()
         {
             InitializeComponent();
+
+
+            lightUserCtrl = new Lights.Lights();
+            lightColumn.Content = lightUserCtrl;
+
+            cameraUserCtrl = new Camera.Camera();
+            CameraColumn.Content = cameraUserCtrl;
+
+            labelUserCtrl = new UC_Label();
+            labelColumn.Content = labelUserCtrl;
+            labelUserCtrl.labelName.Text = labelName;
+
+
+            // Set the Source properties for the SvgViewbox controls
+            backgroundSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/HBYRotation/Images/HoldBayboader.svg");
+            svgViewbox.Source = new Uri("pack://application:,,,/UC_OtherAnima/HBYRotation/Images/hallbayBackground.svg");
+
+            uC_ScrewRotation = new UC_ScrewRotation();
+            PadleColumn.Content = uC_ScrewRotation;
+            uC_ScrewRotation.backgroundSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/HBYRotation/Images/HalbayRotationalSection.svg");
+
+      
+
+            uC_ScrewRotation.StartSpinning();
         }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)

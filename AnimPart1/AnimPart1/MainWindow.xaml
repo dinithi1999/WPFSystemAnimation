@@ -628,7 +628,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                            <ToggleButton x:Name="pmpAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="PMPStartChecked_Checked" Unchecked="PMPStartChecked_Unchecked"/>
+                            <ToggleButton x:Name="pmpAnimStartToggleBtn" Content="" Margin="81,5,73,0" Width="50" Height="30" Grid.Column="1" Checked="PMPStartChecked_Checked" Unchecked="PMPStartChecked_Unchecked" VerticalAlignment="Top"/>
                         </Grid>
 
                         <Grid Grid.Row="4">
@@ -781,6 +781,7 @@
                 </GroupBox>
 
                 <GroupBox Header="HBY" Margin="580,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="250" Width="250" Grid.Column="1">
+
                     <Grid Height="230">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -1221,11 +1222,69 @@
                     <ContentControl Grid.Column="1" x:Name="LOCcolumn2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 </Grid>
 
-                <Grid Grid.Row="3"  VerticalAlignment="Top" Height="300">
+                <Grid Grid.Row="3" VerticalAlignment="Center" >
 
-                    <!-- ContentControls to host UserControls -->
-                    <ContentControl Grid.Column="0" x:Name="HBYcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="1" Width="1100" Margin="-350,0,0,0" >
+                        <!-- Define two rows and two columns for the nested grid -->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="450*"/>
+                            <RowDefinition Height="300*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="450*"/>
+                                <ColumnDefinition Width="150*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Row="0">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+
+                                </Grid.RowDefinitions>
+
+                                <ContentControl x:Name="HBYTopLeftContentControltopRow"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150,0,0,0"/>
+
+                                <ContentControl x:Name="HBYTopLeftContentControl"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,0,0,0"/>
+
+                                <ContentControl x:Name="HBYTopLeftContentControldownRow"  Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="150,-50,0,0"/>
+
+                            </Grid>
+
+
+                            <ContentControl  x:Name="HBYTopRightContentControl" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="-350,0,0,0" />
+
+                        </Grid>
+
+                        <Grid Grid.Row="1" Height="580">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <!-- ContentControl for the bottom-right section of the nested grid -->
+                            <ContentControl x:Name="HBYBottomRightContentControl" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="550,0,0,0"/>
+                            <ContentControl x:Name="PFUDownArrowContentControl" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="430,0,0,0"/>
+
+                        </Grid>
+
+                    </Grid>
+
                 </Grid>
+
 
                 <Grid Grid.Row="4" VerticalAlignment="Top" Height="300" >
                     <!-- ContentControls to host UserControls -->

@@ -7,8 +7,7 @@
              mc:Ignorable="d" 
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
-             MouseRightButtonDown="UserControl_MouseRightButtonDown"
-             >
+             MouseRightButtonDown="UserControl_MouseRightButtonDown">
     <UserControl.Resources>
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
@@ -17,8 +16,6 @@
     </UserControl.Resources>
 
     <Grid x:Name="MainGrid">
-
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
             <!-- Column 0: Width adjusts to content -->
@@ -27,46 +24,68 @@
         </Grid.ColumnDefinitions>
 
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid" Width="220" HorizontalAlignment="Center" VerticalAlignment="top" >
+        <Grid x:Name="BackgroundGrid" Width="220" HorizontalAlignment="Center" VerticalAlignment="Center" Height="320">
             <svgc:SvgViewbox x:Name="backgroundSvg"
-                    Stretch="Uniform"
-                    Visibility="Collapsed"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                   />
-
+                             Stretch="Uniform"
+                             Visibility="Collapsed"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Top" />
 
             <svgc:SvgViewbox x:Name="svgViewbox"
-                Stretch="Uniform"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top" Height="348" Width="180" Margin="15,16,0,0" 
-               />
+                             Stretch="Uniform"
+                             Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\HBYRotation\Images\hallbayBackground.svg"
+                             HorizontalAlignment="Center"
+                             Panel.ZIndex="0"
+                             VerticalAlignment="Top"
+                             Height="225"
+                             Width="191"
+                             Margin="0,36,0,0" />
 
             <!-- LightColumn positioned at the top-left of TankColumn -->
             <ContentControl x:Name="lightColumn"
-       HorizontalAlignment="Left"
-       Panel.ZIndex="1"
-       VerticalAlignment="Top">
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
                 <ContentControl.Effect>
                     <DropShadowEffect Color="Gray"
-                 Direction="320"
-                 ShadowDepth="1"
-                 Opacity="0.3"/>
+                                      Direction="320"
+                                      ShadowDepth="1"
+                                      Opacity="0.3"/>
                 </ContentControl.Effect>
             </ContentControl>
 
-            <!-- CameraColumn positioned at the top-right of TankColumn -->
-            <ContentControl x:Name="CameraColumn" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <ContentControl x:Name="CameraColumn" HorizontalAlignment="Right" VerticalAlignment="Top" />
 
-            <!-- PadleColumn positioned at the center -->
-            <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-5,50,0,0"  Panel.ZIndex="0"/>
+            <!-- Ensure upArrow and downArrow are on top -->
+            <ContentControl x:Name="upArrow"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Panel.ZIndex="10"
+                            Visibility="Visible" />
+
+            <ContentControl x:Name="downArrow"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Panel.ZIndex="10"
+                            Visibility="Visible" />
+
+            <ContentControl x:Name="PadleColumn"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="0,-30,0,0"
+                            Panel.ZIndex="1"/>
         </Grid>
 
-        <ContentControl Grid.Column="1" x:Name="labelColumn" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="150"  >
+        <ContentControl Grid.Column="1" x:Name="labelColumn"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Height="100"
+                        Width="150" />
 
-        </ContentControl>
-
-        <ContentControl Grid.Column="1" x:Name="labelColumn2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Width="150" Margin="0,100,0,0"/>
-
+        <ContentControl Grid.Column="1" x:Name="labelColumn2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Height="150"
+                        Width="150"
+                        Margin="0,100,0,0"/>
     </Grid>
 </UserControl>

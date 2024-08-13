@@ -28,6 +28,9 @@
     <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOff.svg" />
     <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOn.png" />
     <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOn.svg" />
+    <None Remove="UC_AncillaryAnima\DownArrow\Images\down1Arrow.svg" />
+    <None Remove="UC_AncillaryAnima\DownArrow\Images\down2Arrow.svg" />
+    <None Remove="UC_AncillaryAnima\DownArrow\Images\downArrow.svg" />
     <None Remove="UC_AncillaryAnima\Labels\Images\geerIcon.svg" />
     <None Remove="UC_AncillaryAnima\Labels\Images\green.svg" />
     <None Remove="UC_AncillaryAnima\Labels\Images\labetFormat.svg" />
@@ -182,10 +185,16 @@
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\90.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\99.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\empty.svg" />
+    <None Remove="UC_OtherAnima\HBYRotation\Images\HalbayRotationalSection.svg" />
+    <None Remove="UC_OtherAnima\HBYRotation\Images\hallbayBackground.svg" />
+    <None Remove="UC_OtherAnima\HBYRotation\Images\HoldBayboader.svg" />
     <None Remove="UC_OtherAnima\LOCAnimation\Images\backgroundPath.svg" />
     <None Remove="UC_OtherAnima\LOCAnimation\Images\boarder.svg" />
     <None Remove="UC_OtherAnima\LOCAnimation\Images\container.svg" />
     <None Remove="UC_OtherAnima\LOCAnimation\Images\downArrow.svg" />
+    <None Remove="UC_OtherAnima\PFUAnimation\Images\PrefinalBackground.svg" />
+    <None Remove="UC_OtherAnima\PFUAnimation\Images\PrefinalBoarer.svg" />
+    <None Remove="UC_OtherAnima\PFUAnimation\Images\PrefinalRotationalPart.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner0.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner180.svg" />
@@ -214,6 +223,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="UC_AncillaryAnima\DownArrow\Images\down1Arrow.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\DownArrow\Images\down2Arrow.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\DownArrow\Images\downArrow.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\HBYRotation\Images\HalbayRotationalSection.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\HBYRotation\Images\hallbayBackground.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\HBYRotation\Images\HoldBayboader.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\PFUAnimation\Images\PrefinalBackground.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\PFUAnimation\Images\PrefinalBoarer.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\PFUAnimation\Images\PrefinalRotationalPart.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -589,8 +625,6 @@
   <ItemGroup>
     <Folder Include="UC_OtherAnima\FPPAnimation\Images\" />
     <Folder Include="UC_OtherAnima\FPUAnimation\Images\" />
-    <Folder Include="UC_OtherAnima\HBYRotation\Images\" />
-    <Folder Include="UC_OtherAnima\PFUAnimation\Images\" />
   </ItemGroup>
 
 </Project>

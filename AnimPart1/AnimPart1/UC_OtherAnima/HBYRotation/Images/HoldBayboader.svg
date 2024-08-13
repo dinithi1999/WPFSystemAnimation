@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="HoldBay" xmlns="http://www.w3.org/2000/svg" width="253" height="290" viewBox="0 0 253 290">
+  <defs>
+    <style>
+      .c {
+        fill: #0000f9;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Marquee">
+    <polygon class="c" points="253 266 235 266 235 260 247 260 247 247 253 247 253 266"/>
+    <path class="c" d="M202,266h-32v-6h32v6ZM139,266h-33v-6h33v6ZM75,266h-32v-6h32v6Z"/>
+    <polygon class="c" points="18 266 0 266 0 247 6 247 6 260 18 260 18 266"/>
+    <path class="c" d="M6,215H0v-29h6v29ZM6,157H0v-29h6v29ZM6,98H0v-29h6v29Z"/>
+    <polygon class="c" points="6 35 0 35 0 16 18 16 18 22 6 22 6 35"/>
+    <path class="c" d="M208,22h-32v-6h32v6ZM143,22h-31v-6h31v6ZM80,22h-31v-6h31v6Z"/>
+    <polygon class="c" points="253 35 247 35 247 22 235 22 235 16 253 16 253 35"/>
+    <path class="c" d="M253,210h-6v-30h6v30ZM253,151h-6v-28h6v28ZM253,94h-6v-30h6v30Z"/>
+  </g>
+</svg>

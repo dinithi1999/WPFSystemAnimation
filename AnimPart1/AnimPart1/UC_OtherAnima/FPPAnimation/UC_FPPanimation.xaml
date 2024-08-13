@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AnimPart1.UC_AncillaryAnima.FPPAnimation"
              mc:Ignorable="d" 
-                 xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-    MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
-    MouseRightButtonDown="UserControl_MouseRightButtonDown"
-             >
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
+             MouseRightButtonDown="UserControl_MouseRightButtonDown">
+    
     <UserControl.Resources>
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
