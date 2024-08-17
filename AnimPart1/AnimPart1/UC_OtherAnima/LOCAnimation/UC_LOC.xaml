@@ -7,12 +7,12 @@
              mc:Ignorable="d" 
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
-             MouseRightButtonDown="UserControl_MouseRightButtonDown">
+             MouseRightButtonDown="UserControl_MouseRightButtonDown" Height="295">
 
     <UserControl.Resources>
-        
+
         <local:DistanceConverter x:Key="DistanceConverter"/>
-        
+
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
         </ContextMenu>
@@ -41,14 +41,14 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <Grid x:Name="MainGrid">
+    <Grid x:Name="MainGrid" Margin="0,0,0,21">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1200">
+        <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width="776" Height="268">
             <svgc:SvgViewbox x:Name="backgroundSvg"
                              Stretch="Fill"
                              Panel.ZIndex="0"
@@ -58,30 +58,28 @@
                              VerticalAlignment="Center"/>
             <svgc:SvgViewbox x:Name="svgViewbox"
                              Stretch="Uniform"
-                             Width="1132"
+                             Width="700"
                              Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\LOCAnimation\Images\backgroundPath.svg"
                              Panel.ZIndex="1"
-                             HorizontalAlignment="Left"
-                             VerticalAlignment="Bottom"
-                             Margin="57,0,0,36"/>
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Top"
+                             Margin="0,201,0,0" RenderTransformOrigin="0.465,0.289"/>
             <svgc:SvgViewbox x:Name="svgViewbox2"
                              Stretch="Uniform"
-                             Width="260"
+                             Width="230"
                              Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\LOCAnimation\Images\container.svg"
                              Panel.ZIndex="2"
                              HorizontalAlignment="Left"
-                             VerticalAlignment="Top"
-                             Height="242"
-                             Margin="932,72,0,0">
+                             Margin="562,89,0,24">
                 <svgc:SvgViewbox.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform x:Name="translateTransformCollector"/>
                     </TransformGroup>
                 </svgc:SvgViewbox.RenderTransform>
-                
-            
+
+
             </svgc:SvgViewbox>
-            
+
             <!-- LightColumn positioned at the top-left of TankColumn -->
             <ContentControl x:Name="lightColumn"
                             HorizontalAlignment="Left"
