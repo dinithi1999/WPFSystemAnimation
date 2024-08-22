@@ -6,55 +6,77 @@ namespace AnimPart1.UC_AncillaryAnima.ScrewRotation
 {
     public partial class UC_ScrewRotation : UserControl
     {
-        private const double BaseDurationSeconds = 2.0; 
+        private const double BaseDurationSeconds = 2.0;
+        public DoubleAnimation animation;
+        public DoubleAnimation animation2;
 
+        public Storyboard spinStoryboard;
+        public Storyboard spinStoryboard2;
+
+        public double rotateFrom =360 ;
+        public double rotateT0 = 0;
+
+        public bool isAntiClockWise = false;
 
         public UC_ScrewRotation()
         {
             InitializeComponent();
+           
+            spinStoryboard = (Storyboard)this.Resources["RotateStoryboard"];
+            spinStoryboard2 = (Storyboard)this.Resources["RotateStoryboardStars"];
+
+            animation = spinStoryboard.Children[0] as DoubleAnimation;
+            animation2 = spinStoryboard2.Children[0] as DoubleAnimation;
+
         }
 
         public void StartSpinning()
         {
-            var spinStoryboard = (Storyboard)this.Resources["RotateStoryboard"];
+            animation.From = rotateFrom;
+            animation.To = rotateT0;
+
+            animation2.From = rotateFrom;
+            animation2.To = rotateT0;
 
             if (spinStoryboard != null)
             {
                 spinStoryboard.Begin();
+                spinStoryboard2.Begin();
             }
 
         }
 
         public void StopSpinning()
         {
-            var spinStoryboard = (Storyboard)this.Resources["RotateStoryboard"];
 
             if (spinStoryboard != null)
             {
                 spinStoryboard.Stop();
+                spinStoryboard2.Stop();
+
             }
 
         }
 
 
-        public void SetRotationDirection(bool clockwise)
+        public void SetRotationDirection(bool isAnticlockwise)
         {
-            var spinStoryboard = (Storyboard)this.Resources["RotateStoryboard"];
+
+            isAntiClockWise = isAnticlockwise;
+
             if (spinStoryboard != null)
             {
-                var animation = spinStoryboard.Children[0] as DoubleAnimation;
-
                 if (animation != null)
                 {
-                    if (clockwise)
+                    if (isAnticlockwise)
                     {
-                        animation.From = 360;
-                        animation.To = 0;
+                        rotateFrom = 360;
+                        rotateT0 = 0;
                     }
                     else
                     {
-                        animation.From = 0;
-                        animation.To = 360;
+                        rotateFrom = 0;
+                        rotateT0 = 360;
                     }
                 }
             }

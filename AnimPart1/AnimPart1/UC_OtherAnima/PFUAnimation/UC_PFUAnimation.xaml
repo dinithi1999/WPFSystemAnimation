@@ -25,24 +25,30 @@
         </Grid.ColumnDefinitions>
 
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center"  >
+        <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width ="280"  >
+            
             <svgc:SvgViewbox x:Name="backgroundSvg"
                 Stretch="Uniform"
                 Visibility="Collapsed"
+                   
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                />
 
             <svgc:SvgViewbox x:Name="svgViewbox"
-            Stretch="Uniform"
+            Stretch="UniformToFill"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top" Margin="0,0,0,0" 
+            Width="220"
+            Panel.ZIndex="0"
+
+            VerticalAlignment="Center" Height="235" 
             />
 
             <!-- LightColumn positioned at the top-left of TankColumn -->
             <ContentControl x:Name="lightColumn"
                      HorizontalAlignment="Left"
                      Margin="0,0,0,0"
+                     Panel.ZIndex="2"
                      VerticalAlignment="Top">
                 <ContentControl.Effect>
                     <DropShadowEffect Color="Gray"
@@ -54,7 +60,7 @@
 
             <ContentControl x:Name="CameraColumn" HorizontalAlignment="Right" VerticalAlignment="Top" />
 
-            <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="-83,-5,0,0"/>
+            <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="310" Height="320"  Margin="-70,0,0,0" Panel.ZIndex="1"/>
 
         </Grid>
 

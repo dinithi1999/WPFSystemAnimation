@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimPart1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="1761" WindowStartupLocation="CenterScreen" WindowState="Maximized">
-
-
+        Title="MainWindow" Height="750" Width="1400" WindowStartupLocation="CenterScreen" WindowState="Maximized">
 
     <Window.Resources>
         <!-- Style for ToggleButton to act as a switch -->
@@ -921,7 +919,6 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                            <ToggleButton x:Name="fppAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="FPPStartChecked_Checked" Unchecked="FPPStartChecked_Unchecked"/>
                         </Grid>
 
                         <Grid Grid.Row="4">
@@ -1023,10 +1020,9 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="Dir" VerticalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="Empty Material" VerticalAlignment="Center" Margin="5"/>
                             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                                <RadioButton x:Name="FPUclockwiseRadioButton" Content="Clockwise" Margin="5" Checked="FPUclockwiseRadioButton_Checked" />
-                                <RadioButton x:Name="FPUcounterClockwiseRadioButton" Content="FPUCounterclockwise" Margin="5" Checked="FPUcounterClockwiseRadioButton_Checked" />
+                                <Button x:Name="emptyFPUButton" Content="Empty" Margin="5" Width="80" Height="25" Background="AliceBlue" Click=" FPUEmptyBtn_Clicked"/>
                             </StackPanel>
                         </Grid>
 
@@ -1180,15 +1176,17 @@
                 <!-- First Animation Row with Three Columns -->
                 <Grid Grid.Row="0" Margin="0,0,0,3">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="500*"/>
+                        <ColumnDefinition Width="500*"/>
+                        <ColumnDefinition Width="500*"/>
+                        <ColumnDefinition Width="500*"/>
+                        <ColumnDefinition Width="500*"/>
                     </Grid.ColumnDefinitions>
 
                     <!-- ContentControls to host UserControls -->
-                    <ContentControl Grid.Column="2" x:Name="hopperContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <ContentControl Grid.Column="0" x:Name="tankContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <ContentControl Grid.Column="1" x:Name="sloContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ContentControl Grid.Column="3" x:Name="hopperContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ContentControl Grid.Column="1" x:Name="tankContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ContentControl Grid.Column="2" x:Name="sloContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
 
                 <!-- Second Animation Row with Three Columns -->
@@ -1197,13 +1195,15 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <!-- ContentControls to host UserControls -->
-                    <ContentControl Grid.Column="0" x:Name="column1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                    <ContentControl Grid.Column="1" x:Name="column2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <ContentControl Grid.Column="1" x:Name="column1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <ContentControl Grid.Column="2" x:Name="column2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-                    <Grid Grid.Column="2" VerticalAlignment="Top">
+                    <Grid Grid.Column="3" VerticalAlignment="Top">
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -1212,14 +1212,14 @@
 
                         <!-- ContentControls for the third column rows -->
                         <ContentControl x:Name="column3Row2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                        <ContentControl Grid.Row="1" x:Name="column3Row1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <ContentControl Grid.Row="2" x:Name="column3Row1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
                     </Grid>
                 </Grid>
 
 
-                <Grid Grid.Row="2" VerticalAlignment="Top" Height="300" Margin="600,-250,0,0">
-                    <ContentControl Grid.Column="1" x:Name="LOCcolumn2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Grid Grid.Row="2" VerticalAlignment="Top" Height="300" Margin="200,-250,0,0">
+                    <ContentControl Grid.Column="0" x:Name="LOCcolumn2ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 </Grid>
 
                 <Grid Grid.Row="3" VerticalAlignment="Center" >
@@ -1228,9 +1228,11 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Column="1" Width="1100" Margin="-350,0,0,0" >
+                    <Grid Grid.Column="2" Width="1100" Margin="-350,0,0,0" >
                         <!-- Define two rows and two columns for the nested grid -->
                         <Grid.RowDefinitions>
                             <RowDefinition Height="450*"/>
@@ -1254,16 +1256,16 @@
 
                                 </Grid.RowDefinitions>
 
-                                <ContentControl x:Name="HBYTopLeftContentControltopRow"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150,0,0,0"/>
+                                <ContentControl x:Name="HBYTopLeftContentControltopRow"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,-150,0,0"/>
 
-                                <ContentControl x:Name="HBYTopLeftContentControl"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,0,0,0"/>
+                                <ContentControl x:Name="HBYTopLeftContentControl"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="200,-100,0,0"/>
 
-                                <ContentControl x:Name="HBYTopLeftContentControldownRow"  Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="150,-50,0,0"/>
+                                <ContentControl x:Name="HBYTopLeftContentControldownRow"  Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="50,-50,0,0"/>
 
                             </Grid>
 
 
-                            <ContentControl  x:Name="HBYTopRightContentControl" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="-350,0,0,0" />
+                            <ContentControl  x:Name="HBYTopRightContentControl" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="-420,0,0,0" />
 
                         </Grid>
 
@@ -1276,8 +1278,8 @@
                             </Grid.RowDefinitions>
 
                             <!-- ContentControl for the bottom-right section of the nested grid -->
-                            <ContentControl x:Name="HBYBottomRightContentControl" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="550,0,0,0"/>
-                            <ContentControl x:Name="PFUDownArrowContentControl" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="430,0,0,0"/>
+                            <ContentControl x:Name="HBYBottomRightContentControl" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="300,0,0,0"/>
+                            <ContentControl x:Name="PFUDownArrowContentControl" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="200,0,0,0"/>
 
                         </Grid>
 
@@ -1288,13 +1290,13 @@
 
                 <Grid Grid.Row="4" VerticalAlignment="Top" Height="300" >
                     <!-- ContentControls to host UserControls -->
-                    <ContentControl Grid.Column="0" x:Name="PFUcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <ContentControl Grid.Column="1" x:Name="FPUcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 </Grid>
 
 
                 <Grid Grid.Row="5"  VerticalAlignment="Top" Height="300" >
                     <!-- ContentControls to host UserControls -->
-                    <ContentControl Grid.Column="0" x:Name="FPUcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <ContentControl Grid.Column="1" x:Name="FPPcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 </Grid>
 
             </Grid>

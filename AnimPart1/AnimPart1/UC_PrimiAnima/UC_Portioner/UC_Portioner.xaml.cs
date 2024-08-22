@@ -21,6 +21,9 @@ namespace AnimPart1.UC_PrimiAnima
         public string labelName = "POR-XXX";
         public bool isLightOn;
 
+        public static readonly RoutedUICommand Option1Command = new RoutedUICommand("Option 1", "Option1Command", typeof(UC_Portioner));
+        public static readonly RoutedUICommand Option2Command = new RoutedUICommand("Option 2", "Option2Command", typeof(UC_Portioner));
+
         public UC_Portioner()
         {
             InitializeComponent();
@@ -39,11 +42,36 @@ namespace AnimPart1.UC_PrimiAnima
 
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portionerMarquee.svg");
-            svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner180.svg");
+            svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner0.svg");
 
             StartAnimations();
+
+            CommandBindings.Add(new CommandBinding(Option1Command, ExecuteOption1));
+            CommandBindings.Add(new CommandBinding(Option2Command, ExecuteOption2));
+
+
         }
 
+
+        private void ExecuteOption1(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Option 1 Triggered");
+        }
+
+        private void ExecuteOption2(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Option 2 Triggered");
+        }
+
+        private void Option1_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Option 1 Clicked");
+        }
+
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Option 2 Clicked");
+        }
 
         public void StartAnimations()
         {
@@ -55,6 +83,8 @@ namespace AnimPart1.UC_PrimiAnima
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
+            Loaded += (s, e) => Focus();
+
         }
 
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
@@ -101,9 +131,9 @@ namespace AnimPart1.UC_PrimiAnima
             contextMenu.IsOpen = true;
         }
 
-        private void Option1_Click(object sender, RoutedEventArgs e)
-        {
-            ToggleLight();
-        }
+        //private void Option1_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ToggleLight();
+        //}
     }
 }

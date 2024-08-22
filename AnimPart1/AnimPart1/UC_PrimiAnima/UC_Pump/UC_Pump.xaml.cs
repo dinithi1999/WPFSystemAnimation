@@ -127,6 +127,7 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
 
         public void StartSpinning()
         {
+            uC_ScrewRotation.animation.RepeatBehavior = RepeatBehavior.Forever;
             uC_ScrewRotation.StartSpinning();
             isAnimationOngoing = true;
         }

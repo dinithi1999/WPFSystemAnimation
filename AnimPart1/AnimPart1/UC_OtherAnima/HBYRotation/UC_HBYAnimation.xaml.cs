@@ -5,6 +5,7 @@ using AnimPart1.UC_AncillaryAnima.ScrewRotation;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 
 namespace AnimPart1.UC_AncillaryAnima.HBYRotation
 {
@@ -39,6 +40,7 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
             labelUserCtrl = new UC_Label();
             labelColumn.Content = labelUserCtrl;
             labelUserCtrl.labelName.Text = labelName;
+            labelUserCtrl.levelPercentage.Visibility = Visibility.Hidden;
 
 
             // Set the Source properties for the SvgViewbox controls
@@ -51,8 +53,9 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
 
       
 
-            uC_ScrewRotation.StartSpinning();
         }
+
+      
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -136,5 +139,69 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
                 uC_ScrewRotation.SetRotationSpeed(percentage);
             }
         }
+
+        private void colorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (colorComboBox.SelectedItem is ComboBoxItem selectedItem)
+            {
+                string selectedColor = selectedItem.Content.ToString();
+
+                // Display the selected color in the TextBox
+                colorComboBox.Text = selectedColor;
+
+                if (uC_ScrewRotation.isAntiClockWise)
+                {
+                    uC_ScrewRotation.rotateFrom = 0;
+                }
+                else
+                {
+                    uC_ScrewRotation.rotateFrom = 0;
+                }
+
+                // Use a switch case to handle different colors
+                switch (selectedColor)
+                {
+                    case "Red":
+
+                        uC_ScrewRotation.rotateT0 = 0;
+
+                       
+
+                        break;
+
+                    case "Yellow":
+
+                        
+                            uC_ScrewRotation.rotateT0 = 70;
+
+                        
+                        break;
+
+                    case "Green":
+
+                       
+                            uC_ScrewRotation.rotateT0 = 140;
+
+                        break;
+
+                    case "Pink":
+
+                       
+                            uC_ScrewRotation.rotateT0 = 220;
+
+                        break;
+
+                    case "Blue":
+
+                            uC_ScrewRotation.rotateT0 = 290;
+                        break;
+
+                    default:
+                        // Handle any other cases if necessary
+                        break;
+                }
+            }
+        }
+
     }
 }

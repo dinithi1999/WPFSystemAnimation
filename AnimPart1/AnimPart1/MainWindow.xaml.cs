@@ -31,7 +31,7 @@ namespace AnimPart1
         UC_Hopper hopperUCInstance;
         UC_SLO sloUCInstance;
         UC_TNK tankUCInstance;
-        UC_Portioner portionerUCInstance;
+        public static UC_Portioner portionerUCInstance;
         UC_Screw screwUCInstance;
         UC_Slicer slicerUCInstance;
         UC_Pump pumpUCInstance;
@@ -42,7 +42,7 @@ namespace AnimPart1
         UC_FPUAnimation fpuUCIinstance;
         UC_FPPAnimation fppUCIinstance;
 
-        public UC_DownArrow arrowUCIinstance;
+        public static  UC_DownArrow arrowUCIinstance;
 
         DispatcherTimer blinkTimer;
         DispatcherTimer blinkTimer2;
@@ -71,10 +71,10 @@ namespace AnimPart1
         bool isCamFlashIsOn11;
         bool isCamFlashIsOn12;
 
-        public UC_DownArrow arrowUpDownHBY;
-        public UC_DownArrow arrowDownDownHBY;
+        public static UC_DownArrow arrowUpDownHBY;
+        public static UC_DownArrow arrowDownDownHBY;
 
-        public UC_DownArrow arrowDownDownPFU;
+        public static UC_DownArrow arrowDownDownPFU;
 
         const string LightOnPath = "pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOn.svg";
         const string LightOffPath = "pack://application:,,,/UC_AncillaryAnima/Lights/Images/LightOff.svg";
@@ -104,6 +104,7 @@ namespace AnimPart1
 
 
                 portionerUCInstance = new UC_Portioner();
+                portionerUCInstance.backgroundSvgRow.Visibility = Visibility.Collapsed;
                 column3Row1ContentControl.Content = portionerUCInstance;
 
 
@@ -133,10 +134,7 @@ namespace AnimPart1
                 //PFUcolumn1ContentControl.Content = pfuUCIinstance;
 
                 fpuUCIinstance = new UC_FPUAnimation();
-                FPUcolumn1ContentControl.Content = fppUCIinstance;
-
-                fppUCIinstance = new UC_FPPAnimation();
-                FPUcolumn1ContentControl.Content = fppUCIinstance;
+                FPUcolumn1ContentControl.Content = fpuUCIinstance;
 
                 arrowUCIinstance = new UC_DownArrow();
                 HBYTopRightContentControl.Content= arrowUCIinstance;
@@ -155,6 +153,10 @@ namespace AnimPart1
                 arrowDownDownPFU.backgroundSvgRow.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/DownArrow/Images/down1Arrow.svg");
                 PFUDownArrowContentControl.Content = arrowDownDownPFU;
 
+                MainWindow.arrowDownDownHBY.Visibility = Visibility.Hidden;
+                MainWindow.arrowUpDownHBY.Visibility = Visibility.Hidden;
+                MainWindow.arrowDownDownPFU.Visibility = Visibility.Hidden;
+                MainWindow.arrowUCIinstance.Visibility = Visibility.Hidden;
 
                 // Initialize the timer for blinking for the camera
                 blinkTimer = new DispatcherTimer();
@@ -261,11 +263,24 @@ namespace AnimPart1
             porlightOnToggleBtn.IsChecked = true;
             porCamOnToggleBtn.IsChecked = true;
             porAnimStartToggleBtn.IsChecked = false;
+            hbyClockwiseRadioButton.IsChecked = true;
 
         }
 
 
-      
+        public static void ChangeVisibilityOfPortionerArrow(bool isVisible)
+        {
+            if (isVisible)
+            {
+                portionerUCInstance.backgroundSvgRow.Visibility = Visibility.Visible;
+
+            }
+            else
+            {
+                portionerUCInstance.backgroundSvgRow.Visibility = Visibility.Collapsed;
+
+            }
+        }
 
         #region Camera
         private void HopperCameraChecked_Checked(object sender, RoutedEventArgs e)
@@ -1087,26 +1102,49 @@ namespace AnimPart1
 
         private void HBYStartChecked_Checked(object sender, RoutedEventArgs e)
         {
+            hbyUCIinstance.StartSpinning();
+            SetSRWSpeed();
+            hbyClockwiseRadioButton.IsEnabled = false;
+            hbyCounterClockwiseRadioButton.IsEnabled = false;
         }
 
         private void HBYStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
+            hbyUCIinstance.StopSpinning();
+            hbyClockwiseRadioButton.IsEnabled = true;
+            hbyCounterClockwiseRadioButton.IsEnabled = true;
         }
 
         private void PFUStartChecked_Checked(object sender, RoutedEventArgs e)
         {
+            pfuUCIinstance.StartSpinning();
+            SetSRWSpeed();
+            pfuClockwiseRadioButton.IsEnabled = false;
+            pfuCounterClockwiseRadioButton.IsEnabled = false;
         }
 
         private void PFUStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
+            pfuUCIinstance.StopSpinning();
+            pfuClockwiseRadioButton.IsEnabled = true;
+            pfuCounterClockwiseRadioButton.IsEnabled = true;
         }
 
         private void FPUStartChecked_Checked(object sender, RoutedEventArgs e)
         {
+            fpuUCIinstance.StartStirrerRotation();
+
         }
 
         private void FPUStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
+            fpuUCIinstance.StopAnimation();
+
+        }
+
+        private void FPUEmptyBtn_Clicked(object sender, RoutedEventArgs e)
+        {
+            fpuUCIinstance.EmptyMaterial();
         }
 
         private void FPPStartChecked_Checked(object sender, RoutedEventArgs e)
@@ -1220,50 +1258,50 @@ namespace AnimPart1
         }
         private void HBYClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            //if (!hbyUCIinstance.isAnimationOnGoing)
-            //{
-            //    hbyUCIinstance.SetRotationDirection(false);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Stop the rotation before changing the rotational direction");
-            //}
+            if (!hbyUCIinstance.isAnimationOngoing)
+            {
+                hbyUCIinstance.SetRotationDirection(false);
+            }
+            else
+            {
+                MessageBox.Show("Stop the rotation before changing the rotational direction");
+            }
         }
 
         private void HBYCounterClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            //    if (!hbyUCIinstance.isAnimationOnGoing)
-            //    {
-            //        hbyUCIinstance.SetRotationDirection(true);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Stop the rotation before changing the rotational direction");
-            //    }
+            if (!hbyUCIinstance.isAnimationOngoing)
+            {
+                hbyUCIinstance.SetRotationDirection(true);
+            }
+            else
+            {
+                MessageBox.Show("Stop the rotation before changing the rotational direction");
+            }
         }
 
         private void PFUClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            //if (!pfuUCIinstance.isAnimationOnGoing)
-            //{
-            //    pfuUCIinstance.SetRotationDirection(false);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Stop the rotation before changing the rotational direction");
-            //}
+            if (!pfuUCIinstance.isAnimationOngoing)
+            {
+                pfuUCIinstance.SetRotationDirection(false);
+            }
+            else
+            {
+                MessageBox.Show("Stop the rotation before changing the rotational direction");
+            }
         }
 
         private void PFUcounterClockwiseRadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            //    if (!pfuUCIinstance.isAnimationOnGoing)
-            //    {
-            //        pfuUCIinstance.SetRotationDirection(true);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Stop the rotation before changing the rotational direction");
-            //    }
+            if (!pfuUCIinstance.isAnimationOngoing)
+            {
+                pfuUCIinstance.SetRotationDirection(true);
+            }
+            else
+            {
+                MessageBox.Show("Stop the rotation before changing the rotational direction");
+            }
         }
 
         private void FPUclockwiseRadioButton_Checked(object sender, RoutedEventArgs e)

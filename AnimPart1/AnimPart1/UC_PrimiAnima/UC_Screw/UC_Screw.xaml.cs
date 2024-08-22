@@ -115,6 +115,7 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
 
         public void StartSpinning()
         {
+            uC_ScrewRotation.animation.RepeatBehavior = RepeatBehavior.Forever;
             uC_ScrewRotation.StartSpinning();
             isAnimationOnGoing = true;
         }

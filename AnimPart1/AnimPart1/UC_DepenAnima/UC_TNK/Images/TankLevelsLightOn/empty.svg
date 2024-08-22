@@ -47,4 +47,5 @@
     <line class="f" x1="97" y1="206" x2="206" y2="206"/>
     <text class="h" transform="translate(87 200.47)"><tspan x="0" y="0">Emp</tspan><tspan class="g" x="90.96" y="0">t</tspan><tspan x="107.28" y="0">y</tspan></text>
   </g>
+  <path class="j" d="M164.02,433h-20.42c-.11,0,5.4,2.29,5.4,5.1v39.9h9.01c.24-13.06.38-39.03.81-39.91,1.28-2.64,5.08-5.09,5.21-5.09Z"/>
 </svg>

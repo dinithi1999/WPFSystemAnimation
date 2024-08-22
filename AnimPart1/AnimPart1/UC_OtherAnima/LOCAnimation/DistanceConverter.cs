@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
+namespace AnimPart1.UC_OtherAnima.LOCAnimation
 {
     public class DistanceConverter : IValueConverter
     {
@@ -12,7 +12,7 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
             if (value is double xValue)
             {
                 // Map value from 0-900 to 0-100
-                double convertedValue = (xValue*(-1) / 900) * 100;
+                double convertedValue = xValue * -1 / 600 * 99;
                 return convertedValue.ToString("0"); // Format as integer
             }
             return "0";
@@ -23,7 +23,7 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
             if (value is string strValue && double.TryParse(strValue, out double numericValue))
             {
                 // Map value from 0-100 back to 0-900
-                return (numericValue / 100) * 900;
+                return numericValue / 99 * 600;
             }
             return 0;
         }

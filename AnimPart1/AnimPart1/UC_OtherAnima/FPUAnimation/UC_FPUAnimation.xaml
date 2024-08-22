@@ -14,7 +14,78 @@
             <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
             <!-- Other MenuItems can be defined here -->
         </ContextMenu>
+
+        <!-- Stirrer Rotation -->
+        <Storyboard x:Key="RotateStirrerStoryboard"  >
+            <DoubleAnimation 
+            Storyboard.TargetName="stirrerRotateTransform"
+            Storyboard.TargetProperty="Angle"
+            From="0"
+            To="180"
+            Duration="0:0:2">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseInOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <!-- Object 1 Rotation -->
+        <Storyboard x:Key="Obj1StirringStoryBoard"  >
+            <DoubleAnimation 
+            Storyboard.TargetName="Obj1RotateTransform"
+            Storyboard.TargetProperty="Angle"
+            From="360"
+            To="330"
+            Duration="0:0:3.2">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseInOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <!-- Object 2 Rotation -->
+        <Storyboard x:Key="Obj2StirringStoryBoard" >
+            <DoubleAnimation 
+            Storyboard.TargetName="Obj2RotateTransform"
+            Storyboard.TargetProperty="Angle"
+            From="360"
+            To="345"
+            Duration="0:0:3.5">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseInOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <!-- Object 3 Rotation -->
+        <Storyboard x:Key="Obj3StirringStoryBoard" >
+            <DoubleAnimation 
+            Storyboard.TargetName="Obj3RotateTransform"
+            Storyboard.TargetProperty="Angle"
+            From="360"
+            To="340"
+            Duration="0:0:3.8">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseInOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <!-- Object 4 Rotation -->
+        <Storyboard x:Key="Obj4StirringStoryBoard">
+            <DoubleAnimation 
+            Storyboard.TargetName="Obj4RotateTransform"
+            Storyboard.TargetProperty="Angle"
+            From="360"
+            To="350"
+            Duration="0:0:4.0">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseInOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
     </UserControl.Resources>
+
 
     <Grid x:Name="MainGrid">
 
@@ -27,39 +98,117 @@
         </Grid.ColumnDefinitions>
 
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid" Width="220" HorizontalAlignment="Center" VerticalAlignment="top" >
+        <Grid x:Name="BackgroundGrid"  HorizontalAlignment="Center" VerticalAlignment="top">
+
+
+
+
             <svgc:SvgViewbox x:Name="backgroundSvg"
                     Stretch="Uniform"
+                    Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\marquee.svg"
                     Visibility="Collapsed"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                   />
+                    VerticalAlignment="Top"/>
 
 
-            <svgc:SvgViewbox x:Name="svgViewbox"
+            <Grid x:Name="BackgroundGrid2"  HorizontalAlignment="Center" VerticalAlignment="top">
+
+                <Grid.RenderTransform>
+                    <RotateTransform x:Name="BackgroundGrid2RotateTransform" Angle="0" CenterX="120" CenterY="120" />
+                </Grid.RenderTransform>
+                <svgc:SvgViewbox x:Name="svgViewbox"
                 Stretch="Uniform"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top" Height="348" Width="180" Margin="15,16,0,0" 
-               />
+                Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\background.svg"
+                HorizontalAlignment="Left"
+                Panel.ZIndex="0"
+                VerticalAlignment="Top" Margin="11,54,0,0" />
 
-            <!-- LightColumn positioned at the top-left of TankColumn -->
+
+                <svgc:SvgViewbox x:Name="svgViewbox2"
+                 Stretch="Uniform"
+                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\stirrer.svg"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top" 
+                 Margin="28,-23,0,0" 
+                 Width="200" Height="200">
+                    <svgc:SvgViewbox.RenderTransform>
+                        <RotateTransform x:Name="stirrerRotateTransform" CenterX="100" CenterY="100" />
+                    </svgc:SvgViewbox.RenderTransform>
+                </svgc:SvgViewbox>
+
+                <svgc:SvgViewbox x:Name="svgViewboxoBj1"
+                 Stretch="Uniform"
+                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\obj1.svg"
+                 HorizontalAlignment="Center"
+                 Panel.ZIndex="4"
+                 VerticalAlignment="Top" Margin="0,134,0,0" Height="12" Width="10">
+                    <svgc:SvgViewbox.RenderTransform>
+                        <RotateTransform x:Name="Obj1RotateTransform" CenterX="-60" CenterY="60" />
+                    </svgc:SvgViewbox.RenderTransform>
+                </svgc:SvgViewbox>
+
+
+                <svgc:SvgViewbox x:Name="svgViewboxoBj2"
+                 Stretch="Uniform"
+                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\obj2.svg"
+                 HorizontalAlignment="Left"
+                 Panel.ZIndex="4"
+                 Height="15" Width="14" 
+                 VerticalAlignment="Top" Margin="171,118,0,0">
+                    <svgc:SvgViewbox.RenderTransform>
+                        <RotateTransform x:Name="Obj2RotateTransform" CenterX="-60" CenterY="60"/>
+                    </svgc:SvgViewbox.RenderTransform>
+                </svgc:SvgViewbox>
+
+
+                <svgc:SvgViewbox x:Name="svgViewboxoBj3"
+                 Stretch="Uniform"
+                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\obj3.svg"
+                 HorizontalAlignment="Left"
+                 Panel.ZIndex="4"
+                 Height="16" Width="17" 
+                 VerticalAlignment="Top" 
+                 Margin="139,136,0,0">
+                    <svgc:SvgViewbox.RenderTransform>
+                        <RotateTransform x:Name="Obj3RotateTransform"  CenterX="-60" CenterY="60" />
+                    </svgc:SvgViewbox.RenderTransform>
+                </svgc:SvgViewbox>
+
+                <svgc:SvgViewbox x:Name="svgViewboxoBj4"
+                 Stretch="Uniform"
+                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\obj4.svg"
+                 HorizontalAlignment="Left"
+                 Height="17" Width="21" 
+                 Panel.ZIndex="4" 
+                 VerticalAlignment="Top" Margin="82,106,0,0" >
+                    <svgc:SvgViewbox.RenderTransform>
+                        <RotateTransform x:Name="Obj4RotateTransform" CenterX="-60" CenterY="60" />
+                    </svgc:SvgViewbox.RenderTransform>
+                </svgc:SvgViewbox>
+
+
+
+                <!-- PadleColumn positioned at the center -->
+            </Grid>
+
+
             <ContentControl x:Name="lightColumn"
-       HorizontalAlignment="Left"
-       Panel.ZIndex="1"
-       VerticalAlignment="Top">
+                 HorizontalAlignment="Left"
+                 Panel.ZIndex="1"
+                 VerticalAlignment="Top">
+
                 <ContentControl.Effect>
                     <DropShadowEffect Color="Gray"
-                 Direction="320"
-                 ShadowDepth="1"
-                 Opacity="0.3"/>
+               Direction="320"
+               ShadowDepth="1"
+               Opacity="0.3"/>
                 </ContentControl.Effect>
             </ContentControl>
 
             <!-- CameraColumn positioned at the top-right of TankColumn -->
             <ContentControl x:Name="CameraColumn" HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
-            <!-- PadleColumn positioned at the center -->
-            <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-5,50,0,0"  Panel.ZIndex="0"/>
+
         </Grid>
 
         <ContentControl Grid.Column="1" x:Name="labelColumn" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="150"  >

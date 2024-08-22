@@ -104,7 +104,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
 
         private void OnAnimationTimerElapsed(object sender, ElapsedEventArgs e)
         {
-            if (currentHopperLevel != 0)
+            if (currentHopperLevel != null && currentHopperLevel != 0 )
             {
                 Application.Current.Dispatcher.Invoke(() =>
                 {

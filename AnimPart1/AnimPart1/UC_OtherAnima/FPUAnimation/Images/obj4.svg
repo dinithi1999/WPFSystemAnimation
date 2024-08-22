@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Final" xmlns="http://www.w3.org/2000/svg" width="240" height="227" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 227">
+  <defs>
+    <style>
+      .e {
+        fill: url(#c);
+        stroke-width: 0px;
+      }
+    </style>
+    <linearGradient id="c" x1="137.54" y1="-142.74" x2="119.53" y2="-130.13" gradientTransform="translate(-47.6 -22.9) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".03" stop-color="#000"/>
+      <stop offset=".14" stop-color="#1c1c1c"/>
+      <stop offset=".45" stop-color="#676767"/>
+      <stop offset=".71" stop-color="#9d9d9d"/>
+      <stop offset=".9" stop-color="#bfbfbf"/>
+      <stop offset="1" stop-color="#ccc"/>
+    </linearGradient>
+  </defs>
+  <g id="b" data-name="Final">
+    <polygon id="d" data-name="Obj-4" class="e" points="93.56 126.83 81.31 128.52 73.73 118.75 78.38 107.3 90.64 105.61 98.23 115.38 93.56 126.83"/>
+  </g>
+</svg>

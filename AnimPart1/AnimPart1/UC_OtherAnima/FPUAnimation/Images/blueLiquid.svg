@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Final" xmlns="http://www.w3.org/2000/svg" width="226" height="226" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 226 226">
+  <defs>
+    <style>
+      .h {
+        fill: #004dff;
+      }
+
+      .h, .i {
+        stroke-width: 0px;
+      }
+
+      .i {
+        fill: url(#f);
+        opacity: .49;
+      }
+
+      .i, .j {
+        isolation: isolate;
+      }
+
+      .j {
+        opacity: .88;
+      }
+    </style>
+    <linearGradient id="f" x1="97.76" y1="56.53" x2="165.55" y2="153.35" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="aqua" stop-opacity=".53"/>
+      <stop offset=".21" stop-color="rgba(0, 248, 255, .54)" stop-opacity=".54"/>
+      <stop offset=".38" stop-color="rgba(0, 229, 255, .58)" stop-opacity=".58"/>
+      <stop offset=".53" stop-color="rgba(0, 197, 255, .64)" stop-opacity=".64"/>
+      <stop offset=".68" stop-color="rgba(0, 151, 255, .72)" stop-opacity=".72"/>
+      <stop offset=".83" stop-color="rgba(0, 92, 255, .83)" stop-opacity=".83"/>
+      <stop offset=".96" stop-color="rgba(0, 21, 255, .96)" stop-opacity=".96"/>
+      <stop offset="1" stop-color="blue"/>
+    </linearGradient>
+  </defs>
+  <g id="b" data-name="Final">
+    <image id="c" data-name="Level Shadow" class="j" width="168" height="21" transform="translate(53.52 81) scale(.91)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAAVCAYAAADSH6UfAAAACXBIWXMAAAwmAAAMJgE29OC7AAAEKklEQVRoge2a627iMBCFDwQKgUK7+/7PuNulm3Apgf2ROfXJxOGyopIr2ZIVmsTHX6yZyXjSEeJtFDl3Hrj3UovpfKVmZnyMZiqMPdGRnNNr54HjJc0hLa9zTXPkfl9b2Mz4fRl7beImYx+7Sc8ATjdMEtPg0UOf3DGm6RdgHGG7Ry8zpssYbTHwifXCOoUbAEf5PQRdSKcOFwQ2XvUa6bGF5diY3ijCd0kvM6bFeNVYfQQtAEwBzKzzegPgA8DBjjTUk4wn2MQ0nqxP7ZxCU29/QZOLyoenFnuBsLBH4cuM34OxwQ0RdYIQPQubZAng2frcrh0B7ADUdtzbRPQEb9wlgIUd56ZLTyUw9WoA24gmF+DJNErRo/OM7SGpt72glxnTYKwRjPWIvgN0DJUR0hvoDwA/AazsnqPBvgP4C6CyST8EemqASxu3QmvkpenSU08GtzWtjelWdo7A5FmYDvUWtjDTiF5lWtTLjOkxbux3zAF6RqoGqka6ALBGa6gzG7gzIILXNvkJrcdw3MrGruz+EvFXyc5AlzZu4zQLWwTqrd0iMPqr51eilxnTZCzR2hQNmenAGd28FEB8Fz9G30MYRTkRPeuA1vI1+qqHKoT2kdOjZ1VoPYoLW6LvofR4Nj5UYzx1Zkya8Q3AbwC/rL8JxwEuJ1UDJeAJITdgDjMziIWA0asUmvfMRZuJcoOQ70wQ8hfmMM8I+Yl6/tJp0iv5SmDkV83MmC4jc186CB2CmydGXkCEaZgfBrMxkcLOvyJsmuiNFGXY526OpSnmHlwsQvPBlwiGPzP9vWiOIpp70dzJgs0REvUZwistM6bDyE0anWBs95GF+WinjqoGSkuuECx7b39XaPPRtU2q5QomzuyEfUcbvpkTKfQawIs9/ALBm7irPItuY4u4M01uBrgRmCDkzK+mmRnTZCwRck6WqLQ0pXV5ADjzIYBgoD4P4cNs0I2kBfqNi6C5xsYeojEIRuAXBz5FP2FmmYKLsAHwx/R36OZY3NRlxjQZuTmbGVONkCszOvc+i/oclPmn/q1F+tpBj2U8740l7PoaYXmBSXisPKF6WqZgmWuLbk7E18M+MybNyHSE0Zclp5iRAnDve3R38vrlgbkJk2KWJzz00SbWwqzPh4aKxvT8z/CObqGXBeQdQpGXmzgWjTNj2oxayKeBVwh1UTrLZwT1BspzPO8NlbmI/+ZKaB9xOaF+hdAvEbFPbrqw3GnyExy7PoR+E86M6TNS7+zGarH+M4rGDFTP+38y0B2YLoIuBL2LsP47bkyT0LGF1dKF6umrIDN+H0aN7g36TJ1i/ZCB+uv66tddnG/6NaA3mdMd6kN6vg9pZsb0GYc0eK4z+JbmDfVaU9gY9L2aj9bLjGkw9nbtQwPvabdCP1Lz0XpfoZkZ/0/z3vG55ZZO+weOmLsJSK9EvAAAAABJRU5ErkJggg=="/>
+    <g id="d" data-name="Level">
+      <g id="e" data-name="Level">
+        <path class="i" d="M203.01,88.08s.2,1.35-2.01.85c-2.39-.54-7.25-2.93-8.66-2.9-1.69.04-9.17,2.89-10.86,2.9-3.47.02-6.21-3.48-9.63-2.9-2.29.39-6.5,2.96-8.82,2.9-2.79-.07-8.01-3.08-10.79-2.9-2.22.14-6.23,2.57-8.43,2.9-6.12.9-24.7-.95-24.7-.95,0,0-4.99-2.07-6.74-1.95-2.44.16-6.89,3.01-9.33,2.9-2.6-.12-7.39-3.09-9.98-2.9-2.3.17-6.45,2.94-8.76,2.9-2.6-.04-7.39-2.72-9.98-2.9-3.45-.23-11.56,2.9-11.56,2.9l-8.75-1.76,3.56,24.4,3.72,9.08,5.38,10.24,17.61,18.2,24.46,11.21,26.17,2.89,23.97-6.12,19.32-12.58,13.11-17.51,10.14-23.95,1.56-14.95Z"/>
+        <path id="g" data-name="Level" class="h" d="M201,90.31c-3,0-4.47-.95-5.78-1.79-1.17-.76-2.17-1.35-4.21-1.35s-3,.6-4.18,1.35c-1.31.84-2.81,1.79-5.65,1.79s-4.33-.95-5.64-1.79c-1.17-.76-2.1-1.35-4.14-1.35s-2.96.6-4.13,1.35c-1.31.84-2.79,1.79-5.63,1.79s-4.32-.95-5.62-1.79c-1.17-.76-2.1-1.35-4.14-1.35s-2.96.6-4.13,1.35c-1.3.84-2.78,1.79-5.63,1.79s-4.32-.95-5.62-1.79c-1.17-.76-2.1-1.35-4.13-1.35s-2.96.6-4.13,1.35c-1.31.84-2.79,1.79-5.63,1.79s-4.32-.95-5.62-1.79c-1.17-.76-2.09-1.35-4.13-1.35s-2.96.6-4.13,1.35c-1.3.84-2.78,1.79-5.62,1.79s-4.32-.95-5.62-1.79c-1.17-.76-2.1-1.35-4.13-1.35s-2.96.6-4.13,1.35c-1.31.84-2.78,1.79-5.63,1.79s-4.32-.95-5.62-1.79c-1.17-.76-2.1-1.35-4.13-1.35s-2.96.6-4.13,1.35c-1.3.84-2.78,1.79-5.63,1.79s-4.48-.95-5.78-1.79c-1.17-.76-2.29-1.35-4.29-1.35v-3c3,0,4.48.95,5.78,1.79,1.17.75,2.17,1.35,4.21,1.35s3-.6,4.17-1.35c1.3-.84,2.8-1.79,5.65-1.79s4.33.95,5.63,1.79c1.17.75,2.1,1.35,4.14,1.35s2.96-.6,4.13-1.35c1.31-.84,2.78-1.79,5.62-1.79s4.32.95,5.63,1.79c1.17.75,2.1,1.35,4.13,1.35s2.96-.6,4.13-1.35c1.3-.84,2.78-1.79,5.62-1.79s4.32.95,5.62,1.79c1.17.75,2.1,1.35,4.13,1.35s2.96-.6,4.13-1.35c1.31-.84,2.79-1.79,5.63-1.79s4.32.95,5.63,1.79c1.17.75,2.09,1.35,4.13,1.35s2.96-.6,4.14-1.35c1.3-.84,2.78-1.79,5.62-1.79s4.32.95,5.63,1.79c1.17.75,2.1,1.35,4.13,1.35s2.96-.6,4.13-1.35c1.3-.84,2.78-1.79,5.62-1.79s4.32.95,5.63,1.79c1.17.75,2.1,1.35,4.13,1.35s2.97-.6,4.14-1.35c1.3-.84,2.79-1.79,5.63-1.79s4.47.95,5.78,1.79c1.17.76,1.29,1.35,4.29,1.35v3h0Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

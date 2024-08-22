@@ -36,15 +36,11 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
         Storyboard collectorCarrierTextMovement;
         DoubleAnimation collectorTEXTAnimation;
 
+        double destinationXPos = 0;
 
-        DispatcherTimer timer;
         private bool isAnimationOnGoing;
 
-        private List<int> predefinedValues = new List<int>
-        {
-            0, -82, -164, 246, -328, -410, -492, -574, -656, -738,
-            -820, -900
-        };
+    
 
         public UC_LOC()
         {
@@ -60,78 +56,57 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
             labelUserCtrl = new UC_Label();
             labelColumn.Content = labelUserCtrl;
             labelUserCtrl.labelName.Text = labelName;
+            labelUserCtrl.levelPercentage.Visibility = Visibility.Hidden;
 
-          
+
 
         }
+
 
 
         public void StartAnimation()
         {
-            // Start the Storyboard (which starts the animation)
-
-            // Retrieve the Storyboard and the animation
             collectorMovement = (Storyboard)this.Resources["CollectorMovement"];
-            collectorAnimation = (DoubleAnimation)collectorMovement.Children[0]; // Assuming it's the first child
+            collectorAnimation = (DoubleAnimation)collectorMovement.Children[0]; 
 
             collectorCarrierTextMovement = (Storyboard)this.Resources["CollectortextboxMovement"];
-            collectorTEXTAnimation = (DoubleAnimation)collectorMovement.Children[0]; // Assuming it's the first child
+            collectorTEXTAnimation = (DoubleAnimation)collectorCarrierTextMovement.Children[0];
+
+
+            MainWindow.arrowUpDownHBY.Visibility = Visibility.Hidden;
+            MainWindow.arrowUCIinstance.Visibility = Visibility.Hidden;
+            MainWindow.portionerUCInstance.svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner0.svg");
+            MainWindow.ChangeVisibilityOfPortionerArrow(false);
 
             isAnimationOngoing = true;
 
-            if (collectorMovement != null && collectorAnimation != null)
+            if (collectorMovement != null && collectorAnimation != null && collectorCarrierTextMovement != null && collectorTEXTAnimation != null)
             {
+                collectorAnimation.From = translateTransformCollector.X;
+                collectorAnimation.To = destinationXPos;
+
+                collectorTEXTAnimation.From = translateTransformCollectortexybox.X;
+                collectorTEXTAnimation.To = destinationXPos;
+
+                collectorMovement.Completed += CollectorMovement_Completed;
+
+
                 collectorMovement.Begin();
                 collectorCarrierTextMovement.Begin();
 
-                timer = new DispatcherTimer
-                {
-                    Interval = TimeSpan.FromMilliseconds(50) // Increase frequency for better detection
-                };
-                timer.Tick += OnTimerTick;
-                timer.Start();
+
             }
-            else
-            {
-                // Handle the case where the resources were not found
-                MessageBox.Show("Storyboard or DoubleAnimation not found in resources.");
-            }
-            // Add an event handler to track progress
+
         }
 
-        
+
         public void StopAnimation()
         {
             isAnimationOngoing = false;
-            timer.Stop(); // Stop the timer if animation is paused
 
         }
 
-        private void OnTimerTick(object sender, EventArgs e)
-        {
-            if (collectorMovement != null && translateTransformCollector != null)
-            {
-                // Get the current X value of the TranslateTransform
-                double currentXValue = translateTransformCollector.X;
-
-                // Round the current X value to the nearest integer
-                int roundedValue = (int)Math.Round(currentXValue);
-                Debug.WriteLine(roundedValue);
-
-                // Check if roundedValue is in the predefined set of values or less than or equal to -900
-                if (roundedValue <= -900 || predefinedValues.Contains(roundedValue))
-                {
-                    collectorMovement.Pause();
-                    collectorCarrierTextMovement.Pause();
-                    timer.Stop(); // Stop the timer if animation is paused
-                }
-            }
-            else
-            {
-                // Handle the case where the resources are still not initialized
-                MessageBox.Show("Storyboard or TranslateTransform is null.");
-            }
-        }
+      
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -200,6 +175,91 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
             if (isAnimationOngoing)
             {
                 uC_ScrewRotation.SetRotationSpeed(percentage);
+            }
+        }
+
+        private void myComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            ComboBoxItem selectedItem = comboBox.SelectedItem as ComboBoxItem;
+
+            if (selectedItem != null)
+            {
+                string selectedValue = selectedItem.Content.ToString();
+
+                switch (selectedValue)
+                {
+                    case "0 ":
+                        destinationXPos = -0;
+                        break;
+
+                    case "1":
+                        destinationXPos = -60;
+                        break;
+
+                    case "2":
+                        destinationXPos = -120;
+                        break;
+
+                    case "3":
+                        destinationXPos = -180;
+                        break;
+
+                    case "4":
+                        destinationXPos = -240;
+                        break;
+
+                    case "5":
+                        destinationXPos = -300;
+                        break;
+
+                    case "6":
+                        destinationXPos = -365;
+                        break;
+
+                    case "7":
+                        destinationXPos = -425;
+                        break;
+
+                    case "8":
+                        destinationXPos = -485;
+                        break;
+
+                    case "9":
+                        destinationXPos = -545;
+                        break;
+
+                    case "10":
+
+                        destinationXPos = -600;
+
+                        break;
+
+                    default:
+                        // Handle any unexpected cases
+                        break;
+                }
+            }
+        }
+
+        private void CollectorMovement_Completed(object sender, EventArgs e)
+        {
+            if (destinationXPos == -300)
+            {
+                MainWindow.arrowUCIinstance.Visibility = Visibility.Visible;
+
+            }else if (destinationXPos == -600)
+            {
+                MainWindow.arrowUpDownHBY.Visibility = Visibility.Visible;
+
+            }
+            else if(destinationXPos == -425)
+            {
+                //just below slicer
+            }else if(destinationXPos == -60)
+            {
+                MainWindow.portionerUCInstance.svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner180.svg");
+                MainWindow.ChangeVisibilityOfPortionerArrow(true);
             }
         }
     }

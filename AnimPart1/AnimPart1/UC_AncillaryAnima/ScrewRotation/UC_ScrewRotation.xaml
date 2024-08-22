@@ -8,13 +8,26 @@
              mc:Ignorable="d" Height="150" Width="150">
 
     <UserControl.Resources>
-        <Storyboard x:Key="RotateStoryboard" RepeatBehavior="Forever" AutoReverse="True">
+        <Storyboard x:Key="RotateStoryboard" >
             <DoubleAnimation 
                 Storyboard.TargetName="backgroundSvg" 
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
                 From="360" 
                 To="0" 
-                RepeatBehavior="Forever"/>
+                Duration="0:0:3" 
+
+                />
+        </Storyboard>
+        
+        <Storyboard x:Key="RotateStoryboardStars" >
+            <DoubleAnimation 
+        Storyboard.TargetName="backgroundStarsSvg" 
+        Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+        From="360" 
+        To="0" 
+        RepeatBehavior ="Forever"
+        Duration="0:0:10" 
+                />
         </Storyboard>
     </UserControl.Resources>
 
@@ -22,13 +35,26 @@
         <svgc:SvgViewbox x:Name="backgroundSvg"
                         Stretch="Uniform"
                         Visibility="Visible"
+                        Panel.ZIndex="1"
                         Source="pack://application:,,,/UC_PrimiAnima/UC_Pump/Images/pumpRotationalPart.svg"
-
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
             <svgc:SvgViewbox.RenderTransform>
                 <RotateTransform x:Name="rotationTransform" CenterX="75" CenterY="75"/>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
+
+        <svgc:SvgViewbox x:Name="backgroundStarsSvg"
+                 Stretch="Uniform"
+                 Visibility="Collapsed"
+                 Panel.ZIndex="0"
+                 Source="pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/StartOnlyRotation.svg"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center">
+            <svgc:SvgViewbox.RenderTransform>
+                <RotateTransform x:Name="rotationTransform2" CenterX="75" CenterY="75"/>
+            </svgc:SvgViewbox.RenderTransform>
+        </svgc:SvgViewbox>
+        
     </Grid>
 </UserControl>

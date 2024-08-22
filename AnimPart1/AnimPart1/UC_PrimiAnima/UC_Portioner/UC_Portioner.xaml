@@ -6,13 +6,27 @@
              xmlns:local="clr-namespace:AnimPart1.UC_PrimiAnima"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
+             Focusable="True"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
 
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="L" Modifiers="Control" Command="{x:Static local:UC_Portioner.Option1Command}" />
+        <KeyBinding Key="M" Modifiers="Control" Command="{x:Static local:UC_Portioner.Option2Command}" />
+    </UserControl.InputBindings>
+
     <UserControl.Resources>
+
+
         <ContextMenu x:Key="ContextMenu1">
-            <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
-            <!-- Other MenuItems can be defined here -->
+            <MenuItem Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem Header="Option 2" InputGestureText="Ctrl+M" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <!-- Add other menu items similarly -->
         </ContextMenu>
+
+
+
+
 
         <Storyboard x:Key="GreenArrowDown">
             <!-- Animate the Y position -->

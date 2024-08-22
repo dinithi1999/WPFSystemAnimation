@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Final" xmlns="http://www.w3.org/2000/svg" width="226" height="226" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 226 226">
+  <defs>
+    <style>
+      .j {
+        fill: #000;
+      }
+
+      .j, .k, .l {
+        stroke-width: 0px;
+      }
+
+      .k {
+        fill: url(#e);
+        filter: url(#f);
+        isolation: isolate;
+        opacity: .53;
+      }
+
+      .l {
+        fill: url(#c);
+      }
+    </style>
+    <radialGradient id="c" cx="119.01" cy="-141.06" fx="119.01" fy="-141.06" r="48.94" gradientTransform="translate(-47.6 -22.9) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".2" stop-color="#ccc"/>
+      <stop offset=".24" stop-color="#bfbfbf"/>
+      <stop offset=".32" stop-color="#9d9d9d"/>
+      <stop offset=".42" stop-color="#676767"/>
+      <stop offset=".54" stop-color="#1c1c1c"/>
+      <stop offset=".58" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="e" cx="119.01" cy="-141.06" fx="119.01" fy="-141.06" r="48.94" gradientTransform="translate(-47.6 -22.9) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".03" stop-color="#000"/>
+      <stop offset=".41" stop-color="#020202"/>
+      <stop offset=".54" stop-color="#090909"/>
+      <stop offset=".64" stop-color="#151515"/>
+      <stop offset=".72" stop-color="#252525"/>
+      <stop offset=".79" stop-color="#3b3b3b"/>
+      <stop offset=".85" stop-color="#575757"/>
+      <stop offset=".9" stop-color="#777"/>
+      <stop offset=".95" stop-color="#9d9d9d"/>
+      <stop offset=".99" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#ccc"/>
+    </radialGradient>
+    <filter id="f" data-name="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2" dy="4"/>
+      <feGaussianBlur result="g" stdDeviation="2"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="g" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="b" data-name="Final">
+    <path id="d" data-name="Spout" class="l" d="M124.03,163.13s-36.17-1.33-55.91-21.03c-11.41-11.39-12.02-13.18-20.65-27.15-7.52-12.17-16.28-23.61-21.89-30.91-2.27-2.96-4.73-4.52-6.25-5.5-1.06-.69-.35-1.82.38-1.66,3.29.74,13.16,4.17,19.43.88,12.1-6.35,19.78-4.28,19.38-4.07-.44.23-1.48,14-1.46,15.24.62,32.94,25.25,64.81,59.12,72.56,1.68.38,7.84,1.64,7.84,1.64Z"/>
+    <path id="h" data-name="Spout" class="k" d="M124.03,163.13s-36.17-1.33-55.91-21.03c-11.41-11.39-12.02-13.18-20.65-27.15-7.52-12.17-16.28-23.61-21.89-30.91-2.27-2.96-4.73-4.52-6.25-5.5-1.06-.69-.35-1.82.38-1.66,3.29.74,13.16,4.17,19.43.88,12.1-6.35,19.78-4.28,19.38-4.07-.44.23-1.48,14-1.46,15.24.62,32.94,25.25,64.81,59.12,72.56,1.68.38,7.84,1.64,7.84,1.64Z"/>
+    <path id="i" data-name="Pan" class="j" d="M198.46,73.68c.96,4.67,1.47,9.5,1.47,14.46,0,39.45-31.98,71.44-71.44,71.44s-71.44-31.98-71.44-71.44c0-4.95.5-9.79,1.47-14.46h-5.92c-.89,4.68-1.36,9.52-1.36,14.46,0,42.66,34.58,77.25,77.25,77.25s77.25-34.58,77.25-77.25c0-4.94-.47-9.77-1.36-14.46h-5.92Z"/>
+  </g>
+</svg>

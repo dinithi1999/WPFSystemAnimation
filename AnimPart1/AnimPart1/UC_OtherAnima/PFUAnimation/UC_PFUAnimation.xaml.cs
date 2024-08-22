@@ -12,6 +12,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -50,6 +51,7 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
             labelUserCtrl = new UC_Label();
             labelColumn.Content = labelUserCtrl;
             labelUserCtrl.labelName.Text = labelName;
+            labelUserCtrl.levelPercentage.Visibility = Visibility.Hidden;
 
 
             // Set the Source properties for the SvgViewbox controls
@@ -57,11 +59,17 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
             svgViewbox.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/PrefinalBackground.svg");
 
             uC_ScrewRotation = new UC_ScrewRotation();
-            PadleColumn.Content = uC_ScrewRotation;
-            uC_ScrewRotation.backgroundSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/PrefinalRotationalPart.svg");
 
-            uC_ScrewRotation.StartSpinning();
+            PadleColumn.Content = uC_ScrewRotation;
+            uC_ScrewRotation.backgroundStarsSvg.Visibility = Visibility.Visible;
+            uC_ScrewRotation.backgroundSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/PrefinalRotationalPart.svg");
+            uC_ScrewRotation.backgroundStarsSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/StartOnlyRotation.svg");
+
+
         }
+
+
+
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -122,6 +130,9 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
 
         public void StartSpinning()
         {
+            uC_ScrewRotation.animation.RepeatBehavior = RepeatBehavior.Forever;
+            uC_ScrewRotation.animation2.RepeatBehavior = RepeatBehavior.Forever;
+
             uC_ScrewRotation.StartSpinning();
             isAnimationOngoing = true;
         }
@@ -145,5 +156,7 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
                 uC_ScrewRotation.SetRotationSpeed(percentage);
             }
         }
+
+      
     }
 }

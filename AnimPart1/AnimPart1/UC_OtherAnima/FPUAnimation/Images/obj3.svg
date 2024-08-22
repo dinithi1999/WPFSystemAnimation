@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Final" xmlns="http://www.w3.org/2000/svg" width="240" height="227" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 227">
+  <defs>
+    <style>
+      .f {
+        fill: #666;
+        filter: url(#c);
+        stroke-width: 0px;
+      }
+    </style>
+    <filter id="c" data-name="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="2"/>
+      <feGaussianBlur result="d" stdDeviation="3"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="d" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="b" data-name="Final">
+    <polygon id="e" data-name="Obj-3" class="f" points="144.31 137.87 152.23 143.03 151.72 152.47 143.3 156.75 135.37 151.59 135.88 142.15 144.31 137.87"/>
+  </g>
+</svg>

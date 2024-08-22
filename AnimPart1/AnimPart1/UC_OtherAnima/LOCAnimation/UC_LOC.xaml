@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AnimPart1.UC_AncillaryAnima.LOCAnimation"
              mc:Ignorable="d" 
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             xmlns:local="clr-namespace:AnimPart1.UC_OtherAnima.LOCAnimation"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
              MouseRightButtonDown="UserControl_MouseRightButtonDown" Height="295">
 
@@ -23,20 +23,19 @@
                 Storyboard.TargetName="translateTransformCollector"
                 Storyboard.TargetProperty="X"
                 From="0"
-                To="-900" 
-                RepeatBehavior="Forever"       
-                Duration="0:0:5">
+                To="-600" 
+                Duration="0:0:1">
             </DoubleAnimation>
         </Storyboard>
 
         <Storyboard x:Key="CollectortextboxMovement">
             <DoubleAnimation
+                x:Name="collectorTEXTAnimation"
                 Storyboard.TargetName="translateTransformCollectortexybox"
                 Storyboard.TargetProperty="X"
                 From="0"
-                To="-900" 
-                RepeatBehavior="Forever"       
-                Duration="0:0:5">
+                To="-600" 
+                Duration="0:0:1">
             </DoubleAnimation>
         </Storyboard>
     </UserControl.Resources>
@@ -48,7 +47,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width="776" Height="268">
+        <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width="833" Height="268">
             <svgc:SvgViewbox x:Name="backgroundSvg"
                              Stretch="Fill"
                              Panel.ZIndex="0"
@@ -58,19 +57,19 @@
                              VerticalAlignment="Center"/>
             <svgc:SvgViewbox x:Name="svgViewbox"
                              Stretch="Uniform"
-                             Width="700"
+                             Width="790"
                              Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\LOCAnimation\Images\backgroundPath.svg"
-                             Panel.ZIndex="1"
+                             Panel.ZIndex="0"
                              HorizontalAlignment="Center"
                              VerticalAlignment="Top"
-                             Margin="0,201,0,0" RenderTransformOrigin="0.465,0.289"/>
+                             Margin="0,166,0,0" RenderTransformOrigin="0.465,0.289"/>
             <svgc:SvgViewbox x:Name="svgViewbox2"
                              Stretch="Uniform"
-                             Width="230"
+                             Width="222"
                              Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\LOCAnimation\Images\container.svg"
-                             Panel.ZIndex="2"
+                             Panel.ZIndex="0"
                              HorizontalAlignment="Left"
-                             Margin="562,89,0,24">
+                             Margin="602,26,0,42">
                 <svgc:SvgViewbox.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform x:Name="translateTransformCollector"/>
@@ -101,18 +100,37 @@
 
             <TextBlock x:Name="textBoxContainerDistance"
                        HorizontalAlignment="Left"
-                       Margin="1049,244,0,0"
+                       Margin="694,174,0,0"
                        TextWrapping="Wrap"
                        VerticalAlignment="Top"
                        Height="34"
                        Panel.ZIndex="2"
-                       FontSize="18"
+                       FontSize="26"
                        FontWeight="Bold"
                        Text="{Binding Path=(TranslateTransform.X), ElementName=translateTransformCollectortexybox, Converter={StaticResource DistanceConverter}}">
                 <TextBlock.RenderTransform>
                     <TranslateTransform x:Name="translateTransformCollectortexybox"/>
                 </TextBlock.RenderTransform>
             </TextBlock>
+            <ComboBox x:Name="myComboBox" 
+          HorizontalAlignment="Left" 
+          Margin="272,7,0,0" 
+          VerticalAlignment="Top" 
+          Width="72" 
+          Height="26" 
+          SelectionChanged="myComboBox_SelectionChanged">
+                <ComboBoxItem Content="0" />
+                <ComboBoxItem Content="1" />
+                <ComboBoxItem Content="2" />
+                <ComboBoxItem Content="3" />
+                <ComboBoxItem Content="4" />
+                <ComboBoxItem Content="5" />
+                <ComboBoxItem Content="6" />
+                <ComboBoxItem Content="7" />
+                <ComboBoxItem Content="8" />
+                <ComboBoxItem Content="9" />
+                <ComboBoxItem Content="10" />
+            </ComboBox>
         </Grid>
 
         <ContentControl Grid.Column="1" x:Name="labelColumn" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="150"/>
