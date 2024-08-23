@@ -1,7 +1,23 @@
 ﻿
-
-FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\AnimPart1\AnimPart1\Camera\Camera.xaml;;
-FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\AnimPart1\AnimPart1\Lights\Lights.xaml;;
-FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\AnimPart1\AnimPart1\MainWindow.xaml;;
-FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\AnimPart1\AnimPart1\Tank001\Tank001.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\App.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\MainWindow.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\Camera\Camera.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\DownArrow\UC_DownArrow.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\Labels\UC_Label.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\Lights\Lights.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\RotatingPadle\UC_PadleAnimation.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\ScrewRotation\UC_ScrewRotation.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\SlicerBallAnimation.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_Hopper\UC_Hopper.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_SLO\UC_SLO.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_DepenAnima\UC_TNK\UC_TNK.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPPAnimation\UC_FPPanimation.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\UC_FPUAnimation.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\HBYRotation\UC_HBYAnimation.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\LOCAnimation\UC_LOC.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\PFUAnimation\UC_PFUAnimation.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_PrimiAnima\UC_Portioner\UC_Portioner.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_PrimiAnima\UC_Pump\UC_Pump.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_PrimiAnima\UC_Screw\UC_Screw.xaml;;
+FC:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_PrimiAnima\UC_Slicer\UC_Slicer.xaml;;
 

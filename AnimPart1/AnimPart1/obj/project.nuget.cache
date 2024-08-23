@@ -1,16 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "9fGagmoZNtY=",
+  "dgSpecHash": "EOiGB41LEnw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\DinithiAthukoralage\\OneDrive - MindOxTechno\\Documents\\AnimPart1\\AnimPart1\\AnimPart1.csproj",
+  "projectFilePath": "C:\\Users\\DinithiAthukoralage\\OneDrive - MindOxTechno\\Documents\\GitHub\\WPFSystemAnimation\\AnimPart1\\AnimPart1\\AnimPart1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\excss\\4.2.3\\excss.4.2.3.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\harfbuzzsharp\\7.3.0\\harfbuzzsharp.7.3.0.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0\\harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\7.3.0\\harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.122\\microsoft.xaml.behaviors.wpf.1.1.122.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\sharpvectors\\1.8.4\\sharpvectors.1.8.4.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\sharpvectors.reloaded\\1.8.4\\sharpvectors.reloaded.1.8.4.nupkg.sha512",
-    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\sharpvectors.reloaded.cmguo\\1.3.0\\sharpvectors.reloaded.cmguo.1.3.0.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\sharpvectors.wpf\\1.8.4\\sharpvectors.wpf.1.8.4.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\shimskiasharp\\1.0.0.18\\shimskiasharp.1.0.0.18.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\skiasharp\\2.88.6\\skiasharp.2.88.6.nupkg.sha512",
@@ -20,18 +22,17 @@
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\svg.custom\\1.0.0.18\\svg.custom.1.0.0.18.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\svg.model\\1.0.0.18\\svg.model.1.0.0.18.nupkg.sha512",
     "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\svg.skia\\1.0.0.18\\svg.skia.1.0.0.18.nupkg.sha512",
-    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\svgimage\\3.0.0\\svgimage.3.0.0.nupkg.sha512"
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\svgimage\\3.0.0\\svgimage.3.0.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.componentmodel.primitives\\4.3.0\\system.componentmodel.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\DinithiAthukoralage\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'SharpVectors.Reloaded.Cmguo 1.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "SharpVectors.Reloaded.Cmguo",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

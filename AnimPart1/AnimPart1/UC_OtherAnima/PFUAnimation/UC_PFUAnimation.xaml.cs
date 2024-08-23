@@ -1,4 +1,5 @@
-﻿using AnimPart1.UC_AncillaryAnima.Label;
+﻿using AnimPart1.UC_AncillaryAnima.FPUAnimation;
+using AnimPart1.UC_AncillaryAnima.Label;
 using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
 using System;
@@ -35,7 +36,15 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
 
         public string labelName = "PFU-XXX";
         public bool isLightOn;
+        private bool isCameraOn;
         public bool isAnimationOngoing;
+
+        public static readonly RoutedUICommand PFULighCommand = new RoutedUICommand("", "PFULighCommand", typeof(UC_PFUAnimation));
+        public static readonly RoutedUICommand PFUCameraCommand = new RoutedUICommand("", "PFUCameraCommand", typeof(UC_PFUAnimation));
+        public static readonly RoutedUICommand PFUOpenValveCommand = new RoutedUICommand("", "PFUOpenValveCommand", typeof(UC_PFUAnimation));
+        public static readonly RoutedUICommand PFUStartAimationCameraCommand = new RoutedUICommand("", "PFUStartAimationCameraCommand", typeof(UC_PFUAnimation));
+
+        public bool IsValveOpen { get; private set; }
 
         public UC_PFUAnimation()
         {
@@ -57,6 +66,7 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/PrefinalBoarer.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/PrefinalBackground.svg");
+            svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
 
             uC_ScrewRotation = new UC_ScrewRotation();
 
@@ -65,14 +75,72 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
             uC_ScrewRotation.backgroundSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/PrefinalRotationalPart.svg");
             uC_ScrewRotation.backgroundStarsSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/StartOnlyRotation.svg");
 
+            CommandBindings.Add(new CommandBinding(PFULighCommand, Option1_Click));
+            CommandBindings.Add(new CommandBinding(PFUCameraCommand, Option2_Click));
+            CommandBindings.Add(new CommandBinding(PFUOpenValveCommand, Option3_Click));
+            CommandBindings.Add(new CommandBinding(PFUStartAimationCameraCommand, Option4_Click));
+        }
+
+        private void Option1_Click(object sender, RoutedEventArgs e)
+        {
+
+            ToggleLight();
+
+        }
+
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isCameraOn)
+            {
+                MainWindow.blinkTimer10.Start();
+            }
+            else
+            {
+                MainWindow.blinkTimer10.Stop();
+
+            }
+
+            isCameraOn = !isCameraOn;
+        }
+
+
+        private void Option3_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!IsValveOpen)
+            {
+
+                svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
+            }
+            else
+            {
+                svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
+            }
+
+            IsValveOpen = !IsValveOpen;
 
         }
 
 
+        private void Option4_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isAnimationOngoing)
+            {
+
+                StartSpinning();
+            }
+            else
+            {
+                StopSpinning();
+            }
+        }
 
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
+            this.Focus();
             backgroundSvg.Visibility = Visibility.Visible;
         }
 
@@ -91,28 +159,64 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
             {
                 if (item.Name == "menuItem1")
                 {
-                    item.Header = "Updated Option 1"; // Update header text
 
                     if (isLightOn)
                     {
-                        item.Header = "Light Off"; // Update header text
+                        item.Header = "Light Off";
                     }
                     else
                     {
-                        item.Header = "Light on"; // Update header text
+                        item.Header = "Light on";
                     }
                 }
+                else if (item.Name == "menuItem2")
+                {
+                    if (isCameraOn)
+                    {
+
+                        item.Header = "Camera Off";
+
+                    }
+                    else
+                    {
+                        item.Header = "Camera On";
+                    }
+                }
+                else if (item.Name == "menuItem3")
+                {
+                    if (IsValveOpen)
+                    {
+
+                        item.Header = "Close Valve";
+
+                    }
+                    else
+                    {
+                        item.Header = "Open Valve";
+                    }
+
+                }
+                else if (item.Name == "menuItem4")
+                {
+                    if (isAnimationOngoing)
+                    {
+
+                        item.Header = "Stop Stirring";
+
+                    }
+                    else
+                    {
+                        item.Header = "Start Stirring";
+                    }
+
+                }
+
             }
 
             contextMenu.IsOpen = true;
         }
 
-        private void Option1_Click(object sender, RoutedEventArgs e)
-        {
-
-            ToggleLight();
-
-        }
+    
 
         private void ToggleLight()
         {
@@ -132,6 +236,7 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
         {
             uC_ScrewRotation.animation.RepeatBehavior = RepeatBehavior.Forever;
             uC_ScrewRotation.animation2.RepeatBehavior = RepeatBehavior.Forever;
+            SetRotationDirection(false);
 
             uC_ScrewRotation.StartSpinning();
             isAnimationOngoing = true;
@@ -144,9 +249,9 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
 
         }
 
-        public void SetRotationDirection(bool clockwise)
+        public void SetRotationDirection(bool Anticlockwise)
         {
-            uC_ScrewRotation.SetRotationDirection(clockwise);
+            uC_ScrewRotation.SetRotationDirection(Anticlockwise);
         }
 
         public void SetRotationSpeed(int percentage)

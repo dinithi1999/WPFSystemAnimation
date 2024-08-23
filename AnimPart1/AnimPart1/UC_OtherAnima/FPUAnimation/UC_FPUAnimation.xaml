@@ -116,16 +116,12 @@
         <!-- Grid for the backgroundSvg -->
         <Grid x:Name="BackgroundGrid"  HorizontalAlignment="Center" VerticalAlignment="Bottom">
 
-
-
-
             <svgc:SvgViewbox x:Name="backgroundSvg"
                     Stretch="Fill"
                     Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/marquee.svg"
                     Visibility="Collapsed"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"/>
-
 
             <Grid x:Name="BackgroundGrid2"  HorizontalAlignment="Center" VerticalAlignment="Top" >
 
@@ -145,11 +141,11 @@
                  Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/stirrer.svg"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top" 
-                 Margin="30,36,0,0" 
+                 Margin="24,36,0,0" 
                  Panel.ZIndex="2"
-                 Width="436" Height="397">
+                 Width="445" Height="405">
                     <svgc:SvgViewbox.RenderTransform>
-                        <RotateTransform x:Name="stirrerRotateTransform" CenterX="210" CenterY="190" />
+                        <RotateTransform x:Name="stirrerRotateTransform" CenterX="210" CenterY="195" />
                     </svgc:SvgViewbox.RenderTransform>
                 </svgc:SvgViewbox>
 

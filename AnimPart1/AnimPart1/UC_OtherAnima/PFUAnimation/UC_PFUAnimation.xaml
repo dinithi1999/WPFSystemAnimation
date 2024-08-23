@@ -9,10 +9,23 @@
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
              Focusable="True" 
              mc:Ignorable="d">
+
+
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_PFUAnimation.PFULighCommand}" />
+        <KeyBinding Key="C" Modifiers="Shift" Command="{x:Static local:UC_PFUAnimation.PFUCameraCommand}" />
+        <KeyBinding Key="E" Modifiers="Shift" Command="{x:Static local:UC_PFUAnimation.PFUOpenValveCommand}" />
+        <KeyBinding Key="S" Modifiers="Shift" Command="{x:Static local:UC_PFUAnimation.PFUStartAimationCameraCommand}" />
+    </UserControl.InputBindings>
+
+
     <UserControl.Resources>
         <ContextMenu x:Key="ContextMenu1">
-            <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
-            <!-- Other MenuItems can be defined here -->
+            <MenuItem x:Name="menuItem1" Header="Light On" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem2" Header="Camera On" InputGestureText="Shift+C" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem3" Header="Open Valve" InputGestureText="Shift+E" Click="Option3_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem4" Header="Start Stirring" InputGestureText="Shift+S" Click="Option4_Click" Style="{StaticResource CustomMenuItemStyle}"/>
         </ContextMenu>
     </UserControl.Resources>
 
@@ -27,7 +40,7 @@
 
         <!-- Grid for the backgroundSvg -->
         <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width ="280"  >
-            
+
             <svgc:SvgViewbox x:Name="backgroundSvg"
                 Stretch="Uniform"
                 Visibility="Collapsed"
@@ -41,9 +54,24 @@
             HorizontalAlignment="Center"
             Width="220"
             Panel.ZIndex="0"
-
             VerticalAlignment="Center" Height="235" 
             />
+
+              <svgc:SvgViewbox x:Name="svgViewboxValve"
+              Stretch="None"
+              HorizontalAlignment="Center"
+              Panel.ZIndex="1"
+              Margin="-70,180,0,0"                 
+              VerticalAlignment="Center"
+              />
+            <!--<svgc:SvgViewbox x:Name="svgViewbox4"
+Stretch="UniformToFill"
+HorizontalAlignment="Left"
+Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\PFUAnimation\Images\BlueCircle.svg"                             
+Width="134"
+Panel.ZIndex="1"
+VerticalAlignment="Top" Height="134" Margin="38,78,0,0" 
+/>-->
 
             <!-- LightColumn positioned at the top-left of TankColumn -->
             <ContentControl x:Name="lightColumn"
@@ -61,7 +89,7 @@
 
             <ContentControl x:Name="CameraColumn" HorizontalAlignment="Right" VerticalAlignment="Top" />
 
-            <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="310" Height="320"  Margin="-70,0,0,0" Panel.ZIndex="1"/>
+            <ContentControl x:Name="PadleColumn" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="310" Height="320"  Margin="-70,0,0,0" Panel.ZIndex="0"/>
 
         </Grid>
 

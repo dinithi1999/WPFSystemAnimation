@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\AnimPart1\AnimPart1\obj\Debug\net6.0-windows\
+C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\obj\Debug\net6.0-windows\
 AnimPart1
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\AnimPart1\AnimPart1\App.xaml
-4774591046
-6-965723462
-7-1226174206
-2111734797732
-Camera\Camera.xaml;Lights\Lights.xaml;MainWindow.xaml;Tank001\Tank001.xaml;
+C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\App.xaml
+23-953279153
+611792130186
+25-1007334230
+2121422496419
+MainWindow.xaml;Resources\ButtonStyles.xaml;Resources\ContextMenuStyle.xaml;UC_AncillaryAnima\Camera\Camera.xaml;UC_AncillaryAnima\DownArrow\UC_DownArrow.xaml;UC_AncillaryAnima\Labels\UC_Label.xaml;UC_AncillaryAnima\Lights\Lights.xaml;UC_AncillaryAnima\PrimiLabel\UC_PrimiLabel.xaml;UC_AncillaryAnima\RotatingPadle\UC_PadleAnimation.xaml;UC_AncillaryAnima\ScrewRotation\UC_ScrewRotation.xaml;UC_AncillaryAnima\SlicerBallsAnimation\SlicerBallAnimation.xaml;UC_DepenAnima\UC_Hopper\UC_Hopper.xaml;UC_DepenAnima\UC_SLO\UC_SLO.xaml;UC_DepenAnima\UC_TNK\UC_TNK.xaml;UC_OtherAnima\FPPAnimation\UC_FPPanimation.xaml;UC_OtherAnima\FPUAnimation\UC_FPUAnimation.xaml;UC_OtherAnima\HBYRotation\UC_HBYAnimation.xaml;UC_OtherAnima\LOCAnimation\UC_LOC.xaml;UC_OtherAnima\PFUAnimation\UC_PFUAnimation.xaml;UC_PrimiAnima\UC_Portioner\UC_Portioner.xaml;UC_PrimiAnima\UC_Pump\UC_Pump.xaml;UC_PrimiAnima\UC_Screw\UC_Screw.xaml;UC_PrimiAnima\UC_Slicer\UC_Slicer.xaml;
 
 False
 

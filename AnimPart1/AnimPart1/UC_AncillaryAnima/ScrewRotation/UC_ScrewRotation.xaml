@@ -12,8 +12,8 @@
             <DoubleAnimation 
                 Storyboard.TargetName="backgroundSvg" 
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
-                From="360" 
-                To="0" 
+                From="0" 
+                To="360" 
                 Duration="0:0:3" 
 
                 />
@@ -23,8 +23,8 @@
             <DoubleAnimation 
         Storyboard.TargetName="backgroundStarsSvg" 
         Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
-        From="360" 
-        To="0" 
+        From="0" 
+        To="360" 
         RepeatBehavior ="Forever"
         Duration="0:0:10" 
                 />

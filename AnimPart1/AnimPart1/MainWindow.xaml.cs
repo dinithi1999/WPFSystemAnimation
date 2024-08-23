@@ -263,6 +263,23 @@ namespace AnimPart1
             porlightOnToggleBtn.IsChecked = true;
             porCamOnToggleBtn.IsChecked = true;
             porAnimStartToggleBtn.IsChecked = false;
+
+
+            pfuLabelVisibilityToggleBtn.IsChecked = true;
+            pfuLightOnToggleBtn.IsChecked = true;
+            pfuCamOnToggleBtn.IsChecked = true;
+            pfuAnimStartToggleBtn.IsChecked = false;
+            pfuClockwiseRadioButton.IsChecked = true;
+
+            locLabelVisibilityToggleBtn.IsChecked = true;
+            loclightOnToggleBtn.IsChecked = true;
+            locCamOnToggleBtn.IsChecked = true;
+            locAnimStartToggleBtn.IsChecked = false;
+
+            hbyLabelVisibilityToggleBtn.IsChecked = true;
+            hbyLightOnToggleBtn.IsChecked = true;
+            hbyCamOnToggleBtn.IsChecked = true;
+            hbyAnimStartToggleBtn.IsChecked = false;
             hbyClockwiseRadioButton.IsChecked = true;
 
         }

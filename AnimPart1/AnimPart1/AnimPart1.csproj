@@ -206,10 +206,13 @@
     <None Remove="UC_OtherAnima\LOCAnimation\Images\boarder.svg" />
     <None Remove="UC_OtherAnima\LOCAnimation\Images\container.svg" />
     <None Remove="UC_OtherAnima\LOCAnimation\Images\downArrow.svg" />
+    <None Remove="UC_OtherAnima\PFUAnimation\Images\BlueCircle.svg" />
     <None Remove="UC_OtherAnima\PFUAnimation\Images\PrefinalBackground.svg" />
     <None Remove="UC_OtherAnima\PFUAnimation\Images\PrefinalBoarer.svg" />
     <None Remove="UC_OtherAnima\PFUAnimation\Images\PrefinalRotationalPart.svg" />
     <None Remove="UC_OtherAnima\PFUAnimation\Images\StartOnlyRotation.svg" />
+    <None Remove="UC_OtherAnima\PFUAnimation\Images\valveClosed.svg" />
+    <None Remove="UC_OtherAnima\PFUAnimation\Images\valveOpened.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner0.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner180.svg" />
@@ -262,9 +265,9 @@
     <Resource Include="UC_OtherAnima\FPUAnimation\Images\EmptyWithoutArrow.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="UC_OtherAnima\FPUAnimation\Images\marquee.svg">
+    <Resource Include="UC_OtherAnima\FPUAnimation\Images\marquee.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Resource Include="UC_OtherAnima\FPUAnimation\Images\obj1.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -292,6 +295,9 @@
     <Resource Include="UC_OtherAnima\HBYRotation\Images\HoldBayboader.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="UC_OtherAnima\PFUAnimation\Images\BlueCircle.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="UC_OtherAnima\PFUAnimation\Images\PrefinalBackground.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -302,6 +308,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_OtherAnima\PFUAnimation\Images\StartOnlyRotation.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\PFUAnimation\Images\valveClosed.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\PFUAnimation\Images\valveOpened.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg">
