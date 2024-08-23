@@ -6,16 +6,33 @@
              xmlns:local="clr-namespace:AnimPart1.UC_AncillaryAnima.FPUAnimation"
              mc:Ignorable="d" 
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-             MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
+             MouseEnter="Grid_MouseEnter" 
+             MouseLeave="Grid_MouseLeave"
+             Focusable="True"
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
              Width="800" Height="400"
              >
-    <UserControl.Resources>
-        <ContextMenu x:Key="ContextMenu1">
-            <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
-            <!-- Other MenuItems can be defined here -->
-        </ContextMenu>
 
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_FPUAnimation.FPULighCommand}" />
+        <KeyBinding Key="C" Modifiers="Shift" Command="{x:Static local:UC_FPUAnimation.FPUCameraCommand}" />
+        <KeyBinding Key="E" Modifiers="Shift" Command="{x:Static local:UC_FPUAnimation.FPUEmtpyMaterialCommand}" />
+        <KeyBinding Key="S" Modifiers="Shift" Command="{x:Static local:UC_FPUAnimation.FPUStartAimationCameraCommand}" />
+    </UserControl.InputBindings>
+
+    
+    
+    <UserControl.Resources>
+       
+        <ContextMenu x:Key="ContextMenu1">
+            <MenuItem x:Name="menuItem1" Header="Light On" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem2" Header="Camera On" InputGestureText="Shift+C" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem3" Header="Empty Matertial" InputGestureText="Shift+E" Click="Option3_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem4" Header="Start Stirring" InputGestureText="Shift+S" Click="Option4_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <!-- Add other menu items similarly -->
+        </ContextMenu>
+        
         <!-- Stirrer Rotation -->
         <Storyboard x:Key="RotateStirrerStoryboard"  >
             <DoubleAnimation 
@@ -23,7 +40,7 @@
             Storyboard.TargetProperty="Angle"
             From="0"
             To="180"
-            Duration="0:0:2">
+            Duration="0:0:4">
                 <DoubleAnimation.EasingFunction>
                     <SineEase EasingMode="EaseInOut"/>
                 </DoubleAnimation.EasingFunction>
@@ -93,9 +110,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <!-- Column 0: Width adjusts to content -->
             <ColumnDefinition Width="*" />
-            <!-- Column 1: Takes up remaining space -->
         </Grid.ColumnDefinitions>
 
         <!-- Grid for the backgroundSvg -->
@@ -106,7 +121,7 @@
 
             <svgc:SvgViewbox x:Name="backgroundSvg"
                     Stretch="Fill"
-                    Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\marquee.svg"
+                    Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/marquee.svg"
                     Visibility="Collapsed"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"/>
@@ -115,11 +130,11 @@
             <Grid x:Name="BackgroundGrid2"  HorizontalAlignment="Center" VerticalAlignment="Top" >
 
                 <Grid.RenderTransform>
-                    <RotateTransform x:Name="BackgroundGrid2RotateTransform" Angle="0"  CenterX="200" CenterY="500" />
+                    <RotateTransform x:Name="BackgroundGrid2RotateTransform" Angle="0"  CenterX="200" CenterY="300" />
                 </Grid.RenderTransform>
                 <svgc:SvgViewbox x:Name="svgViewbox"
                 Stretch="UniformToFill"
-                Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\background.svg"
+                Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/background.svg"
                 HorizontalAlignment="Center"
                 Panel.ZIndex="0"
                 VerticalAlignment="Bottom" Margin="0,51,0,0" Height="213" />
@@ -127,22 +142,23 @@
 
                 <svgc:SvgViewbox x:Name="svgViewbox2"
                  Stretch="Uniform"
-                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\stirrer.svg"
+                 Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/stirrer.svg"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top" 
-                 Margin="38,38,0,0" 
-                 Width="430" Height="390">
+                 Margin="30,36,0,0" 
+                 Panel.ZIndex="2"
+                 Width="436" Height="397">
                     <svgc:SvgViewbox.RenderTransform>
-                        <RotateTransform x:Name="stirrerRotateTransform" CenterX="200" CenterY="190" />
+                        <RotateTransform x:Name="stirrerRotateTransform" CenterX="210" CenterY="190" />
                     </svgc:SvgViewbox.RenderTransform>
                 </svgc:SvgViewbox>
 
                 <svgc:SvgViewbox x:Name="svgViewboxoBj1"
                  Stretch="Uniform"
-                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\obj1.svg"
-                 HorizontalAlignment="Center"
-                 Panel.ZIndex="4"
-                 VerticalAlignment="Top" Margin="0,134,0,0" Height="12" Width="10">
+                 Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/obj1.svg"
+                 HorizontalAlignment="Left"
+                 Panel.ZIndex="1"
+                 VerticalAlignment="Top" Margin="244,350,0,0" Height="17" Width="16">
                     <svgc:SvgViewbox.RenderTransform>
                         <RotateTransform x:Name="Obj1RotateTransform" CenterX="-60" CenterY="60" />
                     </svgc:SvgViewbox.RenderTransform>
@@ -151,11 +167,11 @@
 
                 <svgc:SvgViewbox x:Name="svgViewboxoBj2"
                  Stretch="Uniform"
-                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\obj2.svg"
+                 Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/obj2.svg"
                  HorizontalAlignment="Left"
-                 Panel.ZIndex="4"
-                 Height="15" Width="14" 
-                 VerticalAlignment="Top" Margin="171,118,0,0">
+                 Panel.ZIndex="1"
+                 Height="26" Width="22" 
+                 VerticalAlignment="Top" Margin="200,321,0,0">
                     <svgc:SvgViewbox.RenderTransform>
                         <RotateTransform x:Name="Obj2RotateTransform" CenterX="-60" CenterY="60"/>
                     </svgc:SvgViewbox.RenderTransform>
@@ -164,12 +180,12 @@
 
                 <svgc:SvgViewbox x:Name="svgViewboxoBj3"
                  Stretch="Uniform"
-                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\obj3.svg"
+                 Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/obj3.svg"
                  HorizontalAlignment="Left"
-                 Panel.ZIndex="4"
+                 Panel.ZIndex="1"
                  Height="16" Width="17" 
                  VerticalAlignment="Top" 
-                 Margin="139,136,0,0">
+                 Margin="152,323,0,0">
                     <svgc:SvgViewbox.RenderTransform>
                         <RotateTransform x:Name="Obj3RotateTransform"  CenterX="-60" CenterY="60" />
                     </svgc:SvgViewbox.RenderTransform>
@@ -177,11 +193,11 @@
 
                 <svgc:SvgViewbox x:Name="svgViewboxoBj4"
                  Stretch="Uniform"
-                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\obj4.svg"
+                 Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/obj4.svg"
                  HorizontalAlignment="Left"
-                 Height="17" Width="21" 
-                 Panel.ZIndex="4" 
-                 VerticalAlignment="Top" Margin="82,106,0,0" >
+                 Height="28" Width="30" 
+                 Panel.ZIndex="1" 
+                 VerticalAlignment="Top" Margin="111,266,0,0" >
                     <svgc:SvgViewbox.RenderTransform>
                         <RotateTransform x:Name="Obj4RotateTransform" CenterX="-60" CenterY="60" />
                     </svgc:SvgViewbox.RenderTransform>

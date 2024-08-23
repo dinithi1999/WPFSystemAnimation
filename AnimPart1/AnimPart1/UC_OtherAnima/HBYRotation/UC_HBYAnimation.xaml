@@ -5,6 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AnimPart1.UC_AncillaryAnima.HBYRotation"
              mc:Ignorable="d" 
+                          Focusable="True"
+
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
              MouseRightButtonDown="UserControl_MouseRightButtonDown">

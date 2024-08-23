@@ -1038,7 +1038,7 @@
                                     <ColumnDefinition Width="Auto" MinWidth="43.047"/>
                                     <ColumnDefinition Width="Auto" MinWidth="18"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
+                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16" Visibility="Collapsed" />
 
                                 <TextBox x:Name="FPUspeedTextBoxpmp"
                                           Width="30"
@@ -1046,6 +1046,7 @@
                                           TextChanged="FPUSpeedTextBox_TextChanged"
                                           HorizontalAlignment="Left"
                                           Text="50"
+                                         Visibility="Collapsed"
                                           VerticalAlignment="Center"
                                           Grid.Column="1" Height="18" RenderTransformOrigin="0.504,0.507" Margin="78,0,0,0"/>
                             </Grid>
@@ -1053,6 +1054,7 @@
                             <TextBlock Text="%"
                                        VerticalAlignment="Center"
                                        Margin="2,0,20,0"
+                                       Visibility="Collapsed"
                                        Grid.Column="1" Height="16"/>
                         </Grid>
 
@@ -1290,7 +1292,7 @@
 
                 <Grid Grid.Row="4" VerticalAlignment="Center" Margin="154,0,36,0" >
                     <!-- ContentControls to host UserControls -->
-                    <ContentControl x:Name="FPUcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-200,-200,0,0"/>
+                    <ContentControl x:Name="FPUcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,-250,0,0"/>
                 </Grid>
 
 

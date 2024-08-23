@@ -83,8 +83,7 @@ namespace AnimPart1.UC_PrimiAnima
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
-            Loaded += (s, e) => Focus();
-
+            this.Focus();
         }
 
         private void Grid_MouseLeave(object sender, MouseEventArgs e)

@@ -11,8 +11,8 @@
 
 
     <UserControl.InputBindings>
-        <KeyBinding Key="L" Modifiers="Control" Command="{x:Static local:UC_Portioner.Option1Command}" />
-        <KeyBinding Key="M" Modifiers="Control" Command="{x:Static local:UC_Portioner.Option2Command}" />
+        <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_Portioner.Option1Command}" />
+        <KeyBinding Key="M" Modifiers="Shift" Command="{x:Static local:UC_Portioner.Option2Command}" />
     </UserControl.InputBindings>
 
     <UserControl.Resources>

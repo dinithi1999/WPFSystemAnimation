@@ -195,6 +195,7 @@
     <None Remove="UC_OtherAnima\FPUAnimation\Images\obj2.svg" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\obj3.svg" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\obj4.svg" />
+    <None Remove="UC_OtherAnima\FPUAnimation\Images\pin-24.png" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\RemovingMaterials.svg" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\stirrer.svg" />
     <None Remove="UC_OtherAnima\HBYRotation\Images\HalbayRotationalSection.svg" />
@@ -271,6 +272,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_OtherAnima\FPUAnimation\Images\obj3.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\FPUAnimation\Images\pin-24.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_OtherAnima\FPUAnimation\Images\RemovingMaterials.svg">

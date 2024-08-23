@@ -6,6 +6,8 @@
              xmlns:local="clr-namespace:AnimPart1.UC_DepenAnima.UC_SLO"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              mc:Ignorable="d" Height="425" Width="375"
+                          Focusable="True"
+
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
 

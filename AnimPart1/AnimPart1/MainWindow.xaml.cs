@@ -44,19 +44,19 @@ namespace AnimPart1
 
         public static  UC_DownArrow arrowUCIinstance;
 
-        DispatcherTimer blinkTimer;
-        DispatcherTimer blinkTimer2;
-        DispatcherTimer blinkTimer3;
-        DispatcherTimer blinkTimer4;
-        DispatcherTimer blinkTimer5;
-        DispatcherTimer blinkTimer6;
-        DispatcherTimer blinkTimer7;
+        public static DispatcherTimer blinkTimer;
+        public static DispatcherTimer blinkTimer2;
+        public static DispatcherTimer blinkTimer3;
+        public static DispatcherTimer blinkTimer4;
+        public static DispatcherTimer blinkTimer5;
+        public static DispatcherTimer blinkTimer6;
+        public static DispatcherTimer blinkTimer7;
 
-        DispatcherTimer blinkTimer8;
-        DispatcherTimer blinkTimer9;
-        DispatcherTimer blinkTimer10;
-        DispatcherTimer blinkTimer11;
-        DispatcherTimer blinkTimer12;
+        public static DispatcherTimer blinkTimer8;
+        public static DispatcherTimer blinkTimer9;
+        public static DispatcherTimer blinkTimer10;
+        public static DispatcherTimer blinkTimer11;
+        public static DispatcherTimer blinkTimer12;
 
         bool isCamFlashIsOn;
         bool isCamFlashIsOn2;

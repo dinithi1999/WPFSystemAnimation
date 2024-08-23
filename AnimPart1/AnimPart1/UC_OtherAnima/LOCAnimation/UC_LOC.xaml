@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
+             Focusable="True"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              xmlns:local="clr-namespace:AnimPart1.UC_OtherAnima.LOCAnimation"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"

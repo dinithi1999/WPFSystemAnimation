@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AnimPart1.UC_PrimiAnima.UC_Pump"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             Focusable="True"             
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
              >

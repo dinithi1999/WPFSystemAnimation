@@ -26,6 +26,7 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
         public string labelName = "FPU-XXX";
         public bool isLightOn;
         public bool isAnimationOngoing;
+        bool isCmeraOn;
 
         Storyboard obj1;
 
@@ -39,6 +40,11 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
         DoubleAnimation angleAnimation3;
         DoubleAnimation angleAnimation4;
         DoubleAnimation angleAnimation5;
+
+        public static readonly RoutedUICommand FPULighCommand = new RoutedUICommand("", "FPULighCommand", typeof(UC_FPUAnimation));
+        public static readonly RoutedUICommand FPUCameraCommand = new RoutedUICommand("", "FPUCameraCommand", typeof(UC_FPUAnimation));
+        public static readonly RoutedUICommand FPUEmtpyMaterialCommand = new RoutedUICommand("", "FPUEmtpyMaterialCommand", typeof(UC_FPUAnimation));
+        public static readonly RoutedUICommand FPUStartAimationCameraCommand = new RoutedUICommand("", "FPUStartAimationCameraCommand", typeof(UC_FPUAnimation));
 
         public UC_FPUAnimation()
         {
@@ -71,12 +77,21 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
 
             obj1.Completed += Storyboard_Completed;
 
-            
+            CommandBindings.Add(new CommandBinding(FPULighCommand, Option1_Click));
+            CommandBindings.Add(new CommandBinding(FPUCameraCommand, Option2_Click));
+            CommandBindings.Add(new CommandBinding(FPUEmtpyMaterialCommand, Option3_Click));
+            CommandBindings.Add(new CommandBinding(FPUStartAimationCameraCommand, Option4_Click));
+
         }
+
+      
+     
+       
 
         public void StartStirrerRotation()
         {
 
+            isAnimationOngoing = true;
             svgViewbox.Source = new Uri("pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/background.svg");
 
 
@@ -134,6 +149,8 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             angleAnimation5 = (DoubleAnimation)rotateStirrer.Children[0];
             angleAnimation5.From = 0;
             angleAnimation5.To = 180;
+            angleAnimation5.Duration = new Duration(TimeSpan.FromSeconds(4));
+
             angleAnimation5.AutoReverse = false;
 
             rotateStirrer.Begin();
@@ -142,6 +159,7 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
+            this.Focus();
         }
 
 
@@ -159,21 +177,51 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             {
                 if (item.Name == "menuItem1")
                 {
-                    item.Header = "Updated Option 1"; // Update header text
 
                     if (isLightOn)
                     {
-                        item.Header = "Light Off"; // Update header text
+                        item.Header = "Light Off";
                     }
                     else
                     {
-                        item.Header = "Light on"; // Update header text
+                        item.Header = "Light on";
                     }
+                } else if (item.Name == "menuItem2")
+                {
+                    if (isCmeraOn) {
+
+                        item.Header = "Camera Off";
+
+                    }
+                    else
+                    {
+                        item.Header = "Camera On";
+                    }
+
+                }
+                else if (item.Name == "menuItem4")
+                {
+                    if (isAnimationOngoing)
+                    {
+
+                        item.Header = "Stop Stirring";
+
+                    }
+                    else
+                    {
+                        item.Header = "Start Stirring";
+                    }
+
+                }
+                else if (item.Name == "menuItem3")
+                {
+
+                    item.Header = "Empty Materials";
+
                 }
 
+                contextMenu.IsOpen = true;
             }
-
-            contextMenu.IsOpen = true;
         }
 
         private void Option1_Click(object sender, RoutedEventArgs e)
@@ -182,6 +230,41 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             ToggleLight();
 
         }
+
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isCmeraOn)
+            {
+                MainWindow.blinkTimer11.Start();
+            }
+            else
+            {
+                MainWindow.blinkTimer11.Stop();
+
+            }
+
+            isCmeraOn = !isCmeraOn;
+        }
+
+        private void Option3_Click(object sender, RoutedEventArgs e)
+        {
+            EmptyMaterial();
+        }
+
+        private void Option4_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isAnimationOngoing) {
+
+                StartStirrerRotation();
+            }
+            else
+            {
+                StopAnimation();
+            }
+        }
+
         private void ToggleLight()
         {
             if (isLightOn)
@@ -209,7 +292,7 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             obj4.Stop();
             rotateStirrer.Stop();
             BackgroundGrid2RotateTransform.Angle = 0;
-
+            isAnimationOngoing = false;
         }
 
         public void SetRotationDirection(bool clockwise)
@@ -278,9 +361,10 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
 
             obj4.Begin();
 
-             angleAnimation5 = (DoubleAnimation)rotateStirrer.Children[0];
+            angleAnimation5 = (DoubleAnimation)rotateStirrer.Children[0];
             angleAnimation5.From = 0;
             angleAnimation5.To = 120;
+            angleAnimation5.Duration = new Duration(TimeSpan.FromSeconds(1));
             rotateStirrer.RepeatBehavior = new RepeatBehavior(1);  // Run once
             angleAnimation5.AutoReverse = false;
 
