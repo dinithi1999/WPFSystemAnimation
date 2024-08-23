@@ -2,6 +2,7 @@
 using AnimPart1.UC_AncillaryAnima.Label;
 using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
+using AnimPart1.UC_OtherAnima.PFUAnimation;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -24,7 +25,14 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
 
         public string labelName = "HBY-XXX";
         public bool isLightOn;
+        private bool isCameraOn;
         public bool isAnimationOngoing;
+
+        public static readonly RoutedUICommand HBYLighCommand = new RoutedUICommand("", "HBYLighCommand", typeof(UC_HBYAnimation));
+        public static readonly RoutedUICommand HBYCameraCommand = new RoutedUICommand("", "HBYCameraCommand", typeof(UC_HBYAnimation));
+        //public static readonly RoutedUICommand HBYOpenValveCommand = new RoutedUICommand("", "HBYOpenValveCommand", typeof(UC_HBYAnimation));
+        public static readonly RoutedUICommand HBYStartAimationCameraCommand = new RoutedUICommand("", "HBYStartAimationCameraCommand", typeof(UC_HBYAnimation));
+
 
         public UC_HBYAnimation()
         {
@@ -51,15 +59,67 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
             PadleColumn.Content = uC_ScrewRotation;
             uC_ScrewRotation.backgroundSvg.Source = new Uri("pack://application:,,,/UC_OtherAnima/HBYRotation/Images/HalbayRotationalSection.svg");
 
-      
+
+            CommandBindings.Add(new CommandBinding(HBYLighCommand, Option1_Click));
+            CommandBindings.Add(new CommandBinding(HBYCameraCommand, Option2_Click));
+            //CommandBindings.Add(new CommandBinding(HBYOpenValveCommand, Option3_Click));
+            CommandBindings.Add(new CommandBinding(HBYStartAimationCameraCommand, Option4_Click));
+        }
+
+     
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isCameraOn)
+            {
+                MainWindow.blinkTimer9.Start();
+            }
+            else
+            {
+                MainWindow.blinkTimer9.Stop();
+
+            }
+
+            isCameraOn = !isCameraOn;
+        }
+
+
+        private void Option3_Click(object sender, RoutedEventArgs e)
+        {
+
+            //if (!IsValveOpen)
+            //{
+
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
+            //}
+            //else
+            //{
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
+            //}
+
+            //IsValveOpen = !IsValveOpen;
 
         }
 
-      
+
+        private void Option4_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isAnimationOngoing)
+            {
+
+                StartSpinning();
+            }
+            else
+            {
+                StopSpinning();
+            }
+        }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
+            this.Focus();
         }
 
 
@@ -77,17 +137,58 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
             {
                 if (item.Name == "menuItem1")
                 {
-                    item.Header = "Updated Option 1"; // Update header text
 
                     if (isLightOn)
                     {
-                        item.Header = "Light Off"; // Update header text
+                        item.Header = "Light Off";
                     }
                     else
                     {
-                        item.Header = "Light on"; // Update header text
+                        item.Header = "Light on";
                     }
                 }
+                else if (item.Name == "menuItem2")
+                {
+                    if (isCameraOn)
+                    {
+
+                        item.Header = "Camera Off";
+
+                    }
+                    else
+                    {
+                        item.Header = "Camera On";
+                    }
+                }
+                //else if (item.Name == "menuItem3")
+                //{
+                //    if (IsValveOpen)
+                //    {
+
+                //        item.Header = "Close Valve";
+
+                //    }
+                //    else
+                //    {
+                //        item.Header = "Open Valve";
+                //    }
+
+                //}
+                else if (item.Name == "menuItem4")
+                {
+                    if (isAnimationOngoing)
+                    {
+
+                        item.Header = "Stop Stirring";
+
+                    }
+                    else
+                    {
+                        item.Header = "Start Stirring";
+                    }
+
+                }
+
 
             }
 
