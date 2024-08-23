@@ -1169,7 +1169,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="100*"/>
-                    <RowDefinition Height="100*"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="100*"/>
                 </Grid.RowDefinitions>
 
@@ -1288,9 +1288,9 @@
                 </Grid>
 
 
-                <Grid Grid.Row="4" VerticalAlignment="Top" Height="300" >
+                <Grid Grid.Row="4" VerticalAlignment="Center" Margin="154,0,36,0" >
                     <!-- ContentControls to host UserControls -->
-                    <ContentControl Grid.Column="1" x:Name="FPUcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <ContentControl x:Name="FPUcolumn1ContentControl" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-200,-200,0,0"/>
                 </Grid>
 
 

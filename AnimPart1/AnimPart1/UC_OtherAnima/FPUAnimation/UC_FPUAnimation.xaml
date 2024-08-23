@@ -8,6 +8,7 @@
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
              MouseRightButtonDown="UserControl_MouseRightButtonDown"
+             Width="800" Height="400"
              >
     <UserControl.Resources>
         <ContextMenu x:Key="ContextMenu1">
@@ -91,37 +92,37 @@
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
             <!-- Column 0: Width adjusts to content -->
             <ColumnDefinition Width="*" />
             <!-- Column 1: Takes up remaining space -->
         </Grid.ColumnDefinitions>
 
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid"  HorizontalAlignment="Center" VerticalAlignment="top">
+        <Grid x:Name="BackgroundGrid"  HorizontalAlignment="Center" VerticalAlignment="Bottom">
 
 
 
 
             <svgc:SvgViewbox x:Name="backgroundSvg"
-                    Stretch="Uniform"
+                    Stretch="Fill"
                     Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\marquee.svg"
                     Visibility="Collapsed"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"/>
 
 
-            <Grid x:Name="BackgroundGrid2"  HorizontalAlignment="Center" VerticalAlignment="top">
+            <Grid x:Name="BackgroundGrid2"  HorizontalAlignment="Center" VerticalAlignment="Top" >
 
                 <Grid.RenderTransform>
-                    <RotateTransform x:Name="BackgroundGrid2RotateTransform" Angle="0" CenterX="120" CenterY="120" />
+                    <RotateTransform x:Name="BackgroundGrid2RotateTransform" Angle="0"  CenterX="200" CenterY="500" />
                 </Grid.RenderTransform>
                 <svgc:SvgViewbox x:Name="svgViewbox"
-                Stretch="Uniform"
+                Stretch="UniformToFill"
                 Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\background.svg"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Center"
                 Panel.ZIndex="0"
-                VerticalAlignment="Top" Margin="11,54,0,0" />
+                VerticalAlignment="Bottom" Margin="0,51,0,0" Height="213" />
 
 
                 <svgc:SvgViewbox x:Name="svgViewbox2"
@@ -129,10 +130,10 @@
                  Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPUAnimation\Images\stirrer.svg"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top" 
-                 Margin="28,-23,0,0" 
-                 Width="200" Height="200">
+                 Margin="38,38,0,0" 
+                 Width="430" Height="390">
                     <svgc:SvgViewbox.RenderTransform>
-                        <RotateTransform x:Name="stirrerRotateTransform" CenterX="100" CenterY="100" />
+                        <RotateTransform x:Name="stirrerRotateTransform" CenterX="200" CenterY="190" />
                     </svgc:SvgViewbox.RenderTransform>
                 </svgc:SvgViewbox>
 
