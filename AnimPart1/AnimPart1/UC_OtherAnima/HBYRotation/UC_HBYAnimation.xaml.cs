@@ -77,6 +77,7 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
             else
             {
                 MainWindow.blinkTimer9.Stop();
+                cameraUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg");
 
             }
 
@@ -183,7 +184,6 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
 
         private void Option1_Click(object sender, RoutedEventArgs e)
         {
-
             ToggleLight();
 
         }

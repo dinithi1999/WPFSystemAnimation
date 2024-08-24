@@ -22,6 +22,7 @@ namespace AnimPart1.UC_PrimiAnima
         public bool isLightOn;
         private bool isCameraOn;
         private bool isMaterialRemoved;
+
         public static readonly RoutedUICommand PORLighCommand = new RoutedUICommand("Option 1", "PORLighCommand", typeof(UC_Portioner));
         public static readonly RoutedUICommand PORCameraCommand = new RoutedUICommand("Option 2", "PORCameraCommand", typeof(UC_Portioner));
         public static readonly RoutedUICommand PORStartAimationCameraCommand = new RoutedUICommand("Option 2", "PORStartAimationCameraCommand", typeof(UC_Portioner));
@@ -71,7 +72,7 @@ namespace AnimPart1.UC_PrimiAnima
             else
             {
                 MainWindow.blinkTimer7.Stop();
-
+                cameraUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg");
             }
 
             isCameraOn = !isCameraOn;

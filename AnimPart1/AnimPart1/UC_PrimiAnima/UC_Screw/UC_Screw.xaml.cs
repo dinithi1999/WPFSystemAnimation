@@ -5,6 +5,7 @@ using System.Windows.Input;
 using AnimPart1.UC_AncillaryAnima.Label;
 using System.Windows.Media.Animation;
 using AnimPart1.UC_AncillaryAnima.PrimiLabel;
+using AnimPart1.UC_OtherAnima.PFUAnimation;
 
 namespace AnimPart1.UC_PrimiAnima.UC_Screw
 {
@@ -23,7 +24,13 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
 
         public string labelName = "SRW-XXX";
         public bool isLightOn;
+        private bool isCameraOn;
         public bool isAnimationOnGoing;
+
+        public static readonly RoutedUICommand ScrewLighCommand = new RoutedUICommand("", "ScrewLighCommand", typeof(UC_Screw));
+        public static readonly RoutedUICommand ScrewCameraCommand = new RoutedUICommand("", "ScrewCameraCommand", typeof(UC_Screw));
+        //public static readonly RoutedUICommand ScrewOpenValveCommand = new RoutedUICommand("", "ScrewOpenValveCommand", typeof(UC_Screw));
+        public static readonly RoutedUICommand ScrewStartAimationCameraCommand = new RoutedUICommand("", "ScrewStartAimationCameraCommand", typeof(UC_Screw));
 
 
         public UC_Screw()
@@ -54,10 +61,64 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Screw/Images/screwmarquee.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Screw/Images/screwBackground.svg");
+
+            CommandBindings.Add(new CommandBinding(ScrewLighCommand, Option1_Click));
+            CommandBindings.Add(new CommandBinding(ScrewCameraCommand, Option2_Click));
+            //CommandBindings.Add(new CommandBinding(ScrewOpenValveCommand, Option3_Click));
+            CommandBindings.Add(new CommandBinding(ScrewStartAimationCameraCommand, Option4_Click));
+
         }
 
-        
-     
+
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isCameraOn)
+            {
+                MainWindow.blinkTimer6.Start();
+            }
+            else
+            {
+                MainWindow.blinkTimer6.Stop();
+                cameraUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg");
+            }
+
+            isCameraOn = !isCameraOn;
+        }
+
+
+        private void Option3_Click(object sender, RoutedEventArgs e)
+        {
+
+            //if (!IsValveOpen)
+            //{
+
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
+            //}
+            //else
+            //{
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
+            //}
+
+            //IsValveOpen = !IsValveOpen;
+
+        }
+
+
+        private void Option4_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isAnimationOnGoing)
+            {
+
+                StartSpinning();
+            }
+            else
+            {
+                StopSpinning();
+            }
+        }
+
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
@@ -77,16 +138,39 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
             {
                 if (item.Name == "menuItem1")
                 {
-                    item.Header = "Updated Option 1"; // Update header text
 
                     if (isLightOn)
                     {
-                        item.Header = "Light Off"; // Update header text
+                        item.Header = "Light Off";
                     }
                     else
                     {
-                        item.Header = "Light on"; // Update header text
+                        item.Header = "Light on";
                     }
+                }
+                else if (item.Name == "menuItem2")
+                {
+                    if (isCameraOn)
+                    {
+
+                        item.Header = "Camera Off";
+                    }
+                    else
+                    {
+                        item.Header = "Camera On";
+                    }
+                }
+                else if (item.Name == "menuItem4")
+                {
+                    if (isAnimationOnGoing)
+                    {
+                        item.Header = "Stop Spinning";
+                    }
+                    else
+                    {
+                        item.Header = "Start Spinning";
+                    }
+
                 }
 
             }
