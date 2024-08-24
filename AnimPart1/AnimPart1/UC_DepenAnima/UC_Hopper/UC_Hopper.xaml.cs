@@ -1,5 +1,6 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
 using AnimPart1.UC_AncillaryAnima.Rotating_Padle;
+using AnimPart1.UC_PrimiAnima.UC_Pump;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,6 +25,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         private int currentImageIndex;
         private System.Timers.Timer animationTimer;
         public bool isLightOn;
+        private bool isCameraOn;
 
         private int currentHopperLevel; // Keep track of the current tank level
 
@@ -31,6 +33,11 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
         public ICommand ToggleLightCommand { get; }
 
         private bool isAnimationOnGoing;
+
+        public static readonly RoutedUICommand HOPLighCommand = new RoutedUICommand("", "HOPLighCommand", typeof(UC_Hopper));
+        public static readonly RoutedUICommand HOPCameraCommand = new RoutedUICommand("", "HOPCameraCommand", typeof(UC_Hopper));
+        //public static readonly RoutedUICommand HBYOpenValveCommand = new RoutedUICommand("", "HBYOpenValveCommand", typeof(UC_Pump));
+        public static readonly RoutedUICommand HOPStartAimationCameraCommand = new RoutedUICommand("", "HOPStartAimationCameraCommand", typeof(UC_Hopper));
 
         public UC_Hopper()
         {
@@ -67,14 +74,67 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             SetHopperLevelImage(currentHopperLevel);
 
             animationTimer.Start();
+
+            CommandBindings.Add(new CommandBinding(HOPLighCommand, Option1_Click));
+            CommandBindings.Add(new CommandBinding(HOPCameraCommand, Option2_Click));
+            //CommandBindings.Add(new CommandBinding(HBYOpenValveCommand, Option3_Click));
+            CommandBindings.Add(new CommandBinding(HOPCameraCommand, Option4_Click));
+        }
+
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isCameraOn)
+            {
+                MainWindow.blinkTimer.Start();
+            }
+            else
+            {
+                MainWindow.blinkTimer.Stop();
+                cameraUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg");
+
+            }
+
+            isCameraOn = !isCameraOn;
         }
 
 
+        private void Option3_Click(object sender, RoutedEventArgs e)
+        {
+
+            //if (!IsValveOpen)
+            //{
+
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
+            //}
+            //else
+            //{
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
+            //}
+
+            //IsValveOpen = !IsValveOpen;
+
+        }
+
+
+        private void Option4_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isAnimationOnGoing)
+            {
+                StartPadleAnimation();
+            }
+            else
+            {
+                StopPadleAnimation();
+            }
+        }
 
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
+            this.Focus();
         }
 
         private void Grid_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
@@ -218,18 +278,44 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             {
                 if (item.Name == "menuItem1")
                 {
-                    item.Header = "Updated Option 1"; // Update header text
 
                     if (isLightOn)
                     {
-                        item.Header = "Light Off"; // Update header text
+                        item.Header = "Light Off";
                     }
                     else
                     {
-                        item.Header = "Light on"; // Update header text
+                        item.Header = "Light on";
                     }
                 }
-              
+                else if (item.Name == "menuItem2")
+                {
+                    if (isCameraOn)
+                    {
+
+                        item.Header = "Camera Off";
+
+                    }
+                    else
+                    {
+                        item.Header = "Camera On";
+                    }
+                }
+                else if (item.Name == "menuItem4")
+                {
+                    if (isAnimationOnGoing)
+                    {
+
+                        item.Header = "Stop ";
+
+                    }
+                    else
+                    {
+                        item.Header = "Start";
+                    }
+
+                }
+
             }
 
             contextMenu.IsOpen = true;
@@ -241,10 +327,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             ToggleLight();
         }
 
-        private void Option2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
         private void UserControl1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.L && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
