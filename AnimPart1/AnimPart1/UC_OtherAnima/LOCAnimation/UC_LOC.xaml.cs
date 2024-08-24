@@ -341,7 +341,7 @@ namespace AnimPart1.UC_OtherAnima.LOCAnimation
 
         private void CollectorMovement_Completed(object sender, EventArgs e)
         {
-            if (destinationXPos == -300)
+            if (destinationXPos == -485)
             {
                 MainWindow.arrowUCIinstance.Visibility = Visibility.Visible;
 

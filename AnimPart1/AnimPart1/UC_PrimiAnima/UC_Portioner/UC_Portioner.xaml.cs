@@ -180,7 +180,7 @@ namespace AnimPart1.UC_PrimiAnima
                     if (isMaterialRemoved)
                     {
 
-                        item.Header = "Set Initial Postion";
+                        item.Header = "Set Initial Position";
 
                     }
                     else
