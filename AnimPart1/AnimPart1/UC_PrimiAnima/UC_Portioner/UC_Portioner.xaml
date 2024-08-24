@@ -101,9 +101,10 @@
                             Panel.ZIndex="2"/>
 
             <svgc:SvgViewbox x:Name="backgroundSvgRow"
-                             Stretch="None"
+                             Stretch="Uniform"
                              Source="pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/downArrow.svg"
-                             Margin="1,0,2,129">
+                             Width="130"
+                             Margin="-50,0,2,129">
                 <svgc:SvgViewbox.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform x:Name="translateTransformArrowDown"/>
