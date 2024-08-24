@@ -1,15 +1,13 @@
 ﻿using AnimPart1.UC_AncillaryAnima.Label;
 using AnimPart1.UC_AncillaryAnima.PrimiLabel;
 using AnimPart1.UC_AncillaryAnima.ScrewRotation;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
-using System.Windows.Threading;
 
 
-namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
+namespace AnimPart1.UC_OtherAnima.LOCAnimation
 {
     /// <summary>
     /// Interaction logic for UC_LOC.xaml
@@ -28,6 +26,7 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
 
         public string labelName = "LOC-XXX";
         public bool isLightOn;
+        private bool isCameraOn;
         public bool isAnimationOngoing;
 
         Storyboard collectorMovement;
@@ -40,7 +39,11 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
 
         private bool isAnimationOnGoing;
 
-    
+
+        public static readonly RoutedUICommand LOCLighCommand = new RoutedUICommand("", "LOCLighCommand", typeof(UC_LOC));
+        public static readonly RoutedUICommand LOCCameraCommand = new RoutedUICommand("", "LOCCameraCommand", typeof(UC_LOC));
+        //public static readonly RoutedUICommand LOCOpenValveCommand = new RoutedUICommand("", "LOCOpenValveCommand", typeof(UC_LOC));
+        public static readonly RoutedUICommand LOCStartAimationCameraCommand = new RoutedUICommand("", "LOCStartAimationCameraCommand", typeof(UC_LOC));
 
         public UC_LOC()
         {
@@ -58,10 +61,62 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
             labelUserCtrl.labelName.Text = labelName;
             labelUserCtrl.levelPercentage.Visibility = Visibility.Hidden;
 
-
+            CommandBindings.Add(new CommandBinding(LOCLighCommand, Option1_Click));
+            CommandBindings.Add(new CommandBinding(LOCCameraCommand, Option2_Click));
+            //CommandBindings.Add(new CommandBinding(LOCOpenValveCommand, Option3_Click));
+            CommandBindings.Add(new CommandBinding(LOCStartAimationCameraCommand, Option4_Click));
 
         }
 
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isCameraOn)
+            {
+                MainWindow.blinkTimer8.Start();
+            }
+            else
+            {
+                MainWindow.blinkTimer8.Stop();
+                cameraUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg");
+
+            }
+
+            isCameraOn = !isCameraOn;
+        }
+
+
+        private void Option3_Click(object sender, RoutedEventArgs e)
+        {
+
+            //if (!IsValveOpen)
+            //{
+
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
+            //}
+            //else
+            //{
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
+            //}
+
+            //IsValveOpen = !IsValveOpen;
+
+        }
+
+
+        private void Option4_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isAnimationOngoing)
+            {
+
+                StartAnimation();
+            }
+            else
+            {
+                StopAnimation();
+            }
+        }
 
 
         public void StartAnimation()
@@ -111,6 +166,7 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
+            this.Focus();       
         }
 
 
@@ -128,17 +184,58 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
             {
                 if (item.Name == "menuItem1")
                 {
-                    item.Header = "Updated Option 1"; // Update header text
 
                     if (isLightOn)
                     {
-                        item.Header = "Light Off"; // Update header text
+                        item.Header = "Light Off";
                     }
                     else
                     {
-                        item.Header = "Light on"; // Update header text
+                        item.Header = "Light on";
                     }
                 }
+                else if (item.Name == "menuItem2")
+                {
+                    if (isCameraOn)
+                    {
+
+                        item.Header = "Camera Off";
+
+                    }
+                    else
+                    {
+                        item.Header = "Camera On";
+                    }
+                }
+                else if (item.Name == "menuItem3")
+                {
+                    //if (IsValveOpen)
+                    //{
+
+                    //    item.Header = "Close Valve";
+
+                    //}
+                    //else
+                    //{
+                    //    item.Header = "Open Valve";
+                    //}
+
+                }
+                else if (item.Name == "menuItem4")
+                {
+                    if (isAnimationOngoing)
+                    {
+
+                        item.Header = "Stop Animation";
+
+                    }
+                    else
+                    {
+                        item.Header = "Start Animation";
+                    }
+
+                }
+
             }
 
             contextMenu.IsOpen = true;
@@ -189,7 +286,7 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
 
                 switch (selectedValue)
                 {
-                    case "0 ":
+                    case "0":
                         destinationXPos = -0;
                         break;
 
@@ -236,7 +333,7 @@ namespace AnimPart1.UC_AncillaryAnima.LOCAnimation
                         break;
 
                     default:
-                        // Handle any unexpected cases
+                        destinationXPos = -0;
                         break;
                 }
             }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AnimPart1.UC_AncillaryAnima.LOCAnimation.UC_LOC"
+﻿<UserControl x:Class="AnimPart1.UC_OtherAnima.LOCAnimation.UC_LOC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,15 +7,28 @@
              Focusable="True"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              xmlns:local="clr-namespace:AnimPart1.UC_OtherAnima.LOCAnimation"
-             MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
-             MouseRightButtonDown="UserControl_MouseRightButtonDown" Height="295">
+             MouseEnter="Grid_MouseEnter" 
+             MouseLeave="Grid_MouseLeave"
+             MouseRightButtonDown="UserControl_MouseRightButtonDown" 
+             Height="295">
 
+    <UserControl.InputBindings>
+        <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_LOC.LOCLighCommand}" />
+        <KeyBinding Key="C" Modifiers="Shift" Command="{x:Static local:UC_LOC.LOCCameraCommand}" />
+        <KeyBinding Key="S" Modifiers="Shift" Command="{x:Static local:UC_LOC.LOCStartAimationCameraCommand}" />
+    </UserControl.InputBindings>
+
+   
+    
     <UserControl.Resources>
-
+        
         <local:DistanceConverter x:Key="DistanceConverter"/>
-
+        
         <ContextMenu x:Key="ContextMenu1">
-            <MenuItem Name="menuItem1" Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click"/>
+            <MenuItem x:Name="menuItem1" Header="Light On" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem2" Header="Camera On" InputGestureText="Shift+C" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <!--<MenuItem x:Name="menuItem3" Header="Open Valve" InputGestureText="Shift+E" Click="Option3_Click" Style="{StaticResource CustomMenuItemStyle}"/>-->
+            <MenuItem x:Name="menuItem4" Header="Start Stirring" InputGestureText="Shift+S" Click="Option4_Click" Style="{StaticResource CustomMenuItemStyle}"/>
         </ContextMenu>
 
         <Storyboard x:Key="CollectorMovement" >

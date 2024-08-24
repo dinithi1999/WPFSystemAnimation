@@ -9,6 +9,7 @@
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave"
              MouseRightButtonDown="UserControl_MouseRightButtonDown">
+    
     <UserControl.InputBindings>
         <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_HBYAnimation.HBYLighCommand}" />
         <KeyBinding Key="C" Modifiers="Shift" Command="{x:Static local:UC_HBYAnimation.HBYCameraCommand}" />

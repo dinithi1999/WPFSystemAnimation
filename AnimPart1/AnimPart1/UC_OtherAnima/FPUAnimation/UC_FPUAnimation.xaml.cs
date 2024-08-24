@@ -241,6 +241,7 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             else
             {
                 MainWindow.blinkTimer11.Stop();
+                cameraUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg");
 
             }
 

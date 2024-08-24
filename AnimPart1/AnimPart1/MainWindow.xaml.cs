@@ -16,9 +16,10 @@ using System.Windows.Input;
 using AnimPart1.UC_AncillaryAnima.FPPAnimation;
 using AnimPart1.UC_AncillaryAnima.FPUAnimation;
 using AnimPart1.UC_AncillaryAnima.HBYRotation;
-using AnimPart1.UC_AncillaryAnima.LOCAnimation;
+using AnimPart1.UC_OtherAnima.LOCAnimation;
 using AnimPart1.UC_OtherAnima.PFUAnimation;
 using AnimPart1.UC_AncillaryAnima.DownArrow;
+using AnimPart1.UC_OtherAnima.LOCAnimation;
 
 namespace AnimPart1
 {

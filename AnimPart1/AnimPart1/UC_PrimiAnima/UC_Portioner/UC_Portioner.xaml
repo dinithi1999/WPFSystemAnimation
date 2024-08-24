@@ -17,16 +17,11 @@
 
     <UserControl.Resources>
 
-
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
             <MenuItem Header="Option 2" InputGestureText="Ctrl+M" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
             <!-- Add other menu items similarly -->
         </ContextMenu>
-
-
-
-
 
         <Storyboard x:Key="GreenArrowDown">
             <!-- Animate the Y position -->

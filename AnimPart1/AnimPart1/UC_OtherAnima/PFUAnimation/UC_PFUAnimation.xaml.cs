@@ -50,7 +50,7 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
         {
             InitializeComponent();
 
-
+           
             lightUserCtrl = new Lights.Lights();
             lightColumn.Content = lightUserCtrl;
 
@@ -98,6 +98,7 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
             else
             {
                 MainWindow.blinkTimer10.Stop();
+                cameraUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg");
 
             }
 
