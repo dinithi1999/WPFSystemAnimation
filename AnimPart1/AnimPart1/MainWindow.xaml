@@ -222,7 +222,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                            <ToggleButton x:Name="porAnimStartToggleBtn" Content="" Margin="47,5,39,5" Width="50" Height="30" Grid.Column="1" Checked="PortionerStartChecked_Checked" Unchecked="PortionerStartChecked_Unchecked"/>
+                            <ToggleButton x:Name="porAnimStartToggleBtn" Content="" Margin="56,5,48,0" Width="50" Grid.Column="1" Checked="PortionerStartChecked_Checked" Unchecked="PortionerStartChecked_Unchecked" Height="32" VerticalAlignment="Top"/>
                         </Grid>
 
                     </Grid>

@@ -160,20 +160,6 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
                         item.Header = "Camera On";
                     }
                 }
-                //else if (item.Name == "menuItem3")
-                //{
-                //    if (IsValveOpen)
-                //    {
-
-                //        item.Header = "Close Valve";
-
-                //    }
-                //    else
-                //    {
-                //        item.Header = "Open Valve";
-                //    }
-
-                //}
                 else if (item.Name == "menuItem4")
                 {
                     if (isAnimationOngoing)

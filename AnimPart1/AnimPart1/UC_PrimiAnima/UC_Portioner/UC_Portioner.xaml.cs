@@ -20,9 +20,11 @@ namespace AnimPart1.UC_PrimiAnima
 
         public string labelName = "POR-XXX";
         public bool isLightOn;
-
-        public static readonly RoutedUICommand Option1Command = new RoutedUICommand("Option 1", "Option1Command", typeof(UC_Portioner));
-        public static readonly RoutedUICommand Option2Command = new RoutedUICommand("Option 2", "Option2Command", typeof(UC_Portioner));
+        private bool isCameraOn;
+        private bool isMaterialRemoved;
+        public static readonly RoutedUICommand PORLighCommand = new RoutedUICommand("Option 1", "PORLighCommand", typeof(UC_Portioner));
+        public static readonly RoutedUICommand PORCameraCommand = new RoutedUICommand("Option 2", "PORCameraCommand", typeof(UC_Portioner));
+        public static readonly RoutedUICommand PORStartAimationCameraCommand = new RoutedUICommand("Option 2", "PORStartAimationCameraCommand", typeof(UC_Portioner));
 
         public UC_Portioner()
         {
@@ -46,31 +48,66 @@ namespace AnimPart1.UC_PrimiAnima
 
             StartAnimations();
 
-            CommandBindings.Add(new CommandBinding(Option1Command, ExecuteOption1));
-            CommandBindings.Add(new CommandBinding(Option2Command, ExecuteOption2));
+            CommandBindings.Add(new CommandBinding(PORLighCommand, Option1_Click));
+            CommandBindings.Add(new CommandBinding(PORCameraCommand, Option2_Click));
+            CommandBindings.Add(new CommandBinding(PORStartAimationCameraCommand, Option3_Click));
 
 
-        }
-
-
-        private void ExecuteOption1(object sender, ExecutedRoutedEventArgs e)
-        {
-            MessageBox.Show("Option 1 Triggered");
-        }
-
-        private void ExecuteOption2(object sender, ExecutedRoutedEventArgs e)
-        {
-            MessageBox.Show("Option 2 Triggered");
         }
 
         private void Option1_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Option 1 Clicked");
+            ToggleLight();
         }
+
 
         private void Option2_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Option 2 Clicked");
+
+            if (!isCameraOn)
+            {
+                MainWindow.blinkTimer7.Start();
+            }
+            else
+            {
+                MainWindow.blinkTimer7.Stop();
+
+            }
+
+            isCameraOn = !isCameraOn;
+        }
+
+
+        private void Option3_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isMaterialRemoved)
+            {
+
+                svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner90.svg");
+            }
+            else
+            {
+                svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner0.svg");
+            }
+
+            isMaterialRemoved = !isMaterialRemoved;
+
+        }
+
+
+        private void Option4_Click(object sender, RoutedEventArgs e)
+        {
+
+            //if (!isAnimationOngoing)
+            //{
+
+            //    StartSpinning();
+            //}
+            //else
+            //{
+            //    StopSpinning();
+            //}
         }
 
         public void StartAnimations()
@@ -123,6 +160,33 @@ namespace AnimPart1.UC_PrimiAnima
                     {
                         item.Header = "Light on"; // Update header text
                     }
+                }
+                else if (item.Name == "menuItem2")
+                {
+                    if (isCameraOn)
+                    {
+
+                        item.Header = "Camera Off";
+
+                    }
+                    else
+                    {
+                        item.Header = "Camera On";
+                    }
+                }
+                else if (item.Name == "menuItem3")
+                {
+                    if (isMaterialRemoved)
+                    {
+
+                        item.Header = "Set Initial Postion";
+
+                    }
+                    else
+                    {
+                        item.Header = "Remove Material";
+                    }
+
                 }
 
             }

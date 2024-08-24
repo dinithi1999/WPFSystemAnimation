@@ -11,17 +11,20 @@
 
 
     <UserControl.InputBindings>
-        <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_Portioner.Option1Command}" />
-        <KeyBinding Key="M" Modifiers="Shift" Command="{x:Static local:UC_Portioner.Option2Command}" />
+        <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_Portioner.PORLighCommand}" />
+        <KeyBinding Key="C" Modifiers="Shift" Command="{x:Static local:UC_Portioner.PORCameraCommand}" />
+        <KeyBinding Key="E" Modifiers="Shift" Command="{x:Static local:UC_Portioner.PORStartAimationCameraCommand}" />
+        <!--<KeyBinding Key="S" Modifiers="Shift" Command="{x:Static local:UC_Portioner.HBYStartAimationCameraCommand}" />-->
     </UserControl.InputBindings>
-
+    
     <UserControl.Resources>
-
+        
         <ContextMenu x:Key="ContextMenu1">
-            <MenuItem Header="Option 1" InputGestureText="Ctrl+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
-            <MenuItem Header="Option 2" InputGestureText="Ctrl+M" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
-            <!-- Add other menu items similarly -->
-        </ContextMenu>
+                <MenuItem x:Name="menuItem1" Header="Light On" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+                <MenuItem x:Name="menuItem2" Header="Camera On" InputGestureText="Shift+C" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+                <MenuItem x:Name="menuItem3" Header="Remove Material" InputGestureText="Shift+E" Click="Option3_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+                <!--<MenuItem x:Name="menuItem4" Header="Start" InputGestureText="Shift+S" Click="Option4_Click" Style="{StaticResource CustomMenuItemStyle}"/>-->
+            </ContextMenu>
 
         <Storyboard x:Key="GreenArrowDown">
             <!-- Animate the Y position -->
