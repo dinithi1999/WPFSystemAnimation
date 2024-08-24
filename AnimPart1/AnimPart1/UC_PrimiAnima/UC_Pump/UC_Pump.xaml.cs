@@ -18,6 +18,7 @@ using AnimPart1.UC_AncillaryAnima.ScrewRotation;
 using System.Reflection.Metadata;
 using System.Windows.Media.Animation;
 using AnimPart1.UC_AncillaryAnima.PrimiLabel;
+using AnimPart1.UC_AncillaryAnima.HBYRotation;
 
 namespace AnimPart1.UC_PrimiAnima.UC_Pump
 {
@@ -31,13 +32,18 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
         public UC_PrimiLabel labelUserCtrl2;
 
         public UC_Label labelUserCtrl;
-
+        private bool isCameraOn;
 
         UC_ScrewRotation uC_ScrewRotation;
 
         public string labelName = "PMP-XXX";
         public bool isLightOn;
         public bool isAnimationOngoing;
+
+        public static readonly RoutedUICommand PumpLighCommand = new RoutedUICommand("", "PumpLighCommand", typeof(UC_Pump));
+        public static readonly RoutedUICommand PumpCameraCommand = new RoutedUICommand("", "PumpCameraCommand", typeof(UC_Pump));
+        //public static readonly RoutedUICommand HBYOpenValveCommand = new RoutedUICommand("", "HBYOpenValveCommand", typeof(UC_Pump));
+        public static readonly RoutedUICommand PumpStartAimationCameraCommand = new RoutedUICommand("", "PumpStartAimationCameraCommand", typeof(UC_Pump));
 
         public UC_Pump()
         {
@@ -64,13 +70,68 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Pump/Images/pumpMarqueesvg.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Pump/Images/pumpFixedSection.svg");
+
+            CommandBindings.Add(new CommandBinding(PumpCameraCommand, Option1_Click));
+            CommandBindings.Add(new CommandBinding(PumpCameraCommand, Option2_Click));
+            //CommandBindings.Add(new CommandBinding(HBYOpenValveCommand, Option3_Click));
+            CommandBindings.Add(new CommandBinding(PumpStartAimationCameraCommand, Option4_Click));
+
         }
 
-      
+
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isCameraOn)
+            {
+                MainWindow.blinkTimer4.Start();
+            }
+            else
+            {
+                MainWindow.blinkTimer4.Stop();
+                cameraUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg");
+
+            }
+
+            isCameraOn = !isCameraOn;
+        }
+
+
+        private void Option3_Click(object sender, RoutedEventArgs e)
+        {
+
+            //if (!IsValveOpen)
+            //{
+
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
+            //}
+            //else
+            //{
+            //    svgViewboxValve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
+            //}
+
+            //IsValveOpen = !IsValveOpen;
+
+        }
+
+
+        private void Option4_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!isAnimationOngoing)
+            {
+                StartSpinning();
+            }
+            else
+            {
+                StopSpinning();
+            }
+        }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
+            this.Focus();
         }
 
 
@@ -88,16 +149,42 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
             {
                 if (item.Name == "menuItem1")
                 {
-                    item.Header = "Updated Option 1"; // Update header text
 
                     if (isLightOn)
                     {
-                        item.Header = "Light Off"; // Update header text
+                        item.Header = "Light Off";
                     }
                     else
                     {
-                        item.Header = "Light on"; // Update header text
+                        item.Header = "Light on";
                     }
+                }
+                else if (item.Name == "menuItem2")
+                {
+                    if (isCameraOn)
+                    {
+
+                        item.Header = "Camera Off";
+
+                    }
+                    else
+                    {
+                        item.Header = "Camera On";
+                    }
+                }
+                else if (item.Name == "menuItem4")
+                {
+                    if (isAnimationOngoing)
+                    {
+
+                        item.Header = "Stop Spinning";
+
+                    }
+                    else
+                    {
+                        item.Header = "Start Spinning";
+                    }
+
                 }
 
             }

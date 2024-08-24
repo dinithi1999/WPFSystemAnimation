@@ -26,22 +26,40 @@ namespace AnimPart1.UC_AncillaryAnima.SlicerBallsAnimation
             var orangeBallsDroppingOutOfSlicerAnimation = (Storyboard)this.Resources["OrangeBallsDroppingOutOfSlicerAnimation"];
             var secondOrangeBallFallingAnimation = (Storyboard)this.Resources["SecondOrangeBallFallingAnimation"];
 
-            // Set up the Completed events for the storyboards
-            //redBall1FallingAnimation.Completed += (s, e) =>
-            //{
-            //    // Begin the second animation after the first one completes
-            //    firsrOrangeBallFallingAnimation.Begin();
-            //    secondOrangeBallFallingAnimation.Begin();
+            //Set up the Completed events for the storyboards
 
-            //};
+           redBall1FallingAnimation.Completed += (s, e) =>
+           {
+               // Begin the second animation after the first one completes
+               firsrOrangeBallFallingAnimation.Begin();
+               secondOrangeBallFallingAnimation.Begin();
+
+           };
+
+            firsrOrangeBallFallingAnimation.Completed += (s, e) =>
+            {
+                // Begin the second animation after the first one completes
+                //firsrOrangeBallFallingAnimation.Begin();
+                //secondOrangeBallFallingAnimation.Begin();
+                orangeBallsDroppingOutOfSlicerAnimation.Begin();
+
+
+            };
+
+            orangeBallsDroppingOutOfSlicerAnimation.Completed += (s, e) =>
+            {
+                redBall1FallingAnimation.Begin();
+                redBall2FallingAnimation.Begin();
+                //orangeBallsDroppingOutOfSlicerAnimation.Begin();
+            };
 
             // Start the first animation
             redBall1FallingAnimation.Begin();
             redBall2FallingAnimation.Begin();
-            orangeBallsDroppingOutOfSlicerAnimation.Begin();
+            //orangeBallsDroppingOutOfSlicerAnimation.Begin();
 
-            firsrOrangeBallFallingAnimation.Begin();
-            secondOrangeBallFallingAnimation.Begin();
+            //firsrOrangeBallFallingAnimation.Begin();
+            //secondOrangeBallFallingAnimation.Begin();
 
 
         }

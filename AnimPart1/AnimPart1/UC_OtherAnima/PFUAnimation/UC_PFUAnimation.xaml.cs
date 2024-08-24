@@ -160,7 +160,6 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
             {
                 if (item.Name == "menuItem1")
                 {
-
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
@@ -174,9 +173,7 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
                 {
                     if (isCameraOn)
                     {
-
                         item.Header = "Camera Off";
-
                     }
                     else
                     {
@@ -185,11 +182,10 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
                 }
                 else if (item.Name == "menuItem3")
                 {
+
                     if (IsValveOpen)
                     {
-
                         item.Header = "Close Valve";
-
                     }
                     else
                     {
@@ -201,9 +197,7 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
                 {
                     if (isAnimationOngoing)
                     {
-
                         item.Header = "Stop Stirring";
-
                     }
                     else
                     {

@@ -138,7 +138,6 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
             {
                 if (item.Name == "menuItem1")
                 {
-
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
@@ -152,7 +151,6 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
                 {
                     if (isCameraOn)
                     {
-
                         item.Header = "Camera Off";
                     }
                     else
@@ -170,7 +168,6 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
                     {
                         item.Header = "Start Spinning";
                     }
-
                 }
 
             }

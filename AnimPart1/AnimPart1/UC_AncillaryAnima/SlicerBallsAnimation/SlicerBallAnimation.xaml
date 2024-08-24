@@ -19,7 +19,6 @@
                 Storyboard.TargetProperty="Y"
                 From="0"
                 To="105" 
-                RepeatBehavior="Forever"
                 Duration="0:0:2">
             </DoubleAnimation>
         </Storyboard>
@@ -31,7 +30,6 @@
                 Storyboard.TargetProperty="Y"
                 From="0"
                 To="135" 
-                RepeatBehavior="Forever"
                 Duration="0:0:2">
                 <DoubleAnimation.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn"/>
@@ -46,7 +44,6 @@
                 Storyboard.TargetProperty="Y"
                 From="0"
                 To="105"
-                RepeatBehavior="Forever"
                 Duration="0:0:2">
                 <DoubleAnimation.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn"/>
@@ -60,7 +57,6 @@
             Storyboard.TargetProperty="Y"
             From="0"
             To="50" 
-            RepeatBehavior= "Forever"
             Duration="0:0:2">
             </DoubleAnimation>
         </Storyboard>
@@ -72,7 +68,6 @@
             Storyboard.TargetProperty="Y"
             From="0"
             To="125" 
-                RepeatBehavior="Forever"
             Duration="0:0:2">
                
             </DoubleAnimation>

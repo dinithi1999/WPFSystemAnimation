@@ -1078,7 +1078,7 @@ namespace AnimPart1
         private void SLCStartChecked_Checked(object sender, RoutedEventArgs e)
         {
 
-
+            slicerUCInstance.isAnimationOngoing = true;
             slicerUCInstance.slicerAnime.StartAnimations();
 
         }
@@ -1086,6 +1086,7 @@ namespace AnimPart1
         private void SLCStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
             slicerUCInstance.slicerAnime.StopAnimations();
+            slicerUCInstance.isAnimationOngoing = false;
 
         }
 
