@@ -5,21 +5,17 @@ using AnimPart1.UC_PrimiAnima;
 using AnimPart1.UC_PrimiAnima.UC_Screw;
 using AnimPart1.UC_PrimiAnima.UC_Slicer;
 using AnimPart1.UC_PrimiAnima.UC_Pump;
-
 using System.Windows;
-using System.Windows.Controls.Primitives;
-using System.Windows.Media;
 using System.Windows.Threading;
 using System.Windows.Controls;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
-using AnimPart1.UC_AncillaryAnima.FPPAnimation;
 using AnimPart1.UC_AncillaryAnima.FPUAnimation;
 using AnimPart1.UC_AncillaryAnima.HBYRotation;
 using AnimPart1.UC_OtherAnima.LOCAnimation;
 using AnimPart1.UC_OtherAnima.PFUAnimation;
 using AnimPart1.UC_AncillaryAnima.DownArrow;
-using AnimPart1.UC_OtherAnima.LOCAnimation;
+using AnimPart1.UC_OtherAnima.FPPAnimation;
 
 namespace AnimPart1
 {
@@ -131,11 +127,12 @@ namespace AnimPart1
                 LOCcolumn2ContentControl.Content = locUCIinstance;
 
 
-                //pfuUCIinstance = new UC_PFUAnimation();
-                //PFUcolumn1ContentControl.Content = pfuUCIinstance;
-
                 fpuUCIinstance = new UC_FPUAnimation();
                 FPUcolumn1ContentControl.Content = fpuUCIinstance;
+
+
+                fppUCIinstance = new UC_FPPAnimation();
+                FPPcolumn1ContentControl.Content = fppUCIinstance;
 
                 arrowUCIinstance = new UC_DownArrow();
                 HBYTopRightContentControl.Content= arrowUCIinstance;
@@ -1442,11 +1439,7 @@ namespace AnimPart1
             SetFPUSpeed();
 
         }
-        private void FPPSpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            SetFPPSpeed();
-
-        }
+      
 
         private void SpeedTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -1684,31 +1677,7 @@ namespace AnimPart1
             }
         }
 
-        private void SetFPPSpeed()
-        {
-
-            if (int.TryParse(fppSpeedTextBox.Text, out int value))
-            {
-                if (value < 0)
-                {
-                    fppSpeedTextBox.Text = "0";
-                }
-                else if (value > 100)
-                {
-                    fppSpeedTextBox.Text = "100";
-                }
-
-                fppSpeedTextBox.SelectionStart = fppSpeedTextBox.Text.Length;
-            }
-
-            if (int.TryParse(fppSpeedTextBox.Text, out int percentage))
-            {
-                if (fppSpeedTextBox != null)
-                {
-                    //fppUCIinstance.SetRotationSpeed(percentage);
-                }
-            }
-        }
+      
 
         #endregion
 

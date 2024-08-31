@@ -883,7 +883,6 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <!-- First ToggleButton with Label -->
                         <Grid Grid.Row="0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -893,7 +892,6 @@
                             <ToggleButton x:Name="fppLabelVisibilityToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="FPPLabelVisibility_Checked" Unchecked="FPPLabelVisibility_Unchecked"/>
                         </Grid>
 
-                        <!-- Second ToggleButton with Label -->
                         <Grid Grid.Row="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -903,7 +901,6 @@
                             <ToggleButton x:Name="fppLightOnToggleBtn" Content="" Margin="5" Width="50" Height="30" Grid.Column="1" Checked="FPPLights_Checked" Unchecked="FPPLight_Unchecked"/>
                         </Grid>
 
-                        <!-- Third ToggleButton with Label -->
                         <Grid Grid.Row="2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -919,9 +916,11 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
+                            <ToggleButton x:Name="fppStartToggleBtn" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1" Checked="FPPCamera_Checked" Unchecked="FPPCamera_Unchecked"/>
+
                         </Grid>
 
-                        <Grid Grid.Row="4">
+                        <!--<Grid Grid.Row="4">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
@@ -944,12 +943,11 @@
                                     <ColumnDefinition Width="Auto" MinWidth="43.047"/>
                                     <ColumnDefinition Width="Auto" MinWidth="18"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Speed" VerticalAlignment="Center" Margin="5,0,5,0" Grid.Column="0" Height="16"/>
+                                
 
                                 <TextBox x:Name="fppSpeedTextBox"
                           Width="30"
                           PreviewTextInput="TextBox_PreviewTextInput"
-                          TextChanged="FPPSpeedTextBox_TextChanged"
                           HorizontalAlignment="Left"
                           Text="50"
                           VerticalAlignment="Center"
@@ -960,7 +958,7 @@
                        VerticalAlignment="Center"
                        Margin="2,0,20,0"
                        Grid.Column="1" Height="16"/>
-                        </Grid>
+                        </Grid>-->
                     </Grid>
                 </GroupBox>
 

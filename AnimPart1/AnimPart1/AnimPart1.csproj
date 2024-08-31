@@ -185,6 +185,11 @@
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\90.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\99.svg" />
     <None Remove="UC_DepenAnima\UC_TNK\Images\TankLevelsLightOn\empty.svg" />
+    <None Remove="UC_OtherAnima\FPPAnimation\Images\collector.svg" />
+    <None Remove="UC_OtherAnima\FPPAnimation\Images\exit.svg" />
+    <None Remove="UC_OtherAnima\FPPAnimation\Images\marquee.svg" />
+    <None Remove="UC_OtherAnima\FPPAnimation\Images\path.svg" />
+    <None Remove="UC_OtherAnima\FPPAnimation\Images\path_doorCombined.svg" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\background.svg" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\backgroundWithoutArrows.svg" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\blueLiquid.svg" />
@@ -248,6 +253,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_AncillaryAnima\DownArrow\Images\downArrow.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="UC_OtherAnima\FPPAnimation\Images\exit.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="UC_OtherAnima\FPPAnimation\Images\marquee.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="UC_OtherAnima\FPPAnimation\Images\path.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="UC_OtherAnima\FPPAnimation\Images\path_doorCombined.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_OtherAnima\FPUAnimation\Images\background.svg">
@@ -433,6 +450,9 @@
     <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOn\99.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="UC_OtherAnima\FPPAnimation\Images\collector.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="UC_OtherAnima\FPUAnimation\Images\obj4.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -445,9 +465,9 @@
     <Resource Include="UC_OtherAnima\LOCAnimation\Images\boarder.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="UC_OtherAnima\LOCAnimation\Images\container.svg">
+    <Resource Include="UC_OtherAnima\LOCAnimation\Images\container.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Resource Include="UC_OtherAnima\LOCAnimation\Images\downArrow.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -692,10 +712,6 @@
     <None Update="UC_DepenAnima\UC_Hopper\Images\TankLevelsLightOn\70.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UC_OtherAnima\FPPAnimation\Images\" />
   </ItemGroup>
 
 </Project>

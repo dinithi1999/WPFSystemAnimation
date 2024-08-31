@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="PostFinal" xmlns="http://www.w3.org/2000/svg" width="253" height="83" viewBox="0 0 253 83">
+  <defs>
+    <style>
+      .c {
+        fill: #0000f9;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Marquee">
+    <polygon class="c" points="253 83 246 83 246 81 251 81 251 76 253 76 253 83"/>
+    <path class="c" d="M235,83h-11v-2h11v2ZM213,83h-11v-2h11v2ZM191,83h-11v-2h11v2ZM169,83h-11v-2h11v2ZM147,83h-11v-2h11v2ZM126,83h-10v-2h10v2ZM105,83h-11v-2h11v2ZM83,83h-11v-2h11v2ZM61,83h-11v-2h11v2ZM39,83h-11v-2h11v2ZM17,83h-4v-2h4v2Z"/>
+    <polygon class="c" points="7 83 0 83 0 76 2 76 2 81 7 81 7 83"/>
+    <path class="c" d="M2,62H0v-14h2v14ZM2,34H0v-14h2v14Z"/>
+    <polygon class="c" points="2 7 0 7 0 0 7 0 7 2 2 2 2 7"/>
+    <path class="c" d="M240,2h-4V0h4v2ZM225,2h-11V0h11v2ZM203,2h-11V0h11v2ZM181,2h-11V0h11v2ZM159,2h-11V0h11v2ZM137,2h-11V0h11v2ZM117,2h-11V0h11v2ZM95,2h-11V0h11v2ZM73,2h-11V0h11v2ZM51,2h-11V0h11v2ZM29,2h-11V0h11v2Z"/>
+    <polygon class="c" points="253 7 251 7 251 2 246 2 246 0 253 0 253 7"/>
+    <path class="c" d="M253,63h-2v-14h2v14ZM253,35h-2v-14h2v14Z"/>
+  </g>
+</svg>
