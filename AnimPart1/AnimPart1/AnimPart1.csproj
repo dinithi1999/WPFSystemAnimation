@@ -25,6 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\Camera.svg" />
+    <None Remove="Images\lightOn.png" />
+    <None Remove="Images\lightOn.svg" />
+    <None Remove="Images\Remove.png" />
+    <None Remove="Images\Remove.svg" />
+    <None Remove="Images\Start.png" />
+    <None Remove="Images\Start.svg" />
+    <None Remove="Images\Stop.png" />
+    <None Remove="Images\Stop.svg" />
     <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOff.svg" />
     <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOn.png" />
     <None Remove="UC_AncillaryAnima\Camera\Images\CameraFlashOn.svg" />
@@ -201,6 +210,7 @@
     <None Remove="UC_OtherAnima\FPUAnimation\Images\obj3.svg" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\obj4.svg" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\pin-24.png" />
+    <None Remove="UC_OtherAnima\FPUAnimation\Images\Remove.png" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\RemovingMaterials.svg" />
     <None Remove="UC_OtherAnima\FPUAnimation\Images\stirrer.svg" />
     <None Remove="UC_OtherAnima\HBYRotation\Images\HalbayRotationalSection.svg" />
@@ -246,6 +256,30 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\Remove.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\Camera.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\lightOn.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Remove.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Start.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Start.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Stop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Stop.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="UC_AncillaryAnima\DownArrow\Images\down1Arrow.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -253,6 +287,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_AncillaryAnima\DownArrow\Images\downArrow.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\lightOn.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Content Include="UC_OtherAnima\FPPAnimation\Images\exit.svg">
@@ -296,6 +333,9 @@
     </Resource>
     <Resource Include="UC_OtherAnima\FPUAnimation\Images\pin-24.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UC_OtherAnima\FPUAnimation\Images\Remove.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="UC_OtherAnima\FPUAnimation\Images\RemovingMaterials.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

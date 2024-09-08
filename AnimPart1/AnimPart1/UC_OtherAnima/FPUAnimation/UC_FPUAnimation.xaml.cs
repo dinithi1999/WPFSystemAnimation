@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using SharpVectors.Renderers.Wpf;
 
 namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
 {
@@ -34,6 +35,7 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
         Storyboard obj2;
         Storyboard obj3;
         Storyboard obj4;
+        Storyboard objectsFallingFromSpout;
 
         DoubleAnimation angleAnimation;
         DoubleAnimation angleAnimation2;
@@ -75,18 +77,34 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             obj3 = (Storyboard)this.FindResource("Obj3StirringStoryBoard");
             obj4 = (Storyboard)this.FindResource("Obj4StirringStoryBoard");
 
-            obj1.Completed += Storyboard_Completed;
+            objectsFallingFromSpout = (Storyboard)this.FindResource("ObjFallingAnimation");
+
+            objectsFallingFromSpout.Completed += Storyboard_Completed;
 
             CommandBindings.Add(new CommandBinding(FPULighCommand, Option1_Click));
             CommandBindings.Add(new CommandBinding(FPUCameraCommand, Option2_Click));
             CommandBindings.Add(new CommandBinding(FPUEmtpyMaterialCommand, Option3_Click));
             CommandBindings.Add(new CommandBinding(FPUStartAimationCameraCommand, Option4_Click));
 
+            svgViewboxoBjx1.Visibility = Visibility.Collapsed;
+            svgViewboxoBjx2.Visibility = Visibility.Collapsed;
+            svgViewboxoBjx3.Visibility = Visibility.Collapsed;
+            svgViewboxoBjx4.Visibility = Visibility.Collapsed;
+
         }
 
-      
-     
-       
+        private void Storyboard_Completed(object? sender, EventArgs e)
+        {
+            //objectsFallingFromSpout completed event
+
+            svgViewbox.Source = new Uri("pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/Empty.svg");
+            BackgroundGrid2RotateTransform.Angle = 0;
+            svgViewboxoBjx1.Visibility = Visibility.Collapsed;
+            svgViewboxoBjx2.Visibility = Visibility.Collapsed;
+            svgViewboxoBjx3.Visibility = Visibility.Collapsed;
+            svgViewboxoBjx4.Visibility = Visibility.Collapsed;
+            rotateStirrer.Stop();
+        }
 
         public void StartStirrerRotation()
         {
@@ -168,7 +186,6 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             backgroundSvg.Visibility = Visibility.Collapsed;
         }
 
-
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             var contextMenu = (ContextMenu)this.Resources["ContextMenu1"];
@@ -177,52 +194,59 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             {
                 if (item.Name == "menuItem1")
                 {
-
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
                     }
                     else
                     {
-                        item.Header = "Light on";
-                    }
-                } else if (item.Name == "menuItem2")
-                {
-                    if (isCmeraOn) {
+                        item.Header = "Light On";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
 
+                    }
+                }
+                else if (item.Name == "menuItem2")
+                {
+                    if (isCmeraOn)
+                    {
                         item.Header = "Camera Off";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
 
                     }
                     else
                     {
                         item.Header = "Camera On";
-                    }
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
 
+                    }
                 }
                 else if (item.Name == "menuItem4")
                 {
                     if (isAnimationOngoing)
                     {
-
                         item.Header = "Stop Stirring";
+                        item.Icon = "pack://application:,,,/Images/Stop.svg";
 
                     }
                     else
                     {
                         item.Header = "Start Stirring";
-                    }
+                        item.Icon = "pack://application:,,,/Images/Start.svg";
 
+                    }
                 }
                 else if (item.Name == "menuItem3")
                 {
-
                     item.Header = "Empty Materials";
+                    item.Icon = "pack://application:,,,/Images/Remove.svg";
 
                 }
-
-                contextMenu.IsOpen = true;
             }
+
+            contextMenu.IsOpen = true;
         }
+
 
         private void Option1_Click(object sender, RoutedEventArgs e)
         {
@@ -308,7 +332,7 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
                 uC_ScrewRotation.SetRotationSpeed(percentage);
             }
         }
-       
+
         public void EmptyMaterial()
         {
             // Stop any ongoing animations
@@ -317,51 +341,9 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             obj3.Stop();
             obj4.Stop();
             rotateStirrer.Stop();
-          
-            // Make sure the SVG elements are visible
-            svgViewboxoBj1.Visibility = Visibility.Visible;
-            svgViewboxoBj2.Visibility = Visibility.Visible;
-            svgViewboxoBj3.Visibility = Visibility.Visible;
-            svgViewboxoBj4.Visibility = Visibility.Visible;
 
-            // Set the initial state
-            BackgroundGrid2RotateTransform.Angle = -60;
-            svgViewbox.Source = new Uri("pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/RemovingMaterials.svg");
 
-            // Modify the animations to run only once
-            angleAnimation = (DoubleAnimation)obj1.Children[0];
-            angleAnimation.From = 360;
-            angleAnimation.To = 280;
-            obj1.RepeatBehavior = new RepeatBehavior(1);  // Run once
-            angleAnimation.AutoReverse = false;
-
-            obj1.Begin();
-
-            // Apply the same to the other Storyboards
-             angleAnimation2 = (DoubleAnimation)obj2.Children[0];
-            angleAnimation2.From = 360;
-            angleAnimation2.To = 250;
-            obj2.RepeatBehavior = new RepeatBehavior(1);  // Run once
-            angleAnimation2.AutoReverse = false;
-
-            obj2.Begin();
-
-             angleAnimation3 = (DoubleAnimation)obj3.Children[0];
-            angleAnimation3.From = 360;
-            angleAnimation3.To = 220;
-            obj3.RepeatBehavior = new RepeatBehavior(1);  // Run once
-            angleAnimation3.AutoReverse = false;
-
-            obj3.Begin();
-
-             angleAnimation4 = (DoubleAnimation)obj4.Children[0];
-            angleAnimation4.From = 360;
-            angleAnimation4.To = 200;
-            obj4.RepeatBehavior = new RepeatBehavior(1);  // Run once
-            angleAnimation4.AutoReverse = false;
-
-            obj4.Begin();
-
+            
             angleAnimation5 = (DoubleAnimation)rotateStirrer.Children[0];
             angleAnimation5.From = 0;
             angleAnimation5.To = 120;
@@ -369,24 +351,42 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             rotateStirrer.RepeatBehavior = new RepeatBehavior(1);  // Run once
             angleAnimation5.AutoReverse = false;
 
+            // Move the code to the desired location
             rotateStirrer.Begin();
-        }
 
 
 
-
-        private void Storyboard_Completed(object sender, EventArgs e)
-        {
-           
-            svgViewbox.Source = new Uri("pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/Empty.svg");
-            BackgroundGrid2RotateTransform.Angle = 0;
+            // Make sure the SVG elements are visible
+            svgViewboxoBjx1.Visibility = Visibility.Visible;
+            svgViewboxoBjx2.Visibility = Visibility.Visible;
+            svgViewboxoBjx3.Visibility = Visibility.Visible;
+            svgViewboxoBjx4.Visibility = Visibility.Visible;
 
             svgViewboxoBj1.Visibility = Visibility.Collapsed;
             svgViewboxoBj2.Visibility = Visibility.Collapsed;
             svgViewboxoBj3.Visibility = Visibility.Collapsed;
             svgViewboxoBj4.Visibility = Visibility.Collapsed;
 
-            rotateStirrer.Stop();
+            // Set the initial state
+            BackgroundGrid2RotateTransform.Angle = -60;
+            svgViewbox.Source = new Uri("pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/RemovingMaterials.svg");
+
+
+            var objectsFallingFromSpout2 = (Storyboard)this.Resources["ObjFallingAnimation2"];
+            var objectsFallingFromSpout3 = (Storyboard)this.Resources["ObjFallingAnimation3"];
+            var objectsFallingFromSpout4 = (Storyboard)this.Resources["ObjFallingAnimation4"];
+
+            objectsFallingFromSpout.Begin();
+            objectsFallingFromSpout2.Begin();
+            objectsFallingFromSpout3.Begin();
+            objectsFallingFromSpout4.Begin();
+
+       
+
         }
+
+
+
+
     }
 }

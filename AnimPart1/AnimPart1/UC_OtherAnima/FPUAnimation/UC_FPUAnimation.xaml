@@ -24,15 +24,23 @@
     
     
     <UserControl.Resources>
-       
+
         <ContextMenu x:Key="ContextMenu1">
-            <MenuItem x:Name="menuItem1" Header="Light On" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
-            <MenuItem x:Name="menuItem2" Header="Camera On" InputGestureText="Shift+C" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
-            <MenuItem x:Name="menuItem3" Header="Empty Matertial" InputGestureText="Shift+E" Click="Option3_Click" Style="{StaticResource CustomMenuItemStyle}"/>
-            <MenuItem x:Name="menuItem4" Header="Start Stirring" InputGestureText="Shift+S" Click="Option4_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem1" Header="dedede On" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}" Icon="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/obj1.svg"/>
+
+            <MenuItem x:Name="menuItem2" Header="Camera On" InputGestureText="Shift+C" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}">
+                
+            </MenuItem>
+            <MenuItem x:Name="menuItem3" Header="Empty Matertial" InputGestureText="Shift+E" Click="Option3_Click" Style="{StaticResource CustomMenuItemStyle}">
+                
+            </MenuItem>
+            <MenuItem x:Name="menuItem4" Header="Start Stirring" InputGestureText="Shift+S" Click="Option4_Click" Style="{StaticResource CustomMenuItemStyle}">
+              
+            </MenuItem>
             <!-- Add other menu items similarly -->
         </ContextMenu>
-        
+
+
         <!-- Stirrer Rotation -->
         <Storyboard x:Key="RotateStirrerStoryboard"  >
             <DoubleAnimation 
@@ -102,6 +110,46 @@
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
         </Storyboard>
+
+        <Storyboard x:Key="ObjFallingAnimation">
+            <DoubleAnimation
+         Storyboard.TargetName="translateTransformRedBall1"
+         Storyboard.TargetProperty="Y"
+         From="0"
+         To="180" 
+         Duration="0:0:2">
+            </DoubleAnimation>
+        </Storyboard>
+        
+        
+        
+        <Storyboard x:Key="ObjFallingAnimation2">
+            <DoubleAnimation
+    Storyboard.TargetName="translateTransformRedBall2"
+    Storyboard.TargetProperty="Y"
+    From="0"
+    To="150" 
+    Duration="0:0:2">
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Key="ObjFallingAnimation3">
+            <DoubleAnimation
+    Storyboard.TargetName="translateTransformRedBall3"
+    Storyboard.TargetProperty="Y"
+    From="0"
+    To="120" 
+    Duration="0:0:2">
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Key="ObjFallingAnimation4">
+            <DoubleAnimation
+    Storyboard.TargetName="translateTransformRedBall4"
+    Storyboard.TargetProperty="Y"
+    From="0"
+    To="120" 
+    Duration="0:0:2">
+            </DoubleAnimation>
+        </Storyboard>
     </UserControl.Resources>
 
 
@@ -123,6 +171,47 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"/>
 
+            <svgc:SvgViewbox x:Name="svgViewboxoBjx1"
+                        Stretch="Uniform"
+                        Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/obj2.svg"
+                        HorizontalAlignment="Left"
+                        Panel.ZIndex="1"
+                        VerticalAlignment="Top" Margin="14,440,0,0" Height="17" Width="16">
+                <svgc:SvgViewbox.RenderTransform>
+                    <TranslateTransform x:Name="translateTransformRedBall1"/>
+                </svgc:SvgViewbox.RenderTransform>
+            </svgc:SvgViewbox>
+            <svgc:SvgViewbox x:Name="svgViewboxoBjx2"
+              Stretch="Uniform"
+              Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/obj3.svg"
+              HorizontalAlignment="Left"
+              Panel.ZIndex="1"
+              VerticalAlignment="Top" Margin="40,380,0,0" Height="26" Width="22">
+                <svgc:SvgViewbox.RenderTransform>
+                    <TranslateTransform x:Name="translateTransformRedBall2"/>
+                </svgc:SvgViewbox.RenderTransform>
+            </svgc:SvgViewbox>
+            <svgc:SvgViewbox x:Name="svgViewboxoBjx3"
+                 Stretch="Uniform"
+                 Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/obj1.svg"
+                 HorizontalAlignment="Left"
+                 Panel.ZIndex="1"
+                 VerticalAlignment="Top" Margin="40,320,0,0" Height="17" Width="16">
+                <svgc:SvgViewbox.RenderTransform>
+                    <TranslateTransform x:Name="translateTransformRedBall3"/>
+                </svgc:SvgViewbox.RenderTransform>
+            </svgc:SvgViewbox>
+            <svgc:SvgViewbox x:Name="svgViewboxoBjx4"
+                  Stretch="Uniform"
+                  Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/obj4.svg"
+                  HorizontalAlignment="Left"
+                  Panel.ZIndex="1"
+                  Height="28" Width="30" 
+                VerticalAlignment="Top" Margin="19,357,0,0" >
+                <svgc:SvgViewbox.RenderTransform>
+                    <TranslateTransform x:Name="translateTransformRedBall4"/>
+                </svgc:SvgViewbox.RenderTransform>
+            </svgc:SvgViewbox>
             <Grid x:Name="BackgroundGrid2"  HorizontalAlignment="Center" VerticalAlignment="Top" >
 
                 <Grid.RenderTransform>
@@ -134,7 +223,6 @@
                 HorizontalAlignment="Center"
                 Panel.ZIndex="0"
                 VerticalAlignment="Bottom" Margin="0,51,0,0" Height="213" />
-
 
                 <svgc:SvgViewbox x:Name="svgViewbox2"
                  Stretch="Uniform"
@@ -200,6 +288,7 @@
                 </svgc:SvgViewbox>
 
 
+              
 
                 <!-- PadleColumn positioned at the center -->
             </Grid>

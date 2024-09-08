@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Slicer" xmlns="http://www.w3.org/2000/svg" width="267.25" height="355.36" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 267.25 355.36">
+  <defs>
+    <style>
+      .e {
+        filter: url(#c);
+      }
+
+      .e, .f, .g {
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+
+      .e, .g {
+        fill: #000;
+      }
+
+      .f {
+        fill: #fff;
+      }
+    </style>
+    <filter id="c" data-name="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="5"/>
+      <feGaussianBlur result="d" stdDeviation="3"/>
+      <feFlood flood-color="#494949" flood-opacity="1"/>
+      <feComposite in2="d" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="b" data-name="Blade">
+    <path class="f" d="M81.19,134.25c42.77,16.05,85.48,32.15,128.03,48.42v11.87c-43.06-15.61-84.96-32.35-128.03-47.95v-12.34Z"/>
+    <path class="g" d="M80.96,122.96c42.78,16.15,85.49,32.36,128.04,48.73v11.95c-43.06-15.71-84.97-32.56-128.04-48.25v-12.42Z"/>
+    <path class="e" d="M80.96,145.42c43.21,15.55,85.12,32.41,128.04,48.25v12.42c-42.63-16.29-85.35-32.5-128.04-48.73v-11.94Z"/>
+  </g>
+</svg>
