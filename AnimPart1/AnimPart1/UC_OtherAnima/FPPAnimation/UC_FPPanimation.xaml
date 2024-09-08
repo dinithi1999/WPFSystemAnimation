@@ -32,22 +32,32 @@
              x:Name="collectorAnimation"
              Storyboard.TargetName="translateTransformCollector"
              Storyboard.TargetProperty="X"
-             From="-600"
-             To="0" 
-             Duration="0:0:1">
+             From="0"
+             To="500" 
+             Duration="0:0:3">
             </DoubleAnimation>
+          
         </Storyboard>
 
-        <Storyboard x:Key="CollectortextboxMovement">
+        <!--<Storyboard x:Key="CollectortextboxMovement">
             <DoubleAnimation
-             x:Name="collectorTEXTAnimation"
-             Storyboard.TargetName="translateTransformCollectortexybox"
-             Storyboard.TargetProperty="X"
-             From="-600"
-             To="0" 
-             Duration="0:0:1">
+                x:Name="collectorTEXTAnimation"
+                Storyboard.TargetName="translateTransformCollectortexybox"
+                Storyboard.TargetProperty="X"
+                From="-600"
+                To="0" 
+                Duration="0:0:1">
             </DoubleAnimation>
-        </Storyboard>
+            <DoubleAnimation
+                x:Name="resetAnimation"
+                Storyboard.TargetName="translateTransformCollectortexybox"
+                Storyboard.TargetProperty="X"
+                To="0"
+                Duration="0:0:0"
+                BeginTime="0:0:1"
+                FillBehavior="Stop">
+            </DoubleAnimation>
+        </Storyboard>-->
     </UserControl.Resources>
 
     <Grid x:Name="MainGrid" Margin="0,0,0,21">
@@ -69,7 +79,7 @@
                           Stretch="Uniform"
                           Width="790"
                           Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\FPPAnimation\Images\path_doorCombined.svg"
-                          Panel.ZIndex="0"
+                          Panel.ZIndex="1"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Top"
                           Margin="16,48,0,0" RenderTransformOrigin="0.465,0.289"/>

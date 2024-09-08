@@ -53,7 +53,7 @@
             Storyboard.TargetName="Obj1RotateTransform"
             Storyboard.TargetProperty="Angle"
             From="360"
-            To="330"
+            To="355"
             Duration="0:0:3.2">
                 <DoubleAnimation.EasingFunction>
                     <SineEase EasingMode="EaseInOut"/>

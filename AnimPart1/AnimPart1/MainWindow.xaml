@@ -916,7 +916,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Start" VerticalAlignment="Center" Margin="5"/>
-                            <ToggleButton x:Name="fppStartToggleBtn" Content="" Margin="24,5,33,5" Width="50" Height="30" Grid.Column="1" Checked="FPPCamera_Checked" Unchecked="FPPCamera_Unchecked"/>
+                            <ToggleButton x:Name="fppStartToggleBtn" Content="" Margin="40,5,33,5" Width="50" Height="30" Grid.Column="1" Checked="FPPStartChecked_Checked" Unchecked="FPPStartChecked_Unchecked"/>
 
                         </Grid>
 

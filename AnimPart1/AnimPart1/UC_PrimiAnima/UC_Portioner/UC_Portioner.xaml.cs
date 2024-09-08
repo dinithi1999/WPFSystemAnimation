@@ -166,9 +166,7 @@ namespace AnimPart1.UC_PrimiAnima
                 {
                     if (isCameraOn)
                     {
-
                         item.Header = "Camera Off";
-
                     }
                     else
                     {

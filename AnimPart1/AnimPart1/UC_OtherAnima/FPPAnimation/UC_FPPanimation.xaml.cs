@@ -71,11 +71,11 @@ namespace AnimPart1.UC_OtherAnima.FPPAnimation
 
             if (!isCameraOn)
             {
-                MainWindow.blinkTimer8.Start();
+                MainWindow.blinkTimer12.Start();
             }
             else
             {
-                MainWindow.blinkTimer8.Stop();
+                MainWindow.blinkTimer12.Stop();
                 cameraUserCtrl.svgViewbox.Source = new Uri("pack://application:,,,/UC_AncillaryAnima/Camera/Images/CameraFlashOff.svg");
 
             }
@@ -107,7 +107,6 @@ namespace AnimPart1.UC_OtherAnima.FPPAnimation
 
             if (!isAnimationOngoing)
             {
-
                 StartAnimation();
             }
             else
@@ -152,9 +151,6 @@ namespace AnimPart1.UC_OtherAnima.FPPAnimation
         {
             collectorMovement = (Storyboard)this.Resources["CollectorMovement"];
             collectorAnimation = (DoubleAnimation)collectorMovement.Children[0];
-
-           
-
             svgViewbox2.Visibility = Visibility.Visible;
 
             //MainWindow.arrowUpDownHBY.Visibility = Visibility.Hidden;
@@ -166,8 +162,8 @@ namespace AnimPart1.UC_OtherAnima.FPPAnimation
 
             if (collectorMovement != null && collectorAnimation != null)
             {
-                collectorAnimation.From = translateTransformCollector.X;
-                collectorAnimation.To = destinationXPos;
+                //collectorAnimation.From = translateTransformCollector.X;
+                //collectorAnimation.To = destinationXPos;
               
                 collectorMovement.Completed += CollectorMovement_Completed;
 
@@ -181,7 +177,9 @@ namespace AnimPart1.UC_OtherAnima.FPPAnimation
         public void StopAnimation()
         {
             isAnimationOngoing = false;
-
+            svgViewbox2.Visibility = Visibility.Visible;
+            svgViewbox2.HorizontalAlignment = HorizontalAlignment.Left;
+            collectorMovement.Stop();
         }
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -271,6 +269,7 @@ namespace AnimPart1.UC_OtherAnima.FPPAnimation
             //    //MainWindow.ChangeVisibilityOfPortionerArrow(true);
             //}
             svgViewbox2.Visibility = Visibility.Hidden;
+
         }
     }
 }

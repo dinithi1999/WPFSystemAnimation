@@ -331,7 +331,7 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
             // Modify the animations to run only once
             angleAnimation = (DoubleAnimation)obj1.Children[0];
             angleAnimation.From = 360;
-            angleAnimation.To = 220;
+            angleAnimation.To = 280;
             obj1.RepeatBehavior = new RepeatBehavior(1);  // Run once
             angleAnimation.AutoReverse = false;
 
@@ -348,7 +348,7 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
 
              angleAnimation3 = (DoubleAnimation)obj3.Children[0];
             angleAnimation3.From = 360;
-            angleAnimation3.To = 250;
+            angleAnimation3.To = 220;
             obj3.RepeatBehavior = new RepeatBehavior(1);  // Run once
             angleAnimation3.AutoReverse = false;
 
@@ -356,7 +356,7 @@ namespace AnimPart1.UC_AncillaryAnima.FPUAnimation
 
              angleAnimation4 = (DoubleAnimation)obj4.Children[0];
             angleAnimation4.From = 360;
-            angleAnimation4.To = 250;
+            angleAnimation4.To = 200;
             obj4.RepeatBehavior = new RepeatBehavior(1);  // Run once
             angleAnimation4.AutoReverse = false;
 

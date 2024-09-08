@@ -1165,10 +1165,15 @@ namespace AnimPart1
 
         private void FPPStartChecked_Checked(object sender, RoutedEventArgs e)
         {
+            fppUCIinstance.isAnimationOngoing = true;
+            fppUCIinstance.StartAnimation();
+
         }
 
         private void FPPStartChecked_Unchecked(object sender, RoutedEventArgs e)
         {
+            fppUCIinstance.isAnimationOngoing = true;
+            fppUCIinstance.StopAnimation();
         }
         #endregion
 
