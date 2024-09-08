@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="270" height="647" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 270 647">
+  <defs>
+    <style>
+      .d {
+        fill: #ffff3c;
+        filter: url(#b);
+        stroke-width: 0px;
+      }
+
+      .e {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+    </style>
+    <filter id="b" data-name="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3"/>
+      <feGaussianBlur result="c" stdDeviation="3"/>
+      <feFlood flood-color="#000" flood-opacity=".4"/>
+      <feComposite in2="c" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g>
+    <line class="e" x1="2" x2="2" y2="570"/>
+    <line class="e" x1="2" y1="568" x2="181" y2="568"/>
+    <line class="e" x1="179" y1="568" x2="179" y2="624"/>
+  </g>
+  <polygon class="d" points="185.29 624 179.22 634.51 173.16 624 185.29 624"/>
+</svg>

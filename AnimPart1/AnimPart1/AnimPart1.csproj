@@ -228,6 +228,12 @@
     <None Remove="UC_OtherAnima\PFUAnimation\Images\StartOnlyRotation.svg" />
     <None Remove="UC_OtherAnima\PFUAnimation\Images\valveClosed.svg" />
     <None Remove="UC_OtherAnima\PFUAnimation\Images\valveOpened.svg" />
+    <None Remove="UC_OtherAnima\Pipes\Images\bluePipe.svg" />
+    <None Remove="UC_OtherAnima\Pipes\Images\bluePulse.svg" />
+    <None Remove="UC_OtherAnima\Pipes\Images\mainPipe.svg" />
+    <None Remove="UC_OtherAnima\Pipes\Images\valve.svg" />
+    <None Remove="UC_OtherAnima\Pipes\Images\yellowPipe.svg" />
+    <None Remove="UC_OtherAnima\Pipes\Images\yellowPulse.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner0.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\portioner180.svg" />
@@ -257,6 +263,9 @@
 
   <ItemGroup>
     <Content Include="Images\Remove.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_OtherAnima\Pipes\Images\mainPipe.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Images\Camera.svg">
@@ -373,6 +382,21 @@
     <Resource Include="UC_OtherAnima\PFUAnimation\Images\valveOpened.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Content Include="UC_OtherAnima\Pipes\Images\yellowPulse.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_OtherAnima\Pipes\Images\bluePipe.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_OtherAnima\Pipes\Images\bluePulse.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_OtherAnima\Pipes\Images\valve.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UC_OtherAnima\Pipes\Images\yellowPipe.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

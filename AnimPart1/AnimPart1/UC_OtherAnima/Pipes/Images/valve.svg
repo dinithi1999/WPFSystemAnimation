@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="159.93" height="141" viewBox="0 0 159.93 141">
+  <defs>
+    <style>
+      .c {
+        fill: #da0000;
+      }
+
+      .c, .d, .e {
+        stroke-width: 0px;
+      }
+
+      .d {
+        fill: #979797;
+      }
+
+      .e {
+        fill: #e4e4e4;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Valve Close">
+    <g>
+      <circle class="e" cx="37" cy="105" r="7.71"/>
+      <path class="d" d="M37,113c-4.41,0-8-3.59-8-8s3.59-8,8-8,8,3.59,8,8-3.59,8-8,8ZM37,97.58c-4.09,0-7.42,3.33-7.42,7.42s3.33,7.42,7.42,7.42,7.42-3.33,7.42-7.42-3.33-7.42-7.42-7.42Z"/>
+    </g>
+    <path class="c" d="M41.38,106.22c.65,0,1.19-.52,1.19-1.18s-.53-1.02-1.19-1.02c-.03,0-.07.17-.1.17h-10.35v2h10.35s.07.03.1.03Z"/>
+  </g>
+</svg>

@@ -52,6 +52,9 @@
     <Compile Update="UC_OtherAnima\PFUAnimation\UC_PFUAnimation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC_OtherAnima\Pipes\UserControlPipes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC_PrimiAnima\UC_Portioner\UC_Portioner.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -118,6 +121,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_OtherAnima\PFUAnimation\UC_PFUAnimation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC_OtherAnima\Pipes\UserControlPipes.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC_PrimiAnima\UC_Portioner\UC_Portioner.xaml">

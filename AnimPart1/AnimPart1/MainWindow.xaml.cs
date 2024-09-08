@@ -16,6 +16,7 @@ using AnimPart1.UC_OtherAnima.LOCAnimation;
 using AnimPart1.UC_OtherAnima.PFUAnimation;
 using AnimPart1.UC_AncillaryAnima.DownArrow;
 using AnimPart1.UC_OtherAnima.FPPAnimation;
+using AnimPart1.UC_OtherAnima.Pipes;
 
 namespace AnimPart1
 {
@@ -38,6 +39,10 @@ namespace AnimPart1
         UC_PFUAnimation pfuUCIinstance;
         UC_FPUAnimation fpuUCIinstance;
         UC_FPPAnimation fppUCIinstance;
+
+        UserControlPipes useControlVerticalPipes;
+        UserControlBluePipes useControlBluePipes;
+
 
         public static  UC_DownArrow arrowUCIinstance;
 
@@ -88,6 +93,13 @@ namespace AnimPart1
          
             try
             {
+
+                useControlVerticalPipes = new UserControlPipes();
+                PipeContentControl.Content = useControlVerticalPipes;
+
+                //useControlBluePipes = new UserControlBluePipes();
+                //BluePipeContentControl.Content = useControlBluePipes;
+
                 hopperUCInstance = new UC_Hopper();
                 hopperContentControl.Content = hopperUCInstance;
 
