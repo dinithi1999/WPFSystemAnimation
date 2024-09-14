@@ -291,44 +291,44 @@ namespace AnimPart1.UC_OtherAnima.LOCAnimation
                         break;
 
                     case "1":
-                        destinationXPos = -60;
+                        destinationXPos = -53;
                         break;
 
                     case "2":
-                        destinationXPos = -120;
+                        destinationXPos = -106;
                         break;
 
                     case "3":
-                        destinationXPos = -180;
+                        destinationXPos = -159;
                         break;
 
                     case "4":
-                        destinationXPos = -240;
+                        destinationXPos = -212;
                         break;
 
                     case "5":
-                        destinationXPos = -300;
+                        destinationXPos = -265;
                         break;
 
                     case "6":
-                        destinationXPos = -365;
+                        destinationXPos = -319;
                         break;
 
                     case "7":
-                        destinationXPos = -425;
+                        destinationXPos = -374;
                         break;
 
                     case "8":
-                        destinationXPos = -485;
+                        destinationXPos = -427;
                         break;
 
                     case "9":
-                        destinationXPos = -545;
+                        destinationXPos = -480;
                         break;
 
                     case "10":
 
-                        destinationXPos = -600;
+                        destinationXPos = -533;
 
                         break;
 
@@ -341,11 +341,11 @@ namespace AnimPart1.UC_OtherAnima.LOCAnimation
 
         private void CollectorMovement_Completed(object sender, EventArgs e)
         {
-            if (destinationXPos == -485)
+            if (destinationXPos == -374)
             {
                 MainWindow.arrowUCIinstance.Visibility = Visibility.Visible;
 
-            }else if (destinationXPos == -600)
+            }else if (destinationXPos == -533)
             {
                 MainWindow.arrowUpDownHBY.Visibility = Visibility.Visible;
 
@@ -353,7 +353,7 @@ namespace AnimPart1.UC_OtherAnima.LOCAnimation
             else if(destinationXPos == -425)
             {
                 //just below slicer
-            }else if(destinationXPos == -60)
+            }else if(destinationXPos == -0)
             {
                 MainWindow.portionerUCInstance.svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Portioner/Images/portioner180.svg");
                 MainWindow.ChangeVisibilityOfPortionerArrow(true);

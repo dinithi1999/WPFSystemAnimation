@@ -21,6 +21,9 @@ namespace AnimPart1.UC_OtherAnima.Pipes
     /// </summary>
     public partial class UserControlPipes : UserControl
     {
+
+        private bool _isFPUValveOpen = true;
+
         public UserControlPipes()
         {
             InitializeComponent();
@@ -35,6 +38,37 @@ namespace AnimPart1.UC_OtherAnima.Pipes
             var piplePulses = (Storyboard)this.Resources["pulse1Animation"];
             piplePulses.Begin();
          
+        }
+
+
+        private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //var contextMenu = (ContextMenu)this.Resources["ContextMenu1"];
+
+            //foreach (MenuItem item in contextMenu.Items)
+            //{
+            //    if (item.Name == "menuItem1")
+            //    {
+
+            //        if (_isFPUValveOpen)
+            //        {
+            //            item.Header = "Close FPU Valve";
+            //        }
+            //        else
+            //        {
+            //            item.Header = "Open FPU Valve";
+            //        }
+            //    }
+
+
+            //}
+
+        }
+
+        private void Option1_Click(object sender, RoutedEventArgs e)
+        {
+
+
         }
     }
 }

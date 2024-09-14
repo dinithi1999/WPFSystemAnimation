@@ -97,8 +97,8 @@ namespace AnimPart1
                 useControlVerticalPipes = new UserControlPipes();
                 PipeContentControl.Content = useControlVerticalPipes;
 
-                //useControlBluePipes = new UserControlBluePipes();
-                //BluePipeContentControl.Content = useControlBluePipes;
+                useControlBluePipes = new UserControlBluePipes();
+                BluePipeContentControl.Content = useControlBluePipes;
 
                 hopperUCInstance = new UC_Hopper();
                 hopperContentControl.Content = hopperUCInstance;

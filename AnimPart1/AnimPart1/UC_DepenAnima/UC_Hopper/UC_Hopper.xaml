@@ -22,7 +22,6 @@
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem x:Name="menuItem1" Header="Light On" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
             <MenuItem x:Name="menuItem2" Header="Camera On" InputGestureText="Shift+C" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
-            <!--<MenuItem x:Name="menuItem3" Header="Open Valve" InputGestureText="Shift+E" Click="Option3_Click" Style="{StaticResource CustomMenuItemStyle}"/>-->
             <MenuItem x:Name="menuItem4" Header="Start Stirring" InputGestureText="Shift+S" Click="Option4_Click" Style="{StaticResource CustomMenuItemStyle}"/>
         </ContextMenu>
     </UserControl.Resources>

@@ -18,12 +18,12 @@
         <KeyBinding Key="S" Modifiers="Shift" Command="{x:Static local:UC_LOC.LOCStartAimationCameraCommand}" />
     </UserControl.InputBindings>
 
-   
-    
+
+
     <UserControl.Resources>
-        
+
         <local:DistanceConverter x:Key="DistanceConverter"/>
-        
+
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem x:Name="menuItem1" Header="Light On" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
             <MenuItem x:Name="menuItem2" Header="Camera On" InputGestureText="Shift+C" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
@@ -37,7 +37,7 @@
                 Storyboard.TargetName="translateTransformCollector"
                 Storyboard.TargetProperty="X"
                 From="0"
-                To="-600" 
+                To="-500" 
                 Duration="0:0:1">
             </DoubleAnimation>
         </Storyboard>
@@ -48,7 +48,7 @@
                 Storyboard.TargetName="translateTransformCollectortexybox"
                 Storyboard.TargetProperty="X"
                 From="0"
-                To="-600" 
+                To="-500" 
                 Duration="0:0:1">
             </DoubleAnimation>
         </Storyboard>
@@ -61,7 +61,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Grid for the backgroundSvg -->
-        <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width="833" Height="268">
+        <Grid x:Name="BackgroundGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width="695" Height="260">
             <svgc:SvgViewbox x:Name="backgroundSvg"
                              Stretch="Fill"
                              Panel.ZIndex="0"
@@ -71,7 +71,7 @@
                              VerticalAlignment="Center"/>
             <svgc:SvgViewbox x:Name="svgViewbox"
                              Stretch="Uniform"
-                             Width="790"
+                             Width="702"
                              Source="pack://application:,,,/UC_OtherAnima/LOCAnimation/Images/backgroundPath.svg"
                              Panel.ZIndex="0"
                              HorizontalAlignment="Center"
@@ -79,11 +79,11 @@
                              Margin="0,166,0,0" RenderTransformOrigin="0.465,0.289"/>
             <svgc:SvgViewbox x:Name="svgViewbox2"
                              Stretch="Uniform"
-                             Width="222"
+                             Width="200"
                              Source="pack://application:,,,/UC_OtherAnima/LOCAnimation/Images/container.svg"
                              Panel.ZIndex="0"
                              HorizontalAlignment="Left"
-                             Margin="602,26,0,42">
+                             Margin="492,46,0,48">
                 <svgc:SvgViewbox.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform x:Name="translateTransformCollector"/>
@@ -114,14 +114,14 @@
 
             <TextBlock x:Name="textBoxContainerDistance"
                        HorizontalAlignment="Left"
-                       Margin="694,174,0,0"
+                       Margin="572,174,0,0"
                        TextWrapping="Wrap"
                        VerticalAlignment="Top"
-                       Height="34"
+                       Height="30"
                        Panel.ZIndex="2"
-                       FontSize="26"
+                       FontSize="22"
                        FontWeight="Bold"
-                       Text="{Binding Path=(TranslateTransform.X), ElementName=translateTransformCollectortexybox, Converter={StaticResource DistanceConverter}}">
+                       Text="{Binding Path=(TranslateTransform.X), ElementName=translateTransformCollectortexybox, Converter={StaticResource DistanceConverter}}" Width="32">
                 <TextBlock.RenderTransform>
                     <TranslateTransform x:Name="translateTransformCollectortexybox"/>
                 </TextBlock.RenderTransform>

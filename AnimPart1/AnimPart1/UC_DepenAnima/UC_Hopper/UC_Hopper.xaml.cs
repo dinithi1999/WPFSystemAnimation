@@ -78,7 +78,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
             CommandBindings.Add(new CommandBinding(HOPLighCommand, Option1_Click));
             CommandBindings.Add(new CommandBinding(HOPCameraCommand, Option2_Click));
             //CommandBindings.Add(new CommandBinding(HBYOpenValveCommand, Option3_Click));
-            CommandBindings.Add(new CommandBinding(HOPCameraCommand, Option4_Click));
+            CommandBindings.Add(new CommandBinding(HOPStartAimationCameraCommand, Option4_Click));
         }
 
         private void Option2_Click(object sender, RoutedEventArgs e)
@@ -282,10 +282,14 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                     else
                     {
                         item.Header = "Light on";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem2")
@@ -294,11 +298,15 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
                     {
 
                         item.Header = "Camera Off";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Camera On";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem4")
@@ -307,11 +315,15 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
                     {
 
                         item.Header = "Stop ";
+                        item.Icon = "pack://application:,,,/Images/Stop.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Start";
+                        item.Icon = "pack://application:,,,/Images/Start.svg";
+
                     }
 
                 }

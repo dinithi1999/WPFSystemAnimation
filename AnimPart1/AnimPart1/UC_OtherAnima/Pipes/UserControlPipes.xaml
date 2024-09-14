@@ -5,9 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AnimPart1.UC_OtherAnima.Pipes"
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             MouseRightButtonDown="UserControl_MouseRightButtonDown" 
              mc:Ignorable="d">
 
     <UserControl.Resources>
+
+        <ContextMenu x:Key="ContextMenu1">
+            <MenuItem x:Name="menuItem1" Header="Close FPU Valve" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+        </ContextMenu>
+        
+        
         <Storyboard x:Key="pulse1Animation">
             <DoubleAnimation
                 Storyboard.TargetName="translatePulse1"
@@ -16,7 +23,7 @@
                 To="60" 
                 RepeatBehavior="Forever"
                 AutoReverse="False"
-                Duration="0:0:2">
+                Duration="0:0:1">
             </DoubleAnimation>
             <DoubleAnimation
                 Storyboard.TargetName="translatePulse2"
@@ -25,16 +32,16 @@
                 To="60" 
                 RepeatBehavior="Forever"
                 AutoReverse="False"
-                Duration="0:0:2">
+                Duration="0:0:1">
             </DoubleAnimation>
             <DoubleAnimation
                 Storyboard.TargetName="translatePulse3"
                 Storyboard.TargetProperty="Y"
                 From="0"
-                To="60" 
+                To="100" 
                 AutoReverse="False"
                 RepeatBehavior="Forever"
-                Duration="0:0:2">
+                Duration="0:0:1">
                        </DoubleAnimation>
                        <DoubleAnimation
                 Storyboard.TargetName="translatePulse4"
@@ -43,7 +50,7 @@
                 To="60" 
                 AutoReverse="False"
                 RepeatBehavior="Forever"
-                Duration="0:0:2">
+                Duration="0:0:1">
                        </DoubleAnimation>
                        <DoubleAnimation
                 Storyboard.TargetName="translatePulse5"
@@ -52,7 +59,7 @@
                 To="60" 
                 AutoReverse="False"
                 RepeatBehavior="Forever"
-                Duration="0:0:2">
+                Duration="0:0:1">
                        </DoubleAnimation>
                        <DoubleAnimation
                 Storyboard.TargetName="translatePulse6"
@@ -61,7 +68,7 @@
                 To="60"
                 AutoReverse="False"
                 RepeatBehavior="Forever"
-                Duration="0:0:2">
+                Duration="0:0:1">
             </DoubleAnimation>
             <DoubleAnimation
                 Storyboard.TargetName="translatePulse7"
@@ -70,7 +77,7 @@
                 To="60" 
                 AutoReverse="False"
                 RepeatBehavior="Forever"
-                Duration="0:0:2"/>
+                Duration="0:0:1"/>
             <DoubleAnimation
                 Storyboard.TargetName="translatePulseX1"
                 Storyboard.TargetProperty="X"
@@ -78,7 +85,7 @@
                 To="30" 
                 AutoReverse ="False"
                 RepeatBehavior="Forever"
-                Duration="0:0:2">
+                Duration="0:0:1">
             </DoubleAnimation>
             <DoubleAnimation
                 Storyboard.TargetName="translatePulseX2"
@@ -87,7 +94,7 @@
                 To="30" 
                 AutoReverse="False"
                 RepeatBehavior="Forever"
-                Duration="0:0:2">
+                Duration="0:0:1">
             </DoubleAnimation>
             <DoubleAnimation
                 Storyboard.TargetName="translatePulseX3"
@@ -96,18 +103,21 @@
                 To="30" 
                AutoReverse="False"
                 RepeatBehavior="Forever"
-                Duration="0:0:2">
+                Duration="0:0:1">
             </DoubleAnimation>
             <DoubleAnimation
                 Storyboard.TargetName="translatePulseY1"
                 Storyboard.TargetProperty="Y"
                 From="0"
-                To="30" 
+                To="100" 
                AutoReverse="False"
                 RepeatBehavior="Forever"
-                Duration="0:0:2">
+                Duration="0:0:1">
                </DoubleAnimation>
         </Storyboard>
+
+    
+        
     </UserControl.Resources>
 
     <Grid x:Name="MainGrid" Margin="0,234,-33,48">
@@ -119,7 +129,7 @@
         <svgc:SvgViewbox x:Name="pipe1"
             Stretch="Uniform"
             HorizontalAlignment="Left"
-            Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\mainPipe.svg"
+            Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\yellowPipe.svg"
             Panel.ZIndex="0"
             VerticalAlignment="Top" Height="2268" Width="500" Margin="12,190,0,0"/>
 
@@ -286,6 +296,10 @@
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
-        
+        <svgc:SvgViewbox x:Name="svgViewBoxUppervalve"
+      Stretch="Uniform"
+      Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\valve.svg"
+      HorizontalAlignment="Left"
+      Panel.ZIndex="1"  Margin="330,1700,0,715" Width="30"/>
     </Grid>
 </UserControl>
