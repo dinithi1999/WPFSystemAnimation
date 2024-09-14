@@ -64,15 +64,7 @@
               Margin="-70,180,0,0"                 
               VerticalAlignment="Center"
               />
-            <!--<svgc:SvgViewbox x:Name="svgViewbox4"
-Stretch="UniformToFill"
-HorizontalAlignment="Left"
-Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\PFUAnimation\Images\BlueCircle.svg"                             
-Width="134"
-Panel.ZIndex="1"
-VerticalAlignment="Top" Height="134" Margin="38,78,0,0" 
-/>-->
-
+      
             <!-- LightColumn positioned at the top-left of TankColumn -->
             <ContentControl x:Name="lightColumn"
                      HorizontalAlignment="Left"

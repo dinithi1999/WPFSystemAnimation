@@ -162,10 +162,14 @@ namespace AnimPart1.UC_PrimiAnima.UC_Slicer
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                     else
                     {
                         item.Header = "Light on";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem2")
@@ -174,11 +178,15 @@ namespace AnimPart1.UC_PrimiAnima.UC_Slicer
                     {
 
                         item.Header = "Camera Off";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Camera On";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem4")
@@ -187,11 +195,15 @@ namespace AnimPart1.UC_PrimiAnima.UC_Slicer
                     {
 
                         item.Header = "Stop";
+                        item.Icon = "pack://application:,,,/Images/Stop.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Start";
+                        item.Icon = "pack://application:,,,/Images/Start.svg";
+
                     }
 
                 }

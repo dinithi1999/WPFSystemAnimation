@@ -194,10 +194,14 @@ namespace AnimPart1.UC_OtherAnima.FPPAnimation
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                     else
                     {
                         item.Header = "Light on";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem2")
@@ -206,11 +210,15 @@ namespace AnimPart1.UC_OtherAnima.FPPAnimation
                     {
 
                         item.Header = "Camera Off";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Camera On";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem3")
@@ -233,11 +241,15 @@ namespace AnimPart1.UC_OtherAnima.FPPAnimation
                     {
 
                         item.Header = "Stop Animation";
+                        item.Icon = "pack://application:,,,/Images/Stop.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Start Animation";
+                        item.Icon = "pack://application:,,,/Images/Start.svg";
+
                     }
 
                 }

@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:AnimPart1.UC_OtherAnima.Pipes" 
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              MouseRightButtonDown="UserControl_MouseRightButtonDown" 
-
              mc:Ignorable="d">
     <UserControl.Resources>
         <Storyboard x:Key="pulse1Animation">
@@ -65,67 +64,65 @@
                 RepeatBehavior="Forever"
                 Duration="0:0:1">
             </DoubleAnimation>
-
         </Storyboard>
 
         <ContextMenu x:Key="ContextMenu1">
-            <MenuItem x:Name="menuItem1" Header="Close FPU Valve" InputGestureText="Shift+L" Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
-            <MenuItem x:Name="menuItem2" Header="Open FPU Valve" InputGestureText="Shift+C" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem1" Header="Close FPU Valve" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
+            <MenuItem x:Name="menuItem2" Header="Open FPU Valve"  Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
         </ContextMenu>
-        
     </UserControl.Resources>
 
-    <Grid x:Name="MainGrid" Margin="0,234,-33,48">
+    <Grid x:Name="MainGrid" Margin="0,234,-33,48" ContextMenu="{StaticResource ContextMenu1}">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <!--Source="pack://application:,,,/UC_OtherAnima/FPUAnimation/Images/ellowPulse.svg"-->
         <svgc:SvgViewbox x:Name="pipe1"
             Stretch="Uniform"
             HorizontalAlignment="Left"
-            Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\bluePipe.svg"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePipe.svg"
             Panel.ZIndex="0"
             VerticalAlignment="Top" Height="1800" Width="343" Margin="12,190,0,0"/>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse1"
-                  Stretch="Uniform"
-                  HorizontalAlignment="Left"
-                  Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\bluePulse.svg"
-                  Panel.ZIndex="1"
-                  VerticalAlignment="Top"   Width="11" Margin="46,205,0,0">
+            Stretch="Uniform"
+            HorizontalAlignment="Left"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
+            Panel.ZIndex="1"
+            VerticalAlignment="Top" Width="11" Margin="46,205,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse1"/>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse2"
-      Stretch="Uniform"
-      HorizontalAlignment="Left"
-      Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\bluePulse.svg"
-      Panel.ZIndex="1"
-      VerticalAlignment="Top"   Width="11" Margin="45,464,0,0">
+            Stretch="Uniform"
+            HorizontalAlignment="Left"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
+            Panel.ZIndex="1"
+            VerticalAlignment="Top" Width="11" Margin="45,464,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse2"/>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse3"
-      Stretch="Uniform"
-      HorizontalAlignment="Left"
-      Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\bluePulse.svg"
-      Panel.ZIndex="1"
-      VerticalAlignment="Top"   Width="11" Margin="46,632,0,0">
+            Stretch="Uniform"
+            HorizontalAlignment="Left"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
+            Panel.ZIndex="1"
+            VerticalAlignment="Top" Width="11" Margin="46,632,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse3"/>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse4"
-      Stretch="Uniform"
-      Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\bluePulse.svg"
-      HorizontalAlignment="Left"
-      Panel.ZIndex="1" Width="11" Margin="46,821,0,1615">
+            Stretch="Uniform"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
+            HorizontalAlignment="Left"
+            Visibility="Collapsed"
+            Panel.ZIndex="1" Width="11" Margin="46,821,0,1615">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -136,12 +133,11 @@
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
-
         <svgc:SvgViewbox x:Name="svgViewboxPulse5"
-Stretch="Uniform"
-Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\bluePulse.svg"
-HorizontalAlignment="Left"
-Panel.ZIndex="1" Width="11" Margin="332,653,0,1783">
+            Stretch="Uniform"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
+            HorizontalAlignment="Left"
+            Panel.ZIndex="1" Width="11" Margin="332,653,0,1783">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -152,12 +148,9 @@ Panel.ZIndex="1" Width="11" Margin="332,653,0,1783">
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
-
-
-
         <svgc:SvgViewbox x:Name="svgViewboxPulseX1"
             Stretch="Uniform"
-            Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\bluePulse.svg"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
             HorizontalAlignment="Left"
             Panel.ZIndex="1" Width="12" Margin="168,604,0,1823">
             <svgc:SvgViewbox.RenderTransform>
@@ -171,19 +164,16 @@ Panel.ZIndex="1" Width="11" Margin="332,653,0,1783">
         </svgc:SvgViewbox>
 
         <svgc:SvgViewbox x:Name="svgViewBoxLowervalve"
-      Stretch="Uniform"
-      Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\valve.svg"
-      HorizontalAlignment="Left"
-      Panel.ZIndex="1"  Margin="35,783,0,1651" Width="30">
-
+            Stretch="Uniform"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/valve.svg"
+            HorizontalAlignment="Left"
+            Panel.ZIndex="1" Margin="35,783,0,1651" Width="30">
         </svgc:SvgViewbox>
+
         <svgc:SvgViewbox x:Name="svgViewBoxUppervalve"
             Stretch="Uniform"
-            Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_OtherAnima\Pipes\Images\valve.svg"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/valve.svg"
             HorizontalAlignment="Left"
-            Panel.ZIndex="1"  Margin="76,590,0,1825" Width="30"/>
-
-
-
+            Panel.ZIndex="1" Margin="76,590,0,1825" Width="30"/>
     </Grid>
 </UserControl>

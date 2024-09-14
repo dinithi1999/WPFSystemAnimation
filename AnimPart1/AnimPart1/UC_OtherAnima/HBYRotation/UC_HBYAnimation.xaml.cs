@@ -142,10 +142,14 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                     else
                     {
                         item.Header = "Light on";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem2")
@@ -154,11 +158,15 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
                     {
 
                         item.Header = "Camera Off";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Camera On";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem4")
@@ -167,11 +175,15 @@ namespace AnimPart1.UC_AncillaryAnima.HBYRotation
                     {
 
                         item.Header = "Stop Stirring";
+                        item.Icon = "pack://application:,,,/Images/Stop.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Start Stirring";
+                        item.Icon = "pack://application:,,,/Images/Start.svg";
+
                     }
 
                 }

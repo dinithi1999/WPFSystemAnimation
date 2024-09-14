@@ -27,10 +27,9 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
         private bool isCameraOn;
         public bool isAnimationOnGoing;
 
-        public static readonly RoutedUICommand ScrewLighCommand = new RoutedUICommand("", "ScrewLighCommand", typeof(UC_Screw));
-        public static readonly RoutedUICommand ScrewCameraCommand = new RoutedUICommand("", "ScrewCameraCommand", typeof(UC_Screw));
-        //public static readonly RoutedUICommand ScrewOpenValveCommand = new RoutedUICommand("", "ScrewOpenValveCommand", typeof(UC_Screw));
-        public static readonly RoutedUICommand ScrewStartAimationCameraCommand = new RoutedUICommand("", "ScrewStartAimationCameraCommand", typeof(UC_Screw));
+        public static readonly RoutedUICommand ScrewLighCommand = new RoutedUICommand("Light", "ScrewLighCommand", typeof(UC_Screw));
+        public static readonly RoutedUICommand ScrewCameraCommand = new RoutedUICommand("Camera", "ScrewCameraCommand", typeof(UC_Screw));
+        public static readonly RoutedUICommand ScrewStartAimationCameraCommand = new RoutedUICommand("Start Animation", "ScrewStartAimationCameraCommand", typeof(UC_Screw));
 
 
         public UC_Screw()
@@ -61,10 +60,9 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
             // Set the Source properties for the SvgViewbox controls
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Screw/Images/screwmarquee.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Screw/Images/screwBackground.svg");
-
+           
             CommandBindings.Add(new CommandBinding(ScrewLighCommand, Option1_Click));
             CommandBindings.Add(new CommandBinding(ScrewCameraCommand, Option2_Click));
-            //CommandBindings.Add(new CommandBinding(ScrewOpenValveCommand, Option3_Click));
             CommandBindings.Add(new CommandBinding(ScrewStartAimationCameraCommand, Option4_Click));
 
         }
@@ -122,6 +120,7 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             backgroundSvg.Visibility = Visibility.Visible;
+            this.Focus();
         }
 
 
@@ -141,10 +140,14 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                     else
                     {
                         item.Header = "Light on";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem2")
@@ -152,10 +155,14 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
                     if (isCameraOn)
                     {
                         item.Header = "Camera Off";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                     else
                     {
                         item.Header = "Camera On";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem4")
@@ -163,10 +170,14 @@ namespace AnimPart1.UC_PrimiAnima.UC_Screw
                     if (isAnimationOnGoing)
                     {
                         item.Header = "Stop Spinning";
+                        item.Icon = "pack://application:,,,/Images/Stop.svg";
+
                     }
                     else
                     {
                         item.Header = "Start Spinning";
+                        item.Icon = "pack://application:,,,/Images/Start.svg";
+
                     }
                 }
 

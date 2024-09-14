@@ -265,9 +265,9 @@
     <Content Include="Images\Remove.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="UC_OtherAnima\Pipes\Images\mainPipe.svg">
+    <Resource Include="UC_OtherAnima\Pipes\Images\mainPipe.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Resource Include="Images\Camera.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -301,15 +301,15 @@
     <Resource Include="Images\lightOn.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="UC_OtherAnima\FPPAnimation\Images\exit.svg">
+    <Resource Include="UC_OtherAnima\FPPAnimation\Images\exit.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Resource Include="UC_OtherAnima\FPPAnimation\Images\marquee.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="UC_OtherAnima\FPPAnimation\Images\path.svg">
+    <Resource Include="UC_OtherAnima\FPPAnimation\Images\path.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Resource Include="UC_OtherAnima\FPPAnimation\Images\path_doorCombined.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -382,21 +382,21 @@
     <Resource Include="UC_OtherAnima\PFUAnimation\Images\valveOpened.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="UC_OtherAnima\Pipes\Images\yellowPulse.svg">
+    <Resource Include="UC_OtherAnima\Pipes\Images\yellowPulse.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="UC_OtherAnima\Pipes\Images\bluePipe.svg">
+    </Resource>
+    <Resource Include="UC_OtherAnima\Pipes\Images\bluePipe.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="UC_OtherAnima\Pipes\Images\bluePulse.svg">
+    </Resource>
+    <Resource Include="UC_OtherAnima\Pipes\Images\bluePulse.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="UC_OtherAnima\Pipes\Images\valve.svg">
+    </Resource>
+    <Resource Include="UC_OtherAnima\Pipes\Images\valve.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="UC_OtherAnima\Pipes\Images\yellowPipe.svg">
+    </Resource>
+    <Resource Include="UC_OtherAnima\Pipes\Images\yellowPipe.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Resource Include="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

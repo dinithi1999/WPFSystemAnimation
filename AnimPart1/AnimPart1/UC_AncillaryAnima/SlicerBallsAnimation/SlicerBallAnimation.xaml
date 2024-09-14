@@ -81,19 +81,19 @@
 
         <!-- Background SVG for the paddle -->
         <svgc:SvgViewbox x:Name="svgViewboxSlicerUpperBackground"
-                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBackGround.svg"
+                Source="pack://application:,,,/UC_AncillaryAnima/SlicerBallsAnimation/Images/slicerBackGround.svg"
                          Stretch="Uniform" Canvas.Left="98" Canvas.Top="26" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
         <!-- Background SVG for the paddle -->
         <svgc:SvgViewbox x:Name="svgViewboxSlicerLowerBackground"
-                      Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBottom.svg"
+                Source="pack://application:,,,/UC_AncillaryAnima/SlicerBallsAnimation/Images/slicerBottom.svg"
                       Stretch="Uniform" Canvas.Left="110" Canvas.Top="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Panel.ZIndex="1"/>
 
 
         <!-- Red Ball SVG with TranslateTransform -->
         <svgc:SvgViewbox x:Name="svgViewboxRedBall1"
                          Visibility="Hidden"
-                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\RedBall.svg"
+                    Source="pack://application:,,,/UC_AncillaryAnima/SlicerBallsAnimation/Images/RedBall.svg"
                          Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="135" Canvas.Top="38" Panel.ZIndex="0">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
@@ -104,7 +104,7 @@
 
         <!-- Orange Ball SVG -->
         <svgc:SvgViewbox x:Name="svgViewboxOrangeBall1"
-                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\orangeBall.svg"
+                    Source="pack://application:,,,/UC_AncillaryAnima/SlicerBallsAnimation/Images/orangeBall.svg"
                          Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="135" Canvas.Top="146">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
@@ -115,7 +115,7 @@
 
 
         <svgc:SvgViewbox x:Name="svgViewboxOrangeBall2"
-                    Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\orangeBall.svg"
+                    Source="pack://application:,,,/UC_AncillaryAnima/SlicerBallsAnimation/Images/orangeBall.svg"
                     Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="180" Canvas.Top="157">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
@@ -125,7 +125,7 @@
         </svgc:SvgViewbox>
 
         <svgc:SvgViewbox x:Name="svgViewboxOrangeBallDropping"
-               Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\orangeBall.svg"
+                        Source="pack://application:,,,/UC_AncillaryAnima/SlicerBallsAnimation/Images/orangeBall.svg"
                Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="170" Canvas.Top="297">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
@@ -138,7 +138,7 @@
         <!-- New Ball 1 SVG -->
         <svgc:SvgViewbox x:Name="svgViewboxRedBall2"
                          Visibility="Hidden"
-                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\RedBall.svg"
+                            Source="pack://application:,,,/UC_AncillaryAnima/SlicerBallsAnimation/Images/RedBall.svg"
                          Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="180" Canvas.Top="60" HorizontalAlignment="Center" VerticalAlignment="Top">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
@@ -151,7 +151,7 @@
 
         <!-- Slicer Blades SVG -->
         <svgc:SvgViewbox x:Name="svgViewboxSliderBaldes"
-                         Source="C:\Users\DinithiAthukoralage\OneDrive - MindOxTechno\Documents\GitHub\WPFSystemAnimation\AnimPart1\AnimPart1\UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBlades.svg"
+                        Source="pack://application:,,,/UC_AncillaryAnima/SlicerBallsAnimation/Images/slicerBlades.svg"
                          Stretch="Uniform" RenderTransformOrigin="-0.783,-0.336" Canvas.Left="121" Canvas.Top="129"/>
     </Canvas>
 </UserControl>

@@ -21,7 +21,7 @@ namespace AnimPart1.UC_OtherAnima.Pipes
     /// </summary>
     public partial class UserControlBluePipes : UserControl
     {
-        private bool _isFPUValveOpen = true;
+        private bool _isFPUValveOpen = false;
         private bool _isPFUValveOpen = true;
 
 
@@ -41,14 +41,42 @@ namespace AnimPart1.UC_OtherAnima.Pipes
 
         private void Option1_Click(object sender, RoutedEventArgs e)
         {
-            //close or open pfu valve
+
+            if (_isPFUValveOpen)
+            {
+
+                svgViewBoxUppervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
+                svgViewboxPulseX1.Visibility = Visibility.Collapsed;
+                svgViewboxPulse5.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                svgViewBoxUppervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
+                svgViewboxPulseX1.Visibility=Visibility.Visible;
+                svgViewboxPulse5.Visibility = Visibility.Visible;
+
+            }
+
+            _isPFUValveOpen = !_isPFUValveOpen;
 
         }
 
         private void Option2_Click(object sender, RoutedEventArgs e)
         {
-            //close or open final unit valve 
 
+            if (!_isFPUValveOpen)
+            {
+
+                svgViewBoxLowervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
+                svgViewboxPulse4.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                svgViewBoxLowervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
+                svgViewboxPulse4.Visibility= Visibility.Collapsed;
+            }
+
+            _isFPUValveOpen = !_isFPUValveOpen;
         }
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -57,6 +85,8 @@ namespace AnimPart1.UC_OtherAnima.Pipes
 
             foreach (MenuItem item in contextMenu.Items)
             {
+                item.Icon = "pack://application:,,,/Images/Remove.svg";
+
                 if (item.Name == "menuItem1")
                 {
 

@@ -14,7 +14,6 @@
     <UserControl.InputBindings>
         <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_Screw.ScrewLighCommand}" />
         <KeyBinding Key="C" Modifiers="Shift" Command="{x:Static local:UC_Screw.ScrewCameraCommand}" />
-        <!--<KeyBinding Key="E" Modifiers="Shift" Command="{x:Static local:UC_HBYAnimation.PFUOpenValveCommand}" />-->
         <KeyBinding Key="S" Modifiers="Shift" Command="{x:Static local:UC_Screw.ScrewStartAimationCameraCommand}" />
     </UserControl.InputBindings>
     

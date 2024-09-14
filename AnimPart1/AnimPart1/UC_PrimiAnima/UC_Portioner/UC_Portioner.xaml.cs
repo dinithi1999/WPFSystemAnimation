@@ -156,10 +156,14 @@ namespace AnimPart1.UC_PrimiAnima
                     if (isLightOn)
                     {
                         item.Header = "Light Off"; // Update header text
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                     else
                     {
                         item.Header = "Light on"; // Update header text
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem2")
@@ -167,10 +171,14 @@ namespace AnimPart1.UC_PrimiAnima
                     if (isCameraOn)
                     {
                         item.Header = "Camera Off";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                     else
                     {
                         item.Header = "Camera On";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem3")
@@ -179,11 +187,15 @@ namespace AnimPart1.UC_PrimiAnima
                     {
 
                         item.Header = "Set Initial Position";
+                        item.Icon = "pack://application:,,,/Images/Remove.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Remove Material";
+                        item.Icon = "pack://application:,,,/Images/Remove.svg";
+
                     }
 
                 }

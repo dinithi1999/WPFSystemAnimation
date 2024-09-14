@@ -12,7 +12,6 @@
     <UserControl.InputBindings>
         <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_Pump.PumpLighCommand}" />
         <KeyBinding Key="C" Modifiers="Shift" Command="{x:Static local:UC_Pump.PumpCameraCommand}" />
-        <!--<KeyBinding Key="E" Modifiers="Shift" Command="{x:Static local:UC_Pump.PFUOpenValveCommand}" />-->
         <KeyBinding Key="S" Modifiers="Shift" Command="{x:Static local:UC_Pump.PumpStartAimationCameraCommand}" />
     </UserControl.InputBindings>
 

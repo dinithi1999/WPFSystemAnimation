@@ -1299,9 +1299,9 @@
 
                                         </Grid.RowDefinitions>
 
-                                        <ContentControl x:Name="HBYTopLeftContentControltopRow"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150,-280,0,0"/>
+                                        <ContentControl x:Name="HBYTopLeftContentControltopRow"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="180,-300,0,0"/>
 
-                                        <ContentControl x:Name="HBYTopLeftContentControl"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,-220,0,0"/>
+                                        <ContentControl x:Name="HBYTopLeftContentControl"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="320,-200,0,0"/>
 
                                         <ContentControl x:Name="HBYTopLeftContentControldownRow"  Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="150,-150,0,0"/>
 

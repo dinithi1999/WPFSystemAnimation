@@ -43,25 +43,28 @@ namespace AnimPart1.UC_OtherAnima.Pipes
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //var contextMenu = (ContextMenu)this.Resources["ContextMenu1"];
-
-            //foreach (MenuItem item in contextMenu.Items)
-            //{
-            //    if (item.Name == "menuItem1")
-            //    {
-
-            //        if (_isFPUValveOpen)
-            //        {
-            //            item.Header = "Close FPU Valve";
-            //        }
-            //        else
-            //        {
-            //            item.Header = "Open FPU Valve";
-            //        }
-            //    }
+            var contextMenu = (ContextMenu)this.Resources["ContextMenu1"];
 
 
-            //}
+            foreach (MenuItem item in contextMenu.Items)
+            {
+                item.Icon = "pack://application:,,,/Images/Remove.svg";
+
+                if (item.Name == "menuItem1")
+                {
+
+                    if (_isFPUValveOpen)
+                    {
+                        item.Header = "Close FPU Valve";
+                    }
+                    else
+                    {
+                        item.Header = "Open FPU Valve";
+                    }
+                }
+
+
+            }
 
         }
 
@@ -69,6 +72,23 @@ namespace AnimPart1.UC_OtherAnima.Pipes
         {
 
 
+            if (_isFPUValveOpen)
+            {
+
+                svgViewBoxUppervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
+                svgViewboxPulseY1.Visibility = Visibility.Collapsed;
+                svgViewboxPulseX3.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                svgViewBoxUppervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
+                svgViewboxPulseY1.Visibility = Visibility.Visible;
+                svgViewboxPulseX3.Visibility = Visibility.Visible;
+
+
+            }
+
+            _isFPUValveOpen = !_isFPUValveOpen;
         }
     }
 }

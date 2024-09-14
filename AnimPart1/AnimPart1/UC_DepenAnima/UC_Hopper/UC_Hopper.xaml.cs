@@ -288,7 +288,7 @@ namespace AnimPart1.UC_DepenAnima.UC_Hopper
                     else
                     {
                         item.Header = "Light on";
-                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
 
                     }
                 }

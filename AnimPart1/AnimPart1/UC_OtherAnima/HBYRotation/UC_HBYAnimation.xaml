@@ -96,10 +96,10 @@
                             Panel.ZIndex="1"/>
             <ComboBox x:Name="colorComboBox" 
               HorizontalAlignment="Left" 
-              Margin="75,4,0,0" 
+              Margin="145,257,0,0" 
               VerticalAlignment="Top" 
               Width="67" 
-              SelectionChanged="colorComboBox_SelectionChanged">
+              SelectionChanged="colorComboBox_SelectionChanged" RenderTransformOrigin="1.204,0.432">
                 <ComboBoxItem Content="Red"/>
                 <ComboBoxItem Content="Yellow"/>
                 <ComboBoxItem Content="Green"/>

@@ -163,10 +163,14 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                     else
                     {
                         item.Header = "Light on";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem2")
@@ -174,10 +178,14 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
                     if (isCameraOn)
                     {
                         item.Header = "Camera Off";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                     else
                     {
                         item.Header = "Camera On";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem3")
@@ -186,10 +194,14 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
                     if (IsValveOpen)
                     {
                         item.Header = "Close Valve";
+                        item.Icon = "pack://application:,,,/Images/Remove.svg";
+
                     }
                     else
                     {
                         item.Header = "Open Valve";
+                        item.Icon = "pack://application:,,,/Images/Remove.svg";
+
                     }
 
                 }
@@ -198,10 +210,14 @@ namespace AnimPart1.UC_OtherAnima.PFUAnimation
                     if (isAnimationOngoing)
                     {
                         item.Header = "Stop Stirring";
+                        item.Icon = "pack://application:,,,/Images/Stop.svg";
+
                     }
                     else
                     {
                         item.Header = "Start Stirring";
+                        item.Icon = "pack://application:,,,/Images/Stop.svg";
+
                     }
 
                 }

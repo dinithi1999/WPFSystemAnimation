@@ -71,7 +71,7 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
             backgroundSvg.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Pump/Images/pumpMarqueesvg.svg");
             svgViewbox.Source = new Uri("pack://application:,,,/UC_PrimiAnima/UC_Pump/Images/pumpFixedSection.svg");
 
-            CommandBindings.Add(new CommandBinding(PumpCameraCommand, Option1_Click));
+            CommandBindings.Add(new CommandBinding(PumpLighCommand, Option1_Click));
             CommandBindings.Add(new CommandBinding(PumpCameraCommand, Option2_Click));
             //CommandBindings.Add(new CommandBinding(HBYOpenValveCommand, Option3_Click));
             CommandBindings.Add(new CommandBinding(PumpStartAimationCameraCommand, Option4_Click));
@@ -153,10 +153,14 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
                     if (isLightOn)
                     {
                         item.Header = "Light Off";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                     else
                     {
                         item.Header = "Light on";
+                        item.Icon = "pack://application:,,,/Images/lightOn.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem2")
@@ -165,11 +169,15 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
                     {
 
                         item.Header = "Camera Off";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Camera On";
+                        item.Icon = "pack://application:,,,/Images/Camera.svg";
+
                     }
                 }
                 else if (item.Name == "menuItem4")
@@ -178,11 +186,15 @@ namespace AnimPart1.UC_PrimiAnima.UC_Pump
                     {
 
                         item.Header = "Stop Spinning";
+                        item.Icon = "pack://application:,,,/Images/Stop.svg";
+
 
                     }
                     else
                     {
                         item.Header = "Start Spinning";
+                        item.Icon = "pack://application:,,,/Images/Start.svg";
+
                     }
 
                 }
