@@ -10,8 +10,6 @@
              Focusable="True" 
              mc:Ignorable="d">
 
-
-
     <UserControl.InputBindings>
         <KeyBinding Key="L" Modifiers="Shift" Command="{x:Static local:UC_PFUAnimation.PFULighCommand}" />
         <KeyBinding Key="C" Modifiers="Shift" Command="{x:Static local:UC_PFUAnimation.PFUCameraCommand}" />

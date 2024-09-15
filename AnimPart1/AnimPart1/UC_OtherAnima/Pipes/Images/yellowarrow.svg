@@ -3,13 +3,15 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="326px" height="684px" viewBox="0 0 326 684" enable-background="new 0 0 326 684" xml:space="preserve">
-<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="180" y1="482" x2="286" y2="482"/>
-<g>
+<line display="none" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="180" y1="482" x2="286" y2="482"/>
+<g display="none">
 	<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="166" y1="330" x2="182" y2="330"/>
-	<line display="none" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="35" y1="39" x2="35" y2="609"/>
+	<line display="inline" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="35" y1="39" x2="35" y2="609"/>
 	<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="180" y1="330" x2="180" y2="606"/>
-	<line display="none" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="35" y1="607" x2="214" y2="607"/>
-	<line display="none" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="212" y1="607" x2="212" y2="663"/>
+	
+		<line display="inline" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="35" y1="607" x2="214" y2="607"/>
+	
+		<line display="inline" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="212" y1="607" x2="212" y2="663"/>
 </g>
 <path display="none" fill="#FFFF3C" d="M39,116.252c0,2.07-1.678,3.748-3.748,3.748h-0.505c-2.07,0-3.748-1.678-3.748-3.748v-13.504
 	c0-2.07,1.678-3.748,3.748-3.748h0.505c2.07,0,3.748,1.678,3.748,3.748V116.252z"/>
@@ -29,9 +31,9 @@
 	c0-2.07,1.678-3.748,3.748-3.748h13.504c2.07,0,3.748,1.678,3.748,3.748V607.252z"/>
 <path display="none" fill="#FFFF3C" d="M137,607.252c0,2.07-1.678,3.748-3.748,3.748h-13.504c-2.07,0-3.748-1.678-3.748-3.748
 	v-0.504c0-2.07,1.678-3.748,3.748-3.748h13.504c2.07,0,3.748,1.678,3.748,3.748V607.252z"/>
-<g display="none">
+<g>
 	
-		<image display="inline" overflow="visible" opacity="0.4" width="31" height="29" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAdCAYAAABSZrcyAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
+		<image overflow="visible" opacity="0.4" width="31" height="29" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAdCAYAAABSZrcyAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAgxJREFUeNrsV9luwjAQ9JFwtKXX
 //9iWwoESEjsGmlWGhnbSSqkvjTSKME5Zna9njVK/eGh7/yOvye5LjyrC6R+iqBqhFQnkBPt6czI
 CqgyxAwTYHHWdNYJUpdBUkBVIBbSimAjIZoiHAg9QWPsRkAucoN7dcACWOJckwCO+Ep0CegCWkBj
@@ -44,26 +46,26 @@ YtmdQD7k0m4ntNFUM3GI+gjyLci3+N0g9cW0V4XW6MgsThS5wtiavLtBqneU7r5EXOrnXPEXRGEo
 lKinkisSIEQm2kaxMfkpUc/ZOuc2kiqzafRTP/qbbfbY7nXSYe/058Or/2PG8SPAABLzCDE9aBZS
 AAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 200 657)">
 	</image>
-	<g display="inline">
+	<g>
 		<polygon fill="#FFFF3C" points="218.295,663 212.225,673.512 206.156,663 		"/>
 	</g>
 </g>
-<g>
-	<path display="none" fill="#8FFFFF" d="M184,562.252c0,2.07-1.678,3.748-3.748,3.748h-0.504c-2.07,0-3.748-1.678-3.748-3.748
+<g display="none">
+	<path display="inline" fill="#8FFFFF" d="M184,562.252c0,2.07-1.678,3.748-3.748,3.748h-0.504c-2.07,0-3.748-1.678-3.748-3.748
 		v-13.504c0-2.07,1.678-3.748,3.748-3.748h0.504c2.07,0,3.748,1.678,3.748,3.748V562.252z"/>
-	<path display="none" fill="#8FFFFF" d="M184,506.252c0,2.07-1.678,3.748-3.748,3.748h-0.504c-2.07,0-3.748-1.678-3.748-3.748
+	<path display="inline" fill="#8FFFFF" d="M184,506.252c0,2.07-1.678,3.748-3.748,3.748h-0.504c-2.07,0-3.748-1.678-3.748-3.748
 		v-13.504c0-2.07,1.678-3.748,3.748-3.748h0.504c2.07,0,3.748,1.678,3.748,3.748V506.252z"/>
-	<path display="none" fill="#8FFFFF" d="M184,447.252c0,2.07-1.678,3.748-3.748,3.748h-0.504c-2.07,0-3.748-1.678-3.748-3.748
+	<path display="inline" fill="#8FFFFF" d="M184,447.252c0,2.07-1.678,3.748-3.748,3.748h-0.504c-2.07,0-3.748-1.678-3.748-3.748
 		v-13.504c0-2.07,1.678-3.748,3.748-3.748h0.504c2.07,0,3.748,1.678,3.748,3.748V447.252z"/>
-	<path display="none" fill="#8FFFFF" d="M184,367.252c0,2.07-1.678,3.748-3.748,3.748h-0.504c-2.07,0-3.748-1.678-3.748-3.748
+	<path display="inline" fill="#8FFFFF" d="M184,367.252c0,2.07-1.678,3.748-3.748,3.748h-0.504c-2.07,0-3.748-1.678-3.748-3.748
 		v-13.504c0-2.07,1.678-3.748,3.748-3.748h0.504c2.07,0,3.748,1.678,3.748,3.748V367.252z"/>
-	<g>
+	<g display="inline">
 		<g>
 			<rect x="282" y="482" width="4" height="104"/>
 		</g>
-		<g display="none">
+		<g>
 			
-				<image display="inline" overflow="visible" opacity="0.4" width="31" height="29" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAdCAYAAABSZrcyAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
+				<image overflow="visible" opacity="0.4" width="31" height="29" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAdCAYAAABSZrcyAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAgxJREFUeNrsV9luwjAQ9JFwtKXX
 //9iWwoESEjsGmlWGhnbSSqkvjTSKME5Zna9njVK/eGh7/yOvye5LjyrC6R+iqBqhFQnkBPt6czI
 CqgyxAwTYHHWdNYJUpdBUkBVIBbSimAjIZoiHAg9QWPsRkAucoN7dcACWOJckwCO+Ep0CegCWkBj
@@ -76,14 +78,14 @@ YtmdQD7k0m4ntNFUM3GI+gjyLci3+N0g9cW0V4XW6MgsThS5wtiavLtBqneU7r5EXOrnXPEXRGEo
 lKinkisSIEQm2kaxMfkpUc/ZOuc2kiqzafRTP/qbbfbY7nXSYe/058Or/2PG8SPAABLzCDE9aBZS
 AAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 272 579)">
 			</image>
-			<g display="inline">
+			<g>
 				<polygon fill="#8FFFFF" points="290.295,585 284.225,595.512 278.156,585 				"/>
 			</g>
 		</g>
 	</g>
-	<path display="none" fill="#8FFFFF" d="M288,537.431c0,1.972-1.678,3.569-3.748,3.569h-0.504c-2.07,0-3.748-1.598-3.748-3.569
+	<path display="inline" fill="#8FFFFF" d="M288,537.431c0,1.972-1.678,3.569-3.748,3.569h-0.504c-2.07,0-3.748-1.598-3.748-3.569
 		v-12.861c0-1.972,1.678-3.569,3.748-3.569h0.504c2.07,0,3.748,1.598,3.748,3.569V537.431z"/>
-	<path display="none" fill="#8FFFFF" d="M257.431,478c1.972,0,3.569,1.678,3.569,3.748v0.504c0,2.07-1.598,3.748-3.569,3.748
+	<path display="inline" fill="#8FFFFF" d="M257.431,478c1.972,0,3.569,1.678,3.569,3.748v0.504c0,2.07-1.598,3.748-3.569,3.748
 		h-12.861c-1.972,0-3.569-1.678-3.569-3.748v-0.504c0-2.07,1.598-3.748,3.569-3.748H257.431z"/>
 </g>
 <g id="Valve_Open_1_" display="none">

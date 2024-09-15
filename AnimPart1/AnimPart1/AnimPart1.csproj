@@ -228,10 +228,12 @@
     <None Remove="UC_OtherAnima\PFUAnimation\Images\StartOnlyRotation.svg" />
     <None Remove="UC_OtherAnima\PFUAnimation\Images\valveClosed.svg" />
     <None Remove="UC_OtherAnima\PFUAnimation\Images\valveOpened.svg" />
+    <None Remove="UC_OtherAnima\Pipes\Images\bluearrow.svg" />
     <None Remove="UC_OtherAnima\Pipes\Images\bluePipe.svg" />
     <None Remove="UC_OtherAnima\Pipes\Images\bluePulse.svg" />
     <None Remove="UC_OtherAnima\Pipes\Images\mainPipe.svg" />
     <None Remove="UC_OtherAnima\Pipes\Images\valve.svg" />
+    <None Remove="UC_OtherAnima\Pipes\Images\yellowarrow.svg" />
     <None Remove="UC_OtherAnima\Pipes\Images\yellowPipe.svg" />
     <None Remove="UC_OtherAnima\Pipes\Images\yellowPulse.svg" />
     <None Remove="UC_PrimiAnima\UC_Portioner\Images\downArrow.svg" />
@@ -382,6 +384,9 @@
     <Resource Include="UC_OtherAnima\PFUAnimation\Images\valveOpened.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="UC_OtherAnima\Pipes\Images\yellowarrow.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="UC_OtherAnima\Pipes\Images\yellowPulse.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -415,9 +420,9 @@
     <Resource Include="UC_PrimiAnima\UC_Pump\Images\pumpMarqueesvg.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerMarquee.svg">
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerMarquee.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -445,21 +450,21 @@
     <Resource Include="UC_AncillaryAnima\PrimiLabel\Images\PrimiLabel.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\orangeBall.svg">
+    <Resource Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\orangeBall.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\RedBall.svg">
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\RedBall.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBackGround.svg">
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBackGround.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBlades.svg">
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBlades.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBottom.svg">
+    </Resource>
+    <Resource Include="UC_AncillaryAnima\SlicerBallsAnimation\Images\slicerBottom.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Content Include="UC_DepenAnima\UC_SLO\Images\TankLevelsLightOff\20.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -541,9 +546,9 @@
     <Resource Include="UC_PrimiAnima\UC_Pump\Images\pumpRotationalPart.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerbackground.svg">
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerbackground.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Resource Include="UC_PrimiAnima\UC_Screw\Images\screwBackground.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -730,28 +735,34 @@
     <Resource Include="UC_PrimiAnima\UC_Screw\Images\screwRotatingPart2.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerDroppedorange.svg">
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerDroppedorange.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerOrange1.svg">
+    </Content>
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerOrange1.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerOrange2.svg">
+    </Content>
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerOrange2.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerrCutRed1.svg">
+    </Content>
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerrCutRed1.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerReadyToCut1.svg">
+    </Content>
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerReadyToCut1.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerReadyToCut2.svg">
+    </Content>
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerReadyToCut2.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerRed1.svg">
+    </Content>
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerRed1.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="UC_PrimiAnima\UC_Slicer\Images\slicerRed2.svg">
+    </Content>
+    <Content Include="UC_PrimiAnima\UC_Slicer\Images\slicerRed2.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UC_OtherAnima\Pipes\Images\bluearrow.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

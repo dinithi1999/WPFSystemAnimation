@@ -24,18 +24,32 @@ namespace AnimPart1.UC_OtherAnima.Pipes
 
         private bool _isFPUValveOpen = true;
 
+        Storyboard piplePulses;
+        private Storyboard blinkAnimation;
+
         public UserControlPipes()
         {
             InitializeComponent();
 
 
             StartPippeAnimation();
+
+            blinkAnimation = (Storyboard)this.Resources["blinkAnimation"];
+            StartBlinking(); // Start blinking on load
         }
 
+        public void StartBlinking()
+        {
+            blinkAnimation.Begin();
+        }
 
+        public void StopBlinking()
+        {
+            blinkAnimation.Stop();
+        }
         private void StartPippeAnimation()
         {
-            var piplePulses = (Storyboard)this.Resources["pulse1Animation"];
+            piplePulses = (Storyboard)this.Resources["pulse1Animation"];
             piplePulses.Begin();
          
         }
@@ -62,30 +76,31 @@ namespace AnimPart1.UC_OtherAnima.Pipes
                         item.Header = "Open FPU Valve";
                     }
                 }
-
-
             }
 
         }
 
+
         private void Option1_Click(object sender, RoutedEventArgs e)
         {
-
-
-            if (_isFPUValveOpen)
+            if (_isFPUValveOpen)//current state, but user say need to close the valve
             {
 
                 svgViewBoxUppervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
                 svgViewboxPulseY1.Visibility = Visibility.Collapsed;
                 svgViewboxPulseX3.Visibility = Visibility.Collapsed;
+
+                piplePulses.Stop();
+                StopBlinking();
             }
-            else
+            else //current state is closed , but user say need to open the valve
             {
                 svgViewBoxUppervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
                 svgViewboxPulseY1.Visibility = Visibility.Visible;
                 svgViewboxPulseX3.Visibility = Visibility.Visible;
 
-
+                piplePulses.Begin();
+                StartBlinking();
             }
 
             _isFPUValveOpen = !_isFPUValveOpen;

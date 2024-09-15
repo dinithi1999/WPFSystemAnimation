@@ -9,24 +9,16 @@
              mc:Ignorable="d">
     <UserControl.Resources>
         <Storyboard x:Key="pulse1Animation">
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse1"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="80" 
-                RepeatBehavior="Forever"
-                AutoReverse="False"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse2"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="80" 
-                RepeatBehavior="Forever"
-                AutoReverse="False"
-                Duration="0:0:1">
-            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="translatePulse1" Storyboard.TargetProperty="Y" RepeatBehavior="Forever">
+                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0" />
+                <LinearDoubleKeyFrame Value="100" KeyTime="0:0:1" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="translatePulse2" Storyboard.TargetProperty="Y" RepeatBehavior="Forever">
+                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0" />
+                <LinearDoubleKeyFrame Value="100" KeyTime="0:0:1" />
+            </DoubleAnimationUsingKeyFrames>
+
             <DoubleAnimation
                 Storyboard.TargetName="translatePulse3"
                 Storyboard.TargetProperty="Y"
@@ -66,6 +58,16 @@
             </DoubleAnimation>
         </Storyboard>
 
+        <Storyboard x:Key="blinkAnimation" RepeatBehavior="Forever">
+            <DoubleAnimation
+                Storyboard.TargetName="svgViewBoxarrow"
+                Storyboard.TargetProperty="Opacity"
+                From="1.0"
+                To="0.2"
+                Duration="0:0:0.5"
+                AutoReverse="True" />
+        </Storyboard>
+
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem x:Name="menuItem1" Header="Close FPU Valve" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
             <MenuItem x:Name="menuItem2" Header="Open FPU Valve"  Click="Option1_Click" Style="{StaticResource CustomMenuItemStyle}"/>
@@ -80,9 +82,9 @@
         <svgc:SvgViewbox x:Name="pipe1"
             Stretch="Uniform"
             HorizontalAlignment="Left"
-            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePipe.svg"
+            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluepipe.svg"
             Panel.ZIndex="0"
-            VerticalAlignment="Top" Height="1800" Width="343" Margin="12,190,0,0"/>
+            VerticalAlignment="Top" Height="1800" Width="343" Margin="11,195,0,0"/>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse1"
             Stretch="Uniform"
@@ -111,6 +113,7 @@
             HorizontalAlignment="Left"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
             Panel.ZIndex="1"
+            Visibility="Collapsed"
             VerticalAlignment="Top" Width="11" Margin="46,632,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse3"/>
@@ -137,7 +140,7 @@
             Stretch="Uniform"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
             HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="11" Margin="332,653,0,1783">
+            Panel.ZIndex="1" Width="11" Margin="342,653,0,1783">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -152,7 +155,7 @@
             Stretch="Uniform"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
             HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="12" Margin="168,604,0,1823">
+            Panel.ZIndex="1" Width="12" Margin="168,629,0,1830">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -174,6 +177,13 @@
             Stretch="Uniform"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/valve.svg"
             HorizontalAlignment="Left"
-            Panel.ZIndex="1" Margin="76,590,0,1825" Width="30"/>
+            Panel.ZIndex="1" Margin="76,612,0,1825" Width="30"/>
+
+        <svgc:SvgViewbox x:Name="svgViewBoxarrow"
+     Stretch="Uniform"
+     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluearrow.svg"
+     HorizontalAlignment="Left"
+     Panel.ZIndex="1" Margin="318,917,0,1504" Width="76"/>
+
     </Grid>
 </UserControl>

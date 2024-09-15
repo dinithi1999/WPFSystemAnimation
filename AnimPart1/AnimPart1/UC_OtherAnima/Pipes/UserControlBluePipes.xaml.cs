@@ -23,20 +23,35 @@ namespace AnimPart1.UC_OtherAnima.Pipes
     {
         private bool _isFPUValveOpen = false;
         private bool _isPFUValveOpen = true;
-
+        Storyboard piplePulses;
+        private Storyboard blinkAnimation;
 
         public UserControlBluePipes()
         {
             InitializeComponent();
 
             StartPippeAnimation();
+
+            blinkAnimation = (Storyboard)this.Resources["blinkAnimation"];
+            StartBlinking(); // Start blinking on load
+
         }
 
         private void StartPippeAnimation()
         {
-            var piplePulses = (Storyboard)this.Resources["pulse1Animation"];
+            piplePulses = (Storyboard)this.Resources["pulse1Animation"];
             piplePulses.Begin();
 
+        }
+
+        public void StartBlinking()
+        {
+            blinkAnimation.Begin();
+        }
+
+        public void StopBlinking()
+        {
+            blinkAnimation.Stop();
         }
 
         private void Option1_Click(object sender, RoutedEventArgs e)
@@ -48,6 +63,9 @@ namespace AnimPart1.UC_OtherAnima.Pipes
                 svgViewBoxUppervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
                 svgViewboxPulseX1.Visibility = Visibility.Collapsed;
                 svgViewboxPulse5.Visibility = Visibility.Collapsed;
+
+                            blinkAnimation.Stop();
+
             }
             else
             {
@@ -55,9 +73,19 @@ namespace AnimPart1.UC_OtherAnima.Pipes
                 svgViewboxPulseX1.Visibility=Visibility.Visible;
                 svgViewboxPulse5.Visibility = Visibility.Visible;
 
+                piplePulses.Begin();
+                blinkAnimation.Begin();
+
+
             }
 
             _isPFUValveOpen = !_isPFUValveOpen;
+
+            if (!_isPFUValveOpen && !_isFPUValveOpen)
+            {
+
+                piplePulses.Stop();
+            }
 
         }
 
@@ -69,14 +97,27 @@ namespace AnimPart1.UC_OtherAnima.Pipes
 
                 svgViewBoxLowervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveOpened.svg");
                 svgViewboxPulse4.Visibility = Visibility.Visible;
+                svgViewboxPulse3.Visibility = Visibility.Visible;
+
+                piplePulses.Begin();
+
             }
             else
             {
                 svgViewBoxLowervalve.Source = new Uri("pack://application:,,,/UC_OtherAnima/PFUAnimation/Images/valveClosed.svg");
                 svgViewboxPulse4.Visibility= Visibility.Collapsed;
+                svgViewboxPulse3.Visibility = Visibility.Collapsed;
+
+
             }
 
             _isFPUValveOpen = !_isFPUValveOpen;
+
+            if (!_isPFUValveOpen && !_isFPUValveOpen)
+            {
+
+                piplePulses.Stop();
+            }
         }
 
         private void UserControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)

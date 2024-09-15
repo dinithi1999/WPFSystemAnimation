@@ -114,6 +114,17 @@
                 Duration="0:0:1">
             </DoubleAnimation>
         </Storyboard>
+        <Storyboard x:Key="blinkAnimation" RepeatBehavior="Forever">
+            <DoubleAnimation
+          Storyboard.TargetName="svgViewBoxarrow"
+          Storyboard.TargetProperty="Opacity"
+          From="1.0"
+          To="0.0"
+          Duration="0:0:0.5"
+          AutoReverse="True" />
+        </Storyboard>
+
+
     </UserControl.Resources>
 
     <Grid x:Name="MainGrid" Margin="0,234,-33,48" ContextMenu="{StaticResource ContextMenu1}">
@@ -126,14 +137,14 @@
             HorizontalAlignment="Left"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPipe.svg"
             Panel.ZIndex="0"
-            VerticalAlignment="Top" Height="2268" Width="500" Margin="12,190,0,0"/>
+            VerticalAlignment="Top" Height="2268" Width="500" Margin="30,190,0,0"/>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse1"
             Stretch="Uniform"
             HorizontalAlignment="Left"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             Panel.ZIndex="1"
-            VerticalAlignment="Top" Width="11" Margin="12,205,0,0">
+            VerticalAlignment="Top" Width="11" Margin="30,205,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse1"/>
             </svgc:SvgViewbox.RenderTransform>
@@ -144,7 +155,7 @@
             HorizontalAlignment="Left"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             Panel.ZIndex="1"
-            VerticalAlignment="Top" Width="11" Margin="12,464,0,0">
+            VerticalAlignment="Top" Width="11" Margin="30,464,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse2"/>
             </svgc:SvgViewbox.RenderTransform>
@@ -155,7 +166,7 @@
             HorizontalAlignment="Left"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             Panel.ZIndex="1"
-            VerticalAlignment="Top" Width="11" Margin="12,690,0,0">
+            VerticalAlignment="Top" Width="11" Margin="30,690,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse3"/>
             </svgc:SvgViewbox.RenderTransform>
@@ -165,7 +176,7 @@
             Stretch="Uniform"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="11" Margin="12,890,0,1546">
+            Panel.ZIndex="1" Width="11" Margin="30,890,0,1546">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -180,7 +191,7 @@
             Stretch="Uniform"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="11" Margin="12,1108,0,1328">
+            Panel.ZIndex="1" Width="11" Margin="30,1108,0,1328">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -195,7 +206,7 @@
             Stretch="Uniform"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="10" Margin="12,1331,0,1105">
+            Panel.ZIndex="1" Width="10" Margin="30,1331,0,1105">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -210,22 +221,18 @@
             Stretch="Uniform"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="11" Margin="12,1573,0,861">
+            Panel.ZIndex="1" Width="11" Margin="30,1573,0,861">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse7"/>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
 
-
-
-
-
         <svgc:SvgViewbox x:Name="svgViewboxPulseX1"
     Stretch="Uniform"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
     HorizontalAlignment="Left"
-    Panel.ZIndex="1" Width="11" Margin="85,1713,0,714">
+    Panel.ZIndex="1" Width="11" Margin="82,1752,0,695">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -240,7 +247,7 @@
     Stretch="Uniform"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
     HorizontalAlignment="Left"
-    Panel.ZIndex="1" Width="11" Margin="211,1715,0,716">
+    Panel.ZIndex="1" Width="11" Margin="210,1754,0,695">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -255,7 +262,7 @@
     Stretch="Uniform"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
     HorizontalAlignment="Left"
-    Panel.ZIndex="1" Width="11" Margin="446,1715,0,716">
+    Panel.ZIndex="1" Width="11" Margin="446,1744,0,687">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -270,7 +277,7 @@
     Stretch="Uniform"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
     HorizontalAlignment="Left"
-    Panel.ZIndex="1" Width="11" Margin="490,1746,0,687">
+    Panel.ZIndex="1" Width="11" Margin="517,1757,0,676">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulseY1"/>
             </svgc:SvgViewbox.RenderTransform>
@@ -280,7 +287,19 @@
     Stretch="Uniform"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/valve.svg"
     HorizontalAlignment="Left"
-    Panel.ZIndex="1" Margin="330,1700,0,715" Width="30"/>
+    Panel.ZIndex="1" Margin="333,1731,0,684" Width="30"/>
+
+        <Canvas>
+            <svgc:SvgViewbox x:Name="svgViewBoxarrow"
+           Stretch="Uniform"
+           Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowarrow.svg"
+           Width="76"
+           Canvas.Left="496"
+           Canvas.Top="1900"
+           Panel.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
     </Grid>
+
+
 
 </UserControl>
