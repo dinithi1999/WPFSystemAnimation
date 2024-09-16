@@ -16,114 +16,134 @@
 
         <Storyboard x:Key="pulse1Animation">
             <DoubleAnimation
-                Storyboard.TargetName="translatePulse1"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="60" 
-                RepeatBehavior="Forever"
-                AutoReverse="False"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse2"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="60" 
-                RepeatBehavior="Forever"
-                AutoReverse="False"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse3"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="100" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse4"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="60" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse5"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="60" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse6"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="60"
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse7"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="60" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1"/>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulseX1"
-                Storyboard.TargetProperty="X"
-                From="0"
-                To="30" 
-                AutoReverse ="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulseX2"
-                Storyboard.TargetProperty="X"
-                From="0"
-                To="30" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulseX3"
-                Storyboard.TargetProperty="X"
-                From="0"
-                To="30" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulseY1"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="100" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
-            </DoubleAnimation>
-        </Storyboard>
-        <Storyboard x:Key="blinkAnimation" RepeatBehavior="Forever">
-            <DoubleAnimation
-          Storyboard.TargetName="svgViewBoxarrow"
-          Storyboard.TargetProperty="Opacity"
-          From="1.0"
-          To="0.0"
-          Duration="0:0:0.5"
-          AutoReverse="True" />
+        Storyboard.TargetName="translatePulse1"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="1500" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:8"/>
         </Storyboard>
 
+        <Storyboard x:Key="pulse2Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulse2"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="1500" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:8"/>
+        </Storyboard>
+
+        <Storyboard x:Key="pulse3Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulse3"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="1500" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:8"/>
+        </Storyboard>
+
+        <Storyboard x:Key="pulse4Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulse4"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="1500" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:8"/>
+        </Storyboard>
+
+        <Storyboard x:Key="pulse5Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulse5"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="1500" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:8"/>
+        </Storyboard>
+
+        <Storyboard x:Key="pulse6Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulse6"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="1500"
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:8"/>
+        </Storyboard>
+
+        <Storyboard x:Key="pulse7Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulse7"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="1500" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:4"/>
+        </Storyboard>
+
+        <Storyboard x:Key="pulseX1Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulseX1"
+        Storyboard.TargetProperty="X"
+        From="0"
+        To="380" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:3"/>
+        </Storyboard>
+
+        <Storyboard x:Key="pulseX2Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulseX2"
+        Storyboard.TargetProperty="X"
+        From="0"
+        To="380" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:3"/>
+        </Storyboard>
+
+        <Storyboard x:Key="pulseX3Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulseX3"
+        Storyboard.TargetProperty="X"
+        From="0"
+        To="60" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:1"/>
+        </Storyboard>
+
+        <Storyboard x:Key="pulseY1Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulseY1"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="100" 
+        RepeatBehavior="Forever"
+        AutoReverse="False"
+        Duration="0:0:1"/>
+        </Storyboard>
+
+        <Storyboard x:Key="blinkAnimation" RepeatBehavior="Forever">
+            <DoubleAnimation
+        Storyboard.TargetName="svgViewBoxarrow"
+        Storyboard.TargetProperty="Opacity"
+        From="1.0"
+        To="0.0"
+        Duration="0:0:0.5"
+        AutoReverse="True"/>
+        </Storyboard>
 
     </UserControl.Resources>
 
@@ -144,7 +164,7 @@
             HorizontalAlignment="Left"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             Panel.ZIndex="1"
-            VerticalAlignment="Top" Width="11" Margin="30,205,0,0">
+            VerticalAlignment="Top" Width="11" Margin="30,250,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse1"/>
             </svgc:SvgViewbox.RenderTransform>
@@ -155,7 +175,7 @@
             HorizontalAlignment="Left"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             Panel.ZIndex="1"
-            VerticalAlignment="Top" Width="11" Margin="30,464,0,0">
+            VerticalAlignment="Top" Width="11" Margin="30,250,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse2"/>
             </svgc:SvgViewbox.RenderTransform>
@@ -166,62 +186,52 @@
             HorizontalAlignment="Left"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
             Panel.ZIndex="1"
-            VerticalAlignment="Top" Width="11" Margin="30,690,0,0">
+            VerticalAlignment="Top" Width="11" Margin="30,250,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse3"/>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse4"
-            Stretch="Uniform"
-            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
-            HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="11" Margin="30,890,0,1546">
+     Stretch="Uniform"
+     HorizontalAlignment="Left"
+     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
+     Panel.ZIndex="1"
+     VerticalAlignment="Top" Width="11" Margin="30,250,0,0">
             <svgc:SvgViewbox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="2.045"/>
-                    <RotateTransform/>
-                    <TranslateTransform x:Name="translatePulse4"/>
-                </TransformGroup>
+                <TranslateTransform x:Name="translatePulse4"/>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse5"
-            Stretch="Uniform"
-            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
-            HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="11" Margin="30,1108,0,1328">
+     Stretch="Uniform"
+     HorizontalAlignment="Left"
+     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
+     Panel.ZIndex="1"
+     VerticalAlignment="Top" Width="11" Margin="30,250,0,0">
             <svgc:SvgViewbox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="2.045"/>
-                    <RotateTransform/>
-                    <TranslateTransform x:Name="translatePulse5"/>
-                </TransformGroup>
+                <TranslateTransform x:Name="translatePulse5"/>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse6"
-            Stretch="Uniform"
-            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
-            HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="10" Margin="30,1331,0,1105">
+     Stretch="Uniform"
+     HorizontalAlignment="Left"
+     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
+     Panel.ZIndex="1"
+     VerticalAlignment="Top" Width="11" Margin="30,250,0,0">
             <svgc:SvgViewbox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="2.045"/>
-                    <RotateTransform/>
-                    <TranslateTransform x:Name="translatePulse6"/>
-                </TransformGroup>
+                <TranslateTransform x:Name="translatePulse6"/>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
         <svgc:SvgViewbox x:Name="svgViewboxPulse7"
-            Stretch="Uniform"
-            Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
-            HorizontalAlignment="Left"
-            Panel.ZIndex="1" Width="11" Margin="30,1573,0,861">
+     Stretch="Uniform"
+     HorizontalAlignment="Left"
+     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
+     Panel.ZIndex="1"
+     Visibility="Collapsed"
+     VerticalAlignment="Top" Width="11" Margin="30,250,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse7"/>
             </svgc:SvgViewbox.RenderTransform>
@@ -232,6 +242,8 @@
     Stretch="Uniform"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
     HorizontalAlignment="Left"
+                              Visibility="Collapsed"
+
     Panel.ZIndex="1" Width="11" Margin="82,1752,0,695">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
@@ -247,7 +259,9 @@
     Stretch="Uniform"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
     HorizontalAlignment="Left"
-    Panel.ZIndex="1" Width="11" Margin="210,1754,0,695">
+                              Visibility="Collapsed"
+
+    Panel.ZIndex="1" Width="11" Margin="82,1754,0,695">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -260,24 +274,42 @@
 
         <svgc:SvgViewbox x:Name="svgViewboxPulseX3"
     Stretch="Uniform"
+ Visibility="Collapsed"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
     HorizontalAlignment="Left"
-    Panel.ZIndex="1" Width="11" Margin="446,1744,0,687">
+    Panel.ZIndex="1" Width="11" Margin="120,1755,0,687">
             <svgc:SvgViewbox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform Angle="90"/>
-                    <TranslateTransform x:Name="translatePulseX3"/>
                 </TransformGroup>
             </svgc:SvgViewbox.RenderTransform>
         </svgc:SvgViewbox>
 
+
+        <svgc:SvgViewbox x:Name="svgViewboxPulseX4"
+    Stretch="Uniform"
+    Visibility="Collapsed"
+    Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
+    HorizontalAlignment="Left"
+    Panel.ZIndex="1" Width="11" Margin="240,1755,0,687">
+            <svgc:SvgViewbox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                </TransformGroup>
+            </svgc:SvgViewbox.RenderTransform>
+        </svgc:SvgViewbox>
+        
+        
         <svgc:SvgViewbox x:Name="svgViewboxPulseY1"
     Stretch="Uniform"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/yellowPulse.svg"
     HorizontalAlignment="Left"
-    Panel.ZIndex="1" Width="11" Margin="517,1757,0,676">
+                 Visibility="Collapsed"        
+    Panel.ZIndex="1" Width="11" Margin="518,1757,0,676">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulseY1"/>
             </svgc:SvgViewbox.RenderTransform>
@@ -287,7 +319,7 @@
     Stretch="Uniform"
     Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/valve.svg"
     HorizontalAlignment="Left"
-    Panel.ZIndex="1" Margin="333,1731,0,684" Width="30"/>
+    Panel.ZIndex="1" Margin="333,1729,0,684" Width="30"/>
 
         <Canvas>
             <svgc:SvgViewbox x:Name="svgViewBoxarrow"

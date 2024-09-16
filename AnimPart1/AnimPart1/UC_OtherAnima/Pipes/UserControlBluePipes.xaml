@@ -11,62 +11,75 @@
         <Storyboard x:Key="pulse1Animation">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="translatePulse1" Storyboard.TargetProperty="Y" RepeatBehavior="Forever">
                 <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0" />
-                <LinearDoubleKeyFrame Value="100" KeyTime="0:0:1" />
+                <LinearDoubleKeyFrame Value="300" KeyTime="0:0:3" />
             </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
+        <Storyboard x:Key="pulse2Animation">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="translatePulse2" Storyboard.TargetProperty="Y" RepeatBehavior="Forever">
                 <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0" />
-                <LinearDoubleKeyFrame Value="100" KeyTime="0:0:1" />
+                <LinearDoubleKeyFrame Value="300" KeyTime="0:0:3" />
             </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
+        <Storyboard x:Key="pulse3Animation">
             <DoubleAnimation
-                Storyboard.TargetName="translatePulse3"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="80" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
+        Storyboard.TargetName="translatePulse3"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="300" 
+        AutoReverse="False"
+        RepeatBehavior="Forever"
+        Duration="0:0:3">
             </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse4"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="80" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
-            </DoubleAnimation>
-            <DoubleAnimation
-                Storyboard.TargetName="translatePulse5"
-                Storyboard.TargetProperty="Y"
-                From="0"
-                To="180" 
-                AutoReverse="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:2">
-            </DoubleAnimation>
+        </Storyboard>
 
+        <Storyboard x:Key="pulse4Animation">
             <DoubleAnimation
-                Storyboard.TargetName="translatePulseX1"
-                Storyboard.TargetProperty="X"
-                From="0"
-                To="80" 
-                AutoReverse ="False"
-                RepeatBehavior="Forever"
-                Duration="0:0:1">
+        Storyboard.TargetName="translatePulse4"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="80" 
+        AutoReverse="False"
+        RepeatBehavior="Forever"
+        Duration="0:0:1">
+            </DoubleAnimation>
+        </Storyboard>
+
+        <Storyboard x:Key="pulse5Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulse5"
+        Storyboard.TargetProperty="Y"
+        From="0"
+        To="180" 
+        AutoReverse="False"
+        RepeatBehavior="Forever"
+        Duration="0:0:2">
+            </DoubleAnimation>
+        </Storyboard>
+
+        <Storyboard x:Key="pulseX1Animation">
+            <DoubleAnimation
+        Storyboard.TargetName="translatePulseX1"
+        Storyboard.TargetProperty="X"
+        From="-30"
+        To="120" 
+        AutoReverse="False"
+        RepeatBehavior="Forever"
+        Duration="0:0:2">
             </DoubleAnimation>
         </Storyboard>
 
         <Storyboard x:Key="blinkAnimation" RepeatBehavior="Forever">
             <DoubleAnimation
-                Storyboard.TargetName="svgViewBoxarrow"
-                Storyboard.TargetProperty="Opacity"
-                From="1.0"
-                To="0.2"
-                Duration="0:0:0.5"
-                AutoReverse="True" />
+        Storyboard.TargetName="svgViewBoxarrow"
+        Storyboard.TargetProperty="Opacity"
+        From="1.0"
+        To="0.2"
+        Duration="0:0:0.5"
+        AutoReverse="True" />
         </Storyboard>
+
 
         <ContextMenu x:Key="ContextMenu1">
             <MenuItem x:Name="menuItem1" Header="Close FPU Valve" Click="Option2_Click" Style="{StaticResource CustomMenuItemStyle}"/>
@@ -102,7 +115,7 @@
             HorizontalAlignment="Left"
             Source="pack://application:,,,/UC_OtherAnima/Pipes/Images/bluePulse.svg"
             Panel.ZIndex="1"
-            VerticalAlignment="Top" Width="11" Margin="45,464,0,0">
+            VerticalAlignment="Top" Width="11" Margin="45,205,0,0">
             <svgc:SvgViewbox.RenderTransform>
                 <TranslateTransform x:Name="translatePulse2"/>
             </svgc:SvgViewbox.RenderTransform>
